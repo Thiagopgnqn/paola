@@ -1,0 +1,3460 @@
+{
+  "generatedAt": "2026-10-26T03:10:20.427Z",
+  "settings": {
+    "shippingCost": 4500,
+    "freeShippingThreshold": 45000,
+    "freePickupEnabled": true,
+    "transferDiscountPercent": 10,
+    "transferDiscountEnabled": true,
+    "priceHistoryDays": 30,
+    "generalTermsText": "Envíos 100% discretos en empaque neutro sin identificación del contenido.",
+    "shippingNoticeText": "Envío gratis a todo el país superando el monto mínimo de compra.",
+    "bankTransferInstructions": "Transferencia bancaria. Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp."
+  },
+  "categories": [
+    {
+      "id": "cat_lenceria",
+      "name": "Lencería",
+      "slug": "lenceria",
+      "parentId": null,
+      "order": 1,
+      "children": [
+        {
+          "id": "sub_lenceria-baby-dolls",
+          "name": "Baby dolls",
+          "slug": "lenceria-baby-dolls",
+          "parentId": "cat_lenceria",
+          "order": 1,
+          "parent": {
+            "id": "cat_lenceria",
+            "name": "Lencería",
+            "slug": "lenceria"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_lenceria-vestidos",
+          "name": "Vestidos",
+          "slug": "lenceria-vestidos",
+          "parentId": "cat_lenceria",
+          "order": 2,
+          "parent": {
+            "id": "cat_lenceria",
+            "name": "Lencería",
+            "slug": "lenceria"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_lenceria-bodys",
+          "name": "Bodys",
+          "slug": "lenceria-bodys",
+          "parentId": "cat_lenceria",
+          "order": 3,
+          "parent": {
+            "id": "cat_lenceria",
+            "name": "Lencería",
+            "slug": "lenceria"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_lenceria-conjuntos",
+          "name": "Conjuntos",
+          "slug": "lenceria-conjuntos",
+          "parentId": "cat_lenceria",
+          "order": 4,
+          "parent": {
+            "id": "cat_lenceria",
+            "name": "Lencería",
+            "slug": "lenceria"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_lenceria-ligueros-arneses-y-mascaras",
+          "name": "Ligueros, arneses y máscaras",
+          "slug": "lenceria-ligueros-arneses-y-mascaras",
+          "parentId": "cat_lenceria",
+          "order": 5,
+          "parent": {
+            "id": "cat_lenceria",
+            "name": "Lencería",
+            "slug": "lenceria"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_lenceria-baby-dolls",
+      "name": "Baby dolls",
+      "slug": "lenceria-baby-dolls",
+      "parentId": "cat_lenceria",
+      "order": 1,
+      "parent": {
+        "id": "cat_lenceria",
+        "name": "Lencería",
+        "slug": "lenceria"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_lenceria-vestidos",
+      "name": "Vestidos",
+      "slug": "lenceria-vestidos",
+      "parentId": "cat_lenceria",
+      "order": 2,
+      "parent": {
+        "id": "cat_lenceria",
+        "name": "Lencería",
+        "slug": "lenceria"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_lenceria-bodys",
+      "name": "Bodys",
+      "slug": "lenceria-bodys",
+      "parentId": "cat_lenceria",
+      "order": 3,
+      "parent": {
+        "id": "cat_lenceria",
+        "name": "Lencería",
+        "slug": "lenceria"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_lenceria-conjuntos",
+      "name": "Conjuntos",
+      "slug": "lenceria-conjuntos",
+      "parentId": "cat_lenceria",
+      "order": 4,
+      "parent": {
+        "id": "cat_lenceria",
+        "name": "Lencería",
+        "slug": "lenceria"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_lenceria-ligueros-arneses-y-mascaras",
+      "name": "Ligueros, arneses y máscaras",
+      "slug": "lenceria-ligueros-arneses-y-mascaras",
+      "parentId": "cat_lenceria",
+      "order": 5,
+      "parent": {
+        "id": "cat_lenceria",
+        "name": "Lencería",
+        "slug": "lenceria"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_linea-masculina",
+      "name": "Línea masculina",
+      "slug": "linea-masculina",
+      "parentId": null,
+      "order": 2,
+      "children": []
+    },
+    {
+      "id": "cat_fantasias",
+      "name": "Fantasías",
+      "slug": "fantasias",
+      "parentId": null,
+      "order": 3,
+      "children": [
+        {
+          "id": "sub_fantasias-linea-pasionel",
+          "name": "Línea Pasionel",
+          "slug": "fantasias-linea-pasionel",
+          "parentId": "cat_fantasias",
+          "order": 1,
+          "parent": {
+            "id": "cat_fantasias",
+            "name": "Fantasías",
+            "slug": "fantasias"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_fantasias-linea-free-size",
+          "name": "Línea Free Size",
+          "slug": "fantasias-linea-free-size",
+          "parentId": "cat_fantasias",
+          "order": 2,
+          "parent": {
+            "id": "cat_fantasias",
+            "name": "Fantasías",
+            "slug": "fantasias"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_fantasias-linea-pasionel",
+      "name": "Línea Pasionel",
+      "slug": "fantasias-linea-pasionel",
+      "parentId": "cat_fantasias",
+      "order": 1,
+      "parent": {
+        "id": "cat_fantasias",
+        "name": "Fantasías",
+        "slug": "fantasias"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_fantasias-linea-free-size",
+      "name": "Línea Free Size",
+      "slug": "fantasias-linea-free-size",
+      "parentId": "cat_fantasias",
+      "order": 2,
+      "parent": {
+        "id": "cat_fantasias",
+        "name": "Fantasías",
+        "slug": "fantasias"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_cosmetica-intima",
+      "name": "Cosmética íntima",
+      "slug": "cosmetica-intima",
+      "parentId": null,
+      "order": 4,
+      "children": [
+        {
+          "id": "sub_cosmetica-intima-geles-y-lubricantes",
+          "name": "Geles y lubricantes",
+          "slug": "cosmetica-intima-geles-y-lubricantes",
+          "parentId": "cat_cosmetica-intima",
+          "order": 1,
+          "parent": {
+            "id": "cat_cosmetica-intima",
+            "name": "Cosmética íntima",
+            "slug": "cosmetica-intima"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
+          "name": "Velas y cremas de masaje",
+          "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
+          "parentId": "cat_cosmetica-intima",
+          "order": 2,
+          "parent": {
+            "id": "cat_cosmetica-intima",
+            "name": "Cosmética íntima",
+            "slug": "cosmetica-intima"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
+          "name": "Aceites comestibles y de masaje",
+          "slug": "cosmetica-intima-aceites-comestibles-y-de-masaje",
+          "parentId": "cat_cosmetica-intima",
+          "order": 3,
+          "parent": {
+            "id": "cat_cosmetica-intima",
+            "name": "Cosmética íntima",
+            "slug": "cosmetica-intima"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_cosmetica-intima-geles-y-lubricantes",
+      "name": "Geles y lubricantes",
+      "slug": "cosmetica-intima-geles-y-lubricantes",
+      "parentId": "cat_cosmetica-intima",
+      "order": 1,
+      "parent": {
+        "id": "cat_cosmetica-intima",
+        "name": "Cosmética íntima",
+        "slug": "cosmetica-intima"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
+      "name": "Velas y cremas de masaje",
+      "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
+      "parentId": "cat_cosmetica-intima",
+      "order": 2,
+      "parent": {
+        "id": "cat_cosmetica-intima",
+        "name": "Cosmética íntima",
+        "slug": "cosmetica-intima"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
+      "name": "Aceites comestibles y de masaje",
+      "slug": "cosmetica-intima-aceites-comestibles-y-de-masaje",
+      "parentId": "cat_cosmetica-intima",
+      "order": 3,
+      "parent": {
+        "id": "cat_cosmetica-intima",
+        "name": "Cosmética íntima",
+        "slug": "cosmetica-intima"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_perfumes-y-feromonas",
+      "name": "Perfumes y feromonas",
+      "slug": "perfumes-y-feromonas",
+      "parentId": null,
+      "order": 5,
+      "children": [
+        {
+          "id": "sub_perfumes-y-feromonas-perfumes",
+          "name": "Perfumes",
+          "slug": "perfumes-y-feromonas-perfumes",
+          "parentId": "cat_perfumes-y-feromonas",
+          "order": 1,
+          "parent": {
+            "id": "cat_perfumes-y-feromonas",
+            "name": "Perfumes y feromonas",
+            "slug": "perfumes-y-feromonas"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_perfumes-y-feromonas-perfumes",
+      "name": "Perfumes",
+      "slug": "perfumes-y-feromonas-perfumes",
+      "parentId": "cat_perfumes-y-feromonas",
+      "order": 1,
+      "parent": {
+        "id": "cat_perfumes-y-feromonas",
+        "name": "Perfumes y feromonas",
+        "slug": "perfumes-y-feromonas"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_juegos",
+      "name": "Juegos",
+      "slug": "juegos",
+      "parentId": null,
+      "order": 6,
+      "children": [
+        {
+          "id": "sub_juegos-juegos-de-mesa-y-otros",
+          "name": "Juegos de mesa y otros",
+          "slug": "juegos-juegos-de-mesa-y-otros",
+          "parentId": "cat_juegos",
+          "order": 1,
+          "parent": {
+            "id": "cat_juegos",
+            "name": "Juegos",
+            "slug": "juegos"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_juegos-dados-y-cartas",
+          "name": "Dados y cartas",
+          "slug": "juegos-dados-y-cartas",
+          "parentId": "cat_juegos",
+          "order": 2,
+          "parent": {
+            "id": "cat_juegos",
+            "name": "Juegos",
+            "slug": "juegos"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_juegos-juegos-de-mesa-y-otros",
+      "name": "Juegos de mesa y otros",
+      "slug": "juegos-juegos-de-mesa-y-otros",
+      "parentId": "cat_juegos",
+      "order": 1,
+      "parent": {
+        "id": "cat_juegos",
+        "name": "Juegos",
+        "slug": "juegos"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_juegos-dados-y-cartas",
+      "name": "Dados y cartas",
+      "slug": "juegos-dados-y-cartas",
+      "parentId": "cat_juegos",
+      "order": 2,
+      "parent": {
+        "id": "cat_juegos",
+        "name": "Juegos",
+        "slug": "juegos"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_anillos-y-estimuladores",
+      "name": "Anillos y estimuladores",
+      "slug": "anillos-y-estimuladores",
+      "parentId": null,
+      "order": 7,
+      "children": []
+    },
+    {
+      "id": "cat_bdsm-y-arneses",
+      "name": "BDSM y arneses",
+      "slug": "bdsm-y-arneses",
+      "parentId": null,
+      "order": 8,
+      "children": [
+        {
+          "id": "sub_bdsm-y-arneses-esposas",
+          "name": "Esposas",
+          "slug": "bdsm-y-arneses-esposas",
+          "parentId": "cat_bdsm-y-arneses",
+          "order": 1,
+          "parent": {
+            "id": "cat_bdsm-y-arneses",
+            "name": "BDSM y arneses",
+            "slug": "bdsm-y-arneses"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_bdsm-y-arneses-mordazas-y-antifaces",
+          "name": "Mordazas y antifaces",
+          "slug": "bdsm-y-arneses-mordazas-y-antifaces",
+          "parentId": "cat_bdsm-y-arneses",
+          "order": 2,
+          "parent": {
+            "id": "cat_bdsm-y-arneses",
+            "name": "BDSM y arneses",
+            "slug": "bdsm-y-arneses"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_bdsm-y-arneses-latigos-y-fustas",
+          "name": "Látigos y fustas",
+          "slug": "bdsm-y-arneses-latigos-y-fustas",
+          "parentId": "cat_bdsm-y-arneses",
+          "order": 3,
+          "parent": {
+            "id": "cat_bdsm-y-arneses",
+            "name": "BDSM y arneses",
+            "slug": "bdsm-y-arneses"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_bdsm-y-arneses-kits-y-accesorios",
+          "name": "Kits y accesorios",
+          "slug": "bdsm-y-arneses-kits-y-accesorios",
+          "parentId": "cat_bdsm-y-arneses",
+          "order": 4,
+          "parent": {
+            "id": "cat_bdsm-y-arneses",
+            "name": "BDSM y arneses",
+            "slug": "bdsm-y-arneses"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_bdsm-y-arneses-esposas",
+      "name": "Esposas",
+      "slug": "bdsm-y-arneses-esposas",
+      "parentId": "cat_bdsm-y-arneses",
+      "order": 1,
+      "parent": {
+        "id": "cat_bdsm-y-arneses",
+        "name": "BDSM y arneses",
+        "slug": "bdsm-y-arneses"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_bdsm-y-arneses-mordazas-y-antifaces",
+      "name": "Mordazas y antifaces",
+      "slug": "bdsm-y-arneses-mordazas-y-antifaces",
+      "parentId": "cat_bdsm-y-arneses",
+      "order": 2,
+      "parent": {
+        "id": "cat_bdsm-y-arneses",
+        "name": "BDSM y arneses",
+        "slug": "bdsm-y-arneses"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_bdsm-y-arneses-latigos-y-fustas",
+      "name": "Látigos y fustas",
+      "slug": "bdsm-y-arneses-latigos-y-fustas",
+      "parentId": "cat_bdsm-y-arneses",
+      "order": 3,
+      "parent": {
+        "id": "cat_bdsm-y-arneses",
+        "name": "BDSM y arneses",
+        "slug": "bdsm-y-arneses"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_bdsm-y-arneses-kits-y-accesorios",
+      "name": "Kits y accesorios",
+      "slug": "bdsm-y-arneses-kits-y-accesorios",
+      "parentId": "cat_bdsm-y-arneses",
+      "order": 4,
+      "parent": {
+        "id": "cat_bdsm-y-arneses",
+        "name": "BDSM y arneses",
+        "slug": "bdsm-y-arneses"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_dilatadores-consoladores-y-vibradores",
+      "name": "Dilatadores, consoladores y vibradores",
+      "slug": "dilatadores-consoladores-y-vibradores",
+      "parentId": null,
+      "order": 9,
+      "children": [
+        {
+          "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+          "name": "Dilatadores y consoladores anales",
+          "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+          "parentId": "cat_dilatadores-consoladores-y-vibradores",
+          "order": 1,
+          "parent": {
+            "id": "cat_dilatadores-consoladores-y-vibradores",
+            "name": "Dilatadores, consoladores y vibradores",
+            "slug": "dilatadores-consoladores-y-vibradores"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+      "name": "Dilatadores y consoladores anales",
+      "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+      "parentId": "cat_dilatadores-consoladores-y-vibradores",
+      "order": 1,
+      "parent": {
+        "id": "cat_dilatadores-consoladores-y-vibradores",
+        "name": "Dilatadores, consoladores y vibradores",
+        "slug": "dilatadores-consoladores-y-vibradores"
+      },
+      "children": []
+    }
+  ],
+  "products": [
+    {
+      "id": "demo_prod_001_baby-doll-venecia",
+      "name": "Baby Doll Venecia",
+      "description": "Confeccionado en tela microtul con terminaciones de puntilla",
+      "sku": "4580",
+      "price": 32000,
+      "transferPrice": 28800,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Nocturna",
+      "categoryId": "sub_lenceria-baby-dolls",
+      "category": {
+        "id": "sub_lenceria-baby-dolls",
+        "name": "Baby dolls",
+        "slug": "lenceria-baby-dolls",
+        "parentId": "cat_lenceria",
+        "parent": {
+          "id": "cat_lenceria",
+          "name": "Lencería",
+          "slug": "lenceria"
+        }
+      },
+      "active": true,
+      "soldCount": 24,
+      "createdAt": "2026-10-26T02:10:20.424Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_002_baby-doll-rose",
+      "name": "Baby Doll Rose",
+      "description": "Baby Doll Rose — Selección Lencería (Baby dolls). Empaque 100% discreto.",
+      "sku": "221",
+      "price": 26000,
+      "transferPrice": 23400,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_lenceria-baby-dolls",
+      "category": {
+        "id": "sub_lenceria-baby-dolls",
+        "name": "Baby dolls",
+        "slug": "lenceria-baby-dolls",
+        "parentId": "cat_lenceria",
+        "parent": {
+          "id": "cat_lenceria",
+          "name": "Lencería",
+          "slug": "lenceria"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-26T01:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_003_vestido-vinilo-verona",
+      "name": "Vestido Vinilo Verona",
+      "description": "Vestido Vinilo Verona — Selección Lencería (Vestidos). Empaque 100% discreto.",
+      "sku": "4510",
+      "price": 39500,
+      "transferPrice": 35550,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_lenceria-vestidos",
+      "category": {
+        "id": "sub_lenceria-vestidos",
+        "name": "Vestidos",
+        "slug": "lenceria-vestidos",
+        "parentId": "cat_lenceria",
+        "parent": {
+          "id": "cat_lenceria",
+          "name": "Lencería",
+          "slug": "lenceria"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-26T00:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_004_body-marley",
+      "name": "Body Marley",
+      "description": "Body Marley — Selección Lencería (Bodys). Empaque 100% discreto.",
+      "sku": "145R-GRP",
+      "price": 16000,
+      "transferPrice": 14400,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Nocturna",
+      "categoryId": "sub_lenceria-bodys",
+      "category": {
+        "id": "sub_lenceria-bodys",
+        "name": "Bodys",
+        "slug": "lenceria-bodys",
+        "parentId": "cat_lenceria",
+        "parent": {
+          "id": "cat_lenceria",
+          "name": "Lencería",
+          "slug": "lenceria"
+        }
+      },
+      "active": true,
+      "soldCount": 21,
+      "createdAt": "2026-10-25T23:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_001",
+          "productId": "demo_prod_004_body-marley",
+          "sku": "145R",
+          "type": null,
+          "size": "Talle Único",
+          "color": "Rojo",
+          "flavor": null,
+          "volume": null,
+          "price": 16000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_002",
+          "productId": "demo_prod_004_body-marley",
+          "sku": "145N",
+          "type": null,
+          "size": "Talle Único",
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 16000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_005_conjunto-hera",
+      "name": "Conjunto Hera",
+      "description": "Conjunto Hera — Selección Lencería (Conjuntos). Empaque 100% discreto.",
+      "sku": "503",
+      "price": 24000,
+      "transferPrice": 21600,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_lenceria-conjuntos",
+      "category": {
+        "id": "sub_lenceria-conjuntos",
+        "name": "Conjuntos",
+        "slug": "lenceria-conjuntos",
+        "parentId": "cat_lenceria",
+        "parent": {
+          "id": "cat_lenceria",
+          "name": "Lencería",
+          "slug": "lenceria"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T22:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_006_liguero-pandora",
+      "name": "Liguero Pandora",
+      "description": "Liguero Pandora — Selección Lencería (Ligueros, arneses y máscaras). Empaque 100% discreto.",
+      "sku": "128",
+      "price": 16000,
+      "transferPrice": 14400,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_lenceria-ligueros-arneses-y-mascaras",
+      "category": {
+        "id": "sub_lenceria-ligueros-arneses-y-mascaras",
+        "name": "Ligueros, arneses y máscaras",
+        "slug": "lenceria-ligueros-arneses-y-mascaras",
+        "parentId": "cat_lenceria",
+        "parent": {
+          "id": "cat_lenceria",
+          "name": "Lencería",
+          "slug": "lenceria"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T21:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_007_zunga",
+      "name": "Zunga",
+      "description": "Zunga — Selección Línea masculina. Empaque 100% discreto.",
+      "sku": "184",
+      "price": 17000,
+      "transferPrice": 15300,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "cat_linea-masculina",
+      "category": {
+        "id": "cat_linea-masculina",
+        "name": "Línea masculina",
+        "slug": "linea-masculina",
+        "parentId": null,
+        "parent": null
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T20:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_008_fantasia-enfermera-pasionel",
+      "name": "Fantasía Enfermera Pasionel",
+      "description": "Fantasía Enfermera Pasionel — Selección Fantasías (Línea Pasionel). Empaque 100% discreto.",
+      "sku": "P002",
+      "price": 42000,
+      "transferPrice": 37800,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_fantasias-linea-pasionel",
+      "category": {
+        "id": "sub_fantasias-linea-pasionel",
+        "name": "Línea Pasionel",
+        "slug": "fantasias-linea-pasionel",
+        "parentId": "cat_fantasias",
+        "parent": {
+          "id": "cat_fantasias",
+          "name": "Fantasías",
+          "slug": "fantasias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T19:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_009_fantasia-conejita-pasionel",
+      "name": "Fantasía Conejita Pasionel",
+      "description": "Fantasía Conejita Pasionel — Selección Fantasías (Línea Pasionel). Empaque 100% discreto.",
+      "sku": "P012",
+      "price": 42000,
+      "transferPrice": 37800,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_fantasias-linea-pasionel",
+      "category": {
+        "id": "sub_fantasias-linea-pasionel",
+        "name": "Línea Pasionel",
+        "slug": "fantasias-linea-pasionel",
+        "parentId": "cat_fantasias",
+        "parent": {
+          "id": "cat_fantasias",
+          "name": "Fantasías",
+          "slug": "fantasias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T18:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+      "name": "Fantasía Colegiala FT (FT.03)",
+      "description": "Fantasía Colegiala FT (FT.03) — Selección Fantasías (Línea Free Size). Empaque 100% discreto.",
+      "sku": "FT.03-NEGRA-GRP",
+      "price": 28000,
+      "transferPrice": 25200,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_fantasias-linea-free-size",
+      "category": {
+        "id": "sub_fantasias-linea-free-size",
+        "name": "Línea Free Size",
+        "slug": "fantasias-linea-free-size",
+        "parentId": "cat_fantasias",
+        "parent": {
+          "id": "cat_fantasias",
+          "name": "Fantasías",
+          "slug": "fantasias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T17:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_003",
+          "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+          "sku": "FT.03-NEGRA",
+          "type": null,
+          "size": "Free Size",
+          "color": "Negra",
+          "flavor": null,
+          "volume": null,
+          "price": 28000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_004",
+          "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+          "sku": "FT.03-BLANCA",
+          "type": null,
+          "size": "Free Size",
+          "color": "Blanca",
+          "flavor": null,
+          "volume": null,
+          "price": 28000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_011_catsuit-colegiala",
+      "name": "Catsuit Colegiala",
+      "description": "Catsuit Colegiala — Selección Fantasías (Línea Free Size). Empaque 100% discreto.",
+      "sku": "Cat.03-GRP",
+      "price": 18000,
+      "transferPrice": 16200,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_fantasias-linea-free-size",
+      "category": {
+        "id": "sub_fantasias-linea-free-size",
+        "name": "Línea Free Size",
+        "slug": "fantasias-linea-free-size",
+        "parentId": "cat_fantasias",
+        "parent": {
+          "id": "cat_fantasias",
+          "name": "Fantasías",
+          "slug": "fantasias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T16:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_005",
+          "productId": "demo_prod_011_catsuit-colegiala",
+          "sku": "Cat.03",
+          "type": "Modelo 3",
+          "size": "Free Size",
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 18000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_006",
+          "productId": "demo_prod_011_catsuit-colegiala",
+          "sku": "Cat.04",
+          "type": "Modelo 4",
+          "size": "Free Size",
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 18000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_012_gel-natural",
+      "name": "Gel Natural",
+      "description": "Gel Natural — Selección Cosmética íntima (Geles y lubricantes). Empaque 100% discreto.",
+      "sku": "Art.611-GRP",
+      "price": 13000,
+      "transferPrice": 11700,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_cosmetica-intima-geles-y-lubricantes",
+      "category": {
+        "id": "sub_cosmetica-intima-geles-y-lubricantes",
+        "name": "Geles y lubricantes",
+        "slug": "cosmetica-intima-geles-y-lubricantes",
+        "parentId": "cat_cosmetica-intima",
+        "parent": {
+          "id": "cat_cosmetica-intima",
+          "name": "Cosmética íntima",
+          "slug": "cosmetica-intima"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T15:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_007",
+          "productId": "demo_prod_012_gel-natural",
+          "sku": "Art.611",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "80 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_008",
+          "productId": "demo_prod_012_gel-natural",
+          "sku": "Art.627",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "200 ml",
+          "price": 18000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_013_gel-efecto-calor",
+      "name": "Gel Efecto Calor",
+      "description": "Gel Efecto Calor — Selección Cosmética íntima (Geles y lubricantes). Empaque 100% discreto.",
+      "sku": "Art.621-GRP",
+      "price": 13000,
+      "transferPrice": 11700,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_cosmetica-intima-geles-y-lubricantes",
+      "category": {
+        "id": "sub_cosmetica-intima-geles-y-lubricantes",
+        "name": "Geles y lubricantes",
+        "slug": "cosmetica-intima-geles-y-lubricantes",
+        "parentId": "cat_cosmetica-intima",
+        "parent": {
+          "id": "cat_cosmetica-intima",
+          "name": "Cosmética íntima",
+          "slug": "cosmetica-intima"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T14:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_009",
+          "productId": "demo_prod_013_gel-efecto-calor",
+          "sku": "Art.621",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "80 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_014_vela-de-masaje-30-g",
+      "name": "Vela de masaje 30 g",
+      "description": "Vela de masaje 30 g — Selección Cosmética íntima (Velas y cremas de masaje). Empaque 100% discreto.",
+      "sku": "D63-GRP",
+      "price": 12000,
+      "transferPrice": 10800,
+      "stock": 120,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Nocturna",
+      "categoryId": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
+      "category": {
+        "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
+        "name": "Velas y cremas de masaje",
+        "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
+        "parentId": "cat_cosmetica-intima",
+        "parent": {
+          "id": "cat_cosmetica-intima",
+          "name": "Cosmética íntima",
+          "slug": "cosmetica-intima"
+        }
+      },
+      "active": true,
+      "soldCount": 11,
+      "createdAt": "2026-10-25T13:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_010",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D63",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "BE",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_011",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D659",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Frutos Rojos",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_012",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D62",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Latte Capuccino y Dulce de Leche",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_013",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D64",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Body Soufflé Mango y Maracuyá",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_014",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D659-MYHEMP",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "My Hemp",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_015",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D61",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Champagne Rose",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_016",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D58",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Crazy Girl",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_017",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D51",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Sweet Beauty Rush Caramel Strawberries",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_018",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "D55",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Body Soufflé Strawberries",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_019",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "MMA01",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Mon Amour",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_020",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "CT01",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Desire Coconut",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_021",
+          "productId": "demo_prod_014_vela-de-masaje-30-g",
+          "sku": "DEMO-0001",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Sweet Beauty Rush Vainilla Coconut",
+          "volume": "30 g",
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_015_aceite-comestible-love-potion",
+      "name": "Aceite comestible Love Potion",
+      "description": "Aceite comestible Love Potion — Selección Cosmética íntima (Aceites comestibles y de masaje). Empaque 100% discreto.",
+      "sku": "A27-GRP",
+      "price": 13000,
+      "transferPrice": 11700,
+      "stock": 80,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Nocturna",
+      "categoryId": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
+      "category": {
+        "id": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
+        "name": "Aceites comestibles y de masaje",
+        "slug": "cosmetica-intima-aceites-comestibles-y-de-masaje",
+        "parentId": "cat_cosmetica-intima",
+        "parent": {
+          "id": "cat_cosmetica-intima",
+          "name": "Cosmética íntima",
+          "slug": "cosmetica-intima"
+        }
+      },
+      "active": true,
+      "soldCount": 10,
+      "createdAt": "2026-10-25T12:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_022",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A27",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Algodón de azúcar",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_023",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A28",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Banana",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_024",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A26",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Frutilla",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_025",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A01",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Chocolate",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_026",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A03",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Frutos rojos",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_027",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A04",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Dulce de leche",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_028",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A06",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Champagne",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_029",
+          "productId": "demo_prod_015_aceite-comestible-love-potion",
+          "sku": "A24",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Mint Cream",
+          "volume": "30 ml",
+          "price": 13000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_016_crema-corporal-para-masaje",
+      "name": "Crema corporal para masaje",
+      "description": "Crema corporal para masaje — Selección Cosmética íntima (Velas y cremas de masaje). Empaque 100% discreto.",
+      "sku": "DEMO-0004",
+      "price": 18000,
+      "transferPrice": 16200,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
+      "category": {
+        "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
+        "name": "Velas y cremas de masaje",
+        "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
+        "parentId": "cat_cosmetica-intima",
+        "parent": {
+          "id": "cat_cosmetica-intima",
+          "name": "Cosmética íntima",
+          "slug": "cosmetica-intima"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T11:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_030",
+          "productId": "demo_prod_016_crema-corporal-para-masaje",
+          "sku": "DEMO-0002",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "BE",
+          "volume": null,
+          "price": 18000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_031",
+          "productId": "demo_prod_016_crema-corporal-para-masaje",
+          "sku": "DEMO-0003",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Coconut",
+          "volume": null,
+          "price": 18000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_017_gel-intimo-sens-bomb",
+      "name": "Gel íntimo Sens Bomb",
+      "description": "Gel íntimo Sens Bomb — Selección Cosmética íntima (Geles y lubricantes). Empaque 100% discreto.",
+      "sku": "S01-GRP",
+      "price": 12000,
+      "transferPrice": 10800,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_cosmetica-intima-geles-y-lubricantes",
+      "category": {
+        "id": "sub_cosmetica-intima-geles-y-lubricantes",
+        "name": "Geles y lubricantes",
+        "slug": "cosmetica-intima-geles-y-lubricantes",
+        "parentId": "cat_cosmetica-intima",
+        "parent": {
+          "id": "cat_cosmetica-intima",
+          "name": "Cosmética íntima",
+          "slug": "cosmetica-intima"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T10:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_032",
+          "productId": "demo_prod_017_gel-intimo-sens-bomb",
+          "sku": "S01",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Maca",
+          "volume": null,
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_033",
+          "productId": "demo_prod_017_gel-intimo-sens-bomb",
+          "sku": "S02",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Sándalo Rojo",
+          "volume": null,
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_018_perfume-hot-inevitable",
+      "name": "Perfume Hot Inevitable",
+      "description": "Perfume Hot Inevitable — Selección Perfumes y feromonas (Perfumes). Empaque 100% discreto.",
+      "sku": "CV01-1-GRP",
+      "price": 37000,
+      "transferPrice": 33300,
+      "stock": 30,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Nocturna",
+      "categoryId": "sub_perfumes-y-feromonas-perfumes",
+      "category": {
+        "id": "sub_perfumes-y-feromonas-perfumes",
+        "name": "Perfumes",
+        "slug": "perfumes-y-feromonas-perfumes",
+        "parentId": "cat_perfumes-y-feromonas",
+        "parent": {
+          "id": "cat_perfumes-y-feromonas",
+          "name": "Perfumes y feromonas",
+          "slug": "perfumes-y-feromonas"
+        }
+      },
+      "active": true,
+      "soldCount": 7,
+      "createdAt": "2026-10-25T09:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_034",
+          "productId": "demo_prod_018_perfume-hot-inevitable",
+          "sku": "CV01-1",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Privée",
+          "volume": "100 ml",
+          "price": 37000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_035",
+          "productId": "demo_prod_018_perfume-hot-inevitable",
+          "sku": "C01",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "So Excited",
+          "volume": "100 ml",
+          "price": 37000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_036",
+          "productId": "demo_prod_018_perfume-hot-inevitable",
+          "sku": "C02",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Con feromonas",
+          "volume": "100 ml",
+          "price": 37000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_019_perfume-petit-mort",
+      "name": "Perfume Petit Mort",
+      "description": "Perfume Petit Mort — Selección Perfumes y feromonas (Perfumes). Empaque 100% discreto.",
+      "sku": "PM03-GRP",
+      "price": 32000,
+      "transferPrice": 28800,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_perfumes-y-feromonas-perfumes",
+      "category": {
+        "id": "sub_perfumes-y-feromonas-perfumes",
+        "name": "Perfumes",
+        "slug": "perfumes-y-feromonas-perfumes",
+        "parentId": "cat_perfumes-y-feromonas",
+        "parent": {
+          "id": "cat_perfumes-y-feromonas",
+          "name": "Perfumes y feromonas",
+          "slug": "perfumes-y-feromonas"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T08:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_037",
+          "productId": "demo_prod_019_perfume-petit-mort",
+          "sku": "PM03",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "50 ml",
+          "price": 32000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_020_perfume-it-femme",
+      "name": "Perfume IT Femme",
+      "description": "Perfume IT Femme — Selección Perfumes y feromonas (Perfumes). Empaque 100% discreto.",
+      "sku": "IT01-GRP",
+      "price": 30000,
+      "transferPrice": 27000,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_perfumes-y-feromonas-perfumes",
+      "category": {
+        "id": "sub_perfumes-y-feromonas-perfumes",
+        "name": "Perfumes",
+        "slug": "perfumes-y-feromonas-perfumes",
+        "parentId": "cat_perfumes-y-feromonas",
+        "parent": {
+          "id": "cat_perfumes-y-feromonas",
+          "name": "Perfumes y feromonas",
+          "slug": "perfumes-y-feromonas"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T07:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_038",
+          "productId": "demo_prod_020_perfume-it-femme",
+          "sku": "IT01",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Clásico",
+          "volume": "50 ml",
+          "price": 30000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_039",
+          "productId": "demo_prod_020_perfume-it-femme",
+          "sku": "IT02",
+          "type": null,
+          "size": null,
+          "color": null,
+          "flavor": "Florale Aphrodisiac",
+          "volume": "50 ml",
+          "price": 30000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_021_jenga-sex",
+      "name": "Jenga Sex",
+      "description": "Jenga Sex — Selección Juegos (Juegos de mesa y otros). Empaque 100% discreto.",
+      "sku": "JS",
+      "price": 24000,
+      "transferPrice": 21600,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_juegos-juegos-de-mesa-y-otros",
+      "category": {
+        "id": "sub_juegos-juegos-de-mesa-y-otros",
+        "name": "Juegos de mesa y otros",
+        "slug": "juegos-juegos-de-mesa-y-otros",
+        "parentId": "cat_juegos",
+        "parent": {
+          "id": "cat_juegos",
+          "name": "Juegos",
+          "slug": "juegos"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T06:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_022_naipe-kamasutra",
+      "name": "Naipe Kamasutra",
+      "description": "Naipe Kamasutra — Selección Juegos (Dados y cartas). Empaque 100% discreto.",
+      "sku": "DEMO-0005",
+      "price": 15000,
+      "transferPrice": 13500,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_juegos-dados-y-cartas",
+      "category": {
+        "id": "sub_juegos-dados-y-cartas",
+        "name": "Dados y cartas",
+        "slug": "juegos-dados-y-cartas",
+        "parentId": "cat_juegos",
+        "parent": {
+          "id": "cat_juegos",
+          "name": "Juegos",
+          "slug": "juegos"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T05:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_023_anillo-jelly",
+      "name": "Anillo Jelly",
+      "description": "Anillo Jelly — Selección Anillos y estimuladores. Empaque 100% discreto.",
+      "sku": "AN01",
+      "price": 6000,
+      "transferPrice": 5400,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "cat_anillos-y-estimuladores",
+      "category": {
+        "id": "cat_anillos-y-estimuladores",
+        "name": "Anillos y estimuladores",
+        "slug": "anillos-y-estimuladores",
+        "parentId": null,
+        "parent": null
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T04:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_024_torito-vibrador",
+      "name": "Torito Vibrador",
+      "description": "Torito Vibrador — Selección Anillos y estimuladores. Empaque 100% discreto.",
+      "sku": "AN4",
+      "price": 26000,
+      "transferPrice": 23400,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "cat_anillos-y-estimuladores",
+      "category": {
+        "id": "cat_anillos-y-estimuladores",
+        "name": "Anillos y estimuladores",
+        "slug": "anillos-y-estimuladores",
+        "parentId": null,
+        "parent": null
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T03:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_025_esposas",
+      "name": "Esposas",
+      "description": "Esposas — Selección BDSM y arneses (Esposas). Empaque 100% discreto.",
+      "sku": "BDSM9-GRP",
+      "price": 16000,
+      "transferPrice": 14400,
+      "stock": 60,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_bdsm-y-arneses-esposas",
+      "category": {
+        "id": "sub_bdsm-y-arneses-esposas",
+        "name": "Esposas",
+        "slug": "bdsm-y-arneses-esposas",
+        "parentId": "cat_bdsm-y-arneses",
+        "parent": {
+          "id": "cat_bdsm-y-arneses",
+          "name": "BDSM y arneses",
+          "slug": "bdsm-y-arneses"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T02:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_040",
+          "productId": "demo_prod_025_esposas",
+          "sku": "BDSM9",
+          "type": "Fina",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 17000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_041",
+          "productId": "demo_prod_025_esposas",
+          "sku": "BDSM10",
+          "type": "Mediana",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 19000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_042",
+          "productId": "demo_prod_025_esposas",
+          "sku": "BDSM11",
+          "type": "Ancha",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 22000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_043",
+          "productId": "demo_prod_025_esposas",
+          "sku": "BDSM4",
+          "type": "Cadena larga",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 26000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_044",
+          "productId": "demo_prod_025_esposas",
+          "sku": "DEMO-0006",
+          "type": "Metal con peluche",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 16000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_045",
+          "productId": "demo_prod_025_esposas",
+          "sku": "DEMO-0007",
+          "type": "Cuero con peluche",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 17000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_026_antifaz-ciego",
+      "name": "Antifaz Ciego",
+      "description": "Antifaz Ciego — Selección BDSM y arneses (Mordazas y antifaces). Empaque 100% discreto.",
+      "sku": "BDSM12",
+      "price": 11000,
+      "transferPrice": 9900,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_bdsm-y-arneses-mordazas-y-antifaces",
+      "category": {
+        "id": "sub_bdsm-y-arneses-mordazas-y-antifaces",
+        "name": "Mordazas y antifaces",
+        "slug": "bdsm-y-arneses-mordazas-y-antifaces",
+        "parentId": "cat_bdsm-y-arneses",
+        "parent": {
+          "id": "cat_bdsm-y-arneses",
+          "name": "BDSM y arneses",
+          "slug": "bdsm-y-arneses"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T01:10:20.426Z",
+      "variants": []
+    },
+    {
+      "id": "demo_prod_027_fusta",
+      "name": "Fusta",
+      "description": "Fusta — Selección BDSM y arneses (Látigos y fustas). Empaque 100% discreto.",
+      "sku": "BDSM5-GRP",
+      "price": 19000,
+      "transferPrice": 17100,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_bdsm-y-arneses-latigos-y-fustas",
+      "category": {
+        "id": "sub_bdsm-y-arneses-latigos-y-fustas",
+        "name": "Látigos y fustas",
+        "slug": "bdsm-y-arneses-latigos-y-fustas",
+        "parentId": "cat_bdsm-y-arneses",
+        "parent": {
+          "id": "cat_bdsm-y-arneses",
+          "name": "BDSM y arneses",
+          "slug": "bdsm-y-arneses"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-25T00:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_046",
+          "productId": "demo_prod_027_fusta",
+          "sku": "BDSM5",
+          "type": "Clásica",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 19000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_047",
+          "productId": "demo_prod_027_fusta",
+          "sku": "BDSM6",
+          "type": "Peluche",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 22000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_028_kit-negro",
+      "name": "Kit negro",
+      "description": "Kit negro — Selección BDSM y arneses (Kits y accesorios). Empaque 100% discreto.",
+      "sku": "DEMO-0009",
+      "price": 29000,
+      "transferPrice": 26100,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_bdsm-y-arneses-kits-y-accesorios",
+      "category": {
+        "id": "sub_bdsm-y-arneses-kits-y-accesorios",
+        "name": "Kits y accesorios",
+        "slug": "bdsm-y-arneses-kits-y-accesorios",
+        "parentId": "cat_bdsm-y-arneses",
+        "parent": {
+          "id": "cat_bdsm-y-arneses",
+          "name": "BDSM y arneses",
+          "slug": "bdsm-y-arneses"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-24T23:10:20.426Z",
+      "variants": [
+        {
+          "id": "demo_var_048",
+          "productId": "demo_prod_028_kit-negro",
+          "sku": "DEMO-0008",
+          "type": "4 piezas",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 29000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_049",
+          "productId": "demo_prod_028_kit-negro",
+          "sku": "BDSM7",
+          "type": "11 piezas",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": null,
+          "price": 44000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_029_safary",
+      "name": "Safary",
+      "description": "Safary — Selección Dilatadores, consoladores y vibradores (Dilatadores y consoladores anales). Empaque 100% discreto.",
+      "sku": "420-GRP",
+      "price": 20000,
+      "transferPrice": 18000,
+      "stock": 30,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Nocturna",
+      "categoryId": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+      "category": {
+        "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+        "name": "Dilatadores y consoladores anales",
+        "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+        "parentId": "cat_dilatadores-consoladores-y-vibradores",
+        "parent": {
+          "id": "cat_dilatadores-consoladores-y-vibradores",
+          "name": "Dilatadores, consoladores y vibradores",
+          "slug": "dilatadores-consoladores-y-vibradores"
+        }
+      },
+      "active": true,
+      "soldCount": -4,
+      "createdAt": "2026-10-24T22:10:20.427Z",
+      "variants": [
+        {
+          "id": "demo_var_050",
+          "productId": "demo_prod_029_safary",
+          "sku": "420",
+          "type": "Estándar",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "16 x 3 cm",
+          "price": 20000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_051",
+          "productId": "demo_prod_029_safary",
+          "sku": "421",
+          "type": "SCV",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "16 x 3 cm",
+          "price": 27000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_052",
+          "productId": "demo_prod_029_safary",
+          "sku": "422",
+          "type": "Completo SCV",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "16 x 3 cm",
+          "price": 29000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_030_escorpion",
+      "name": "Escorpión",
+      "description": "Escorpión — Selección Dilatadores, consoladores y vibradores (Dilatadores y consoladores anales). Empaque 100% discreto.",
+      "sku": "403-C-GRP",
+      "price": 16000,
+      "transferPrice": 14400,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Nocturna",
+      "categoryId": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+      "category": {
+        "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+        "name": "Dilatadores y consoladores anales",
+        "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+        "parentId": "cat_dilatadores-consoladores-y-vibradores",
+        "parent": {
+          "id": "cat_dilatadores-consoladores-y-vibradores",
+          "name": "Dilatadores, consoladores y vibradores",
+          "slug": "dilatadores-consoladores-y-vibradores"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-10-24T21:10:20.427Z",
+      "variants": [
+        {
+          "id": "demo_var_053",
+          "productId": "demo_prod_030_escorpion",
+          "sku": "403-C",
+          "type": "Consolador",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "8 x 2 cm",
+          "price": 16000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_054",
+          "productId": "demo_prod_030_escorpion",
+          "sku": "403-V",
+          "type": "Vibrador",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "8 x 2 cm",
+          "price": 27000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    }
+  ],
+  "priceHistory": [
+    {
+      "id": "demo_ph_demo_prod_001_baby-doll-venecia_base",
+      "productId": "demo_prod_001_baby-doll-venecia",
+      "variantId": null,
+      "oldPrice": 32000,
+      "newPrice": 32000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_002_baby-doll-rose_base",
+      "productId": "demo_prod_002_baby-doll-rose",
+      "variantId": null,
+      "oldPrice": 26000,
+      "newPrice": 26000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_003_vestido-vinilo-verona_base",
+      "productId": "demo_prod_003_vestido-vinilo-verona",
+      "variantId": null,
+      "oldPrice": 39500,
+      "newPrice": 39500,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_004_body-marley_base",
+      "productId": "demo_prod_004_body-marley",
+      "variantId": null,
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_001",
+      "productId": "demo_prod_004_body-marley",
+      "variantId": "demo_var_001",
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_002",
+      "productId": "demo_prod_004_body-marley",
+      "variantId": "demo_var_002",
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_005_conjunto-hera_base",
+      "productId": "demo_prod_005_conjunto-hera",
+      "variantId": null,
+      "oldPrice": 24000,
+      "newPrice": 24000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_006_liguero-pandora_base",
+      "productId": "demo_prod_006_liguero-pandora",
+      "variantId": null,
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_007_zunga_base",
+      "productId": "demo_prod_007_zunga",
+      "variantId": null,
+      "oldPrice": 17000,
+      "newPrice": 17000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_008_fantasia-enfermera-pasionel_base",
+      "productId": "demo_prod_008_fantasia-enfermera-pasionel",
+      "variantId": null,
+      "oldPrice": 42000,
+      "newPrice": 42000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_009_fantasia-conejita-pasionel_base",
+      "productId": "demo_prod_009_fantasia-conejita-pasionel",
+      "variantId": null,
+      "oldPrice": 42000,
+      "newPrice": 42000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_010_fantasia-colegiala-ft-ft-03_base",
+      "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+      "variantId": null,
+      "oldPrice": 28000,
+      "newPrice": 28000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_003",
+      "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+      "variantId": "demo_var_003",
+      "oldPrice": 28000,
+      "newPrice": 28000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_004",
+      "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+      "variantId": "demo_var_004",
+      "oldPrice": 28000,
+      "newPrice": 28000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_011_catsuit-colegiala_base",
+      "productId": "demo_prod_011_catsuit-colegiala",
+      "variantId": null,
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_005",
+      "productId": "demo_prod_011_catsuit-colegiala",
+      "variantId": "demo_var_005",
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_006",
+      "productId": "demo_prod_011_catsuit-colegiala",
+      "variantId": "demo_var_006",
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_012_gel-natural_base",
+      "productId": "demo_prod_012_gel-natural",
+      "variantId": null,
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_007",
+      "productId": "demo_prod_012_gel-natural",
+      "variantId": "demo_var_007",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_008",
+      "productId": "demo_prod_012_gel-natural",
+      "variantId": "demo_var_008",
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_013_gel-efecto-calor_base",
+      "productId": "demo_prod_013_gel-efecto-calor",
+      "variantId": null,
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_009",
+      "productId": "demo_prod_013_gel-efecto-calor",
+      "variantId": "demo_var_009",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_014_vela-de-masaje-30-g_base",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": null,
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_010",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_010",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_011",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_011",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_012",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_012",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_013",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_013",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_014",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_014",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_015",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_015",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_016",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_016",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_017",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_017",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_018",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_018",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_019",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_019",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_020",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_020",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_021",
+      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "variantId": "demo_var_021",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_015_aceite-comestible-love-potion_base",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": null,
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_022",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_022",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_023",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_023",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_024",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_024",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_025",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_025",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_026",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_026",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_027",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_027",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_028",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_028",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_029",
+      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "variantId": "demo_var_029",
+      "oldPrice": 13000,
+      "newPrice": 13000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_016_crema-corporal-para-masaje_base",
+      "productId": "demo_prod_016_crema-corporal-para-masaje",
+      "variantId": null,
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_030",
+      "productId": "demo_prod_016_crema-corporal-para-masaje",
+      "variantId": "demo_var_030",
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_031",
+      "productId": "demo_prod_016_crema-corporal-para-masaje",
+      "variantId": "demo_var_031",
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_017_gel-intimo-sens-bomb_base",
+      "productId": "demo_prod_017_gel-intimo-sens-bomb",
+      "variantId": null,
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_032",
+      "productId": "demo_prod_017_gel-intimo-sens-bomb",
+      "variantId": "demo_var_032",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_033",
+      "productId": "demo_prod_017_gel-intimo-sens-bomb",
+      "variantId": "demo_var_033",
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_018_perfume-hot-inevitable_base",
+      "productId": "demo_prod_018_perfume-hot-inevitable",
+      "variantId": null,
+      "oldPrice": 37000,
+      "newPrice": 37000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_034",
+      "productId": "demo_prod_018_perfume-hot-inevitable",
+      "variantId": "demo_var_034",
+      "oldPrice": 37000,
+      "newPrice": 37000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_035",
+      "productId": "demo_prod_018_perfume-hot-inevitable",
+      "variantId": "demo_var_035",
+      "oldPrice": 37000,
+      "newPrice": 37000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_036",
+      "productId": "demo_prod_018_perfume-hot-inevitable",
+      "variantId": "demo_var_036",
+      "oldPrice": 37000,
+      "newPrice": 37000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_019_perfume-petit-mort_base",
+      "productId": "demo_prod_019_perfume-petit-mort",
+      "variantId": null,
+      "oldPrice": 32000,
+      "newPrice": 32000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_037",
+      "productId": "demo_prod_019_perfume-petit-mort",
+      "variantId": "demo_var_037",
+      "oldPrice": 32000,
+      "newPrice": 32000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_020_perfume-it-femme_base",
+      "productId": "demo_prod_020_perfume-it-femme",
+      "variantId": null,
+      "oldPrice": 30000,
+      "newPrice": 30000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_038",
+      "productId": "demo_prod_020_perfume-it-femme",
+      "variantId": "demo_var_038",
+      "oldPrice": 30000,
+      "newPrice": 30000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_039",
+      "productId": "demo_prod_020_perfume-it-femme",
+      "variantId": "demo_var_039",
+      "oldPrice": 30000,
+      "newPrice": 30000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_021_jenga-sex_base",
+      "productId": "demo_prod_021_jenga-sex",
+      "variantId": null,
+      "oldPrice": 24000,
+      "newPrice": 24000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_022_naipe-kamasutra_base",
+      "productId": "demo_prod_022_naipe-kamasutra",
+      "variantId": null,
+      "oldPrice": 15000,
+      "newPrice": 15000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_023_anillo-jelly_base",
+      "productId": "demo_prod_023_anillo-jelly",
+      "variantId": null,
+      "oldPrice": 6000,
+      "newPrice": 6000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_024_torito-vibrador_base",
+      "productId": "demo_prod_024_torito-vibrador",
+      "variantId": null,
+      "oldPrice": 26000,
+      "newPrice": 26000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_025_esposas_base",
+      "productId": "demo_prod_025_esposas",
+      "variantId": null,
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_040",
+      "productId": "demo_prod_025_esposas",
+      "variantId": "demo_var_040",
+      "oldPrice": 17000,
+      "newPrice": 17000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_041",
+      "productId": "demo_prod_025_esposas",
+      "variantId": "demo_var_041",
+      "oldPrice": 19000,
+      "newPrice": 19000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_042",
+      "productId": "demo_prod_025_esposas",
+      "variantId": "demo_var_042",
+      "oldPrice": 22000,
+      "newPrice": 22000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_043",
+      "productId": "demo_prod_025_esposas",
+      "variantId": "demo_var_043",
+      "oldPrice": 26000,
+      "newPrice": 26000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_044",
+      "productId": "demo_prod_025_esposas",
+      "variantId": "demo_var_044",
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_045",
+      "productId": "demo_prod_025_esposas",
+      "variantId": "demo_var_045",
+      "oldPrice": 17000,
+      "newPrice": 17000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_026_antifaz-ciego_base",
+      "productId": "demo_prod_026_antifaz-ciego",
+      "variantId": null,
+      "oldPrice": 11000,
+      "newPrice": 11000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_prod_027_fusta_base",
+      "productId": "demo_prod_027_fusta",
+      "variantId": null,
+      "oldPrice": 19000,
+      "newPrice": 19000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_046",
+      "productId": "demo_prod_027_fusta",
+      "variantId": "demo_var_046",
+      "oldPrice": 19000,
+      "newPrice": 19000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_047",
+      "productId": "demo_prod_027_fusta",
+      "variantId": "demo_var_047",
+      "oldPrice": 22000,
+      "newPrice": 22000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_028_kit-negro_base",
+      "productId": "demo_prod_028_kit-negro",
+      "variantId": null,
+      "oldPrice": 29000,
+      "newPrice": 29000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_048",
+      "productId": "demo_prod_028_kit-negro",
+      "variantId": "demo_var_048",
+      "oldPrice": 29000,
+      "newPrice": 29000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_049",
+      "productId": "demo_prod_028_kit-negro",
+      "variantId": "demo_var_049",
+      "oldPrice": 44000,
+      "newPrice": 44000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_029_safary_base",
+      "productId": "demo_prod_029_safary",
+      "variantId": null,
+      "oldPrice": 20000,
+      "newPrice": 20000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_050",
+      "productId": "demo_prod_029_safary",
+      "variantId": "demo_var_050",
+      "oldPrice": 20000,
+      "newPrice": 20000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_051",
+      "productId": "demo_prod_029_safary",
+      "variantId": "demo_var_051",
+      "oldPrice": 27000,
+      "newPrice": 27000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_052",
+      "productId": "demo_prod_029_safary",
+      "variantId": "demo_var_052",
+      "oldPrice": 29000,
+      "newPrice": 29000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_030_escorpion_base",
+      "productId": "demo_prod_030_escorpion",
+      "variantId": null,
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
+      "id": "demo_ph_demo_var_053",
+      "productId": "demo_prod_030_escorpion",
+      "variantId": "demo_var_053",
+      "oldPrice": 16000,
+      "newPrice": 16000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_054",
+      "productId": "demo_prod_030_escorpion",
+      "variantId": "demo_var_054",
+      "oldPrice": 27000,
+      "newPrice": 27000,
+      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "demo_camp_blackfriday",
+      "name": "Black Friday",
+      "slug": "black-friday",
+      "status": "ACTIVE",
+      "startsAt": "2026-10-25T03:10:20.427Z",
+      "endsAt": "2026-11-02T03:10:20.427Z",
+      "priority": 20,
+      "active": true,
+      "headline": "Black Friday Nocturna: Descuentos de Temporada",
+      "subheadline": "Hasta 30% OFF en productos seleccionados y promociones por tiempo limitado con envíos confidenciales.",
+      "description": "Campaña activa de Black Friday con promociones de temporada y combos de ahorro.",
+      "theme": "black-friday",
+      "announcementText": "⚡ Black Friday: Hasta 30% OFF en productos seleccionados + Envíos discretos",
+      "announcementLink": "/campanas/black-friday",
+      "conditionsText": "Válido durante el período de Black Friday o hasta agotar stock disponible. Descuentos no acumulables con otros cupones. Envíos 100% discretos en Córdoba.",
+      "showCountdown": true,
+      "landingEnabled": true,
+      "seoTitle": "Black Friday Nocturna | Ofertas Exclusivas",
+      "seoDescription": "Aprovechá las promociones destacadas en boutique íntima con envíos confidenciales.",
+      "createdAt": "2026-10-26T03:10:20.427Z",
+      "updatedAt": "2026-10-26T03:10:20.427Z"
+    },
+    {
+      "id": "demo_camp_cyberweek",
+      "name": "Cyber Week",
+      "slug": "cyber-week",
+      "status": "SCHEDULED",
+      "startsAt": "2026-11-10T03:10:20.427Z",
+      "endsAt": "2026-11-17T03:10:20.427Z",
+      "priority": 15,
+      "active": true,
+      "headline": "Cyber Week: Anticipo de Promociones Online",
+      "subheadline": "Próximamente beneficios exclusivos y combos para parejas.",
+      "description": "Campaña programada de Cyber Week.",
+      "theme": "cyber-sale",
+      "announcementText": "🚀 Próximamente: Cyber Week con beneficios exclusivos",
+      "announcementLink": "/campanas/cyber-week",
+      "conditionsText": "Promoción programada. Envíos discretos a todo el país.",
+      "showCountdown": true,
+      "landingEnabled": true,
+      "seoTitle": "Cyber Week en Nocturna | Próximamente",
+      "seoDescription": "Anticipate a las ofertas de Cyber Week en Nocturna SexShop.",
+      "createdAt": "2026-10-26T03:10:20.427Z",
+      "updatedAt": "2026-10-26T03:10:20.427Z"
+    },
+    {
+      "id": "demo_camp_navidad",
+      "name": "Navidad",
+      "slug": "navidad",
+      "status": "DRAFT",
+      "startsAt": null,
+      "endsAt": null,
+      "priority": 5,
+      "active": false,
+      "headline": "Regalos íntimos para estas fiestas",
+      "subheadline": "Borrador de campaña navideña y fin de año.",
+      "description": "Borrador de campaña navideña y fin de año.",
+      "theme": "navidad",
+      "announcementText": "✨ Anticipo de Navidad: Sets exclusivos para regalar",
+      "announcementLink": "/campanas/navidad",
+      "conditionsText": "Promoción especial para las fiestas. Entregas programadas en Córdoba.",
+      "showCountdown": true,
+      "landingEnabled": true,
+      "seoTitle": "Navidad en Nocturna | Regalos Íntimos",
+      "seoDescription": "Encontrá el regalo ideal para estas fiestas con empaque 100% neutro.",
+      "createdAt": "2026-10-26T03:10:20.427Z",
+      "updatedAt": "2026-10-26T03:10:20.427Z"
+    },
+    {
+      "id": "demo_camp_madre",
+      "name": "Día de la Madre",
+      "slug": "dia-de-la-madre",
+      "status": "ENDED",
+      "startsAt": "2026-10-06T03:10:20.427Z",
+      "endsAt": "2026-10-16T03:10:20.427Z",
+      "priority": 0,
+      "active": false,
+      "headline": "Especial Día de la Madre",
+      "subheadline": "Promociones pasadas de la temporada.",
+      "description": "Campaña finalizada / plantilla.",
+      "theme": "dia-de-la-madre",
+      "announcementText": "🌸 Campaña finalizada",
+      "announcementLink": "/campanas/dia-de-la-madre",
+      "conditionsText": "Campaña finalizada.",
+      "showCountdown": false,
+      "landingEnabled": false,
+      "seoTitle": "Especial Día de la Madre | Nocturna Sexshop",
+      "seoDescription": "Campaña de archivo.",
+      "createdAt": "2026-10-01T03:10:20.427Z",
+      "updatedAt": "2026-10-16T03:10:20.427Z"
+    }
+  ],
+  "promotions": [
+    {
+      "id": "demo_promo_bf_lenceria",
+      "campaignId": "demo_camp_blackfriday",
+      "name": "20% OFF en Lencería",
+      "kind": "PERCENT",
+      "value": 20,
+      "stackable": true,
+      "startsAt": null,
+      "endsAt": null,
+      "active": true,
+      "priority": 5,
+      "targets": [
+        {
+          "targetType": "CATEGORY",
+          "targetId": "cat_lenceria",
+          "excluded": false
+        }
+      ]
+    },
+    {
+      "id": "demo_promo_2x1_cosmetica",
+      "campaignId": "demo_camp_blackfriday",
+      "name": "2x1 en Cosmética íntima",
+      "kind": "BUY_X_PAY_Y",
+      "buyQuantity": 2,
+      "payQuantity": 1,
+      "stackable": false,
+      "startsAt": null,
+      "endsAt": null,
+      "active": true,
+      "priority": 8,
+      "targets": [
+        {
+          "targetType": "CATEGORY",
+          "targetId": "cat_cosmetica-intima",
+          "excluded": false
+        }
+      ]
+    },
+    {
+      "id": "demo_promo_combo_parejas",
+      "campaignId": "demo_camp_blackfriday",
+      "name": "Combo Sensorial: Aceite + Vela a $22.000",
+      "kind": "BUNDLE_PRICE",
+      "bundleSkus": "[\"A27-GRP\",\"D63-GRP\"]",
+      "value": 22000,
+      "stackable": false,
+      "active": true,
+      "priority": 9,
+      "targets": [
+        {
+          "targetType": "PRODUCT",
+          "targetId": "demo_prod_015_aceite-comestible-love-potion",
+          "excluded": false
+        },
+        {
+          "targetType": "PRODUCT",
+          "targetId": "demo_prod_014_vela-de-masaje-30-g",
+          "excluded": false
+        }
+      ]
+    },
+    {
+      "id": "demo_promo_tiered",
+      "campaignId": "demo_camp_blackfriday",
+      "name": "Descuento Escalonado por Cantidad",
+      "kind": "TIERED",
+      "stackable": true,
+      "active": true,
+      "priority": 3,
+      "tiers": "[{\"minQuantity\":3,\"discountPercent\":10},{\"minQuantity\":5,\"discountPercent\":20}]",
+      "targets": [
+        {
+          "targetType": "ALL",
+          "excluded": false
+        }
+      ]
+    }
+  ],
+  "coupons": [
+    {
+      "id": "demo_coupon_bienvenida10",
+      "code": "BIENVENIDA10",
+      "kind": "PERCENT",
+      "value": 10,
+      "minOrderAmount": 20000,
+      "maxDiscountAmount": 10000,
+      "startsAt": "2026-09-26T03:10:20.427Z",
+      "endsAt": "2026-12-25T03:10:20.427Z",
+      "usageLimitTotal": 100,
+      "usageLimitPerCustomer": 1,
+      "usedCount": 3,
+      "active": true,
+      "stackableWithPromotions": true,
+      "campaignId": "demo_camp_madre",
+      "appliesTo": "ALL",
+      "createdAt": "2026-10-26T03:10:20.427Z",
+      "updatedAt": "2026-10-26T03:10:20.427Z"
+    },
+    {
+      "id": "demo_coupon_enviogratis",
+      "code": "ENVIOGRATIS",
+      "kind": "FREE_SHIPPING",
+      "value": 0,
+      "minOrderAmount": 15000,
+      "startsAt": "2026-10-11T03:10:20.427Z",
+      "endsAt": "2026-12-10T03:10:20.427Z",
+      "usageLimitTotal": 200,
+      "usageLimitPerCustomer": 2,
+      "usedCount": 1,
+      "active": true,
+      "stackableWithPromotions": true,
+      "campaignId": null,
+      "appliesTo": "ALL",
+      "createdAt": "2026-10-26T03:10:20.427Z",
+      "updatedAt": "2026-10-26T03:10:20.427Z"
+    },
+    {
+      "id": "demo_coupon_vip5000",
+      "code": "VIP5000",
+      "kind": "FIXED_AMOUNT",
+      "value": 5000,
+      "minOrderAmount": 40000,
+      "maxDiscountAmount": 5000,
+      "startsAt": "2026-10-21T03:10:20.427Z",
+      "endsAt": "2026-11-15T03:10:20.427Z",
+      "usageLimitTotal": 30,
+      "usageLimitPerCustomer": 1,
+      "usedCount": 0,
+      "active": true,
+      "stackableWithPromotions": true,
+      "campaignId": "demo_camp_madre",
+      "appliesTo": "ALL",
+      "createdAt": "2026-10-26T03:10:20.427Z",
+      "updatedAt": "2026-10-26T03:10:20.427Z"
+    }
+  ],
+  "tags": [
+    {
+      "id": "tag_imperdible",
+      "name": "Imperdible",
+      "slug": "imperdible"
+    },
+    {
+      "id": "tag_favorito",
+      "name": "Favorito",
+      "slug": "favorito"
+    },
+    {
+      "id": "tag_nuevo",
+      "name": "Nuevo",
+      "slug": "nuevo"
+    },
+    {
+      "id": "tag_sensual",
+      "name": "Sensual",
+      "slug": "sensual"
+    },
+    {
+      "id": "tag_edicion_limitada",
+      "name": "Edición Limitada",
+      "slug": "edicion-limitada"
+    }
+  ],
+  "collections": [
+    {
+      "id": "coll_regalos_ella",
+      "name": "Regalos para ella",
+      "slug": "regalos-para-ella",
+      "description": "Lencería, prendas seductoras y aromas cautivantes",
+      "active": true,
+      "products": [
+        {
+          "collectionId": "coll_regalos_ella",
+          "productId": "demo_prod_001_baby-doll-venecia",
+          "order": 0
+        },
+        {
+          "collectionId": "coll_regalos_ella",
+          "productId": "demo_prod_002_baby-doll-rose",
+          "order": 1
+        },
+        {
+          "collectionId": "coll_regalos_ella",
+          "productId": "demo_prod_003_vestido-vinilo-verona",
+          "order": 2
+        },
+        {
+          "collectionId": "coll_regalos_ella",
+          "productId": "demo_prod_004_body-marley",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "coll_parejas",
+      "name": "Para parejas",
+      "slug": "para-parejas",
+      "description": "Juegos, geles y cosmética para disfrutar de a dos",
+      "active": true,
+      "products": [
+        {
+          "collectionId": "coll_parejas",
+          "productId": "demo_prod_005_conjunto-hera",
+          "order": 0
+        },
+        {
+          "collectionId": "coll_parejas",
+          "productId": "demo_prod_006_liguero-pandora",
+          "order": 1
+        },
+        {
+          "collectionId": "coll_parejas",
+          "productId": "demo_prod_007_zunga",
+          "order": 2
+        },
+        {
+          "collectionId": "coll_parejas",
+          "productId": "demo_prod_008_fantasia-enfermera-pasionel",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "coll_novedades",
+      "name": "Novedades",
+      "slug": "novedades",
+      "description": "Los últimos ingresos de la temporada",
+      "active": true,
+      "products": [
+        {
+          "collectionId": "coll_novedades",
+          "productId": "demo_prod_009_fantasia-conejita-pasionel",
+          "order": 0
+        },
+        {
+          "collectionId": "coll_novedades",
+          "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+          "order": 1
+        },
+        {
+          "collectionId": "coll_novedades",
+          "productId": "demo_prod_011_catsuit-colegiala",
+          "order": 2
+        },
+        {
+          "collectionId": "coll_novedades",
+          "productId": "demo_prod_012_gel-natural",
+          "order": 3
+        }
+      ]
+    }
+  ],
+  "homeSections": [
+    {
+      "id": "sec_base_01",
+      "campaignId": null,
+      "type": "HERO",
+      "order": 0,
+      "enabled": true,
+      "config": {
+        "headline": "Intimidad, diseño y placer sin tabúes.",
+        "subheadline": "Una selección curada de bienestar íntimo, cosmética sensorial y lencería. Comprá con total reserva desde tu casa: envíos 100% discretos en Córdoba y atención personalizada por WhatsApp.",
+        "ctaText": "Explorar Colección",
+        "ctaLink": "/catalogo"
+      }
+    },
+    {
+      "id": "sec_base_02",
+      "campaignId": null,
+      "type": "CATEGORY_GRID",
+      "order": 1,
+      "enabled": true,
+      "config": {
+        "title": "Categorías de la Colección",
+        "subtitle": "Universo Nocturna"
+      }
+    },
+    {
+      "id": "sec_base_03",
+      "campaignId": null,
+      "type": "PRODUCT_GRID",
+      "order": 2,
+      "enabled": true,
+      "config": {
+        "title": "Seleccionados para Vos",
+        "subtitle": "Curaduría",
+        "limit": 6
+      }
+    },
+    {
+      "id": "sec_base_04",
+      "campaignId": null,
+      "type": "TEXT_BLOCK",
+      "order": 3,
+      "enabled": true,
+      "config": {
+        "title": "Una experiencia íntima pensada desde el respeto, la estética y la confidencialidad.",
+        "id": "nosotros"
+      }
+    },
+    {
+      "id": "sec_base_05",
+      "campaignId": null,
+      "type": "BENEFITS",
+      "order": 4,
+      "enabled": true,
+      "config": {}
+    },
+    {
+      "id": "sec_base_06",
+      "campaignId": null,
+      "type": "FAQ",
+      "order": 5,
+      "enabled": true,
+      "config": {
+        "id": "faq"
+      }
+    },
+    {
+      "id": "sec_bf_01",
+      "campaignId": "demo_camp_blackfriday",
+      "type": "HERO",
+      "order": 0,
+      "enabled": true,
+      "config": {
+        "headline": "BLACK FRIDAY NOCTURNA",
+        "subheadline": "Promociones de temporada en bienestar íntimo y lencería. Envíos 100% discretos en Córdoba.",
+        "ctaText": "Aprovechar Ofertas",
+        "ctaLink": "/campanas/black-friday"
+      }
+    },
+    {
+      "id": "sec_bf_02",
+      "campaignId": "demo_camp_blackfriday",
+      "type": "COUNTDOWN",
+      "order": 1,
+      "enabled": true,
+      "config": {
+        "title": "La campaña de Black Friday finaliza en:",
+        "message": "Promociones válidas por tiempo limitado o hasta agotar stock físico.",
+        "targetDate": "2026-11-02T03:10:20.427Z"
+      }
+    },
+    {
+      "id": "sec_bf_03",
+      "campaignId": "demo_camp_blackfriday",
+      "type": "PRODUCT_GRID",
+      "order": 2,
+      "enabled": true,
+      "config": {
+        "title": "Ofertas Destacadas de Black Friday",
+        "subtitle": "Hasta 30% OFF en productos seleccionados",
+        "filter": "campaign",
+        "limit": 8
+      }
+    },
+    {
+      "id": "sec_bf_04",
+      "campaignId": "demo_camp_blackfriday",
+      "type": "BENEFITS",
+      "order": 3,
+      "enabled": true,
+      "config": {}
+    },
+    {
+      "id": "sec_madre_01",
+      "campaignId": "demo_camp_madre",
+      "type": "CAMPAIGN_BANNER",
+      "order": 0,
+      "enabled": false,
+      "config": {
+        "title": "Especial Día de la Madre",
+        "subtitle": "15% OFF en Lencería y 2x1 en Cosmética íntima con envíos discretos en Córdoba.",
+        "badge": "Campaña Finalizada",
+        "ctaText": "Ver Colección",
+        "ctaLink": "/campanas/dia-de-la-madre"
+      }
+    }
+  ],
+  "couponRedemptions": []
+}

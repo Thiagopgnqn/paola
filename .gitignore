@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment (exclude all real .env files, keep .env.example templates)
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Build output
+frontend/dist/
+backend/dist/
+
+# Local Database & Docker volumes
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+backend/prisma/*.db
+backend/prisma/*.db-journal
+postgres_data/
+
+# Uploads & Raw Source Images (optimized WebP in frontend/public/images/ ARE committed)
+backend/uploads/*
+!backend/uploads/.gitkeep
+images-source/products/*
+!images-source/products/.gitkeep
+images-source/brand/*
+!images-source/brand/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

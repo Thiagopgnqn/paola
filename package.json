@@ -1,0 +1,23 @@
+{
+  "name": "nocturna-sexshop",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Tienda online de Nocturna SexShop — Córdoba, Argentina",
+  "scripts": {
+    "sync:engine": "node scripts/sync-engine.js",
+    "sync:engine:check": "node scripts/sync-engine.js --check",
+    "import:catalog": "npm --prefix backend run import:catalog",
+    "demo:build-data": "npm --prefix frontend run demo:build-data",
+    "images:build": "npm --prefix frontend run images:build",
+    "images:report": "npm --prefix frontend run images:report",
+    "test": "npx vitest run packages/pricing-engine/ frontend/src/__tests__/smoke.test.jsx",
+    "build": "npm --prefix frontend run build",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev"
+  },
+  "devDependencies": {
+    "jsdom": "^30.1.3",
+    "vitest": "^5.0.5"
+  }
+}

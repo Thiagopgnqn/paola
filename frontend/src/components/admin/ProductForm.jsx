@@ -1,0 +1,848 @@
+import React, { useState, useEffect, useRef } from 'react';
+import Input from '../ui/Input';
+import Select from '../ui/Select';
+import Button from '../ui/Button';
+import client from '../../api/client';
+import { resolveProductImage } from '../../utils/productImages';
+import { FiUploadCloud, FiTrash2, FiRefreshCw, FiLink, FiPlus } from 'react-icons/fi';
+
+const emptyVariant = (defaultPrice = '') => ({
+  sku: '',
+  type: '',
+  size: '',
+  color: '',
+  flavor: '',
+  volume: '',
+  price: defaultPrice,
+  stock: 0,
+  active: true,
+});
+
+const flattenCategoriesList = (rawList = []) => {
+  const map = new Map();
+  for (const item of rawList) {
+    if (!item || !item.id) continue;
+    map.set(item.id, item);
+    if (Array.isArray(item.children)) {
+      for (const child of item.children) {
+        if (child && child.id && !map.has(child.id)) {
+          map.set(child.id, {
+            ...child,
+            parentId: child.parentId || item.id,
+          });
+        }
+      }
+    }
+  }
+  return Array.from(map.values());
+};
+
+const resolveCategoryIds = (initialData, categories) => {
+  if (!initialData) return { parentCategoryId: '', subcategoryId: '' };
+
+  const rawCatId = initialData.categoryId || initialData.category?.id || '';
+  const rawParentId =
+    initialData.category?.parentId || initialData.category?.parent?.id || '';
+
+  if (rawParentId) {
+    return {
+      parentCategoryId: rawParentId,
+      subcategoryId: rawCatId,
+    };
+  }
+
+  const matchedCat = categories.find(
+    (c) =>
+      c.id === rawCatId ||
+      (initialData.category?.slug && c.slug === initialData.category.slug)
+  );
+
+  if (matchedCat) {
+    if (matchedCat.parentId) {
+      return {
+        parentCategoryId: matchedCat.parentId,
+        subcategoryId: matchedCat.id,
+      };
+    }
+    return {
+      parentCategoryId: matchedCat.id,
+      subcategoryId: '',
+    };
+  }
+
+  return {
+    parentCategoryId: rawCatId,
+    subcategoryId: '',
+  };
+};
+
+const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, loading }) => {
+  const [categories, setCategories] = useState(() =>
+    flattenCategoriesList(propCategories)
+  );
+  const [availableTags, setAvailableTags] = useState([]);
+  const [selectedTagIds, setSelectedTagIds] = useState([]);
+  const [formData, setFormData] = useState({
+    name: '',
+    sku: '',
+    parentCategoryId: '',
+    subcategoryId: '',
+    categoryId: '',
+    brand: '',
+    badge: '',
+    description: '',
+    price: '',
+    transferPrice: '',
+    stock: 0,
+    imageUrl: '',
+    active: true,
+    variants: [],
+  });
+
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [uploadError, setUploadError] = useState('');
+  const [showUrlInput, setShowUrlInput] = useState(false);
+  const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    if (Array.isArray(propCategories) && propCategories.length > 0) {
+      setCategories(flattenCategoriesList(propCategories));
+      return;
+    }
+    const fetchCategories = async () => {
+      try {
+        const res = await client.get('/categories?flat=true');
+        setCategories(flattenCategoriesList(Array.isArray(res.data) ? res.data : []));
+      } catch (err) {
+        console.error('Error loading categories:', err);
+      }
+    };
+    fetchCategories();
+  }, [propCategories]);
+
+  useEffect(() => {
+    const fetchTags = async () => {
+      try {
+        const res = await client.get('/tags');
+        setAvailableTags(Array.isArray(res.data) ? res.data : []);
+      } catch (err) {
+        console.error('Error loading tags in ProductForm:', err);
+      }
+    };
+    fetchTags();
+  }, []);
+
+  // Populate form when initialData changes
+  useEffect(() => {
+    if (initialData) {
+      const { parentCategoryId, subcategoryId } = resolveCategoryIds(
+        initialData,
+        categories
+      );
+
+      // Extract existing tags
+      const currentTags = [];
+      if (Array.isArray(initialData.tags)) {
+        initialData.tags.forEach((t) => {
+          if (typeof t === 'string') currentTags.push(t);
+          else if (t?.id) currentTags.push(t.id);
+        });
+      }
+      if (Array.isArray(initialData.productTags)) {
+        initialData.productTags.forEach((pt) => {
+          if (pt.tagId) currentTags.push(pt.tagId);
+          else if (pt.tag?.id) currentTags.push(pt.tag.id);
+        });
+      }
+      setSelectedTagIds(Array.from(new Set(currentTags)));
+
+      setFormData({
+        name: initialData.name || '',
+        sku: initialData.sku || '',
+        parentCategoryId,
+        subcategoryId,
+        categoryId: subcategoryId || parentCategoryId || '',
+        brand: initialData.brand || '',
+        badge: initialData.badge || '',
+        description: initialData.description || '',
+        price: initialData.price ?? '',
+        transferPrice: initialData.transferPrice ?? '',
+        stock: initialData.stock ?? 0,
+        imageUrl: initialData.imageUrl || initialData.image || '',
+        active: initialData.active !== false,
+        variants: Array.isArray(initialData.variants)
+          ? initialData.variants.map((v) => ({
+              id: v.id,
+              sku: v.sku || '',
+              type: v.type || '',
+              size: v.size || '',
+              color: v.color || '',
+              flavor: v.flavor || '',
+              volume: v.volume || '',
+              price: v.price ?? initialData.price ?? '',
+              stock: v.stock ?? 0,
+              active: v.active !== false,
+            }))
+          : [],
+      });
+      if (initialData.imageUrl && initialData.imageUrl.startsWith('http')) {
+        setShowUrlInput(true);
+      } else {
+        setShowUrlInput(false);
+      }
+      setUploadError('');
+    } else {
+      setFormData({
+        name: '',
+        sku: '',
+        parentCategoryId: '',
+        subcategoryId: '',
+        categoryId: '',
+        brand: '',
+        badge: '',
+        description: '',
+        price: '',
+        transferPrice: '',
+        stock: 0,
+        imageUrl: '',
+        active: true,
+        variants: [],
+      });
+      setUploadError('');
+      setShowUrlInput(false);
+      setSelectedTagIds([]);
+    }
+      }, [initialData]);
+
+  const toggleTag = (tagId) => {
+    setSelectedTagIds((prev) =>
+      prev.includes(tagId) ? prev.filter((id) => id !== tagId) : [...prev, tagId]
+    );
+  };
+
+  // Backfill parentCategoryId / subcategoryId if categories loaded after initialData
+  useEffect(() => {
+    if (!initialData || categories.length === 0) return;
+    setFormData((prev) => {
+      const resolved = resolveCategoryIds(initialData, categories);
+      if (
+        (!prev.parentCategoryId && resolved.parentCategoryId) ||
+        (prev.parentCategoryId === resolved.subcategoryId && resolved.parentCategoryId)
+      ) {
+        return {
+          ...prev,
+          parentCategoryId: resolved.parentCategoryId,
+          subcategoryId: resolved.subcategoryId,
+          categoryId: resolved.subcategoryId || resolved.parentCategoryId || '',
+        };
+      }
+      return prev;
+    });
+  }, [categories, initialData]);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (name === 'parentCategoryId') {
+      setFormData((prev) => ({
+        ...prev,
+        parentCategoryId: value,
+        subcategoryId: '',
+        categoryId: value,
+      }));
+      return;
+    }
+    if (name === 'subcategoryId') {
+      setFormData((prev) => ({
+        ...prev,
+        subcategoryId: value,
+        categoryId: value || prev.parentCategoryId,
+      }));
+      return;
+    }
+    if (name === 'price') {
+      setFormData((prev) => {
+        const oldPriceStr = String(prev.price ?? '');
+        const updatedVariants = prev.variants.map((v) => {
+          if (String(v.price ?? '') === oldPriceStr || v.price === '' || v.price == null) {
+            return { ...v, price: value };
+          }
+          return v;
+        });
+        return {
+          ...prev,
+          price: value,
+          variants: updatedVariants,
+        };
+      });
+      return;
+    }
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSyncPriceToAllVariants = () => {
+    setFormData((prev) => ({
+      ...prev,
+      variants: prev.variants.map((v) => ({ ...v, price: prev.price })),
+    }));
+  };
+
+  const handleVariantChange = (idx, field, value) => {
+    setFormData((prev) => {
+      const next = [...prev.variants];
+      next[idx] = { ...next[idx], [field]: value };
+      return { ...prev, variants: next };
+    });
+  };
+
+  const addVariantRow = () => {
+    setFormData((prev) => ({
+      ...prev,
+      variants: [...prev.variants, emptyVariant(prev.price)],
+    }));
+  };
+
+  const removeVariantRow = (idx) => {
+    setFormData((prev) => ({
+      ...prev,
+      variants: prev.variants.filter((_, i) => i !== idx),
+    }));
+  };
+
+  const handleFileSelect = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+      setUploadError('La imagen no debe superar los 5MB.');
+      return;
+    }
+
+    const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    if (!validTypes.includes(file.type)) {
+      setUploadError('Formato no válido. Usá JPG, PNG o WEBP.');
+      return;
+    }
+
+    setUploadError('');
+    setUploadingImage(true);
+
+    try {
+      const data = new FormData();
+      data.append('image', file);
+
+      const res = await client.post('/upload/image', data, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      if (res.data?.url) {
+        setFormData((prev) => ({ ...prev, imageUrl: res.data.url }));
+      }
+    } catch (err) {
+      console.error('Upload error:', err);
+      setUploadError(err.response?.data?.error || 'Error al subir la imagen.');
+    } finally {
+      setUploadingImage(false);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setFormData((prev) => ({ ...prev, imageUrl: '' }));
+    setUploadError('');
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const cleanedVariants = formData.variants
+      .filter((v) => v.sku && String(v.sku).trim())
+      .map((v) => ({
+        ...(v.id ? { id: v.id } : {}),
+        sku: String(v.sku).trim(),
+        type: v.type ? String(v.type).trim() : null,
+        size: v.size ? String(v.size).trim() : null,
+        color: v.color ? String(v.color).trim() : null,
+        flavor: v.flavor ? String(v.flavor).trim() : null,
+        volume: v.volume ? String(v.volume).trim() : null,
+        price: parseFloat(v.price || formData.price || 0),
+        stock: parseInt(v.stock || 0, 10),
+        active: v.active !== false,
+      }));
+
+    const basePrice =
+      cleanedVariants.length > 0
+        ? Math.min(...cleanedVariants.map((v) => v.price))
+        : parseFloat(formData.price || 0);
+
+    const finalCategoryId =
+      formData.subcategoryId ||
+      formData.parentCategoryId ||
+      initialData?.categoryId ||
+      initialData?.category?.id ||
+      null;
+
+    const payload = {
+      name: formData.name.trim(),
+      sku: formData.sku ? formData.sku.trim() : null,
+      categoryId: finalCategoryId,
+      brand: formData.brand ? formData.brand.trim() : null,
+      badge: formData.badge ? formData.badge.trim() : null,
+      description: formData.description ? formData.description.trim() : '',
+      price: basePrice,
+      transferPrice: formData.transferPrice ? parseFloat(formData.transferPrice) : null,
+      stock:
+        cleanedVariants.length > 0
+          ? cleanedVariants.reduce((sum, v) => sum + v.stock, 0)
+          : formData.stock !== '' &&
+            formData.stock !== undefined &&
+            formData.stock !== null
+          ? parseInt(formData.stock, 10)
+          : 0,
+      imageUrl: formData.imageUrl ? formData.imageUrl.trim() : null,
+      active: Boolean(formData.active),
+      variants: cleanedVariants,
+      tagIds: selectedTagIds,
+    };
+
+    onSubmit(payload);
+  };
+
+  const rootCategories = categories.filter((c) => !c.parentId);
+  const availableSubcategories = formData.parentCategoryId
+    ? categories.filter((c) => c.parentId === formData.parentCategoryId)
+    : [];
+
+  const parentCategoryOptions = [
+    { value: '', label: 'Seleccionar categoría...' },
+    ...rootCategories.map((c) => ({
+      value: c.id,
+      label: c.name,
+    })),
+  ];
+
+  const subcategoryOptions = !formData.parentCategoryId
+    ? [{ value: '', label: 'Primero elegí una categoría...' }]
+    : availableSubcategories.length === 0
+    ? [{ value: '', label: 'Sin subcategorías en esta categoría' }]
+    : [
+        { value: '', label: 'Seleccionar subcategoría (o dejar general)...' },
+        ...availableSubcategories.map((sub) => ({
+          value: sub.id,
+          label: sub.name,
+        })),
+      ];
+
+  // Resolve automatic SKU image if no custom imageUrl is set
+  const skuResolvedImg = initialData ? resolveProductImage(initialData) : null;
+  const activePreviewUrl =
+    formData.imageUrl || skuResolvedImg?.main || skuResolvedImg?.thumb || '';
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4 max-h-[75vh] overflow-y-auto px-1 pr-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        <div className="sm:col-span-2">
+          <Input
+            label="Nombre del Producto *"
+            name="name"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Ej: Vibrador Conejo Silicona"
+          />
+        </div>
+        <Input
+          label="Código SKU"
+          name="sku"
+          value={formData.sku}
+          onChange={handleChange}
+          placeholder="Ej: NOC-0010"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <Select
+          label="Categoría *"
+          name="parentCategoryId"
+          required={!initialData}
+          options={parentCategoryOptions}
+          value={formData.parentCategoryId}
+          onChange={handleChange}
+        />
+        <Select
+          label="Subcategoría"
+          name="subcategoryId"
+          disabled={!formData.parentCategoryId || availableSubcategories.length === 0}
+          options={subcategoryOptions}
+          value={formData.subcategoryId}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <Input
+          label="Marca (Opcional)"
+          name="brand"
+          value={formData.brand}
+          onChange={handleChange}
+          placeholder="Ej: Miss V / Sexy Fantasy"
+        />
+        <Input
+          label="Badge / Etiqueta (Opcional)"
+          name="badge"
+          value={formData.badge}
+          onChange={handleChange}
+          placeholder="Ej: Nuevo / Destacado"
+        />
+      </div>
+
+      {/* Etiquetas / Tags de Catálogo */}
+      {availableTags.length > 0 && (
+        <div className="space-y-1.5">
+          <label className="block text-xs font-medium text-content-secondary tracking-wide">
+            Etiquetas del Catálogo (Tags)
+          </label>
+          <div className="flex flex-wrap gap-2 p-2.5 bg-surface-elevated rounded-md border border-brand-border/25">
+            {availableTags.map((tag) => {
+              const isSelected = selectedTagIds.includes(tag.id);
+              const tagColor = tag.color || '#907878';
+              return (
+                <button
+                  key={tag.id}
+                  type="button"
+                  onClick={() => toggleTag(tag.id)}
+                  className={`text-xs px-2.5 py-1 rounded-full border transition-all inline-flex items-center space-x-1.5 ${
+                    isSelected
+                      ? 'border-mauve text-content font-medium ring-1 ring-mauve/40'
+                      : 'border-brand-border/30 text-content-secondary hover:text-content opacity-75 hover:opacity-100'
+                  }`}
+                  style={{
+                    backgroundColor: isSelected ? `${tagColor}40` : `${tagColor}15`,
+                  }}
+                >
+                  <span
+                    className="h-2 w-2 rounded-full shrink-0"
+                    style={{ backgroundColor: tagColor }}
+                  />
+                  <span>{tag.name}</span>
+                </button>
+              );
+            })}
+          </div>
+          <p className="text-[10px] text-content-muted">
+            Hacé clic en una o más etiquetas para asignarlas a este producto.
+          </p>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        <Input
+          label="Precio Base ($) *"
+          type="number"
+          name="price"
+          required
+          value={formData.price}
+          onChange={handleChange}
+          min="0"
+          step="any"
+          placeholder="Ej: 15000"
+        />
+        <Input
+          label="Precio Transferencia ($)"
+          type="number"
+          name="transferPrice"
+          value={formData.transferPrice}
+          onChange={handleChange}
+          min="0"
+          step="any"
+          placeholder="Opcional"
+        />
+        <Input
+          label={
+            formData.variants.length > 0
+              ? 'Stock Total (por variantes)'
+              : 'Stock General'
+          }
+          type="number"
+          name="stock"
+          value={
+            formData.variants.length > 0
+              ? formData.variants.reduce((s, v) => s + Number(v.stock || 0), 0)
+              : formData.stock
+          }
+          onChange={handleChange}
+          disabled={formData.variants.length > 0}
+          min="0"
+          placeholder="0"
+        />
+      </div>
+
+      <label className="inline-flex items-center gap-2 text-xs text-content cursor-pointer">
+        <input
+          type="checkbox"
+          name="active"
+          checked={formData.active}
+          onChange={handleChange}
+          className="rounded border-brand-border/40 bg-canvas text-brand focus:ring-mauve"
+        />
+        <span>Producto activo y visible en el catálogo público</span>
+      </label>
+
+      {/* Variantes del producto */}
+      <div className="p-4 rounded-lg border border-brand-border/25 bg-canvas space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h4 className="font-display text-xs uppercase tracking-widest text-content">
+              Variantes ({formData.variants.length})
+            </h4>
+            <p className="text-[11px] text-content-muted">
+              Opcional: agregá variantes por tipo, talle, color, sabor/aroma o volumen.
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            {formData.variants.length > 0 && (
+              <button
+                type="button"
+                onClick={handleSyncPriceToAllVariants}
+                className="text-[11px] px-2.5 py-1 rounded bg-surface-elevated hover:bg-brand text-content border border-brand-border/30 transition-colors"
+                title="Copiar el Precio Base actual a todas las variantes"
+              >
+                Igualar precio (${Number(formData.price || 0).toLocaleString('es-AR')}) en todas
+              </button>
+            )}
+            <Button
+              type="button"
+              variant="secondary"
+              size="sm"
+              onClick={addVariantRow}
+              className="text-xs py-1 px-2.5"
+            >
+              <FiPlus className="mr-1" /> Agregar variante
+            </Button>
+          </div>
+        </div>
+
+        {formData.variants.length > 0 && (
+          <div className="space-y-3">
+            {formData.variants.map((v, idx) => (
+              <div
+                key={v.id || idx}
+                className="p-3 rounded border border-brand-border/20 bg-surface space-y-2.5"
+              >
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <Input
+                    label="SKU *"
+                    value={v.sku}
+                    onChange={(e) => handleVariantChange(idx, 'sku', e.target.value)}
+                    placeholder="SKU único"
+                  />
+                  <Input
+                    label="Precio ($)"
+                    type="number"
+                    step="any"
+                    value={v.price}
+                    onChange={(e) => handleVariantChange(idx, 'price', e.target.value)}
+                    placeholder="Precio"
+                  />
+                  <Input
+                    label="Stock"
+                    type="number"
+                    value={v.stock}
+                    onChange={(e) => handleVariantChange(idx, 'stock', e.target.value)}
+                    placeholder="0"
+                  />
+                  <div className="flex items-end justify-end pb-1">
+                    <button
+                      type="button"
+                      onClick={() => removeVariantRow(idx)}
+                      className="text-xs text-rose-300 hover:text-rose-200 inline-flex items-center gap-1 px-2 py-1.5 rounded bg-rose-950/40 border border-rose-800/40"
+                    >
+                      <FiTrash2 size={12} /> Quitar
+                    </button>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                  <Input
+                    label="Tipo"
+                    value={v.type}
+                    onChange={(e) => handleVariantChange(idx, 'type', e.target.value)}
+                    placeholder="Ej: Anal / Vaginal"
+                  />
+                  <Input
+                    label="Talle"
+                    value={v.size}
+                    onChange={(e) => handleVariantChange(idx, 'size', e.target.value)}
+                    placeholder="Ej: S / M / Único"
+                  />
+                  <Input
+                    label="Color"
+                    value={v.color}
+                    onChange={(e) => handleVariantChange(idx, 'color', e.target.value)}
+                    placeholder="Ej: Negro / Rosa"
+                  />
+                  <Input
+                    label="Sabor / Aroma"
+                    value={v.flavor}
+                    onChange={(e) => handleVariantChange(idx, 'flavor', e.target.value)}
+                    placeholder="Ej: Frutilla"
+                  />
+                  <Input
+                    label="Volumen / Medida"
+                    value={v.volume}
+                    onChange={(e) => handleVariantChange(idx, 'volume', e.target.value)}
+                    placeholder="Ej: 100 ml / 15x3 cm"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Subida de Imagen */}
+      <div className="p-4 rounded-lg border border-brand-border/25 bg-canvas">
+        <label className="block text-xs font-medium uppercase tracking-wider text-content-secondary mb-2">
+          Imagen del Producto (Opcional — si no tiene, se usa la foto por SKU o placeholder)
+        </label>
+
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handleFileSelect}
+          accept="image/jpeg,image/png,image/webp"
+          className="hidden"
+        />
+
+        {activePreviewUrl ? (
+          <div className="flex items-center space-x-3.5 bg-surface p-3 rounded-md border border-brand-border/20">
+            <div className="w-16 h-16 bg-canvas rounded overflow-hidden flex-shrink-0 border border-brand-border/25 flex items-center justify-center">
+              <img
+                src={activePreviewUrl}
+                alt="Preview"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = '';
+                }}
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <span className="text-[10px] font-medium uppercase tracking-wider text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded inline-block mb-1 border border-emerald-800/40">
+                {formData.imageUrl ? '✓ Imagen personalizada' : '✓ Imagen asignada por SKU'}
+              </span>
+              <p className="text-xs text-content-muted truncate font-mono">
+                {formData.imageUrl || activePreviewUrl}
+              </p>
+              <div className="flex space-x-2 mt-2">
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={uploadingImage}
+                  className="text-xs bg-surface-elevated hover:bg-brand text-content px-2.5 py-1 rounded transition-colors flex items-center border border-brand-border/25"
+                >
+                  <FiRefreshCw className="mr-1 text-xs" /> Reemplazar foto
+                </button>
+                {formData.imageUrl && (
+                  <button
+                    type="button"
+                    onClick={handleRemoveImage}
+                    className="text-xs bg-rose-950/50 hover:bg-rose-900/60 text-rose-300 px-2.5 py-1 rounded transition-colors flex items-center border border-rose-800/40"
+                  >
+                    <FiTrash2 className="mr-1 text-xs" /> Quitar
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploadingImage}
+              className="w-full border border-dashed border-brand-border/40 hover:border-mauve rounded-lg p-6 text-center transition-colors cursor-pointer flex flex-col items-center justify-center group bg-surface"
+            >
+              <div className="w-10 h-10 rounded-full bg-surface-elevated text-mauve flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                <FiUploadCloud size={20} />
+              </div>
+              <span className="text-xs font-medium text-content">
+                {uploadingImage ? 'Subiendo imagen...' : 'Seleccionar archivo de imagen'}
+              </span>
+              <span className="text-[11px] text-content-muted mt-1">
+                JPG, PNG o WEBP (Máx. 5MB)
+              </span>
+            </button>
+          </div>
+        )}
+
+        {uploadError && (
+          <p className="text-xs text-rose-300 mt-2 bg-rose-950/60 p-2 rounded border border-rose-800/50">
+            {uploadError}
+          </p>
+        )}
+
+        <div className="mt-2.5 text-right">
+          <button
+            type="button"
+            onClick={() => setShowUrlInput(!showUrlInput)}
+            className="text-xs text-mauve hover:text-content underline inline-flex items-center transition-colors"
+          >
+            <FiLink className="mr-1 text-xs" />
+            {showUrlInput ? 'Ocultar URL directa' : 'Ingresar URL de imagen'}
+          </button>
+        </div>
+
+        {showUrlInput && (
+          <div className="mt-2">
+            <Input
+              label="URL directa de la imagen"
+              name="imageUrl"
+              value={formData.imageUrl}
+              onChange={handleChange}
+              placeholder="https://ejemplo.com/foto.jpg"
+            />
+          </div>
+        )}
+      </div>
+
+      <div>
+        <label className="block text-xs font-medium text-content-secondary mb-1.5 tracking-wide">
+          Descripción
+        </label>
+        <textarea
+          name="description"
+          rows="3"
+          value={formData.description}
+          onChange={handleChange}
+          className="block w-full rounded-md border border-brand-border/30 bg-surface-elevated text-content text-xs sm:text-sm p-3 focus:outline-none focus:border-mauve focus:ring-1 focus:ring-mauve placeholder:text-content-muted"
+          placeholder="Descripción de materiales, medidas, modo de uso y cuidados..."
+        />
+      </div>
+
+      <div className="pt-3">
+        <Button
+          type="submit"
+          variant="primary"
+          loading={loading || uploadingImage}
+          disabled={uploadingImage}
+          fullWidth
+          className="py-3 text-xs sm:text-sm font-medium"
+        >
+          {initialData && (initialData.id || initialData._id)
+            ? 'Guardar Cambios del Producto'
+            : 'Guardar Producto en Catálogo'}
+        </Button>
+      </div>
+    </form>
+  );
+};
+
+export default ProductForm;

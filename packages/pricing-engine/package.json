@@ -1,0 +1,13 @@
+{
+  "name": "@nocturna/pricing-engine",
+  "version": "1.0.0",
+  "description": "Shared pricing engine for Nocturna SexShop",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "test": "vitest run"
+  }
+}

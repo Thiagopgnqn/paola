@@ -1,0 +1,345 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  passwordHash String
+  name         String
+  phone        String?
+  role         String         @default("CUSTOMER") // CUSTOMER | ADMIN
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  orders       Order[]
+  tokens       RefreshToken[]
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  name      String
+  slug      String     @unique
+  parentId  String?
+  order     Int        @default(0)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  parent    Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
+  children  Category[] @relation("CategoryHierarchy")
+  products  Product[]
+}
+
+model Product {
+  id                 String              @id @default(cuid())
+  name               String
+  description        String?             @default("")
+  sku                String?             @unique
+  price              Decimal
+  transferPrice      Decimal?
+  stock              Int                 @default(0)
+  imageUrl           String?
+  badge              String?
+  brand              String?
+  categoryId         String?
+  active             Boolean             @default(true)
+  soldCount          Int                 @default(0)
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  category           Category?           @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  variants           ProductVariant[]
+  orderItems         OrderItem[]
+  priceHistories     PriceHistory[]
+  productTags        ProductTag[]
+  collectionProducts CollectionProduct[]
+}
+
+model ProductVariant {
+  id             String         @id @default(cuid())
+  productId      String
+  sku            String         @unique
+  type           String?
+  size           String?
+  color          String?
+  flavor         String?
+  volume         String?
+  price          Decimal
+  stock          Int            @default(0)
+  active         Boolean        @default(true)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  product        Product        @relation(fields: [productId], references: [id], onDelete: Cascade)
+  orderItems     OrderItem[]
+  priceHistories PriceHistory[]
+}
+
+model Campaign {
+  id               String        @id @default(cuid())
+  name             String
+  slug             String        @unique
+  status           String        @default("DRAFT") // DRAFT | SCHEDULED | ACTIVE | ENDED | ARCHIVED
+  startsAt         DateTime?
+  endsAt           DateTime?
+  priority         Int           @default(0)
+  active           Boolean       @default(true)
+  headline         String?
+  subheadline      String?
+  description      String?
+  bannerUrl        String?
+  bannerImage      String?
+  theme            String?       // black-friday | cyber-sale | dia-de-la-madre | san-valentin | navidad | liquidacion | neutro
+  themeConfig      String?
+  announcementText String?
+  announcementLink String?
+  conditionsText   String?
+  showCountdown    Boolean       @default(false)
+  landingEnabled   Boolean       @default(true)
+  seoTitle         String?
+  seoDescription   String?
+  views            Int           @default(0)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  promotions       Promotion[]
+  coupons          Coupon[]
+  orderItems       OrderItem[]
+  homeSections     HomeSection[]
+}
+
+model Promotion {
+  id                String            @id @default(cuid())
+  campaignId        String?
+  name              String
+  kind              String            // PERCENT | FIXED_AMOUNT | FIXED_PRICE | BUY_X_PAY_Y | BUNDLE_PRICE | TIERED | FREE_SHIPPING | PAYMENT_METHOD
+  value             Decimal?
+  minQuantity       Int?
+  minOrderAmount    Decimal?
+  maxDiscountAmount Decimal?
+  tiers             String?
+  buyQuantity       Int?
+  payQuantity       Int?
+  bundleSkus        String?
+  paymentMethod     String?
+  stackable         Boolean           @default(false)
+  startsAt          DateTime?
+  endsAt            DateTime?
+  active            Boolean           @default(true)
+  usageLimit        Int?
+  usedCount         Int               @default(0)
+  priority          Int               @default(0)
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  campaign          Campaign?         @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+  targets           PromotionTarget[]
+  orderItems        OrderItem[]
+}
+
+model PromotionTarget {
+  id          String    @id @default(cuid())
+  promotionId String
+  targetType  String    // PRODUCT | VARIANT | CATEGORY | SUBCATEGORY | TAG | COLLECTION | ALL
+  targetId    String?
+  excluded    Boolean   @default(false)
+  promotion   Promotion @relation(fields: [promotionId], references: [id], onDelete: Cascade)
+
+  @@index([promotionId])
+  @@index([targetType, targetId])
+}
+
+model Tag {
+  id        String       @id @default(cuid())
+  name      String       @unique
+  slug      String       @unique
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  products  ProductTag[]
+}
+
+model ProductTag {
+  id        String   @id @default(cuid())
+  productId String
+  tagId     String
+  createdAt DateTime @default(now())
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  tag       Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, tagId])
+}
+
+model Collection {
+  id          String              @id @default(cuid())
+  name        String
+  slug        String              @unique
+  description String?
+  active      Boolean             @default(true)
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+  products    CollectionProduct[]
+}
+
+model CollectionProduct {
+  id           String     @id @default(cuid())
+  collectionId String
+  productId    String
+  order        Int        @default(0)
+  createdAt    DateTime   @default(now())
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  product      Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([collectionId, productId])
+}
+
+model Coupon {
+  id                     String             @id @default(cuid())
+  code                   String             @unique
+  kind                   String             // PERCENT | FIXED_AMOUNT | FREE_SHIPPING
+  value                  Decimal
+  minOrderAmount         Decimal?
+  maxDiscountAmount      Decimal?
+  startsAt               DateTime?
+  endsAt                 DateTime?
+  usageLimitTotal        Int?
+  usageLimitPerCustomer  Int?
+  usedCount              Int                @default(0)
+  active                 Boolean            @default(true)
+  campaignId             String?
+  appliesTo              String?            @default("ALL")
+  stackableWithPromotions Boolean           @default(false)
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+  campaign               Campaign?          @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+  redemptions            CouponRedemption[]
+}
+
+model CouponRedemption {
+  id          String   @id @default(cuid())
+  couponId    String
+  orderId     String
+  customerKey String
+  createdAt   DateTime @default(now())
+  coupon      Coupon   @relation(fields: [couponId], references: [id], onDelete: Cascade)
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([couponId, customerKey])
+}
+
+model PriceHistory {
+  id        String          @id @default(cuid())
+  productId String
+  variantId String?
+  oldPrice  Decimal
+  newPrice  Decimal
+  changedAt DateTime        @default(now())
+  changedBy String?         @default("SYSTEM")
+  reason    String?
+  product   Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variant   ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+
+  @@index([productId, changedAt])
+  @@index([variantId, changedAt])
+}
+
+model Order {
+  id                     String             @id @default(cuid())
+  userId                 String?
+  customerName           String
+  customerPhone          String
+  customerEmail          String
+  customerAddress        String?
+  deliveryMethod         String             // PICKUP | DELIVERY
+  comments               String?
+  status                 String             @default("PENDING") // PENDING | CONFIRMED | DELIVERED | CANCELLED
+  subtotal               Decimal?
+  couponCode             String?
+  couponDiscount         Decimal            @default(0)
+  paymentMethodDiscount  Decimal            @default(0)
+  shippingDiscount       Decimal            @default(0)
+  shippingTotal          Decimal            @default(0)
+  total                  Decimal
+  utm_source             String?
+  utm_medium             String?
+  utm_campaign           String?
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+  user                   User?              @relation(fields: [userId], references: [id])
+  items                  OrderItem[]
+  redemptions            CouponRedemption[]
+}
+
+model OrderItem {
+  id                 String          @id @default(cuid())
+  orderId            String
+  productId          String
+  variantId          String?
+  variantDescription String?
+  quantity           Int
+  originalUnitPrice  Decimal?
+  discountAmount     Decimal         @default(0)
+  unitPrice          Decimal
+  subtotal           Decimal
+  promotionId        String?
+  campaignId         String?
+  order              Order           @relation(fields: [orderId], references: [id])
+  product            Product         @relation(fields: [productId], references: [id])
+  variant            ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+  promotion          Promotion?      @relation(fields: [promotionId], references: [id], onDelete: SetNull)
+  campaign           Campaign?       @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  revoked   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model HomeSection {
+  id         String    @id @default(cuid())
+  campaignId String?
+  campaign   Campaign? @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  type       String    // HERO | CAMPAIGN_BANNER | PRODUCT_GRID | CATEGORY_GRID | COLLECTION | COUNTDOWN | TEXT_BLOCK | BENEFITS | FAQ | NEWSLETTER
+  order      Int       @default(0)
+  enabled    Boolean   @default(true)
+  config     String?   // JSON configuration
+  startsAt   DateTime?
+  endsAt     DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([campaignId])
+  @@index([enabled, order])
+}
+
+model NewsletterSubscriber {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  consentGiven   Boolean   @default(true)
+  consentDate    DateTime  @default(now())
+  active         Boolean   @default(true)
+  unsubscribedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([active])
+}
+
+model StoreSettings {
+  id                         String   @id @default("default")
+  shippingCost               Int      @default(4500)
+  freeShippingThreshold      Int      @default(45000)
+  freePickupEnabled          Boolean  @default(true)
+  transferDiscountPercent    Int      @default(10)
+  transferDiscountEnabled    Boolean  @default(true)
+  priceHistoryDays           Int      @default(30)
+  generalTermsText           String?  @db.Text
+  shippingNoticeText         String?  @db.Text
+  bankTransferInstructions   String?  @db.Text
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @updatedAt
+}
+
