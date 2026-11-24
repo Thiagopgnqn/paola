@@ -10,13 +10,13 @@ const Input = forwardRef(({ label, error, icon: Icon, className = '', ...props }
       )}
       <div className="relative">
         {Icon && (
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-mauve">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-brand-deep">
             <Icon className="h-4 w-4" />
           </div>
         )}
         <input
           ref={ref}
-          className={`block w-full rounded-md bg-surface-subtle border border-border text-content placeholder:text-content-secondary/50 text-sm py-2 px-3 transition-smooth focus:outline-none focus:border-mauve focus:ring-1 focus:ring-mauve shadow-soft ${
+          className={`block w-full rounded-md bg-surface border border-border-strong text-content placeholder:text-content-secondary/65 text-sm py-2 px-3 transition-smooth focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 shadow-soft ${
             Icon ? 'pl-9' : 'pl-3'
           } ${
             error ? 'border-status-error focus:border-status-error focus:ring-status-error' : ''

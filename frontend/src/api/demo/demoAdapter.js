@@ -14,16 +14,18 @@ import {
   DEFAULT_TRANSFER_DISCOUNT_PERCENT,
 } from '../../pricing-engine/index.js';
 
-export const DEMO_STATE_KEY = 'nocturna-demo-state';
-export const CURRENT_DEMO_VERSION = 6;
-export const DEMO_ADMIN_EMAIL = 'admin@nocturna.demo';
+export const DEMO_STATE_KEY = 'paola-demo-state';
+export const CURRENT_DEMO_VERSION = 7;
+export const DEMO_ADMIN_EMAIL = 'admin@paolacalzados.demo';
 export const DEMO_ADMIN_PASSWORD = 'demo1234';
 
 export const isDemoMode = () =>
   String(import.meta.env.VITE_DEMO_MODE || '').toLowerCase() === 'true';
 
-export const getDemoWhatsappPhone = () =>
-  String(import.meta.env.VITE_DEMO_WHATSAPP || '5493517572841').replace(/\D/g, '');
+export const getDemoWhatsappPhone = () => {
+  const digits = String(import.meta.env.VITE_DEMO_WHATSAPP || '').replace(/\D/g, '');
+  return digits.length >= 8 ? digits : '5493510000000';
+};
 
 const slugify = (text = '') =>
   text
@@ -55,7 +57,7 @@ const buildSampleOrders = (products = []) => {
       customerCity: 'Córdoba Capital',
       customerPostalCode: '5000',
       deliveryMethod: 'SHIPPING',
-      comments: 'Entregar en recepción en sobre cerrado sin logos.',
+      comments: 'Entregar en recepción de 9 a 18 hs (ejemplo demo).',
       status: 'PENDING',
       total: Math.round(Number(p1.price || 32000) * 0.8),
       couponCode: 'BLACKFRIDAY',
@@ -87,7 +89,7 @@ const buildSampleOrders = (products = []) => {
       customerCity: 'Córdoba Capital',
       customerPostalCode: '5000',
       deliveryMethod: 'SHIPPING',
-      comments: 'Timbre 4B, paquete discreto.',
+      comments: 'Timbre 4B (ejemplo demo).',
       status: 'CONFIRMED',
       adminNotes: 'Abonó por transferencia MercadoPago',
       total: Number(p2.price || 28000) * 2,
@@ -188,9 +190,9 @@ const createInitialState = () => {
   const users = [
     {
       id: 'demo_user_admin',
-      name: 'Admin Nocturna (Demo)',
+      name: 'Admin Paola Calzados (Demo)',
       email: DEMO_ADMIN_EMAIL,
-      phone: '+54 9 3517 57-2841',
+      phone: '+54 9 351 000-0000 (TEST)',
       role: 'ADMIN',
       createdAt: new Date(Date.now() - 86400000 * 7).toISOString(),
     },
@@ -208,8 +210,8 @@ const createInitialState = () => {
       transferDiscountPercent: 10,
       transferDiscountEnabled: true,
       priceHistoryDays: 30,
-      generalTermsText: 'Envíos 100% discretos en empaque neutro sin identificación del contenido.',
-      shippingNoticeText: 'Envío gratis a todo el país superando el monto mínimo de compra.',
+      generalTermsText: 'Venta de calzado por mayor y por menor desde Córdoba. Consultá [COSTOS Y PLAZOS DE ENVÍO] y [MÍNIMO DE COMPRA MAYORISTA].',
+      shippingNoticeText: 'Consultá envíos en [ZONA DE ENVÍO] y retiro en [DIRECCIÓN DEL LOCAL].',
       bankTransferInstructions: 'Transferencia bancaria. Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp.',
     }),
     categories,
@@ -251,7 +253,7 @@ export const loadDemoState = () => {
     // Migración automática si la versión es anterior
     if (!parsed.version || parsed.version < CURRENT_DEMO_VERSION) {
       parsed.version = CURRENT_DEMO_VERSION;
-      // Actualizar campañas, promociones y secciones a la nueva versión con Black Friday activo y combo a $22.000
+      // Actualizar campañas, promociones y secciones a la nueva versión de Paola Calzados
       parsed.campaigns = clone(demoSeedData.campaigns || []);
       parsed.promotions = clone(demoSeedData.promotions || []);
       parsed.homeSections = clone(demoSeedData.homeSections || []);
@@ -319,9 +321,9 @@ export const loadDemoState = () => {
       parsed.users = [
         {
           id: 'demo_user_admin',
-          name: 'Admin Nocturna (Demo)',
+          name: 'Admin Paola Calzados (Demo)',
           email: DEMO_ADMIN_EMAIL,
-          phone: '+54 9 3517 57-2841',
+          phone: '+54 9 351 000-0000 (TEST)',
           role: 'ADMIN',
           createdAt: new Date(Date.now() - 86400000 * 7).toISOString(),
         },
@@ -352,10 +354,12 @@ export const saveDemoState = (state) => {
 export const resetDemoState = () => {
   try {
     localStorage.removeItem(DEMO_STATE_KEY);
-    localStorage.removeItem('nocturna_cart');
+    localStorage.removeItem('paola_cart');
+    localStorage.removeItem('paola_coupon');
+    localStorage.removeItem('paola_dismissed_announcement');
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
-    sessionStorage.removeItem('nocturna_utm_attribution');
+    sessionStorage.removeItem('paola_utm_attribution');
   } catch (err) {
     console.warn('[DemoMode] Error al restablecer estado demo:', err);
   }
@@ -366,8 +370,9 @@ export const resetDemoState = () => {
 
 const buildDemoWhatsAppLink = (order) => {
   const phone = getDemoWhatsappPhone();
+  if (!phone) return null;
   const lines = [
-    'Hola *Nocturna SexShop*! Quiero confirmar mi pedido online:',
+    'Hola Paola Calzados, quiero hacer este pedido:',
     '',
     `*Pedido:* #${String(order.id).slice(-6).toUpperCase()}`,
     `*Cliente:* ${order.customerName}`,
@@ -375,7 +380,7 @@ const buildDemoWhatsAppLink = (order) => {
     `*Modalidad:* ${
       order.deliveryMethod === 'PICKUP'
         ? 'Retiro a coordinar'
-        : 'Envío discreto a domicilio'
+        : 'Envío a domicilio'
     }`,
   ];
 
@@ -445,7 +450,7 @@ const buildDemoWhatsAppLink = (order) => {
 
   lines.push(
     '',
-    '_Solicito empaque 100% discreto sin logos. Quedo a la espera para coordinar pago y entrega._'
+    'Quedo a la espera para coordinar el pago y la entrega.'
   );
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(lines.join('\n'))}`;
@@ -1032,7 +1037,7 @@ export const demoAxiosAdapter = async (config) => {
       imageUrl: body.imageUrl || null,
       badge: body.badge || null,
       featured: body.badge === 'Destacado' || Boolean(body.featured),
-      brand: body.brand || 'Nocturna',
+      brand: body.brand || 'Paola Calzados',
       categoryId: cat?.id || null,
       category: cat
         ? {
@@ -2416,7 +2421,7 @@ export const demoAxiosAdapter = async (config) => {
     if (existing) {
       if (existing.active) {
         return makeResponse(config, 200, {
-          message: 'Ya estás suscripto al newsletter de Tienda Nocturna.',
+          message: 'Ya estás suscripto al newsletter de Paola Calzados.',
           subscriber: existing,
           alreadySubscribed: true,
         });
@@ -2447,7 +2452,7 @@ export const demoAxiosAdapter = async (config) => {
     saveDemoState(state);
 
     return makeResponse(config, 201, {
-      message: '¡Te suscribiste exitosamente al newsletter de Tienda Nocturna!',
+      message: '¡Te suscribiste exitosamente al newsletter de Paola Calzados!',
       subscriber: newSub,
       created: true,
     });
@@ -2463,7 +2468,7 @@ export const demoAxiosAdapter = async (config) => {
       saveDemoState(state);
     }
     return makeResponse(config, 200, {
-      message: 'Te diste de baja del newsletter de Tienda Nocturna exitosamente.',
+      message: 'Te diste de baja del newsletter de Paola Calzados exitosamente.',
       success: true,
     });
   }
@@ -2503,8 +2508,8 @@ export const demoAxiosAdapter = async (config) => {
       transferDiscountPercent: 10,
       transferDiscountEnabled: true,
       priceHistoryDays: 30,
-      generalTermsText: 'Envíos 100% discretos en empaque neutro sin identificación del contenido.',
-      shippingNoticeText: 'Envío gratis a todo el país superando el monto mínimo de compra.',
+      generalTermsText: 'Venta de calzado por mayor y por menor desde Córdoba. Consultá [COSTOS Y PLAZOS DE ENVÍO] y [MÍNIMO DE COMPRA MAYORISTA].',
+      shippingNoticeText: 'Consultá envíos en [ZONA DE ENVÍO] y retiro en [DIRECCIÓN DEL LOCAL].',
       bankTransferInstructions: 'Transferencia bancaria. Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp.',
     };
     return makeResponse(config, 200, s);

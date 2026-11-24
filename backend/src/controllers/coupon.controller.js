@@ -58,7 +58,7 @@ export const exportCsv = async (req, res, next) => {
   try {
     const csvData = await couponService.exportCouponsCsv();
     res.header('Content-Type', 'text/csv; charset=utf-8');
-    res.attachment(`cupones-nocturna-${Date.now()}.csv`);
+    res.attachment(`paola-calzados-cupones-${Date.now()}.csv`);
     res.send(csvData);
   } catch (err) {
     next(err);

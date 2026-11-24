@@ -1,10 +1,10 @@
 /**
- * UTM & Attribution Tracker for Tienda Nocturna
+ * UTM & Attribution Tracker for Paola Calzados
  * Captures utm_source, utm_medium, and utm_campaign from first visit and stores in sessionStorage.
  * Adheres to first-touch attribution within session without storing personal data.
  */
 
-const STORAGE_KEY = 'nocturna_utm_attribution';
+const STORAGE_KEY = 'paola_utm_attribution';
 
 export function captureUTM(searchString) {
   if (typeof window === 'undefined') return null;

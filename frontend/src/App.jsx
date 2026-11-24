@@ -54,22 +54,22 @@ const ProtectedAdminRoute = ({ children }) => {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Admin Top Header */}
-        <header className="bg-surface border-b border-brand-border/20 h-16 flex items-center justify-between px-4 sm:px-8 z-10 flex-shrink-0">
+        <header className="bg-surface border-b border-border h-16 flex items-center justify-between px-4 sm:px-8 z-10 flex-shrink-0 shadow-sm">
           <div className="flex items-center space-x-3">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="md:hidden p-2 rounded-md text-content-secondary hover:text-content hover:bg-surface-elevated transition-colors"
+              className="md:hidden p-2 rounded-md text-content-secondary hover:text-brand-deep hover:bg-surface-elevated transition-colors"
               title="Abrir menú"
               aria-label="Abrir menú"
             >
               <FiMenu size={18} />
             </button>
             <div className="flex items-center space-x-2">
-              <span className="font-display text-xs uppercase tracking-widest text-content">
+              <span className="font-display font-bold text-xs uppercase tracking-widest text-brand-deep">
                 {themeConfig.brand.name}
               </span>
-              <span className="text-brand-border/40 hidden sm:inline">&bull;</span>
-              <span className="text-xs text-content-secondary hidden sm:inline">
+              <span className="text-border-strong hidden sm:inline">&bull;</span>
+              <span className="text-xs text-content-secondary hidden sm:inline font-medium">
                 Panel de Administración
               </span>
             </div>
@@ -80,17 +80,17 @@ const ProtectedAdminRoute = ({ children }) => {
               <button
                 type="button"
                 onClick={resetDemoState}
-                className="inline-flex items-center space-x-1.5 text-xs font-medium text-content border border-mauve/40 bg-surface-elevated hover:bg-brand px-3 py-1.5 rounded-md transition-colors"
+                className="inline-flex items-center space-x-1.5 text-xs font-semibold text-content border border-border-strong bg-surface-elevated hover:bg-brand hover:border-brand hover:text-white px-3 py-1.5 rounded-md transition-colors"
                 title="Borrar cambios locales y restaurar datos originales de la demo"
               >
-                <FiRefreshCw size={13} className="text-mauve" />
+                <FiRefreshCw size={13} />
                 <span>Restablecer demo</span>
               </button>
             )}
 
             <Link
               to="/"
-              className="inline-flex items-center space-x-1.5 text-xs font-medium text-content-secondary hover:text-content border border-brand-border/30 hover:bg-surface-elevated px-3 py-1.5 rounded-md transition-colors"
+              className="inline-flex items-center space-x-1.5 text-xs font-medium text-content-secondary hover:text-brand-deep border border-border-strong hover:bg-surface-elevated px-3 py-1.5 rounded-md transition-colors"
             >
               <FiExternalLink size={13} />
               <span>Ver Tienda</span>
@@ -98,7 +98,7 @@ const ProtectedAdminRoute = ({ children }) => {
 
             <button
               onClick={logout}
-              className="text-content-muted hover:text-rose-400 p-2 rounded-md hover:bg-surface-elevated transition-colors"
+              className="text-content-secondary hover:text-status-error p-2 rounded-md hover:bg-status-error-bg transition-colors"
               title="Cerrar sesión"
               aria-label="Cerrar sesión"
             >
@@ -114,7 +114,7 @@ const ProtectedAdminRoute = ({ children }) => {
               <React.Suspense
                 fallback={
                   <div className="py-24 text-center">
-                    <div className="w-8 h-8 border-2 border-mauve border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                    <div className="w-8 h-8 border-2 border-brand border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                     <p className="text-xs uppercase tracking-widest text-content-secondary">
                       Cargando módulo de administración...
                     </p>

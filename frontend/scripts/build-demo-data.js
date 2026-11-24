@@ -59,12 +59,12 @@ function parseCsv(content) {
 }
 
 const FEATURED_GROUPS = new Set([
-  'Baby Doll Venecia',
-  'Body Marley',
-  'Aceite comestible Love Potion',
-  'Vela de masaje 30 g',
-  'Perfume Hot Inevitable',
-  'Safary',
+  'Zapatilla Urbana Clásica',
+  'Zapatilla Running Liviana',
+  'Sandalia Dos Hebillas',
+  'Ojota Faja Ancha',
+  'Borcego Mujer Base Tractor',
+  'Botita Urbana Niña',
 ]);
 
 function buildDemoData() {
@@ -190,13 +190,7 @@ function buildDemoData() {
       for (const r of groupRows) {
         const vSku = ensureUniqueSku(r.sku);
         const vPrice = Number(r.precio_ars || 15000);
-        const inferredSize =
-          r.variante_talle ||
-          (subName === 'Línea Free Size'
-            ? 'Free Size'
-            : parentName === 'Lencería'
-            ? 'Talle Único'
-            : null);
+        const inferredSize = r.variante_talle || null;
 
         variants.push({
           id: `demo_var_${String(varIndex++).padStart(3, '0')}`,
@@ -230,7 +224,7 @@ function buildDemoData() {
 
     const defaultDesc =
       first.descripcion ||
-      `${groupName} — Selección ${parentName}${subName ? ` (${subName})` : ''}. Empaque 100% discreto.`;
+      `${groupName} — Selección ${parentName}${subName ? ` (${subName})` : ''}. Venta por mayor y por menor (ejemplo de prueba).`;
 
     products.push({
       id: productId,
@@ -243,7 +237,7 @@ function buildDemoData() {
       imageUrl: null,
       badge: isFeatured ? 'Destacado' : null,
       featured: isFeatured,
-      brand: 'Nocturna',
+      brand: 'Paola Calzados',
       categoryId: assignedCat.id,
       category: {
         id: assignedCat.id,
@@ -302,17 +296,17 @@ function buildDemoData() {
       endsAt: new Date(Date.now() + 7 * 86400000).toISOString(), // Termina en 7 días
       priority: 20,
       active: true,
-      headline: 'Black Friday Nocturna: Descuentos de Temporada',
-      subheadline: 'Hasta 30% OFF en productos seleccionados y promociones por tiempo limitado con envíos confidenciales.',
-      description: 'Campaña activa de Black Friday con promociones de temporada y combos de ahorro.',
+      headline: 'Black Friday en Paola Calzados',
+      subheadline: 'Ofertas de temporada por mayor y por menor en zapatillas, sandalias y botas desde Córdoba.',
+      description: 'Campaña activa de Black Friday con promociones de temporada y combos de ejemplo.',
       theme: 'black-friday',
-      announcementText: '⚡ Black Friday: Hasta 30% OFF en productos seleccionados + Envíos discretos',
+      announcementText: '⚡ Black Friday Paola Calzados: Ofertas por mayor y menor en modelos seleccionados',
       announcementLink: '/campanas/black-friday',
-      conditionsText: 'Válido durante el período de Black Friday o hasta agotar stock disponible. Descuentos no acumulables con otros cupones. Envíos 100% discretos en Córdoba.',
+      conditionsText: 'Válido durante el período de Black Friday o hasta agotar stock disponible. Descuentos no acumulables con otros cupones. [ZONA DE ENVÍO].',
       showCountdown: true,
       landingEnabled: true,
-      seoTitle: 'Black Friday Nocturna | Ofertas Exclusivas',
-      seoDescription: 'Aprovechá las promociones destacadas en boutique íntima con envíos confidenciales.',
+      seoTitle: 'Black Friday | Paola Calzados Córdoba',
+      seoDescription: 'Aprovechá las promociones de calzado por mayor y por menor en Paola Calzados.',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     },
@@ -326,16 +320,16 @@ function buildDemoData() {
       priority: 15,
       active: true,
       headline: 'Cyber Week: Anticipo de Promociones Online',
-      subheadline: 'Próximamente beneficios exclusivos y combos para parejas.',
+      subheadline: 'Próximamente beneficios en zapatillas urbanas, sandalias y línea infantil.',
       description: 'Campaña programada de Cyber Week.',
       theme: 'cyber-sale',
-      announcementText: '🚀 Próximamente: Cyber Week con beneficios exclusivos',
+      announcementText: '🚀 Próximamente: Cyber Week en Paola Calzados',
       announcementLink: '/campanas/cyber-week',
-      conditionsText: 'Promoción programada. Envíos discretos a todo el país.',
+      conditionsText: 'Promoción programada. Consultá condiciones por mayor y menor.',
       showCountdown: true,
       landingEnabled: true,
-      seoTitle: 'Cyber Week en Nocturna | Próximamente',
-      seoDescription: 'Anticipate a las ofertas de Cyber Week en Nocturna SexShop.',
+      seoTitle: 'Cyber Week en Paola Calzados | Próximamente',
+      seoDescription: 'Anticipate a las ofertas de Cyber Week en Paola Calzados Córdoba.',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     },
@@ -348,17 +342,17 @@ function buildDemoData() {
       endsAt: null,
       priority: 5,
       active: false,
-      headline: 'Regalos íntimos para estas fiestas',
+      headline: 'Regalá calzado estas fiestas',
       subheadline: 'Borrador de campaña navideña y fin de año.',
       description: 'Borrador de campaña navideña y fin de año.',
       theme: 'navidad',
-      announcementText: '✨ Anticipo de Navidad: Sets exclusivos para regalar',
+      announcementText: '✨ Anticipo de Navidad: Modelos seleccionados para regalar',
       announcementLink: '/campanas/navidad',
-      conditionsText: 'Promoción especial para las fiestas. Entregas programadas en Córdoba.',
+      conditionsText: 'Promoción especial para las fiestas. Entregas y retiros en [DIRECCIÓN DEL LOCAL].',
       showCountdown: true,
       landingEnabled: true,
-      seoTitle: 'Navidad en Nocturna | Regalos Íntimos',
-      seoDescription: 'Encontrá el regalo ideal para estas fiestas con empaque 100% neutro.',
+      seoTitle: 'Navidad en Paola Calzados | Córdoba',
+      seoDescription: 'Encontrá zapatillas, sandalias y botas para regalar estas fiestas en Paola Calzados.',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     },
@@ -380,28 +374,26 @@ function buildDemoData() {
       conditionsText: 'Campaña finalizada.',
       showCountdown: false,
       landingEnabled: false,
-      seoTitle: 'Especial Día de la Madre | Nocturna Sexshop',
+      seoTitle: 'Especial Día de la Madre | Paola Calzados',
       seoDescription: 'Campaña de archivo.',
       createdAt: new Date(Date.now() - 25 * 86400000).toISOString(),
       updatedAt: new Date(Date.now() - 10 * 86400000).toISOString(),
     },
   ];
 
-  // 5. Promociones demo iniciales (Combo Aceite + Vela a $22.000 con ahorro real frente a $25.000)
-  const pCosm1 =
-    products.find((p) => p.name.includes('Love Potion') || p.name.includes('Aceite')) ||
-    products.find((p) => p.categoryId === 'cat_cosmetica-intima') ||
+  // 5. Promociones demo iniciales (Combo Zapatilla + Ojota a $36.000 con ahorro real de ejemplo)
+  const pCombo1 =
+    products.find((p) => p.categoryId === 'cat_zapatillas') ||
     products[0];
-  const pCosm2 =
-    products.find((p) => (p.name.includes('Vela') || p.name.includes('Soja')) && p.id !== pCosm1.id) ||
-    products.find((p) => p.categoryId === 'cat_cosmetica-intima' && p.id !== pCosm1.id) ||
+  const pCombo2 =
+    products.find((p) => p.categoryId === 'cat_sandalias' && p.id !== pCombo1.id) ||
     products[1];
 
   const promotions = [
     {
-      id: 'demo_promo_bf_lenceria',
+      id: 'demo_promo_bf_zapatillas',
       campaignId: 'demo_camp_blackfriday',
-      name: '20% OFF en Lencería',
+      name: '20% OFF en Zapatillas (Demo)',
       kind: 'PERCENT',
       value: 20,
       stackable: true,
@@ -409,12 +401,12 @@ function buildDemoData() {
       endsAt: null,
       active: true,
       priority: 5,
-      targets: [{ targetType: 'CATEGORY', targetId: 'cat_lenceria', excluded: false }],
+      targets: [{ targetType: 'CATEGORY', targetId: 'cat_zapatillas', excluded: false }],
     },
     {
-      id: 'demo_promo_2x1_cosmetica',
+      id: 'demo_promo_2x1_sandalias',
       campaignId: 'demo_camp_blackfriday',
-      name: '2x1 en Cosmética íntima',
+      name: '2x1 en Sandalias seleccionadas (Demo)',
       kind: 'BUY_X_PAY_Y',
       buyQuantity: 2,
       payQuantity: 1,
@@ -423,21 +415,21 @@ function buildDemoData() {
       endsAt: null,
       active: true,
       priority: 8,
-      targets: [{ targetType: 'CATEGORY', targetId: 'cat_cosmetica-intima', excluded: false }],
+      targets: [{ targetType: 'CATEGORY', targetId: 'cat_sandalias', excluded: false }],
     },
     {
-      id: 'demo_promo_combo_parejas',
+      id: 'demo_promo_combo_calzado',
       campaignId: 'demo_camp_blackfriday',
-      name: 'Combo Sensorial: Aceite + Vela a $22.000',
+      name: 'Combo Verano Demo: Zapatilla + Sandalia a $36.000',
       kind: 'BUNDLE_PRICE',
-      bundleSkus: JSON.stringify([pCosm1.sku, pCosm2.sku]),
-      value: 22000,
+      bundleSkus: JSON.stringify([pCombo1.sku, pCombo2.sku]),
+      value: 36000,
       stackable: false,
       active: true,
       priority: 9,
       targets: [
-        { targetType: 'PRODUCT', targetId: pCosm1.id, excluded: false },
-        { targetType: 'PRODUCT', targetId: pCosm2.id, excluded: false },
+        { targetType: 'PRODUCT', targetId: pCombo1.id, excluded: false },
+        { targetType: 'PRODUCT', targetId: pCombo2.id, excluded: false },
       ],
     },
     {
@@ -521,31 +513,31 @@ function buildDemoData() {
     { id: 'tag_imperdible', name: 'Imperdible', slug: 'imperdible' },
     { id: 'tag_favorito', name: 'Favorito', slug: 'favorito' },
     { id: 'tag_nuevo', name: 'Nuevo', slug: 'nuevo' },
-    { id: 'tag_sensual', name: 'Sensual', slug: 'sensual' },
-    { id: 'tag_edicion_limitada', name: 'Edición Limitada', slug: 'edicion-limitada' },
+    { id: 'tag_mayorista', name: 'Mayorista', slug: 'mayorista' },
+    { id: 'tag_edicion_limitada', name: 'Temporada', slug: 'temporada' },
   ];
 
   const collections = [
     {
-      id: 'coll_regalos_ella',
-      name: 'Regalos para ella',
-      slug: 'regalos-para-ella',
-      description: 'Lencería, prendas seductoras y aromas cautivantes',
+      id: 'coll_zapatillas_urbanas',
+      name: 'Zapatillas Urbanas',
+      slug: 'zapatillas-urbanas',
+      description: 'Modelos urbanos y deportivos para uso diario por mayor y menor',
       active: true,
       products: products.slice(0, 4).map((p, idx) => ({
-        collectionId: 'coll_regalos_ella',
+        collectionId: 'coll_zapatillas_urbanas',
         productId: p.id,
         order: idx,
       })),
     },
     {
-      id: 'coll_parejas',
-      name: 'Para parejas',
-      slug: 'para-parejas',
-      description: 'Juegos, geles y cosmética para disfrutar de a dos',
+      id: 'coll_sandalias_verano',
+      name: 'Sandalias y Verano',
+      slug: 'sandalias-y-verano',
+      description: 'Sandalias bajas, ojotas y plataformas livianas de estación',
       active: true,
       products: products.slice(4, 8).map((p, idx) => ({
-        collectionId: 'coll_parejas',
+        collectionId: 'coll_sandalias_verano',
         productId: p.id,
         order: idx,
       })),
@@ -554,7 +546,7 @@ function buildDemoData() {
       id: 'coll_novedades',
       name: 'Novedades',
       slug: 'novedades',
-      description: 'Los últimos ingresos de la temporada',
+      description: 'Los últimos ingresos de la temporada en calzado',
       active: true,
       products: products.slice(8, 12).map((p, idx) => ({
         collectionId: 'coll_novedades',
@@ -574,9 +566,9 @@ function buildDemoData() {
       order: 0,
       enabled: true,
       config: {
-        headline: 'Intimidad, diseño y placer sin tabúes.',
-        subheadline: 'Una selección curada de bienestar íntimo, cosmética sensorial y lencería. Comprá con total reserva desde tu casa: envíos 100% discretos en Córdoba y atención personalizada por WhatsApp.',
-        ctaText: 'Explorar Colección',
+        headline: 'Calzado por mayor y por menor desde Córdoba.',
+        subheadline: 'Zapatillas, sandalias, botas y línea infantil para tu local o para vos. Elegí tus pares favoritos y hacé tu pedido directo por WhatsApp.',
+        ctaText: 'Ver Catálogo',
         ctaLink: '/catalogo',
       },
     },
@@ -587,8 +579,8 @@ function buildDemoData() {
       order: 1,
       enabled: true,
       config: {
-        title: 'Categorías de la Colección',
-        subtitle: 'Universo Nocturna',
+        title: 'Categorías de Calzado',
+        subtitle: 'Paola Calzados',
       },
     },
     {
@@ -598,8 +590,8 @@ function buildDemoData() {
       order: 2,
       enabled: true,
       config: {
-        title: 'Seleccionados para Vos',
-        subtitle: 'Curaduría',
+        title: 'Destacados de Temporada',
+        subtitle: 'Selección',
         limit: 6,
       },
     },
@@ -610,7 +602,7 @@ function buildDemoData() {
       order: 3,
       enabled: true,
       config: {
-        title: 'Una experiencia íntima pensada desde el respeto, la estética y la confidencialidad.',
+        title: 'Atención cercana en Córdoba para compras mayoristas y minoristas.',
         id: 'nosotros',
       },
     },
@@ -641,8 +633,8 @@ function buildDemoData() {
       order: 0,
       enabled: true,
       config: {
-        headline: 'BLACK FRIDAY NOCTURNA',
-        subheadline: 'Promociones de temporada en bienestar íntimo y lencería. Envíos 100% discretos en Córdoba.',
+        headline: 'BLACK FRIDAY PAOLA CALZADOS',
+        subheadline: 'Promociones de temporada en zapatillas, sandalias y botas por mayor y menor.',
         ctaText: 'Aprovechar Ofertas',
         ctaLink: '/campanas/black-friday',
       },
@@ -667,7 +659,7 @@ function buildDemoData() {
       enabled: true,
       config: {
         title: 'Ofertas Destacadas de Black Friday',
-        subtitle: 'Hasta 30% OFF en productos seleccionados',
+        subtitle: 'Promociones en modelos seleccionados',
         filter: 'campaign',
         limit: 8,
       },
@@ -690,7 +682,7 @@ function buildDemoData() {
       enabled: false,
       config: {
         title: 'Especial Día de la Madre',
-        subtitle: '15% OFF en Lencería y 2x1 en Cosmética íntima con envíos discretos en Córdoba.',
+        subtitle: 'Modelos seleccionados para mujer, sandalias y zapatillas en Córdoba.',
         badge: 'Campaña Finalizada',
         ctaText: 'Ver Colección',
         ctaLink: '/campanas/dia-de-la-madre',
@@ -705,8 +697,8 @@ function buildDemoData() {
     transferDiscountPercent: 10,
     transferDiscountEnabled: true,
     priceHistoryDays: 30,
-    generalTermsText: 'Envíos 100% discretos en empaque neutro sin identificación del contenido.',
-    shippingNoticeText: 'Envío gratis a todo el país superando el monto mínimo de compra.',
+    generalTermsText: 'Venta de calzado por mayor y por menor desde Córdoba. Consultá [COSTOS Y PLAZOS DE ENVÍO] y [MÍNIMO DE COMPRA MAYORISTA] por WhatsApp.',
+    shippingNoticeText: 'Consultá envíos en [ZONA DE ENVÍO] y retiro en [DIRECCIÓN DEL LOCAL].',
     bankTransferInstructions: 'Transferencia bancaria. Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp.',
   };
 

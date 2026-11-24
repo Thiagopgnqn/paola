@@ -1,10 +1,20 @@
 import { env } from '../config/env.js';
 
+export const resolveWhatsAppDigits = (rawPhone) => {
+  const value = String(rawPhone || '').trim();
+  if (!value || value.includes('[') || value.includes(']')) {
+    return null;
+  }
+  const digits = value.replace(/\D/g, '');
+  return digits.length >= 8 ? digits : null;
+};
+
 export const generateWhatsAppLink = (order, items) => {
   const isPickup = order.deliveryMethod === 'PICKUP';
   const shortId = String(order.id || '').slice(0, 8).toUpperCase();
 
-  let message = `Hola *Nocturna SexShop*, quiero confirmar mi pedido *#${shortId}*\n\n`;
+  let message = `Hola Paola Calzados, quiero hacer este pedido:\n\n`;
+  message += `*Pedido #${shortId}*\n`;
   message += `*Datos de contacto:*\n`;
   message += `• Nombre: ${order.customerName}\n`;
   message += `• Teléfono: ${order.customerPhone}\n`;
@@ -13,7 +23,7 @@ export const generateWhatsAppLink = (order, items) => {
   }
 
   message += `\n*Modalidad de entrega:* ${
-    isPickup ? 'Retiro a coordinar (Córdoba)' : 'Envío discreto a domicilio'
+    isPickup ? 'Retiro en local (Córdoba)' : 'Envío a domicilio'
   }\n`;
 
   if (!isPickup) {
@@ -70,11 +80,11 @@ export const generateWhatsAppLink = (order, items) => {
   }
 
   if (order.paymentMethodDiscount > 0) {
-    message += `• Bonificación Transferencia (10% OFF): -$${Number(order.paymentMethodDiscount).toLocaleString('es-AR')}\n`;
+    message += `• Bonificación Transferencia: -$${Number(order.paymentMethodDiscount).toLocaleString('es-AR')}\n`;
   }
 
   if (isPickup) {
-    message += `• Retiro: Sin costo\n`;
+    message += `• Retiro en local: Sin costo\n`;
   } else if (order.shippingTotal === 0 || order.shippingDiscount > 0) {
     message += `• Envío a domicilio: ¡Gratis!\n`;
   } else if (order.shippingTotal > 0) {
@@ -92,9 +102,12 @@ export const generateWhatsAppLink = (order, items) => {
     message += `\n*Notas adicionales:* ${order.comments}\n`;
   }
 
-  message += `\n_Solicito empaque 100% discreto sin logos. Quedo a la espera para coordinar pago y entrega._`;
+  message += `\nQuedo a la espera para confirmar stock, pago y entrega.`;
 
-  const phone = env.WHATSAPP_PHONE || '5493517572841';
+  const phone = resolveWhatsAppDigits(env.WHATSAPP_PHONE);
+  if (!phone) {
+    return null;
+  }
   const encodedMessage = encodeURIComponent(message);
   return `https://wa.me/${phone}?text=${encodedMessage}`;
 };

@@ -63,10 +63,10 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group bg-surface rounded-lg border border-brand-border/20 overflow-hidden transition-smooth hover:border-mauve/50 flex flex-col h-full relative">
+    <div className="group bg-surface rounded-xl border border-border overflow-hidden transition-smooth hover:border-brand hover:shadow-lifted flex flex-col h-full relative">
       <Link to={`/producto/${productId}`} className="relative flex-grow flex flex-col">
         {/* Contenedor de Imagen 1:1 */}
-        <div className="aspect-square w-full bg-canvas relative overflow-hidden flex items-center justify-center border-b border-brand-border/15">
+        <div className="aspect-square w-full bg-surface-elevated relative overflow-hidden flex items-center justify-center border-b border-border">
           {imageUrl && !imgError ? (
             <img
               src={imageUrl}
@@ -81,7 +81,7 @@ const ProductCard = ({ product }) => {
               decoding="async"
             />
           ) : (
-            <ProductPlaceholder label={product.category?.name || 'Nocturna'} />
+            <ProductPlaceholder categoryName={product.category?.name || themeConfig.brand.name} sku={product.sku || ''} />
           )}
 
           {/* Badges de promoción y catálogo */}
@@ -111,8 +111,8 @@ const ProductCard = ({ product }) => {
 
           {/* Sin stock */}
           {isOutOfStock && (
-            <div className="absolute inset-0 bg-canvas/75 backdrop-blur-[1px] flex items-center justify-center z-20">
-              <span className="bg-surface-elevated text-content-secondary border border-brand-border/30 px-3 py-1 rounded text-[10px] font-medium uppercase tracking-widest">
+            <div className="absolute inset-0 bg-canvas/80 backdrop-blur-[1px] flex items-center justify-center z-20">
+              <span className="bg-surface text-content-secondary border border-border-strong px-3 py-1 rounded text-[10px] font-semibold uppercase tracking-widest shadow-sm">
                 Sin Stock
               </span>
             </div>
@@ -122,27 +122,27 @@ const ProductCard = ({ product }) => {
         {/* Ficha descriptiva */}
         <div className="p-4 sm:p-5 flex flex-col flex-grow">
           {categoryName && (
-            <div className="text-[10px] font-medium text-mauve uppercase tracking-widest mb-1.5 truncate">
+            <div className="text-[10px] font-bold text-brand-deep uppercase tracking-widest mb-1.5 truncate">
               {categoryName}
             </div>
           )}
 
-          <h3 className="font-medium text-sm sm:text-base text-content mb-1.5 leading-snug line-clamp-2 group-hover:text-mauve-light transition-colors">
+          <h3 className="font-semibold text-sm sm:text-base text-content mb-1.5 leading-snug line-clamp-2 group-hover:text-brand-deep transition-colors">
             {product.name}
           </h3>
 
           {product.description && (
-            <p className="text-xs text-content-muted line-clamp-2 mb-3 leading-relaxed">
+            <p className="text-xs text-content-secondary line-clamp-2 mb-3 leading-relaxed">
               {product.description}
             </p>
           )}
 
           {/* Precios y Ahorro */}
-          <div className="mt-auto pt-3 border-t border-brand-border/15">
+          <div className="mt-auto pt-3 border-t border-border-subtle">
             <div className="flex items-baseline justify-between gap-1 flex-wrap">
               <div className="flex items-baseline flex-wrap gap-x-2">
                 {hasVariants && (
-                  <span className="text-[10px] uppercase tracking-wider text-content-muted">
+                  <span className="text-[10px] uppercase tracking-wider text-content-secondary">
                     Desde
                   </span>
                 )}
@@ -152,14 +152,14 @@ const ProductCard = ({ product }) => {
 
                 {/* REGLA LEGAL: Solo mostrar precio tachado si compareAtPrice fue verificado por PriceHistory */}
                 {compareAtPrice != null && compareAtPrice > finalPrice && (
-                  <span className="text-xs text-content-muted line-through">
+                  <span className="text-xs text-content-secondary line-through">
                     {themeConfig.brand.currencySymbol}{compareAtPrice.toLocaleString('es-AR')}
                   </span>
                 )}
               </div>
 
               {isLowStock && (
-                <span className="text-[10px] font-medium text-amber-300 bg-amber-950/50 px-2 py-0.5 rounded border border-amber-800/40 whitespace-nowrap">
+                <span className="text-[10px] font-semibold text-status-warning bg-status-warning-bg px-2 py-0.5 rounded border border-status-warning-border whitespace-nowrap">
                   Últimas {totalStock} un.
                 </span>
               )}
@@ -167,28 +167,28 @@ const ProductCard = ({ product }) => {
 
             {/* Ahorro comprobado */}
             {compareAtPrice != null && savingsAmount > 0 && (
-              <div className="text-[11px] font-medium text-emerald-400 mt-1">
+              <div className="text-[11px] font-semibold text-status-success mt-1">
                 Ahorrás {themeConfig.brand.currencySymbol}{savingsAmount.toLocaleString('es-AR')}
                 {promoLabel && (
-                  <span className="text-content-muted font-normal ml-1">({promoLabel})</span>
+                  <span className="text-content-secondary font-normal ml-1">({promoLabel})</span>
                 )}
               </div>
             )}
 
             {/* Si no tiene compareAtPrice validado pero tiene promo activa, solo mostrar la etiqueta */}
             {compareAtPrice == null && promoLabel && (
-              <div className="text-[11px] font-medium text-mauve mt-1">
+              <div className="text-[11px] font-semibold text-brand-deep mt-1">
                 Promoción: {promoLabel}
               </div>
             )}
 
             {/* Transferencia */}
-            <p className="text-[11px] text-emerald-300 font-medium mt-1">
+            <p className="text-[11px] text-status-success font-semibold mt-1">
               <span>
                 {themeConfig.brand.currencySymbol}
                 {transferPrice.toLocaleString('es-AR')}
               </span>
-              <span className="text-content-muted font-normal ml-1">con transferencia (10% OFF)</span>
+              <span className="text-content-secondary font-normal ml-1">con transferencia (10% OFF)</span>
             </p>
           </div>
         </div>
@@ -201,7 +201,7 @@ const ProductCard = ({ product }) => {
             fullWidth
             variant="outline"
             onClick={handleAction}
-            className="py-2 text-xs font-medium"
+            className="py-2 text-xs font-semibold"
           >
             <span className="inline-flex items-center gap-2">
               <span>Ver opciones</span>
@@ -214,14 +214,14 @@ const ProductCard = ({ product }) => {
             variant={isOutOfStock ? 'secondary' : 'primary'}
             disabled={isOutOfStock}
             onClick={handleAction}
-            className="py-2 text-xs font-medium"
+            className="py-2 text-xs font-semibold"
           >
             {isOutOfStock ? (
               'Sin stock'
             ) : (
               <span className="inline-flex items-center gap-2">
                 <FiShoppingBag className="text-xs" />
-                <span>Agregar al carrito</span>
+                <span>Sumá al carrito</span>
               </span>
             )}
           </Button>

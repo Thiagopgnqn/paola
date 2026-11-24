@@ -4,7 +4,7 @@ import { FiX, FiArrowRight } from 'react-icons/fi';
 import client from '../../api/client';
 import { getCampaignTheme } from '../../pricing-engine/index.js';
 
-const STORAGE_KEY = 'nocturna_dismissed_announcement';
+const STORAGE_KEY = 'paola_dismissed_announcement';
 
 const AnnouncementBar = () => {
   const [campaign, setCampaign] = useState(null);

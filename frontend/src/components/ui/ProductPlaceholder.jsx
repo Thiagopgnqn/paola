@@ -1,56 +1,44 @@
 import React from 'react';
+import BrandLogo from './BrandLogo';
 
-const CategoryMinimalIcon = ({ type = 'default', className = 'w-8 h-8' }) => {
+const FootwearMinimalIcon = ({ type = 'default', className = 'w-10 h-10' }) => {
   const normalized = String(type || '').toLowerCase();
 
-  if (normalized.includes('lenceria') || normalized.includes('lingerie') || normalized.includes('fantas')) {
+  if (normalized.includes('sandal') || normalized.includes('ojota')) {
     return (
       <svg
         className={className}
-        viewBox="0 0 32 32"
+        viewBox="0 0 40 40"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.15"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         aria-hidden="true"
       >
-        <path d="M10 6v5c0 3.5 2.5 6 6 6s6-2.5 6-6V6" strokeLinecap="round" />
-        <path d="M7 18c2.8-1.5 5.8-2.2 9-2.2s6.2.7 9 2.2l-3.5 8.5c-1.8-1.2-3.6-1.8-5.5-1.8s-3.7.6-5.5 1.8L7 18Z" strokeLinejoin="round" />
+        <path d="M5 27.5c8.5 1.8 18.5 1.8 29.5 0a2.5 2.5 0 0 1 .5 4.8c-10.5 1.6-20 1.6-29.5 0A2.2 2.2 0 0 1 5 27.5Z" />
+        <path d="M12 28c1.5-5.5 5-9 10-9.5" />
+        <path d="M23 28.5c.8-4.5 3.2-7.5 6.8-8.2" />
+        <path d="M8 27.5l2.5-9.5h3.5l-1 9.5" />
       </svg>
     );
   }
 
-  if (normalized.includes('cosmet') || normalized.includes('perfume') || normalized.includes('gel')) {
+  if (normalized.includes('bota') || normalized.includes('borcego')) {
     return (
       <svg
         className={className}
-        viewBox="0 0 32 32"
+        viewBox="0 0 40 40"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.15"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         aria-hidden="true"
       >
-        <rect x="11" y="11" width="10" height="15" rx="2.5" />
-        <path d="M13.5 11V8.5h5V11" />
-        <path d="M16 8.5V6m-2 0h4" strokeLinecap="round" />
-        <circle cx="16" cy="18.5" r="2" />
-      </svg>
-    );
-  }
-
-  if (normalized.includes('juego') || normalized.includes('game') || normalized.includes('bdsm')) {
-    return (
-      <svg
-        className={className}
-        viewBox="0 0 32 32"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.15"
-        aria-hidden="true"
-      >
-        <rect x="7" y="7" width="18" height="18" rx="3.5" />
-        <circle cx="12" cy="12" r="1.2" fill="currentColor" />
-        <circle cx="20" cy="20" r="1.2" fill="currentColor" />
-        <circle cx="16" cy="16" r="1.2" fill="currentColor" />
+        <path d="M10 8h9l1 11c2.5 2.8 6 4.2 12 5a3 3 0 0 1 2.5 3v3.5H8V8Z" />
+        <path d="M8 30.5h26.5v3H8z" />
+        <path d="M19 14h-3M19 18h-3" />
       </svg>
     );
   }
@@ -58,49 +46,51 @@ const CategoryMinimalIcon = ({ type = 'default', className = 'w-8 h-8' }) => {
   return (
     <svg
       className={className}
-      viewBox="0 0 32 32"
+      viewBox="0 0 40 40"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.15"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path
-        d="M16 6c2.2 4.4 5.6 7.8 10 10-4.4 2.2-7.8 5.6-10 10-2.2-4.4-5.6-7.8-10-10 4.4-2.2 7.8-5.6 10-10Z"
-        strokeLinejoin="round"
-      />
+      <path d="M6 25.5V16c0-.8.7-1.4 1.5-1.1 2.4.9 4.5 1.4 6.5 1.4 2.2 0 4-1.3 5-3.3.4-.8 1.4-.9 2-.3l9.2 8.7c2 .5 3.8 1.7 4.4 3.6.3.9-.3 1.9-1.3 2H7.5A1.5 1.5 0 0 1 6 25.5Z" />
+      <path d="M6 28.5h28.5a1.5 1.5 0 0 1 0 3H7.5a1.5 1.5 0 0 1-1.5-1.5v-1.5Z" />
+      <path d="M21 17.5l2.5-1.5M23.8 20.2l2.5-1.5" />
     </svg>
   );
 };
 
 export const ProductPlaceholder = ({
   categoryName = '',
+  label = '',
   sku = '',
   size = 'md',
+  showLabel = true,
 }) => {
+  const iconType = categoryName || label;
   return (
-    <div className="w-full h-full nocturna-silk-card flex flex-col items-center justify-center p-5 text-center relative overflow-hidden select-none">
-      {/* Marco interno sutil */}
+    <div className="w-full h-full paola-card-texture bg-surface-elevated flex flex-col items-center justify-center p-4 text-center relative overflow-hidden select-none">
       <div
-        className="absolute inset-3 border border-border-subtle rounded pointer-events-none"
+        className="absolute inset-2.5 border border-border rounded-lg pointer-events-none"
         aria-hidden="true"
       />
 
-      <div className="text-mauve/70 mb-2.5 transition-transform duration-500 group-hover:scale-105">
-        <CategoryMinimalIcon
-          type={categoryName}
-          className={size === 'lg' ? 'w-11 h-11' : 'w-8 h-8'}
+      <div
+        className={`${
+          size === 'sm' ? 'w-10 h-10 mb-1' : 'w-14 h-14 mb-2.5'
+        } rounded-full bg-surface/90 border border-border flex items-center justify-center text-brand shadow-sm transition-transform duration-300 group-hover:scale-105`}
+      >
+        <FootwearMinimalIcon
+          type={iconType}
+          className={size === 'lg' ? 'w-9 h-9' : size === 'sm' ? 'w-5 h-5' : 'w-7 h-7'}
         />
       </div>
 
-      <span className="font-display font-light tracking-[0.22em] text-content/80 text-xs sm:text-sm">
-        Nocturna
-      </span>
-      <span className="font-display font-light tracking-[0.26em] text-content-secondary/60 text-[9px] mt-0.5">
-        SexShop
-      </span>
+      {showLabel && <BrandLogo variant="vertical" size="sm" />}
 
-      {sku && (
-        <span className="mt-2.5 text-[10px] font-mono text-content-secondary/50 tracking-wider">
+      {showLabel && sku && (
+        <span className="mt-2 px-2 py-0.5 rounded bg-surface/85 border border-border text-[10px] font-mono text-content-secondary tracking-wider">
           Cód. {sku}
         </span>
       )}

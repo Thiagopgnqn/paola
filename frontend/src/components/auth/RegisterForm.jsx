@@ -65,7 +65,7 @@ const RegisterForm = () => {
         name="phone"
         value={formData.phone}
         onChange={handleChange}
-        placeholder="Ej: 351 757 2841"
+        placeholder="Ej: 351 000 0000"
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Input
@@ -89,7 +89,7 @@ const RegisterForm = () => {
       </div>
 
       {error && (
-        <div className="text-xs text-rose-300 bg-rose-950/60 p-2.5 rounded border border-rose-800/50 font-medium">
+        <div className="text-xs text-status-error bg-status-error-bg p-2.5 rounded border border-status-error-border font-medium">
           {error}
         </div>
       )}
@@ -105,9 +105,9 @@ const RegisterForm = () => {
         Crear mi Cuenta
       </Button>
 
-      <div className="text-center text-xs text-content-secondary pt-3 border-t border-brand-border/15">
+      <div className="text-center text-xs text-content-secondary pt-3 border-t border-border-subtle">
         ¿Ya tenés una cuenta?{' '}
-        <Link to="/login" className="text-mauve font-medium hover:text-content transition-colors">
+        <Link to="/login" className="text-brand-deep font-semibold hover:underline transition-colors">
           Iniciá sesión acá
         </Link>
       </div>

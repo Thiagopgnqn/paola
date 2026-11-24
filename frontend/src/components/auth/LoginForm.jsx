@@ -44,13 +44,13 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {isDemoMode() && (
-        <div className="p-3 rounded-md bg-surface-elevated border border-mauve/35 text-xs space-y-2">
+        <div className="p-3 rounded-lg bg-surface-elevated border border-border text-xs space-y-2">
           <div className="flex items-center justify-between gap-2">
-            <span className="font-medium text-content">Acceso Admin de Demostración</span>
+            <span className="font-semibold text-content">Acceso Admin de Demostración</span>
             <button
               type="button"
               onClick={handleFillDemoAdmin}
-              className="text-[11px] px-2 py-0.5 rounded bg-brand text-content border border-mauve/40 hover:bg-brand/80 transition-colors font-medium"
+              className="text-[11px] px-2.5 py-0.5 rounded bg-brand text-white hover:bg-brand-deep transition-colors font-semibold"
             >
               Autocompletar
             </button>
@@ -83,7 +83,7 @@ const LoginForm = () => {
       />
 
       {error && (
-        <div className="text-xs text-rose-300 bg-rose-950/60 p-2.5 rounded border border-rose-800/50 font-medium">
+        <div className="text-xs text-status-error bg-status-error-bg p-2.5 rounded border border-status-error-border font-medium">
           {error}
         </div>
       )}
@@ -99,9 +99,9 @@ const LoginForm = () => {
         Ingresar a mi Cuenta
       </Button>
 
-      <div className="text-center text-xs text-content-secondary pt-3 border-t border-brand-border/15">
+      <div className="text-center text-xs text-content-secondary pt-3 border-t border-border-subtle">
         ¿Aún no tenés cuenta?{' '}
-        <Link to="/registro" className="text-mauve font-medium hover:text-content transition-colors">
+        <Link to="/registro" className="text-brand-deep font-semibold hover:underline transition-colors">
           Registrate acá
         </Link>
       </div>

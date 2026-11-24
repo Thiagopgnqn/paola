@@ -20,7 +20,7 @@ export const subscribe = async ({ email, consentGiven }) => {
     if (existing) {
       if (existing.active) {
         return {
-          message: 'Ya estás suscripto al newsletter de Tienda Nocturna.',
+          message: 'Ya estás suscripto al newsletter de Paola Calzados.',
           subscriber: existing,
           alreadySubscribed: true,
         };
@@ -54,7 +54,7 @@ export const subscribe = async ({ email, consentGiven }) => {
     });
 
     return {
-      message: '¡Te suscribiste exitosamente al newsletter de Tienda Nocturna!',
+      message: '¡Te suscribiste exitosamente al newsletter de Paola Calzados!',
       subscriber: created,
       created: true,
     };
@@ -65,7 +65,7 @@ export const subscribe = async ({ email, consentGiven }) => {
     if (sub) {
       if (sub.active) {
         return {
-          message: 'Ya estás suscripto al newsletter de Tienda Nocturna.',
+          message: 'Ya estás suscripto al newsletter de Paola Calzados.',
           subscriber: sub,
           alreadySubscribed: true,
         };
@@ -94,7 +94,7 @@ export const subscribe = async ({ email, consentGiven }) => {
     memorySubscribers.push(sub);
 
     return {
-      message: '¡Te suscribiste exitosamente al newsletter de Tienda Nocturna!',
+      message: '¡Te suscribiste exitosamente al newsletter de Paola Calzados!',
       subscriber: sub,
       created: true,
     };
@@ -128,7 +128,7 @@ export const unsubscribe = async ({ email }) => {
     });
 
     return {
-      message: 'Te diste de baja del newsletter de Tienda Nocturna exitosamente.',
+      message: 'Te diste de baja del newsletter de Paola Calzados exitosamente.',
       success: true,
     };
   } catch (err) {
@@ -139,7 +139,7 @@ export const unsubscribe = async ({ email }) => {
       sub.unsubscribedAt = now;
     }
     return {
-      message: 'Te diste de baja del newsletter de Tienda Nocturna exitosamente.',
+      message: 'Te diste de baja del newsletter de Paola Calzados exitosamente.',
       success: true,
     };
   }

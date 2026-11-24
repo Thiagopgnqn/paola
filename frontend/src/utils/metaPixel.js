@@ -1,14 +1,11 @@
 /**
- * Integración con Píxel de Meta — Modo Privacidad Estricta (Nocturna SexShop)
+ * Integración con Píxel de Meta — Paola Calzados
  *
- * REGLAS OBLIGATORIAS:
+ * REGLAS:
  * 1. En modo demo (VITE_DEMO_MODE=true) o si VITE_META_PIXEL_ID no está definido:
  *    EL PÍXEL SE ENCUENTRA COMPLETAMENTE DESACTIVADO.
- * 2. PRIVACIDAD ESTRICTA: NINGÚN evento envía nombres de productos, categorías,
- *    marcas ni títulos de campañas en texto.
- * 3. Identificadores: solo IDs/SKUs en content_ids, content_type: 'product',
- *    y si hay campaña asociada solo se envía el ID numérico como parámetro (campaign_id).
- * 4. Valor (value): siempre es el precio final real que paga el cliente en Pesos Argentinos (ARS).
+ * 2. Solo envía identificadores (SKUs/IDs en content_ids, content_type: 'product')
+ *    y valor final real en Pesos Argentinos (ARS).
  */
 
 import { isDemoMode } from '../api/demo/demoAdapter';

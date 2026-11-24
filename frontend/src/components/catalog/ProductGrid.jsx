@@ -17,7 +17,7 @@ const ProductGrid = ({ products, loading }) => {
   if (!products || products.length === 0) {
     return (
       <div className="w-full py-16 px-4 text-center bg-surface rounded-lg border border-brand-border/20">
-        <FiShoppingBag className="mx-auto text-3xl text-mauve/40 mb-3" />
+        <FiShoppingBag className="mx-auto text-3xl text-brand/50 mb-3" />
         <h3 className="font-display text-base uppercase tracking-wider text-content mb-1">
           No encontramos artículos para esta selección
         </h3>

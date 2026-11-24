@@ -106,8 +106,8 @@ const UsersPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="pb-5 border-b border-brand-border/20">
-        <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+      <div className="pb-5 border-b border-border">
+        <span className="text-[10px] uppercase tracking-widest text-brand-deep font-semibold">
           Cuentas &bull; Clientes
         </span>
         <h1 className="font-display text-2xl uppercase tracking-wider text-content mt-0.5">
@@ -120,8 +120,8 @@ const UsersPage = () => {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-surface p-5 rounded-lg border border-brand-border/20 flex items-center space-x-3.5">
-          <div className="p-2.5 bg-surface-elevated text-mauve border border-brand-border/25 rounded-md">
+        <div className="bg-surface p-5 rounded-lg border border-border flex items-center space-x-3.5">
+          <div className="p-2.5 bg-surface-elevated text-brand border border-border-strong rounded-md">
             <FiUsers size={18} />
           </div>
           <div>
@@ -132,8 +132,8 @@ const UsersPage = () => {
           </div>
         </div>
 
-        <div className="bg-surface p-5 rounded-lg border border-brand-border/20 flex items-center space-x-3.5">
-          <div className="p-2.5 bg-surface-elevated text-mauve border border-brand-border/25 rounded-md">
+        <div className="bg-surface p-5 rounded-lg border border-border flex items-center space-x-3.5">
+          <div className="p-2.5 bg-surface-elevated text-brand border border-border-strong rounded-md">
             <FiShield size={18} />
           </div>
           <div>
@@ -144,8 +144,8 @@ const UsersPage = () => {
           </div>
         </div>
 
-        <div className="bg-surface p-5 rounded-lg border border-brand-border/20 flex items-center space-x-3.5">
-          <div className="p-2.5 bg-surface-elevated text-mauve border border-brand-border/25 rounded-md">
+        <div className="bg-surface p-5 rounded-lg border border-border flex items-center space-x-3.5">
+          <div className="p-2.5 bg-surface-elevated text-brand border border-border-strong rounded-md">
             <FiUserCheck size={18} />
           </div>
           <div>
@@ -181,7 +181,7 @@ const UsersPage = () => {
               onClick={() => setRoleFilter(rf)}
               className={`px-3 py-1.5 rounded text-xs transition-colors ${
                 roleFilter === rf
-                  ? 'bg-brand text-content border border-mauve/30 font-medium'
+                  ? 'bg-brand text-white font-semibold'
                   : 'bg-canvas text-content-secondary hover:bg-surface-elevated'
               }`}
             >
@@ -196,7 +196,7 @@ const UsersPage = () => {
           <Spinner text="Cargando usuarios..." />
         </div>
       ) : error ? (
-        <div className="p-4 bg-rose-950/60 text-rose-300 text-xs rounded border border-rose-800/50">
+        <div className="p-4 bg-status-error-bg text-status-error text-xs rounded border border-status-error-border">
           {error}
         </div>
       ) : (

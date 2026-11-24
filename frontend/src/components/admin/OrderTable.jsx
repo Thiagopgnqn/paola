@@ -48,13 +48,13 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
     const orderId = (order.id || order._id || '').substring(0, 8);
     const customerName = order.customerName || order.name || 'Cliente';
     const total = Number(order.total || 0).toLocaleString('es-AR');
-    const text = `Hola ${customerName}! Te escribimos de Nocturna por tu pedido #${orderId} ($${total}). ¿Cómo estás?`;
+    const text = `Hola ${customerName}! Te escribimos de Paola Calzados por tu pedido #${orderId} ($${total}). ¿Cómo estás?`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
   };
 
   if (!orders || orders.length === 0) {
     return (
-      <div className="p-10 text-center bg-surface rounded-lg border border-brand-border/20 text-content-muted text-xs">
+      <div className="p-10 text-center bg-surface rounded-lg border border-border text-content-secondary text-xs">
         No se encontraron pedidos con los criterios seleccionados.
       </div>
     );
@@ -77,14 +77,14 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
             <div
               key={orderId}
               onClick={() => onViewDetails(order)}
-              className="bg-surface p-4 rounded-lg border border-brand-border/20 shadow-soft hover:border-mauve/50 transition-colors cursor-pointer"
+              className="bg-surface p-4 rounded-lg border border-border shadow-soft hover:border-brand transition-colors cursor-pointer"
             >
-              <div className="flex items-center justify-between pb-2 border-b border-brand-border/15 mb-2">
+              <div className="flex items-center justify-between pb-2 border-b border-border-subtle mb-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-mono font-medium text-content-muted">
+                  <span className="text-[11px] font-mono font-semibold text-content-secondary">
                     #{orderId.substring(0, 8)}
                   </span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-canvas text-content-secondary border border-brand-border/20">
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-surface-elevated text-content font-medium border border-border">
                     {order.deliveryMethod === 'PICKUP' ? 'Retiro' : 'Envío'}
                   </span>
                 </div>
@@ -95,12 +95,12 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
 
               <div className="flex justify-between items-center">
                 <div>
-                  <h4 className="text-xs sm:text-sm font-medium text-content flex items-center">
-                    <FiUser className="mr-1.5 text-xs text-mauve" />
+                  <h4 className="text-xs sm:text-sm font-semibold text-content flex items-center">
+                    <FiUser className="mr-1.5 text-xs text-brand-deep" />
                     {customerName}
                   </h4>
-                  <p className="text-[11px] text-content-muted flex items-center mt-1">
-                    <FiCalendar className="mr-1.5 text-[11px] text-content-muted" />
+                  <p className="text-[11px] text-content-secondary flex items-center mt-1">
+                    <FiCalendar className="mr-1.5 text-[11px] text-content-secondary" />
                     {new Date(order.createdAt).toLocaleDateString('es-AR')} &bull; {itemCount}{' '}
                     un.
                   </p>
@@ -113,19 +113,19 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="p-2 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40"
+                      className="p-2 rounded bg-status-success-bg text-status-success border border-status-success-border"
                       title="Escribir por WhatsApp"
                     >
                       <FiMessageCircle size={14} />
                     </a>
                   )}
                   <div>
-                    <span className="text-[9px] text-content-muted block uppercase font-medium">
+                    <span className="text-[9px] text-content-secondary block uppercase font-semibold">
                       Total
                     </span>
-                    <span className="text-sm font-semibold text-content">${totalFormatted}</span>
+                    <span className="text-sm font-bold text-content">${totalFormatted}</span>
                   </div>
-                  <FiChevronRight className="text-content-muted text-xs" />
+                  <FiChevronRight className="text-content-secondary text-xs" />
                 </div>
               </div>
             </div>
@@ -138,32 +138,32 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
         tabIndex={0}
         role="region"
         aria-label="Tabla de pedidos"
-        className="hidden md:block overflow-x-auto bg-surface rounded-lg border border-brand-border/20 focus:outline-none focus:ring-1 focus:ring-mauve/40"
+        className="hidden md:block overflow-x-auto bg-surface rounded-lg border border-border shadow-soft focus:outline-none focus:ring-1 focus:ring-brand"
       >
-        <table className="min-w-full divide-y divide-brand-border/20">
+        <table className="min-w-full divide-y divide-border">
           <thead className="bg-surface-elevated sticky top-0 z-10">
             <tr>
-              <th className="px-4 py-3 text-left text-[11px] font-medium text-content-secondary uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-[11px] font-bold text-content uppercase tracking-wider">
                 ID / Fecha
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-medium text-content-secondary uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-[11px] font-bold text-content uppercase tracking-wider">
                 Cliente / Contacto
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-medium text-content-secondary uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-[11px] font-bold text-content uppercase tracking-wider">
                 Entrega / Artículos
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-medium text-content-secondary uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-[11px] font-bold text-content uppercase tracking-wider">
                 Total
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-medium text-content-secondary uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-[11px] font-bold text-content uppercase tracking-wider">
                 Estado
               </th>
-              <th className="px-4 py-3 text-right text-[11px] font-medium text-content-secondary uppercase tracking-wider">
+              <th className="px-4 py-3 text-right text-[11px] font-bold text-content uppercase tracking-wider">
                 Acciones Rápidas
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-brand-border/15">
+          <tbody className="divide-y divide-border-subtle">
             {orders.map((order) => {
               const orderId = order.id || order._id;
               const customerName = order.customerName || order.name || 'Cliente';
@@ -179,13 +179,13 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
               return (
                 <tr
                   key={orderId}
-                  className="hover:bg-surface-elevated/30 cursor-pointer transition-colors"
+                  className="hover:bg-surface-elevated/45 cursor-pointer transition-colors"
                   onClick={() => onViewDetails(order)}
                 >
                   <td className="px-4 py-3.5 whitespace-nowrap">
                     <div className="flex items-center gap-1.5">
                       <span
-                        className="text-xs font-medium text-content font-mono"
+                        className="text-xs font-semibold text-content font-mono"
                         title={orderId}
                       >
                         #{orderId.substring(0, 8)}
@@ -193,12 +193,12 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
                       {order.adminNotes && (
                         <FiFileText
                           size={12}
-                          className="text-amber-400"
+                          className="text-status-warning"
                           title={`Nota interna: ${order.adminNotes}`}
                         />
                       )}
                     </div>
-                    <div className="text-[11px] text-content-muted">
+                    <div className="text-[11px] text-content-secondary">
                       {new Date(order.createdAt).toLocaleDateString('es-AR')}{' '}
                       {new Date(order.createdAt).toLocaleTimeString('es-AR', {
                         hour: '2-digit',
@@ -208,8 +208,8 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
                   </td>
 
                   <td className="px-4 py-3.5 whitespace-nowrap">
-                    <div className="text-xs font-medium text-content">{customerName}</div>
-                    <div className="text-[11px] text-content-muted font-mono">
+                    <div className="text-xs font-semibold text-content">{customerName}</div>
+                    <div className="text-[11px] text-content-secondary font-mono">
                       {customerPhone || customerEmail || 'Sin teléfono'}
                     </div>
                   </td>
@@ -218,24 +218,24 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
                     <div className="inline-flex items-center gap-1 text-xs text-content-secondary">
                       {isPickup ? (
                         <>
-                          <FiMapPin size={12} className="text-mauve" />
-                          <span>Retiro acordado</span>
+                          <FiMapPin size={12} className="text-brand-deep" />
+                          <span>Retiro en local</span>
                         </>
                       ) : (
                         <>
-                          <FiTruck size={12} className="text-mauve" />
+                          <FiTruck size={12} className="text-brand-deep" />
                           <span className="truncate max-w-[160px]">
                             {order.customerAddress || 'Envío a domicilio'}
                           </span>
                         </>
                       )}
                     </div>
-                    <div className="text-[10px] text-content-muted mt-0.5">
-                      {itemCount} {itemCount === 1 ? 'unidad' : 'unidades'}
+                    <div className="text-[10px] text-content-secondary mt-0.5">
+                      {itemCount} {itemCount === 1 ? 'par/unidad' : 'pares/unidades'}
                     </div>
                   </td>
 
-                  <td className="px-4 py-3.5 whitespace-nowrap text-xs font-semibold text-content tracking-tight">
+                  <td className="px-4 py-3.5 whitespace-nowrap text-xs font-bold text-content tracking-tight">
                     ${totalFormatted}
                   </td>
 
@@ -248,7 +248,7 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
                         value={(order.status || 'PENDING').toUpperCase()}
                         onChange={(e) => onStatusChange(orderId, e.target.value)}
                         aria-label={`Cambiar estado del pedido ${orderId.substring(0, 8)}`}
-                        className="px-2.5 py-1 rounded text-[11px] font-medium bg-canvas border border-brand-border/30 text-content focus:outline-none focus:border-mauve cursor-pointer"
+                        className="px-2.5 py-1 rounded text-[11px] font-semibold bg-surface border border-border-strong text-content focus:outline-none focus:border-brand cursor-pointer"
                       >
                         <option value="PENDING">Pendiente</option>
                         <option value="CONFIRMED">Confirmado</option>
@@ -272,7 +272,7 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
                           href={waUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-2 py-1 rounded bg-emerald-950/50 hover:bg-emerald-900/60 text-emerald-300 border border-emerald-800/40 transition-colors text-[11px]"
+                          className="inline-flex items-center gap-1 px-2 py-1 rounded bg-status-success-bg hover:bg-emerald-100 text-status-success border border-status-success-border transition-colors text-[11px] font-semibold"
                           title="Contactar cliente por WhatsApp"
                         >
                           <FiMessageCircle size={13} />
@@ -281,9 +281,9 @@ const OrderTable = ({ orders, onViewDetails, onStatusChange }) => {
                       )}
                       <button
                         type="button"
-                        className="text-content-secondary hover:text-content p-1.5 rounded hover:bg-surface-elevated transition-colors"
+                        className="text-content-secondary hover:text-brand-deep p-1.5 rounded hover:bg-surface-elevated transition-colors"
                         onClick={() => onViewDetails(order)}
-                        title="Ver detalle, nota interna e imprimir etiqueta discreta"
+                        title="Ver detalle, nota interna e imprimir hoja de armado"
                       >
                         <FiEye size={15} />
                       </button>

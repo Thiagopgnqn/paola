@@ -9,13 +9,13 @@ const RegisterPage = () => {
   });
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-canvas py-14 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full bg-surface rounded-lg p-8 sm:p-10 border border-brand-border/20">
+    <div className="min-h-[80vh] flex items-center justify-center paola-soft-bg py-14 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full bg-surface rounded-2xl p-8 sm:p-10 border border-border shadow-lifted">
         <div className="text-center mb-8">
-          <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
-            Registro Confidencial
+          <span className="text-[10px] uppercase tracking-widest text-brand-deep font-bold">
+            Registro de Cliente
           </span>
-          <h1 className="font-display text-xl sm:text-2xl uppercase tracking-widest text-content mt-1">
+          <h1 className="font-display font-bold text-xl sm:text-2xl text-content mt-1">
             Crear Cuenta
           </h1>
           <p className="mt-1 text-xs text-content-secondary">

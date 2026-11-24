@@ -97,16 +97,16 @@ const CategoriesPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-5 border-b border-brand-border/20">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-5 border-b border-border">
         <div>
-          <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+          <span className="text-[10px] uppercase tracking-widest text-brand-deep font-bold">
             Organización del Catálogo
           </span>
-          <h1 className="font-display text-2xl uppercase tracking-wider text-content mt-0.5">
+          <h1 className="font-display font-bold text-2xl text-content mt-0.5">
             Categorías y Subcategorías
           </h1>
           <p className="text-xs text-content-secondary mt-0.5">
-            Administrá la jerarquía de rubros de la tienda
+            Administrá la jerarquía de rubros de calzado
           </p>
         </div>
         <Button
@@ -122,16 +122,16 @@ const CategoriesPage = () => {
         {categories.map((parent) => (
           <div
             key={parent.id}
-            className="bg-surface rounded-lg border border-brand-border/20 overflow-hidden"
+            className="bg-surface rounded-xl border border-border shadow-soft overflow-hidden"
           >
-            <div className="p-4 sm:p-5 flex items-center justify-between bg-surface-elevated/40 border-b border-brand-border/15">
+            <div className="p-4 sm:p-5 flex items-center justify-between bg-surface-elevated/60 border-b border-border">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded bg-brand/40 text-mauve border border-brand-border/25">
+                <div className="p-2 rounded bg-brand text-white">
                   <FiTag size={15} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-content">{parent.name}</h3>
-                  <p className="text-[11px] text-content-muted font-mono">
+                  <h3 className="text-sm font-bold text-content">{parent.name}</h3>
+                  <p className="text-[11px] text-content-secondary font-mono">
                     /{parent.slug} &bull; {parent._count?.products || 0} productos directos &bull;{' '}
                     {(parent.children || []).length} subcategorías
                   </p>
@@ -149,7 +149,7 @@ const CategoriesPage = () => {
                 <button
                   type="button"
                   onClick={() => handleOpenModal(parent)}
-                  className="p-1.5 text-content-secondary hover:text-content rounded hover:bg-surface-elevated"
+                  className="p-1.5 text-content-secondary hover:text-brand-deep rounded hover:bg-surface"
                   title="Editar categoría"
                 >
                   <FiEdit2 size={14} />
@@ -157,7 +157,7 @@ const CategoriesPage = () => {
                 <button
                   type="button"
                   onClick={() => handleDelete(parent)}
-                  className="p-1.5 text-content-muted hover:text-rose-400 rounded hover:bg-surface-elevated"
+                  className="p-1.5 text-content-secondary hover:text-status-error rounded hover:bg-status-error-bg"
                   title="Eliminar categoría"
                 >
                   <FiTrash2 size={14} />
@@ -166,17 +166,17 @@ const CategoriesPage = () => {
             </div>
 
             {Array.isArray(parent.children) && parent.children.length > 0 && (
-              <div className="divide-y divide-brand-border/10">
+              <div className="divide-y divide-border-subtle">
                 {parent.children.map((sub) => (
                   <div
                     key={sub.id}
-                    className="px-5 py-3 flex items-center justify-between hover:bg-surface-elevated/25 transition-colors"
+                    className="px-5 py-3 flex items-center justify-between hover:bg-surface-elevated/35 transition-colors"
                   >
                     <div className="flex items-center gap-2.5 pl-4">
-                      <FiCornerDownRight className="text-mauve text-xs" />
+                      <FiCornerDownRight className="text-brand-deep text-xs" />
                       <div>
-                        <span className="text-xs font-medium text-content">{sub.name}</span>
-                        <span className="text-[11px] text-content-muted font-mono ml-2">
+                        <span className="text-xs font-semibold text-content">{sub.name}</span>
+                        <span className="text-[11px] text-content-secondary font-mono ml-2">
                           ({sub._count?.products || 0} prod.)
                         </span>
                       </div>
@@ -185,7 +185,7 @@ const CategoriesPage = () => {
                       <button
                         type="button"
                         onClick={() => handleOpenModal(sub)}
-                        className="p-1 text-content-secondary hover:text-content"
+                        className="p-1 text-content-secondary hover:text-brand-deep"
                         title="Editar subcategoría"
                       >
                         <FiEdit2 size={13} />
@@ -193,7 +193,7 @@ const CategoriesPage = () => {
                       <button
                         type="button"
                         onClick={() => handleDelete(sub)}
-                        className="p-1 text-content-muted hover:text-rose-400"
+                        className="p-1 text-content-secondary hover:text-status-error"
                         title="Eliminar subcategoría"
                       >
                         <FiTrash2 size={13} />
@@ -219,7 +219,7 @@ const CategoriesPage = () => {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            placeholder="Ej: Lubricantes y Cosmética"
+            placeholder="Ej: Sandalias / Zapatillas Urbanas"
           />
 
           <Select
@@ -239,7 +239,7 @@ const CategoriesPage = () => {
           />
 
           {error && (
-            <p className="text-xs text-rose-300 bg-rose-950/60 p-2.5 rounded border border-rose-800/50">
+            <p className="text-xs text-status-error bg-status-error-bg p-2.5 rounded border border-status-error-border font-medium">
               {error}
             </p>
           )}

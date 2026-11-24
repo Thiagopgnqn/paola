@@ -18,7 +18,7 @@ import {
 import client from '../../api/client';
 
 const getRandomCode = () => {
-  const prefixes = ['NOCTURNA', 'VIP', 'HOT', 'DESEO', 'PLACER', 'SECRETO', 'BIENVENIDA'];
+  const prefixes = ['PAOLA', 'CALZADO', 'OFERTA', 'ZAPAS', 'SANDALIAS', 'VERANO', 'BIENVENIDA'];
   const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
   const randNum = Math.floor(100 + Math.random() * 900);
   return `${prefix}-${randNum}`;
@@ -177,7 +177,7 @@ const CouponsPage = () => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `cupones-nocturna-${new Date().toISOString().split('T')[0]}.csv`);
+      link.setAttribute('download', `cupones-paola-${new Date().toISOString().split('T')[0]}.csv`);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -201,7 +201,7 @@ const CouponsPage = () => {
           <button
             type="button"
             onClick={handleExportCsv}
-            className="inline-flex items-center space-x-1.5 px-3 py-2 bg-surface-elevated hover:bg-brand text-content-secondary hover:text-content rounded-xl text-xs font-semibold border border-brand-border/30 transition-colors"
+            className="inline-flex items-center space-x-1.5 px-3 py-2 bg-surface-elevated hover:bg-brand text-content hover:text-white rounded-xl text-xs font-semibold border border-border-strong transition-colors"
             title="Exportar a CSV"
           >
             <FiDownload size={14} />
@@ -211,7 +211,7 @@ const CouponsPage = () => {
           <button
             type="button"
             onClick={handleOpenCreate}
-            className="inline-flex items-center space-x-2 px-4 py-2 bg-brand text-content rounded-xl text-xs font-bold hover:bg-brand/90 transition-colors shadow-sm border border-mauve/40"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-brand text-white rounded-xl text-xs font-bold hover:bg-brand-deep transition-colors shadow-sm"
           >
             <FiPlus size={16} />
             <span>Nuevo Cupón</span>
@@ -220,14 +220,14 @@ const CouponsPage = () => {
       </div>
 
       {/* Filtros */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface p-4 rounded-xl border border-brand-border/20">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface p-4 rounded-xl border border-border">
         <div className="flex items-center space-x-2">
           <button
             type="button"
             onClick={() => setActiveFilter('')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               activeFilter === ''
-                ? 'bg-brand text-content border border-mauve/40'
+                ? 'bg-brand text-white'
                 : 'bg-surface-elevated text-content-secondary hover:text-content'
             }`}
           >
@@ -236,9 +236,9 @@ const CouponsPage = () => {
           <button
             type="button"
             onClick={() => setActiveFilter('true')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               activeFilter === 'true'
-                ? 'bg-brand text-content border border-mauve/40'
+                ? 'bg-brand text-white'
                 : 'bg-surface-elevated text-content-secondary hover:text-content'
             }`}
           >
@@ -247,9 +247,9 @@ const CouponsPage = () => {
           <button
             type="button"
             onClick={() => setActiveFilter('false')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               activeFilter === 'false'
-                ? 'bg-brand text-content border border-mauve/40'
+                ? 'bg-brand text-white'
                 : 'bg-surface-elevated text-content-secondary hover:text-content'
             }`}
           >
@@ -264,21 +264,21 @@ const CouponsPage = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Buscar código de cupón..."
-            className="w-full bg-canvas border border-brand-border/30 rounded-lg pl-9 pr-3 py-1.5 text-xs text-content focus:outline-none focus:border-mauve"
+            className="w-full bg-canvas border border-border-strong rounded-lg pl-9 pr-3 py-1.5 text-xs text-content focus:outline-none focus:border-brand"
           />
         </div>
       </div>
 
       {/* Tabla de Cupones */}
-      <div className="bg-surface rounded-xl border border-brand-border/25 overflow-hidden shadow-xs">
+      <div className="bg-surface rounded-xl border border-border overflow-hidden shadow-xs">
         {loading ? (
           <div className="text-center py-12 text-content-muted">
-            <FiRefreshCw className="animate-spin h-5 w-5 mx-auto mb-2 text-mauve" />
+            <FiRefreshCw className="animate-spin h-5 w-5 mx-auto mb-2 text-brand" />
             <p className="text-xs">Cargando cupones...</p>
           </div>
         ) : coupons.length === 0 ? (
           <div className="text-center py-12 text-content-muted">
-            <FiTag className="mx-auto h-8 w-8 mb-2 opacity-40 text-mauve" />
+            <FiTag className="mx-auto h-8 w-8 mb-2 opacity-50 text-brand" />
             <p className="text-xs">No se encontraron cupones.</p>
           </div>
         ) : (
@@ -300,7 +300,7 @@ const CouponsPage = () => {
                 {coupons.map((c) => (
                   <tr key={c.id} className="hover:bg-surface-elevated/40 transition-colors">
                     <td className="py-3 px-4 font-mono font-bold text-content">
-                      <span className="px-2 py-1 rounded bg-canvas border border-brand-border/35 text-mauve">
+                      <span className="px-2 py-1 rounded bg-surface-elevated border border-border-strong text-brand-deep">
                         {c.code}
                       </span>
                     </td>
@@ -331,7 +331,7 @@ const CouponsPage = () => {
                     </td>
                     <td className="py-3 px-4">
                       {c.stackableWithPromotions ? (
-                        <span className="text-emerald-400 font-medium">Sí</span>
+                        <span className="text-status-success font-medium">Sí</span>
                       ) : (
                         <span className="text-content-muted">No</span>
                       )}
@@ -342,8 +342,8 @@ const CouponsPage = () => {
                         onClick={() => handleToggle(c.id)}
                         className={`inline-flex items-center space-x-1 px-2 py-0.5 rounded text-[11px] font-semibold transition-colors ${
                           c.active
-                            ? 'bg-emerald-950 text-emerald-300 border border-emerald-800/40 hover:bg-emerald-900/60'
-                            : 'bg-zinc-800 text-zinc-400 border border-zinc-700 hover:bg-zinc-700'
+                            ? 'bg-status-success-bg text-status-success border border-status-success-border hover:bg-emerald-100'
+                            : 'bg-surface-elevated text-content-secondary border border-border-strong hover:bg-surface-hover'
                         }`}
                       >
                         <span>{c.active ? 'Activo' : 'Pausado'}</span>
@@ -354,7 +354,7 @@ const CouponsPage = () => {
                         <button
                           type="button"
                           onClick={() => handleOpenEdit(c)}
-                          className="p-1.5 rounded hover:bg-brand/50 text-content-secondary hover:text-content transition-colors"
+                          className="p-1.5 rounded hover:bg-brand/15 text-content-secondary hover:text-brand-deep transition-colors"
                           title="Editar cupón"
                         >
                           <FiEdit2 size={13} />
@@ -362,7 +362,7 @@ const CouponsPage = () => {
                         <button
                           type="button"
                           onClick={() => handleDelete(c.id)}
-                          className="p-1.5 rounded hover:bg-rose-950/40 text-content-muted hover:text-rose-400 transition-colors"
+                          className="p-1.5 rounded hover:bg-status-error-bg text-content-muted hover:text-status-error transition-colors"
                           title="Eliminar cupón"
                         >
                           <FiTrash2 size={13} />
@@ -379,7 +379,7 @@ const CouponsPage = () => {
 
       {/* Modal Crear / Editar */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-content/40 backdrop-blur-xs">
           <div className="bg-surface border border-brand-border/40 rounded-2xl max-w-lg w-full p-6 text-content space-y-5 shadow-2xl">
             <div className="flex items-center justify-between border-b border-brand-border/20 pb-3">
               <h3 className="text-lg font-bold font-display text-content">
@@ -411,7 +411,7 @@ const CouponsPage = () => {
                   <button
                     type="button"
                     onClick={() => setFormData({ ...formData, code: getRandomCode() })}
-                    className="px-3 py-2 bg-surface-elevated hover:bg-brand text-content-secondary hover:text-content text-xs font-medium rounded-lg border border-brand-border/30 transition-colors shrink-0"
+                    className="px-3 py-2 bg-surface-elevated hover:bg-brand text-content hover:text-white text-xs font-medium rounded-lg border border-border-strong transition-colors shrink-0"
                     title="Generar código aleatorio"
                   >
                     Aleatorio
@@ -563,23 +563,23 @@ const CouponsPage = () => {
               </div>
 
               {errorMsg && (
-                <div className="p-3 bg-rose-950/40 border border-rose-800/40 rounded-lg text-rose-300 text-xs flex items-center space-x-2">
+                <div className="p-3 bg-status-error-bg border border-status-error-border rounded-lg text-status-error text-xs flex items-center space-x-2">
                   <FiAlertTriangle size={15} />
                   <span>{errorMsg}</span>
                 </div>
               )}
 
-              <div className="flex items-center justify-end space-x-2 pt-3 border-t border-brand-border/20">
+              <div className="flex items-center justify-end space-x-2 pt-3 border-t border-border">
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="px-4 py-2 bg-surface-elevated hover:bg-surface text-content rounded-lg text-xs font-medium"
+                  className="px-4 py-2 bg-surface-elevated hover:bg-surface-hover text-content rounded-lg text-xs font-medium border border-border"
                 >
                   Cancelar
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 bg-brand text-content hover:bg-brand/90 rounded-lg text-xs font-bold border border-mauve/40 shadow-sm"
+                  className="px-5 py-2 bg-brand text-white hover:bg-brand-deep rounded-lg text-xs font-bold shadow-sm"
                 >
                   {editingCoupon ? 'Guardar Cambios' : 'Crear Cupón'}
                 </button>

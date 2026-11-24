@@ -73,13 +73,13 @@ function parseCSV(content) {
 async function runImport() {
   const rootDir = path.resolve(__dirname, '../..');
   const csvCandidates = [
-    path.join(rootDir, 'catalogo_nocturna.csv'),
-    path.resolve(__dirname, '../prisma/catalogo_nocturna.csv'),
+    path.join(rootDir, 'catalogo_paola.csv'),
+    path.resolve(__dirname, '../prisma/catalogo_paola.csv'),
   ];
   const csvPath = csvCandidates.find((p) => fs.existsSync(p));
 
   if (!csvPath) {
-    throw new Error('No se encontró el archivo catalogo_nocturna.csv');
+    throw new Error('No se encontró el archivo catalogo_paola.csv');
   }
 
   const rawCSV = fs.readFileSync(csvPath, 'utf-8');
@@ -108,7 +108,7 @@ async function runImport() {
     let finalSku = rawSku;
 
     if (!rawSku) {
-      finalSku = `NOC-${String(autoSkuCounter).padStart(4, '0')}`;
+      finalSku = `PAO-${String(autoSkuCounter).padStart(4, '0')}`;
       autoSkuCounter++;
       generatedSkusReport.push({
         rowNumber: row._rowNumber,
@@ -335,7 +335,7 @@ async function runImport() {
       stock: 0,
       imageUrl: null,
       badge: null,
-      brand: null,
+      brand: 'Paola Calzados',
       categoryId: targetCategory?.id || null,
       active: productActive,
       soldCount: 0,
@@ -396,9 +396,9 @@ async function runImport() {
   );
 
   const mdLines = [
-    '# REVISAR — Observaciones del Catálogo Nocturna SexShop',
+    '# REVISAR — Observaciones del Catálogo Paola Calzados',
     '',
-    'Este documento fue generado automáticamente por el script de importación (`npm run import:catalog`) a partir de `catalogo_nocturna.csv`.',
+    'Este documento fue generado automáticamente por el script de importación (`npm run import:catalog`) a partir de `catalogo_paola.csv`.',
     '',
     '## Resumen General de Importación',
     '',
@@ -407,7 +407,7 @@ async function runImport() {
     `- **Filas con \`estado = revisar\` (cargadas como borrador / inactivas):** ${reviewRowsReport.length}`,
     `- **Filas sin precio (\`precio_ars\` vacío, cargadas como inactivas):** ${missingPriceReport.length}`,
     `- **SKUs duplicados renombrados con sufijo único:** ${duplicateSkusReport.length}`,
-    `- **SKUs vacíos completados con código interno (\`NOC-XXXX\`):** ${generatedSkusReport.length}`,
+    `- **SKUs vacíos completados con código interno (\`PAO-XXXX\`):** ${generatedSkusReport.length}`,
     '',
     '---',
     '',
@@ -439,7 +439,7 @@ async function runImport() {
     '',
     '## 3. SKUs Duplicados en el Catálogo (Sufijos Aplicados)',
     '',
-    'Se detectaron códigos repetidos entre distintos productos del proveedor (`144`, `138`, `153`, `109`, `C02`, además de los casos observados `407` y `D659`). Se les asignó un sufijo único para mantener la integridad de la base de datos:',
+    'En caso de detectarse códigos repetidos entre distintas filas, se asigna un sufijo único para mantener la integridad de la base de datos:',
     '',
     '| Fila | SKU Original | SKU Único Asignado | Producto / Grupo | Categoría | Observación |',
     '|------|--------------|--------------------|------------------|-----------|-------------|',
@@ -452,7 +452,7 @@ async function runImport() {
     '',
     '---',
     '',
-    '## 4. Productos sin SKU de Proveedor (Código Interno `NOC-XXXX` Generado)',
+    '## 4. Productos sin SKU de Proveedor (Código Interno `PAO-XXXX` Generado)',
     '',
     '| Fila | SKU Generado | Grupo | Nombre | Categoría | Nota |',
     '|------|--------------|-------|--------|-----------|------|',

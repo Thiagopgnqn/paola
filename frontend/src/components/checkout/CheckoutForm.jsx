@@ -8,7 +8,7 @@ import { trackPurchase } from '../../utils/metaPixel';
 import { formatVariantDescription } from '../../context/CartContext';
 import { getStoredUTM } from '../../utils/utmTracker';
 import { FaWhatsapp } from 'react-icons/fa';
-import { FiCheckCircle, FiLock, FiShield, FiTruck, FiMapPin, FiPercent } from 'react-icons/fi';
+import { FiCheckCircle, FiLock, FiShield, FiTruck, FiMapPin } from 'react-icons/fi';
 import themeConfig from '../../config/theme';
 
 const CheckoutForm = ({ onOrderSuccess }) => {
@@ -61,7 +61,7 @@ const CheckoutForm = ({ onOrderSuccess }) => {
       ...prev,
       deliveryMethod: method,
       customerAddress:
-        method === 'PICKUP' && !prev.customerAddress ? 'Retiro a coordinar' : prev.customerAddress,
+        method === 'PICKUP' && !prev.customerAddress ? 'Retiro en local a coordinar' : prev.customerAddress,
     }));
     if (setDeliveryMethod) {
       setDeliveryMethod(method);
@@ -82,7 +82,7 @@ const CheckoutForm = ({ onOrderSuccess }) => {
     try {
       const isPickup = formData.deliveryMethod === 'PICKUP';
       const addressText = isPickup
-        ? 'Retiro a coordinar por WhatsApp'
+        ? `Retiro en local (${themeConfig.contact.address})`
         : formData.customerAddress.trim();
 
       const fullAddress = isPickup
@@ -123,7 +123,6 @@ const CheckoutForm = ({ onOrderSuccess }) => {
       const res = await client.post('/orders', orderData);
       const link = res.data?.whatsappLink;
 
-      // Meta Pixel Purchase
       trackPurchase({
         orderId: res.data?.id,
         items,
@@ -153,45 +152,55 @@ const CheckoutForm = ({ onOrderSuccess }) => {
 
   if (success) {
     return (
-      <div className="text-center py-12 px-6 bg-surface rounded-lg border border-brand-border/25">
-        <div className="mx-auto w-12 h-12 bg-emerald-950/60 text-emerald-300 rounded-full flex items-center justify-center mb-4 border border-emerald-800/50">
+      <div className="text-center py-12 px-6 bg-surface rounded-xl border border-border shadow-soft">
+        <div className="mx-auto w-12 h-12 bg-status-success-bg text-status-success rounded-full flex items-center justify-center mb-4 border border-status-success-border">
           <FiCheckCircle size={26} />
         </div>
-        <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+        <span className="text-[10px] uppercase tracking-widest text-brand-deep font-bold">
           ¡Pedido Registrado!
         </span>
-        <h2 className="font-display text-xl sm:text-2xl uppercase tracking-wider text-content mt-1 mb-2">
+        <h2 className="font-display text-xl sm:text-2xl font-bold text-content mt-1 mb-2">
           Finalizá la coordinación por WhatsApp
         </h2>
         <p className="text-content-secondary mb-6 max-w-sm mx-auto text-xs sm:text-sm leading-relaxed">
-          Ya preparamos el resumen de tu pedido. Hacé clic abajo para enviarlo a nuestro WhatsApp y coordinar el pago y la entrega discreta.
+          Ya preparamos el resumen de tu pedido. Hacé clic abajo para enviarlo a nuestro WhatsApp y coordinar pago y entrega.
         </p>
 
+        {themeConfig.contact.isWhatsAppTestMode && (
+          <div className="mb-4 p-2.5 rounded-lg bg-status-warning-bg border border-status-warning-border text-status-warning text-[11px] font-medium max-w-sm mx-auto">
+            Modo Demo: el enlace apunta al número ficticio de prueba ({themeConfig.contact.whatsappTestNumber} — TEST).
+          </div>
+        )}
+
         {paymentMethod === 'TRANSFER' && (
-          <div className="mb-6 p-3.5 rounded bg-surface-elevated border border-brand-border/30 text-xs text-content-secondary max-w-sm mx-auto text-left">
+          <div className="mb-6 p-3.5 rounded-lg bg-surface-elevated border border-border text-xs text-content-secondary max-w-sm mx-auto text-left">
             <p className="font-semibold text-content mb-1">Instrucciones de Transferencia bancaria:</p>
             <p className="leading-relaxed">
               {storeSettings?.bankTransferInstructions ||
-                'Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp para abonar con descuento.'}
+                'Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp.'}
             </p>
           </div>
         )}
 
         <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-sm mx-auto">
-          {whatsappUrl && (
+          {whatsappUrl ? (
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 bg-brand hover:bg-brand-hover text-content border border-mauve/40 px-5 py-3 rounded-md font-medium text-xs sm:text-sm transition-colors"
+              className="flex items-center justify-center space-x-2 bg-brand hover:bg-brand-deep text-white px-5 py-3 rounded-md font-semibold text-xs sm:text-sm transition-colors shadow-soft"
             >
               <FaWhatsapp size={18} />
               <span>Abrir WhatsApp Ahora</span>
             </a>
+          ) : (
+            <div className="px-4 py-2.5 rounded-md bg-surface-elevated border border-border text-xs text-content-secondary">
+              WhatsApp pendiente de configurar: {themeConfig.contact.phone}
+            </div>
           )}
           <Link
             to="/"
-            className="flex items-center justify-center px-5 py-3 rounded-md border border-brand-border/30 text-content-secondary text-xs font-medium hover:bg-surface-elevated hover:text-content transition-colors"
+            className="flex items-center justify-center px-5 py-3 rounded-md border border-border-strong text-content text-xs font-semibold hover:bg-surface-elevated transition-colors"
           >
             Volver al Inicio
           </Link>
@@ -203,25 +212,25 @@ const CheckoutForm = ({ onOrderSuccess }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-surface p-6 sm:p-8 rounded-lg border border-brand-border/20 space-y-7"
+      className="bg-surface p-6 sm:p-8 rounded-xl border border-border shadow-soft space-y-7"
     >
       {/* Paso 1: Contacto */}
       <div>
-        <div className="pb-3 mb-4 border-b border-brand-border/15 flex items-center justify-between">
+        <div className="pb-3 mb-4 border-b border-border-subtle flex items-center justify-between">
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+            <span className="text-[10px] uppercase tracking-widest text-brand-deep font-bold">
               Paso 1
             </span>
-            <h2 className="font-display text-base uppercase tracking-widest text-content mt-0.5">
+            <h2 className="font-display font-bold text-base text-content mt-0.5">
               Datos de Contacto
             </h2>
           </div>
-          <span className="text-xs text-content-muted">100% Confidencial</span>
+          <span className="text-xs text-content-secondary">Para coordinar tu entrega</span>
         </div>
 
         <div className="space-y-4">
           <Input
-            label="Nombre o Alias para recibir"
+            label="Nombre y Apellido"
             name="customerName"
             required
             value={formData.customerName}
@@ -245,7 +254,7 @@ const CheckoutForm = ({ onOrderSuccess }) => {
               required
               value={formData.customerPhone}
               onChange={handleChange}
-              placeholder="Ej: 351 757 2841"
+              placeholder="Ej: 351 000 0000"
             />
           </div>
         </div>
@@ -253,11 +262,11 @@ const CheckoutForm = ({ onOrderSuccess }) => {
 
       {/* Paso 2: Modalidad de entrega */}
       <div className="pt-2">
-        <div className="pb-3 mb-4 border-b border-brand-border/15">
-          <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+        <div className="pb-3 mb-4 border-b border-border-subtle">
+          <span className="text-[10px] uppercase tracking-widest text-brand-deep font-bold">
             Paso 2
           </span>
-          <h2 className="font-display text-base uppercase tracking-widest text-content mt-0.5">
+          <h2 className="font-display font-bold text-base text-content mt-0.5">
             Modalidad de Entrega
           </h2>
         </div>
@@ -266,17 +275,17 @@ const CheckoutForm = ({ onOrderSuccess }) => {
           <button
             type="button"
             onClick={() => handleDeliveryChange('DELIVERY')}
-            className={`p-4 rounded-md border text-left transition-all flex items-start gap-3 ${
+            className={`p-4 rounded-lg border text-left transition-all flex items-start gap-3 ${
               formData.deliveryMethod === 'DELIVERY'
-                ? 'bg-brand/40 border-mauve text-content'
-                : 'bg-canvas border-brand-border/25 text-content-secondary hover:border-mauve/40'
+                ? 'bg-surface-elevated border-brand text-content ring-1 ring-brand/40'
+                : 'bg-surface border-border-strong text-content-secondary hover:border-brand'
             }`}
           >
-            <FiTruck className="text-mauve mt-0.5 flex-shrink-0" size={18} />
+            <FiTruck className="text-brand-deep mt-0.5 flex-shrink-0" size={18} />
             <div>
-              <p className="text-xs font-medium text-content">Envío Discreto a Domicilio</p>
-              <p className="text-[11px] text-content-muted mt-0.5">
-                Cadetería en {themeConfig.contact.deliveryZone} y envíos en paquete neutro.
+              <p className="text-xs font-semibold text-content">Envío a Domicilio</p>
+              <p className="text-[11px] text-content-secondary mt-0.5">
+                Entregas en {themeConfig.contact.deliveryZone}.
               </p>
             </div>
           </button>
@@ -284,17 +293,17 @@ const CheckoutForm = ({ onOrderSuccess }) => {
           <button
             type="button"
             onClick={() => handleDeliveryChange('PICKUP')}
-            className={`p-4 rounded-md border text-left transition-all flex items-start gap-3 ${
+            className={`p-4 rounded-lg border text-left transition-all flex items-start gap-3 ${
               formData.deliveryMethod === 'PICKUP'
-                ? 'bg-brand/40 border-mauve text-content'
-                : 'bg-canvas border-brand-border/25 text-content-secondary hover:border-mauve/40'
+                ? 'bg-surface-elevated border-brand text-content ring-1 ring-brand/40'
+                : 'bg-surface border-border-strong text-content-secondary hover:border-brand'
             }`}
           >
-            <FiMapPin className="text-mauve mt-0.5 flex-shrink-0" size={18} />
+            <FiMapPin className="text-brand-deep mt-0.5 flex-shrink-0" size={18} />
             <div>
-              <p className="text-xs font-medium text-content">Punto de Retiro Acordado</p>
-              <p className="text-[11px] text-content-muted mt-0.5">
-                Coordinamos día y horario por WhatsApp en {themeConfig.contact.city}.
+              <p className="text-xs font-semibold text-content">Retiro en Local</p>
+              <p className="text-[11px] text-content-secondary mt-0.5">
+                {themeConfig.contact.address} ({themeConfig.contact.hours}).
               </p>
             </div>
           </button>
@@ -335,7 +344,7 @@ const CheckoutForm = ({ onOrderSuccess }) => {
                 required
                 value={formData.customerAddress}
                 onChange={handleChange}
-                placeholder="Ej: Av. Hipólito Yrigoyen 320, 4B"
+                placeholder="Ej: Av. Colón 450"
               />
             </div>
           </div>
@@ -343,12 +352,12 @@ const CheckoutForm = ({ onOrderSuccess }) => {
       </div>
 
       {/* Paso 3: Método de Pago */}
-      <div className="pt-2 border-t border-brand-border/15">
-        <div className="pb-3 mb-4 border-b border-brand-border/15">
-          <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+      <div className="pt-2 border-t border-border-subtle">
+        <div className="pb-3 mb-4 border-b border-border-subtle">
+          <span className="text-[10px] uppercase tracking-widest text-brand-deep font-bold">
             Paso 3
           </span>
-          <h2 className="font-display text-base uppercase tracking-widest text-content mt-0.5">
+          <h2 className="font-display font-bold text-base text-content mt-0.5">
             Método de Pago
           </h2>
         </div>
@@ -357,23 +366,23 @@ const CheckoutForm = ({ onOrderSuccess }) => {
           <button
             type="button"
             onClick={() => setPaymentMethod('TRANSFER')}
-            className={`p-4 rounded-md border text-left transition-all ${
+            className={`p-4 rounded-lg border text-left transition-all ${
               paymentMethod === 'TRANSFER'
-                ? 'bg-brand/40 border-mauve text-content ring-1 ring-mauve/40'
-                : 'bg-canvas border-brand-border/25 text-content-secondary hover:border-mauve/40'
+                ? 'bg-surface-elevated border-brand text-content ring-1 ring-brand/40'
+                : 'bg-surface border-border-strong text-content-secondary hover:border-brand'
             }`}
           >
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs font-semibold text-content">Transferencia bancaria</span>
               {transferDiscountEnabled && (
-                <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
+                <span className="text-[10px] text-status-success font-bold bg-status-success-bg px-2 py-0.5 rounded border border-status-success-border">
                   {transferDiscountPercent}% OFF
                 </span>
               )}
             </div>
-            <p className="text-[11px] text-content-muted leading-snug">
+            <p className="text-[11px] text-content-secondary leading-snug">
               {transferDiscountEnabled
-                ? `Bonificación directa del ${transferDiscountPercent}% sobre el subtotal de productos.`
+                ? `Bonificación directa del ${transferDiscountPercent}% sobre el subtotal.`
                 : 'Pago directo mediante transferencia bancaria.'}
             </p>
           </button>
@@ -381,17 +390,17 @@ const CheckoutForm = ({ onOrderSuccess }) => {
           <button
             type="button"
             onClick={() => setPaymentMethod('OTHER')}
-            className={`p-4 rounded-md border text-left transition-all ${
+            className={`p-4 rounded-lg border text-left transition-all ${
               paymentMethod === 'OTHER'
-                ? 'bg-brand/40 border-mauve text-content ring-1 ring-mauve/40'
-                : 'bg-canvas border-brand-border/25 text-content-secondary hover:border-mauve/40'
+                ? 'bg-surface-elevated border-brand text-content ring-1 ring-brand/40'
+                : 'bg-surface border-border-strong text-content-secondary hover:border-brand'
             }`}
           >
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs font-semibold text-content">Efectivo / Otros Medios</span>
-              <span className="text-[10px] text-content-muted">Precio regular</span>
+              <span className="text-[10px] text-content-secondary">Precio regular</span>
             </div>
-            <p className="text-[11px] text-content-muted leading-snug">
+            <p className="text-[11px] text-content-secondary leading-snug">
               A coordinar directamente por WhatsApp al momento de la entrega o retiro.
             </p>
           </button>
@@ -399,33 +408,33 @@ const CheckoutForm = ({ onOrderSuccess }) => {
       </div>
 
       {/* Paso 4: Notas */}
-      <div className="pt-2 border-t border-brand-border/15">
-        <label className="block text-xs font-medium text-content-secondary mb-1.5 tracking-wide">
-          Indicaciones para la entrega o franja horaria preferida (Opcional)
+      <div className="pt-2 border-t border-border-subtle">
+        <label className="block text-xs font-semibold text-content-secondary mb-1.5">
+          Aclaraciones de talles, pedido mayorista o franja horaria (Opcional)
         </label>
         <textarea
           name="comments"
           rows="2"
           value={formData.comments}
           onChange={handleChange}
-          className="block w-full rounded-md border border-brand-border/30 bg-surface-elevated text-content text-xs sm:text-sm p-3 focus:outline-none focus:border-mauve focus:ring-1 focus:ring-mauve transition-smooth placeholder:text-content-muted"
-          placeholder="Ej: Entregar después de las 18 hs, llamar al llegar..."
+          className="block w-full rounded-md border border-border-strong bg-surface text-content text-xs sm:text-sm p-3 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-smooth placeholder:text-content-secondary/65"
+          placeholder="Ej: Consultar curva de talles mayorista / Entregar por la tarde..."
         />
       </div>
 
-      {/* Aviso de privacidad */}
-      <div className="p-3.5 rounded-md bg-canvas border border-brand-border/20 flex items-start gap-2.5 text-xs text-content-secondary">
-        <FiShield className="text-mauve mt-0.5 flex-shrink-0" />
+      {/* Aviso de políticas */}
+      <div className="p-3.5 rounded-lg bg-surface-elevated border border-border flex items-start gap-2.5 text-xs text-content-secondary">
+        <FiShield className="text-brand-deep mt-0.5 flex-shrink-0" />
         <div>
-          <p className="text-content font-medium">{themeConfig.legal.discreetNotice}</p>
-          <p className="text-[11px] text-content-muted mt-0.5">
-            {themeConfig.legal.returnsPolicyNotice}
+          <p className="text-content font-semibold">{themeConfig.policies.wholesaleNotice}</p>
+          <p className="text-[11px] text-content-secondary mt-0.5">
+            {themeConfig.policies.returnsPolicyNotice}
           </p>
         </div>
       </div>
 
       {error && (
-        <div className="text-rose-300 text-xs bg-rose-950/60 p-3 rounded-md border border-rose-800/50 font-medium">
+        <div className="text-status-error text-xs bg-status-error-bg p-3 rounded-md border border-status-error-border font-medium">
           {error}
         </div>
       )}
@@ -435,14 +444,14 @@ const CheckoutForm = ({ onOrderSuccess }) => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex items-center justify-center space-x-2.5 bg-brand hover:bg-brand-hover active:scale-[0.99] text-content border border-mauve/40 py-3.5 px-6 rounded-md font-medium text-xs sm:text-sm uppercase tracking-wider transition-smooth disabled:opacity-50"
+          className="w-full flex items-center justify-center space-x-2.5 bg-brand hover:bg-brand-deep active:scale-[0.99] text-white py-3.5 px-6 rounded-md font-semibold text-xs sm:text-sm uppercase tracking-wider transition-smooth disabled:opacity-50 shadow-soft hover:shadow-brand"
         >
           <FaWhatsapp size={18} />
-          <span>{loading ? 'Procesando pedido...' : 'Confirmar Pedido por WhatsApp'}</span>
+          <span>{loading ? 'Procesando pedido...' : 'Hacé tu pedido por WhatsApp'}</span>
         </button>
-        <div className="flex items-center justify-center gap-1.5 text-center text-[11px] text-content-muted mt-3">
-          <FiLock className="text-mauve text-[11px]" />
-          <span>Sin ingreso de tarjetas en la web &bull; Coordinación privada con Nocturna</span>
+        <div className="flex items-center justify-center gap-1.5 text-center text-[11px] text-content-secondary mt-3">
+          <FiLock className="text-brand-deep text-[11px]" />
+          <span>Sin ingreso de tarjetas en la web &bull; Coordinación directa con Paola Calzados</span>
         </div>
       </div>
     </form>

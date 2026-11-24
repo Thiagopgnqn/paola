@@ -278,9 +278,9 @@ const DashboardPage = () => {
   return (
     <div className="space-y-6">
       {/* Header + Quick Shortcuts */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-5 border-b border-brand-border/20">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-5 border-b border-border">
         <div>
-          <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+          <span className="text-[10px] uppercase tracking-widest text-brand-deep font-semibold">
             Centro de Operaciones &bull; Resumen en Vivo
           </span>
           <h1 className="font-display text-2xl uppercase tracking-wider text-content mt-0.5">
@@ -295,34 +295,34 @@ const DashboardPage = () => {
         <div className="flex flex-wrap items-center gap-2">
           <Link
             to="/admin/productos"
-            className="inline-flex items-center px-3.5 py-2 rounded-md text-xs font-medium bg-brand hover:bg-brand/80 text-content border border-mauve/40 transition-colors"
+            className="inline-flex items-center px-3.5 py-2 rounded-md text-xs font-semibold bg-brand hover:bg-brand-deep text-white transition-colors shadow-soft"
           >
             <FiPlus className="mr-1.5" size={14} /> Gestionar Productos
           </Link>
           <Link
             to="/admin/pedidos"
-            className="inline-flex items-center px-3.5 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content border border-brand-border/30 transition-colors"
+            className="inline-flex items-center px-3.5 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content border border-border-strong transition-colors"
           >
-            <FiShoppingBag className="mr-1.5 text-mauve" size={14} /> Ver Pedidos (
+            <FiShoppingBag className="mr-1.5 text-brand" size={14} /> Ver Pedidos (
             {metrics.pendingOrders} pend.)
           </Link>
           <Link
             to="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-3 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content-secondary hover:text-content border border-brand-border/30 transition-colors"
+            className="inline-flex items-center px-3 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content-secondary hover:text-content border border-border-strong transition-colors"
           >
             <span>Tienda</span>
-            <FiExternalLink className="ml-1.5 text-mauve" size={13} />
+            <FiExternalLink className="ml-1.5 text-brand" size={13} />
           </Link>
         </div>
       </div>
 
       {/* Featured Revenue Card with Day / Week / Month / Year / All Filter */}
-      <div className="bg-surface rounded-lg border border-brand-border/25 p-5 space-y-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-3 border-b border-brand-border/15">
+      <div className="bg-surface rounded-lg border border-border p-5 space-y-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-3 border-b border-border/60">
           <div className="flex items-center gap-3">
-            <div className="p-3 rounded-md border border-brand-border/25 bg-surface-elevated text-emerald-300">
+            <div className="p-3 rounded-md border border-status-success-border bg-status-success-bg text-status-success">
               <FiDollarSign size={22} />
             </div>
             <div>
@@ -330,7 +330,7 @@ const DashboardPage = () => {
                 Ingresos Estimados ({activePeriodLabel})
               </span>
               <div className="flex items-baseline gap-3 mt-0.5">
-                <span className="text-2xl sm:text-3xl font-semibold text-emerald-300 tracking-tight">
+                <span className="text-2xl sm:text-3xl font-semibold text-status-success tracking-tight">
                   {themeConfig.brand.currencySymbol}
                   {metrics.periodRevenue.toLocaleString('es-AR')}
                 </span>
@@ -348,8 +348,8 @@ const DashboardPage = () => {
           </div>
 
           {/* Period Selector Pills */}
-          <div className="flex flex-wrap items-center gap-1 bg-canvas p-1 rounded-lg border border-brand-border/20 self-start md:self-auto">
-            <FiCalendar className="text-mauve ml-2 mr-1" size={13} />
+          <div className="flex flex-wrap items-center gap-1 bg-canvas p-1 rounded-lg border border-border self-start md:self-auto">
+            <FiCalendar className="text-brand ml-2 mr-1" size={13} />
             {REVENUE_PERIODS.map((p) => {
               const isActive = revenuePeriod === p.id;
               return (
@@ -357,9 +357,9 @@ const DashboardPage = () => {
                   key={p.id}
                   type="button"
                   onClick={() => setRevenuePeriod(p.id)}
-                  className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
+                  className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors ${
                     isActive
-                      ? 'bg-brand text-content border border-mauve/40 shadow-soft'
+                      ? 'bg-brand text-white shadow-soft'
                       : 'text-content-secondary hover:text-content'
                   }`}
                 >
@@ -444,7 +444,7 @@ const DashboardPage = () => {
                 {metrics.totalOrders}
               </span>
               {metrics.pendingOrders > 0 && (
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800/40 font-medium">
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-status-warning-bg text-status-warning border border-status-warning-border font-medium">
                   {metrics.pendingOrders} pend.
                 </span>
               )}
@@ -453,7 +453,7 @@ const DashboardPage = () => {
               Gestionar despachos &rarr;
             </p>
           </div>
-          <div className="p-2.5 rounded-md border border-brand-border/25 bg-surface-elevated text-mauve">
+          <div className="p-2.5 rounded-md border border-border-strong bg-surface-elevated text-brand">
             <FiShoppingBag size={18} />
           </div>
         </Link>
@@ -461,7 +461,7 @@ const DashboardPage = () => {
         {/* Card 2: Valorización de Inventario */}
         <Link
           to="/admin/productos"
-          className="bg-surface rounded-lg border border-brand-border/20 p-4 flex items-start justify-between hover:border-mauve/50 transition-colors"
+          className="bg-surface rounded-lg border border-border p-4 flex items-start justify-between hover:border-brand transition-colors"
         >
           <div>
             <p className="text-[10px] text-content-muted uppercase font-medium tracking-wider">
@@ -478,7 +478,7 @@ const DashboardPage = () => {
               un. disponibles
             </p>
           </div>
-          <div className="p-2.5 rounded-md border border-brand-border/25 bg-surface-elevated text-mauve">
+          <div className="p-2.5 rounded-md border border-border-strong bg-surface-elevated text-brand">
             <FiLayers size={18} />
           </div>
         </Link>
@@ -486,7 +486,7 @@ const DashboardPage = () => {
         {/* Card 3: Catálogo Activo y Destacados */}
         <Link
           to="/admin/productos"
-          className="bg-surface rounded-lg border border-brand-border/20 p-4 flex items-start justify-between hover:border-mauve/50 transition-colors"
+          className="bg-surface rounded-lg border border-border p-4 flex items-start justify-between hover:border-brand transition-colors"
         >
           <div>
             <p className="text-[10px] text-content-muted uppercase font-medium tracking-wider">
@@ -499,11 +499,11 @@ const DashboardPage = () => {
               </span>
             </p>
             <p className="text-[11px] text-content-secondary mt-1.5">
-              <strong className="text-amber-300">{metrics.featuredProducts}</strong>{' '}
+              <strong className="text-status-warning">{metrics.featuredProducts}</strong>{' '}
               destacados en Home
             </p>
           </div>
-          <div className="p-2.5 rounded-md border border-brand-border/25 bg-surface-elevated text-mauve">
+          <div className="p-2.5 rounded-md border border-border-strong bg-surface-elevated text-brand">
             <FiBox size={18} />
           </div>
         </Link>
@@ -511,7 +511,7 @@ const DashboardPage = () => {
         {/* Card 4: Alertas de Stock */}
         <Link
           to="/admin/productos"
-          className="bg-surface rounded-lg border border-brand-border/20 p-4 flex items-start justify-between hover:border-mauve/50 transition-colors"
+          className="bg-surface rounded-lg border border-border p-4 flex items-start justify-between hover:border-brand transition-colors"
         >
           <div>
             <p className="text-[10px] text-content-muted uppercase font-medium tracking-wider">
@@ -521,8 +521,8 @@ const DashboardPage = () => {
               <span
                 className={`text-xl font-semibold ${
                   metrics.outOfStockCount + metrics.lowStockCount > 0
-                    ? 'text-amber-300'
-                    : 'text-emerald-300'
+                    ? 'text-status-warning'
+                    : 'text-status-success'
                 }`}
               >
                 {metrics.outOfStockCount + metrics.lowStockCount}
@@ -533,7 +533,7 @@ const DashboardPage = () => {
               {metrics.outOfStockCount} agot. &bull; {metrics.lowStockCount} bajos
             </p>
           </div>
-          <div className="p-2.5 rounded-md border border-brand-border/25 bg-surface-elevated text-amber-300">
+          <div className="p-2.5 rounded-md border border-status-warning-border bg-status-warning-bg text-status-warning">
             <FiAlertTriangle size={18} />
           </div>
         </Link>
@@ -555,14 +555,14 @@ const DashboardPage = () => {
                 ({metrics.withPhotoCount}/{metrics.totalProducts})
               </span>
             </div>
-            <div className="w-full h-1.5 bg-canvas rounded-full overflow-hidden mt-2 border border-brand-border/20">
+            <div className="w-full h-1.5 bg-canvas rounded-full overflow-hidden mt-2 border border-border">
               <div
-                className="h-full bg-mauve transition-all"
+                className="h-full bg-brand transition-all"
                 style={{ width: `${metrics.photoPct}%` }}
               />
             </div>
           </div>
-          <div className="p-2.5 rounded-md border border-brand-border/25 bg-surface-elevated text-mauve">
+          <div className="p-2.5 rounded-md border border-border-strong bg-surface-elevated text-brand">
             <FiImage size={18} />
           </div>
         </Link>
@@ -576,7 +576,7 @@ const DashboardPage = () => {
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-brand-border/15">
               <div>
                 <h2 className="font-display text-sm uppercase tracking-widest text-content flex items-center gap-2">
-                  <FiAlertTriangle className="text-amber-400" size={15} />
+                  <FiAlertTriangle className="text-status-warning" size={15} />
                   <span>Reposición Rápida de Stock</span>
                 </h2>
                 <p className="text-xs text-content-muted mt-0.5">
@@ -585,15 +585,15 @@ const DashboardPage = () => {
               </div>
               <Link
                 to="/admin/productos"
-                className="text-xs text-mauve hover:text-content font-medium"
+                className="text-xs text-brand-deep hover:text-brand font-medium"
               >
                 Ver inventario &rarr;
               </Link>
             </div>
 
             {criticalStockProducts.length === 0 ? (
-              <div className="p-6 text-center bg-canvas rounded-md border border-brand-border/15">
-                <p className="text-xs text-emerald-300 font-medium">
+              <div className="p-6 text-center bg-canvas rounded-md border border-border">
+                <p className="text-xs text-status-success font-medium">
                   Todo el catálogo cuenta con stock saludable (&gt; 3 unidades).
                 </p>
                 <p className="text-[11px] text-content-muted mt-1">
@@ -608,15 +608,15 @@ const DashboardPage = () => {
                   return (
                     <div
                       key={id}
-                      className="flex items-center justify-between p-2.5 rounded bg-canvas border border-brand-border/20 text-xs"
+                      className="flex items-center justify-between p-2.5 rounded bg-canvas border border-border text-xs"
                     >
                       <Link
                         to={`/admin/productos?edit=${id}`}
-                        className="min-w-0 pr-2 hover:text-mauve transition-colors"
+                        className="min-w-0 pr-2 hover:text-brand-deep transition-colors"
                         title="Clic para abrir y editar este producto"
                       >
                         <div className="flex items-center gap-1.5">
-                          <span className="font-mono text-[10px] text-mauve">
+                          <span className="font-mono text-[10px] text-brand-deep">
                             [{p.sku || 'S/N'}]
                           </span>
                           <span className="font-medium text-content hover:underline truncate">
@@ -631,8 +631,8 @@ const DashboardPage = () => {
                         <span
                           className={`px-2 py-0.5 rounded text-[10px] font-semibold border ${
                             p.computedStock <= 0
-                              ? 'bg-rose-950/60 text-rose-300 border-rose-800/40'
-                              : 'bg-amber-950/60 text-amber-300 border-amber-800/40'
+                              ? 'bg-status-error-bg text-status-error border-status-error-border'
+                              : 'bg-status-warning-bg text-status-warning border-status-warning-border'
                           }`}
                         >
                           {p.computedStock} un.
@@ -641,14 +641,14 @@ const DashboardPage = () => {
                           type="button"
                           disabled={restockingId === id}
                           onClick={() => handleQuickRestock(p, 5)}
-                          className="px-2 py-1 rounded bg-surface-elevated hover:bg-brand text-content border border-brand-border/30 text-[11px] font-medium transition-colors"
+                          className="px-2 py-1 rounded bg-surface-elevated hover:bg-brand text-content hover:text-white border border-border-strong text-[11px] font-medium transition-colors"
                           title="Sumar 5 unidades al stock"
                         >
                           {restockingId === id ? '...' : '+5 un.'}
                         </button>
                         <Link
                           to={`/admin/productos?edit=${id}`}
-                          className="p-1.5 rounded bg-surface-elevated hover:bg-brand text-content-secondary hover:text-content border border-brand-border/30"
+                          className="p-1.5 rounded bg-surface-elevated hover:bg-brand text-content-secondary hover:text-white border border-border-strong"
                           title="Editar producto"
                         >
                           <FiEdit2 size={12} />
@@ -662,8 +662,8 @@ const DashboardPage = () => {
           </div>
 
           {/* Distribución por Categoría */}
-          <div className="mt-5 pt-4 border-t border-brand-border/15">
-            <h3 className="text-[11px] uppercase tracking-wider font-medium text-mauve mb-2.5">
+          <div className="mt-5 pt-4 border-t border-border/60">
+            <h3 className="text-[11px] uppercase tracking-wider font-semibold text-brand-deep mb-2.5">
               Distribución del Catálogo por Categoría
             </h3>
             <div className="space-y-2">
@@ -698,7 +698,7 @@ const DashboardPage = () => {
           <div className="flex items-center justify-between pb-3 mb-3 border-b border-brand-border/15">
             <div>
               <h2 className="font-display text-sm uppercase tracking-widest text-content flex items-center gap-2">
-                <FiTrendingUp className="text-emerald-400" size={15} />
+                <FiTrendingUp className="text-status-success" size={15} />
                 <span>Productos Más Vendidos</span>
               </h2>
               <p className="text-xs text-content-muted mt-0.5">
@@ -707,7 +707,7 @@ const DashboardPage = () => {
             </div>
             <Link
               to="/admin/productos"
-              className="text-xs text-mauve hover:text-content font-medium"
+              className="text-xs text-brand-deep hover:text-brand font-medium"
             >
               Catálogo completo &rarr;
             </Link>
@@ -724,14 +724,14 @@ const DashboardPage = () => {
                 <Link
                   key={id}
                   to={`/admin/productos?edit=${id}`}
-                  className="group flex items-center justify-between p-2.5 rounded-md bg-canvas border border-brand-border/20 hover:border-mauve/50 transition-colors"
+                  className="group flex items-center justify-between p-2.5 rounded-md bg-canvas border border-border hover:border-brand transition-colors"
                   title="Clic para editar este producto"
                 >
                   <div className="flex items-center gap-3 min-w-0 pr-2">
-                    <span className="w-5 h-5 rounded-full bg-surface-elevated border border-brand-border/30 text-[10px] font-mono text-mauve flex items-center justify-center flex-shrink-0">
+                    <span className="w-5 h-5 rounded-full bg-surface-elevated border border-border-strong text-[10px] font-mono text-brand-deep flex items-center justify-center flex-shrink-0">
                       {idx + 1}
                     </span>
-                    <div className="w-9 h-9 rounded bg-surface border border-brand-border/20 overflow-hidden flex-shrink-0 flex items-center justify-center text-mauve/40">
+                    <div className="w-9 h-9 rounded bg-surface border border-border overflow-hidden flex-shrink-0 flex items-center justify-center text-brand/40">
                       {imgUrl ? (
                         <img
                           src={imgUrl}
@@ -743,7 +743,7 @@ const DashboardPage = () => {
                       )}
                     </div>
                     <div className="min-w-0">
-                      <p className="text-xs font-medium text-content group-hover:text-mauve group-hover:underline truncate">
+                      <p className="text-xs font-medium text-content group-hover:text-brand-deep group-hover:underline truncate">
                         {p.name}
                       </p>
                       <p className="text-[10px] text-content-muted font-mono">
@@ -754,7 +754,7 @@ const DashboardPage = () => {
 
                   <div className="flex items-center gap-3 flex-shrink-0">
                     <div className="text-right">
-                      <span className="text-xs font-semibold text-emerald-300 block">
+                      <span className="text-xs font-semibold text-status-success block">
                         {Number(p.soldCount || 0)} vendidos
                       </span>
                       <span className="text-[11px] text-content-secondary">
@@ -762,7 +762,7 @@ const DashboardPage = () => {
                         {Number(p.price || 0).toLocaleString('es-AR')}
                       </span>
                     </div>
-                    <span className="p-1.5 rounded bg-surface-elevated group-hover:bg-brand text-content-secondary group-hover:text-content border border-brand-border/30 transition-colors">
+                    <span className="p-1.5 rounded bg-surface-elevated group-hover:bg-brand text-content-secondary group-hover:text-white border border-border-strong transition-colors">
                       <FiEdit2 size={12} />
                     </span>
                   </div>
@@ -774,8 +774,8 @@ const DashboardPage = () => {
       </div>
 
       {/* Recent Orders Table */}
-      <div className="bg-surface rounded-lg border border-brand-border/20 p-6">
-        <div className="flex justify-between items-center mb-5 pb-3 border-b border-brand-border/15">
+      <div className="bg-surface rounded-lg border border-border p-6">
+        <div className="flex justify-between items-center mb-5 pb-3 border-b border-border/60">
           <div>
             <h2 className="font-display text-sm uppercase tracking-widest text-content">
               Pedidos Recientes
@@ -784,7 +784,7 @@ const DashboardPage = () => {
               Últimas órdenes recibidas con cambio de estado directo y acceso a WhatsApp
             </p>
           </div>
-          <Link to="/admin/pedidos" className="text-xs text-mauve font-medium hover:text-content">
+          <Link to="/admin/pedidos" className="text-xs text-brand-deep font-medium hover:text-brand">
             Ver todos los pedidos &rarr;
           </Link>
         </div>

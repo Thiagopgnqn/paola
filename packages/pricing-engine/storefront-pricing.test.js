@@ -11,47 +11,47 @@ import {
 
 describe('Parte 3 — Storefront Pricing Engine & Honesty Rules', () => {
   const sampleProduct = {
-    id: 'prod_lenceria_001',
-    name: 'Conjunto Encaje Rojo',
-    sku: 'LEN-001',
+    id: 'prod_sandalia_001',
+    name: 'Sandalia Plataforma Clásica',
+    sku: 'SAN-001',
     price: 30000,
     stock: 5,
     soldCount: 15,
     createdAt: new Date().toISOString(),
-    categoryId: 'cat_lenceria',
-    category: { id: 'cat_lenceria', name: 'Lencería' },
+    categoryId: 'cat_sandalias',
+    category: { id: 'cat_sandalias', name: 'Sandalias' },
     variants: [
-      { id: 'var_s', sku: 'LEN-001-S', size: 'S', price: 30000, stock: 2, active: true },
-      { id: 'var_m', sku: 'LEN-001-M', size: 'M', price: 32000, stock: 3, active: true },
+      { id: 'var_s', sku: 'SAN-001-N', size: '37', price: 30000, stock: 2, active: true },
+      { id: 'var_m', sku: 'SAN-001-B', size: '38', price: 32000, stock: 3, active: true },
     ],
   };
 
   const promoPercent = {
     id: 'promo_15_off',
-    name: '15% OFF en Lencería',
+    name: '15% OFF en Sandalias',
     kind: 'PERCENT',
     value: 15,
     active: true,
-    targets: [{ targetType: 'CATEGORY', targetId: 'cat_lenceria' }],
+    targets: [{ targetType: 'CATEGORY', targetId: 'cat_sandalias' }],
   };
 
   const validPriceHistory = [
     {
-      productId: 'prod_lenceria_001',
+      productId: 'prod_sandalia_001',
       variantId: null,
       oldPrice: 30000,
       newPrice: 30000,
       changedAt: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000).toISOString(),
     },
     {
-      productId: 'prod_lenceria_001',
+      productId: 'prod_sandalia_001',
       variantId: 'var_s',
       oldPrice: 30000,
       newPrice: 30000,
       changedAt: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000).toISOString(),
     },
     {
-      productId: 'prod_lenceria_001',
+      productId: 'prod_sandalia_001',
       variantId: 'var_m',
       oldPrice: 32000,
       newPrice: 32000,
@@ -81,7 +81,7 @@ describe('Parte 3 — Storefront Pricing Engine & Honesty Rules', () => {
 
     expect(enriched.pricing.finalPrice).toBe(25500);
     expect(enriched.pricing.compareAtPrice).toBeNull(); // NUNCA muestra precio tachado
-    expect(enriched.pricing.promotionLabel).toBe('15% OFF en Lencería');
+    expect(enriched.pricing.promotionLabel).toBe('15% OFF en Sandalias');
   });
 
   it('Badges automáticos: nuevo por fecha de alta, más vendido por ventas y stock bajo', () => {
@@ -122,20 +122,20 @@ describe('Parte 3 — Storefront Pricing Engine & Honesty Rules', () => {
 
   it('Combos Comprá junto y ahorrá: identifica productos y calcula precio con descuento', () => {
     const prodB = {
-      id: 'prod_gel_001',
-      sku: 'GEL-001',
-      name: 'Gel Sensorial',
+      id: 'prod_ojota_001',
+      sku: 'OJO-001',
+      name: 'Ojota Verano',
       price: 15000,
       active: true,
       variants: [],
     };
 
     const bundlePromo = {
-      id: 'promo_combo_lenceria_gel',
-      name: 'Combo Pasión',
+      id: 'promo_combo_sandalia_ojota',
+      name: 'Combo Temporada',
       kind: 'BUNDLE_PRICE',
       value: 38000, // Regular total: 30000 + 15000 = 45000 -> 38000
-      bundleSkus: ['LEN-001', 'GEL-001'],
+      bundleSkus: ['SAN-001', 'OJO-001'],
       active: true,
     };
 
@@ -150,28 +150,28 @@ describe('Parte 3 — Storefront Pricing Engine & Honesty Rules', () => {
     expect(enriched.comboPromotions[0].savings).toBe(7000);
   });
 
-  it('Cotización de Carrito con promoción por cantidad (2x1 en Cosmética)', () => {
+  it('Cotización de Carrito con promoción por cantidad (2x1 en Zapatillas)', () => {
     const promo2x1 = {
-      id: 'promo_2x1_cosm',
-      name: '2x1 en Cosmética Sensorial',
+      id: 'promo_2x1_zap',
+      name: '2x1 en Zapatillas Urbanas',
       kind: 'BUY_X_PAY_Y',
       buyQuantity: 2,
       payQuantity: 1,
       active: true,
-      targets: [{ targetType: 'CATEGORY', targetId: 'cat_cosmetica' }],
+      targets: [{ targetType: 'CATEGORY', targetId: 'cat_zapatillas' }],
     };
 
-    const cosmeticItem = {
-      productId: 'prod_aceite_001',
-      sku: 'COS-001',
+    const shoeItem = {
+      productId: 'prod_zapa_001',
+      sku: 'ZAP-001',
       price: 18000,
-      category: { id: 'cat_cosmetica' },
+      category: { id: 'cat_zapatillas' },
     };
 
     // Caso 1: Cliente tiene 2 unidades -> Paga 1
     const quote = quoteCart(
       {
-        items: [{ product: cosmeticItem, quantity: 2 }],
+        items: [{ product: shoeItem, quantity: 2 }],
       },
       {
         promotions: [promo2x1],

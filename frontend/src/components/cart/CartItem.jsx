@@ -37,22 +37,22 @@ const CartItem = ({ item }) => {
 
   const handleIncrease = () => {
     if (quantity < maxStock) {
-      updateQuantity(productId, variantId, quantity + 1);
+      updateQuantity(productId, quantity + 1, variantId);
     }
   };
 
   const handleDecrease = () => {
     if (quantity > 1) {
-      updateQuantity(productId, variantId, quantity - 1);
+      updateQuantity(productId, quantity - 1, variantId);
     } else {
       removeFromCart(productId, variantId);
     }
   };
 
   return (
-    <div className="flex py-5 gap-4 border-b border-brand-border/15 items-center">
+    <div className="flex py-5 gap-4 border-b border-border items-center">
       {/* Thumbnail de producto */}
-      <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded border border-brand-border/20 bg-canvas flex items-center justify-center">
+      <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border border-border bg-surface-elevated flex items-center justify-center">
         {imageUrl && !imgError ? (
           <img
             src={imageUrl}
@@ -67,7 +67,7 @@ const CartItem = ({ item }) => {
             onError={() => setImgError(true)}
           />
         ) : (
-          <ProductPlaceholder size="sm" showLabel={false} />
+          <ProductPlaceholder size="sm" showLabel={false} categoryName={product.category?.name || ''} />
         )}
       </div>
 
@@ -77,12 +77,12 @@ const CartItem = ({ item }) => {
           <div className="flex justify-between items-start gap-2">
             <div>
               {product.category?.name && (
-                <p className="text-[10px] font-medium uppercase tracking-widest text-mauve mb-0.5">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-brand-deep mb-0.5">
                   {product.category.name}
                 </p>
               )}
-              <h3 className="font-medium text-sm text-content line-clamp-1">
-                <Link to={`/producto/${productId}`} className="hover:text-mauve transition-colors">
+              <h3 className="font-semibold text-sm text-content line-clamp-1">
+                <Link to={`/producto/${productId}`} className="hover:text-brand-deep transition-colors">
                   {product.name}
                 </Link>
               </h3>
@@ -94,15 +94,15 @@ const CartItem = ({ item }) => {
             </div>
 
             <div className="text-right ml-2 whitespace-nowrap">
-              <p className="font-semibold text-content text-sm">
+              <p className="font-bold text-content text-sm">
                 {themeConfig.brand.currencySymbol}{itemSubtotal}
               </p>
               {discountPerUnit > 0 && (
                 <>
-                  <p className="text-[10px] text-content-muted line-through">
+                  <p className="text-[10px] text-content-secondary line-through">
                     {themeConfig.brand.currencySymbol}{originalSubtotal}
                   </p>
-                  <span className="text-[10px] text-emerald-400 font-medium block">
+                  <span className="text-[10px] text-status-success font-semibold block">
                     Ahorrás {themeConfig.brand.currencySymbol}{totalItemSavings}
                   </span>
                 </>
@@ -113,22 +113,22 @@ const CartItem = ({ item }) => {
 
         {/* Stepper y botón eliminar */}
         <div className="flex items-center justify-between mt-3">
-          <div className="inline-flex items-center border border-brand-border/30 rounded bg-canvas">
+          <div className="inline-flex items-center border border-border-strong rounded bg-surface">
             <button
               onClick={handleDecrease}
-              className="p-1.5 text-content-secondary hover:text-content hover:bg-surface-elevated transition-colors"
+              className="p-1.5 text-content-secondary hover:text-brand-deep hover:bg-surface-elevated transition-colors"
               title="Disminuir una unidad"
               aria-label="Disminuir una unidad"
             >
               <FiMinus size={11} />
             </button>
-            <span className="px-3 text-xs font-medium text-content select-none">
+            <span className="px-3 text-xs font-semibold text-content select-none">
               {quantity}
             </span>
             <button
               onClick={handleIncrease}
               disabled={quantity >= maxStock}
-              className="p-1.5 text-content-secondary hover:text-content hover:bg-surface-elevated disabled:opacity-30 transition-colors"
+              className="p-1.5 text-content-secondary hover:text-brand-deep hover:bg-surface-elevated disabled:opacity-30 transition-colors"
               title="Aumentar una unidad"
               aria-label="Aumentar una unidad"
             >
@@ -139,7 +139,7 @@ const CartItem = ({ item }) => {
           <button
             type="button"
             onClick={() => removeFromCart(productId, variantId)}
-            className="text-xs text-content-muted hover:text-rose-400 flex items-center gap-1 transition-colors p-1"
+            className="text-xs text-content-secondary hover:text-status-error flex items-center gap-1 transition-colors p-1 font-medium"
             title="Quitar del carrito"
           >
             <FiTrash2 size={13} />

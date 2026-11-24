@@ -13,35 +13,35 @@ describe('Punto 2 — Integridad de Pedidos, Precios y Backend Real', () => {
   const now = new Date('2026-10-25T12:00:00Z');
 
   const mockProduct = {
-    id: 'prod_aceite_01',
-    name: 'Aceite Sensorial Love Potion',
+    id: 'prod_zapa_01',
+    name: 'Zapatilla Urbana Base Alta',
     price: 13000,
     active: true,
     stock: 5,
-    category: { id: 'cat_cosmetica', name: 'Cosmética íntima' },
+    category: { id: 'cat_zapatillas', name: 'Zapatillas' },
   };
 
   const mockVela = {
-    id: 'prod_vela_01',
-    name: 'Vela de Soja Aromatizada',
+    id: 'prod_sandalia_01',
+    name: 'Sandalia Plana Verano',
     price: 12000,
     active: true,
     stock: 2,
-    category: { id: 'cat_cosmetica', name: 'Cosmética íntima' },
+    category: { id: 'cat_sandalias', name: 'Sandalias' },
   };
 
   // Historial establecido con 40 días de antigüedad (>= 30 días)
   const validHistory = [
     {
       id: 'ph_1',
-      productId: 'prod_aceite_01',
+      productId: 'prod_zapa_01',
       oldPrice: 13000,
       newPrice: 13000,
       changedAt: new Date(now.getTime() - 40 * 86400000).toISOString(),
     },
     {
       id: 'ph_2',
-      productId: 'prod_vela_01',
+      productId: 'prod_sandalia_01',
       oldPrice: 12000,
       newPrice: 12000,
       changedAt: new Date(now.getTime() - 40 * 86400000).toISOString(),
@@ -56,11 +56,14 @@ describe('Punto 2 — Integridad de Pedidos, Precios y Backend Real', () => {
   it('1. Calcula correctamente pedido con promoción y cupón válidos', () => {
     const promo = {
       id: 'promo_10',
-      name: '10% OFF en Cosmética',
+      name: '10% OFF en Calzado',
       kind: 'PERCENT',
       value: 10,
       active: true,
-      targets: [{ targetType: 'CATEGORY', targetId: 'cat_cosmetica' }],
+      targets: [
+        { targetType: 'CATEGORY', targetId: 'cat_zapatillas' },
+        { targetType: 'CATEGORY', targetId: 'cat_sandalias' },
+      ],
     };
 
     const coupon = {

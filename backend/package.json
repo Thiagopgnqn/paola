@@ -1,7 +1,7 @@
 {
-  "name": "nocturna-sexshop-backend",
+  "name": "paola-calzados-backend",
   "version": "1.0.0",
-  "description": "Backend para Nocturna SexShop Córdoba",
+  "description": "Backend para Paola Calzados — Córdoba, Argentina",
   "main": "src/index.js",
   "type": "module",
   "scripts": {

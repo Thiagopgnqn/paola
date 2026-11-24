@@ -22,7 +22,7 @@ const Modal = ({ isOpen, onClose, title, children, maxWidth = 'max-w-xl' }) => {
       aria-modal="true"
     >
       <div
-        className="fixed inset-0 bg-canvas/80 backdrop-blur-xs transition-opacity"
+        className="fixed inset-0 bg-[#141014]/50 backdrop-blur-xs transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />

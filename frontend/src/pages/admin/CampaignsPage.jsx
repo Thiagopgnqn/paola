@@ -155,33 +155,33 @@ const CampaignsPage = () => {
     switch (effectiveStatus) {
       case 'ACTIVE':
         return (
-          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-800/40">
+          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-status-success-bg text-status-success border border-status-success-border">
             <FiCheckCircle size={12} />
             <span>ACTIVA</span>
           </span>
         );
       case 'SCHEDULED':
         return (
-          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-amber-950 text-amber-300 border border-amber-800/40">
+          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-status-warning-bg text-status-warning border border-status-warning-border">
             <FiClock size={12} />
             <span>PROGRAMADA</span>
           </span>
         );
       case 'DRAFT':
         return (
-          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-zinc-800 text-zinc-300 border border-zinc-700">
+          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-surface-elevated text-content-secondary border border-border-strong">
             <span>BORRADOR</span>
           </span>
         );
       case 'ENDED':
         return (
-          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-rose-950/80 text-rose-300 border border-rose-800/40">
+          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-status-error-bg text-status-error border border-status-error-border">
             <span>FINALIZADA</span>
           </span>
         );
       case 'ARCHIVED':
         return (
-          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-stone-900 text-stone-400 border border-stone-800">
+          <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-bold bg-surface-subtle text-content-muted border border-border">
             <FiArchive size={12} />
             <span>ARCHIVADA</span>
           </span>
@@ -207,7 +207,7 @@ const CampaignsPage = () => {
         <div className="flex items-center space-x-2 self-start sm:self-auto">
           <Link
             to="/admin/portada"
-            className="inline-flex items-center space-x-2 px-3.5 py-2.5 bg-surface-elevated text-content rounded-xl text-xs font-semibold hover:bg-brand transition-colors border border-brand-border/30"
+            className="inline-flex items-center space-x-2 px-3.5 py-2.5 bg-surface-elevated text-content rounded-xl text-xs font-semibold hover:bg-brand hover:text-white transition-colors border border-border-strong"
           >
             <FiLayout size={15} />
             <span>Constructor de Portada</span>
@@ -219,7 +219,7 @@ const CampaignsPage = () => {
               setEditingCampaign(null);
               setWizardOpen(true);
             }}
-            className="inline-flex items-center space-x-2 px-4 py-2.5 bg-brand text-content rounded-xl text-xs font-bold hover:bg-brand/90 transition-colors shadow-sm border border-mauve/40"
+            className="inline-flex items-center space-x-2 px-4 py-2.5 bg-brand text-white rounded-xl text-xs font-bold hover:bg-brand-deep transition-colors shadow-sm"
           >
             <FiPlus size={16} />
             <span>Nueva Campaña</span>
@@ -228,16 +228,16 @@ const CampaignsPage = () => {
       </div>
 
       {/* Filtros y Buscador */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-surface p-4 rounded-xl border border-brand-border/20">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-surface p-4 rounded-xl border border-border">
         {/* Chips de estado */}
         <div className="flex items-center space-x-1.5 overflow-x-auto pb-1 md:pb-0">
           {STATUS_FILTERS.map((f) => (
             <button
               key={f.id}
               onClick={() => setStatusFilter(f.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors shrink-0 ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 ${
                 statusFilter === f.id
-                  ? 'bg-brand text-content border border-mauve/40 shadow-xs'
+                  ? 'bg-brand text-white shadow-xs'
                   : 'bg-surface-elevated text-content-secondary hover:text-content'
               }`}
             >
@@ -254,7 +254,7 @@ const CampaignsPage = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Buscar por nombre o título..."
-            className="w-full bg-canvas border border-brand-border/30 rounded-lg pl-9 pr-3 py-2 text-xs text-content focus:outline-none focus:border-mauve"
+            className="w-full bg-canvas border border-border-strong rounded-lg pl-9 pr-3 py-2 text-xs text-content focus:outline-none focus:border-brand"
           />
         </div>
       </div>
@@ -262,12 +262,12 @@ const CampaignsPage = () => {
       {/* Listado de Campañas */}
       {loading ? (
         <div className="text-center py-16 text-content-muted">
-          <FiRefreshCw className="animate-spin h-6 w-6 mx-auto mb-2 text-mauve" />
+          <FiRefreshCw className="animate-spin h-6 w-6 mx-auto mb-2 text-brand" />
           <p className="text-xs">Cargando campañas...</p>
         </div>
       ) : campaigns.length === 0 ? (
-        <div className="text-center py-16 bg-surface rounded-xl border border-brand-border/20 p-8">
-          <FiLayers className="mx-auto text-mauve h-10 w-10 mb-3 opacity-50" />
+        <div className="text-center py-16 bg-surface rounded-xl border border-border p-8">
+          <FiLayers className="mx-auto text-brand h-10 w-10 mb-3 opacity-60" />
           <h3 className="text-base font-semibold text-content">No se encontraron campañas</h3>
           <p className="text-xs text-content-secondary mt-1 max-w-sm mx-auto">
             {search || statusFilter !== 'ALL'
@@ -296,7 +296,7 @@ const CampaignsPage = () => {
                 </div>
 
                 {camp.headline && (
-                  <p className="text-xs text-mauve font-medium line-clamp-1">{camp.headline}</p>
+                  <p className="text-xs text-brand-deep font-medium line-clamp-1">{camp.headline}</p>
                 )}
 
                 {camp.description && (
@@ -339,7 +339,7 @@ const CampaignsPage = () => {
                       setEditingCampaign(camp);
                       setWizardOpen(true);
                     }}
-                    className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-content hover:bg-brand transition-colors text-xs"
+                    className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-white hover:bg-brand transition-colors text-xs"
                     title="Editar campaña"
                   >
                     <FiEdit2 size={14} />
@@ -349,7 +349,7 @@ const CampaignsPage = () => {
                     href={`/?preview=${encodeURIComponent(camp.id)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-content hover:bg-brand transition-colors text-xs"
+                    className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-white hover:bg-brand transition-colors text-xs"
                     title="Ver vista previa de la portada con esta campaña"
                   >
                     <FiEye size={14} />
@@ -360,7 +360,7 @@ const CampaignsPage = () => {
                       href={`/campanas/${camp.slug}?preview=${encodeURIComponent(camp.id)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-content hover:bg-brand transition-colors text-xs"
+                      className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-white hover:bg-brand transition-colors text-xs"
                       title="Ver página dedicada de la campaña"
                     >
                       <FiGlobe size={14} />
@@ -370,7 +370,7 @@ const CampaignsPage = () => {
                   <button
                     type="button"
                     onClick={() => setShareCampaign(camp)}
-                    className="p-2 rounded-lg bg-surface-elevated text-purple-400 hover:text-purple-300 hover:bg-purple-950/40 transition-colors text-xs flex items-center gap-1.5"
+                    className="p-2 rounded-lg bg-surface-elevated text-brand-deep hover:text-white hover:bg-brand transition-colors text-xs flex items-center gap-1.5"
                     title="Compartir con enlaces UTM y Código QR offline"
                   >
                     <FiShare2 size={14} />
@@ -397,7 +397,7 @@ const CampaignsPage = () => {
                           message: `¿Estás seguro de que querés finalizar inmediatamente la campaña "${camp.name}"? Los descuentos dejarán de aplicar.`,
                         })
                       }
-                      className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-amber-300 hover:bg-amber-950/40 transition-colors text-xs"
+                      className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-status-warning hover:bg-status-warning-bg transition-colors text-xs"
                       title="Finalizar campaña"
                     >
                       <FiPause size={14} />
@@ -415,7 +415,7 @@ const CampaignsPage = () => {
                           message: `¿Archivar la campaña "${camp.name}"?`,
                         })
                       }
-                      className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-stone-300 hover:bg-stone-900 transition-colors text-xs"
+                      className="p-2 rounded-lg bg-surface-elevated text-content-secondary hover:text-content hover:bg-surface-hover transition-colors text-xs"
                       title="Archivar campaña"
                     >
                       <FiArchive size={14} />
@@ -433,7 +433,7 @@ const CampaignsPage = () => {
                       message: `¿Eliminar permanentemente la campaña "${camp.name}" y sus promociones asociadas?`,
                     })
                   }
-                  className="p-2 rounded-lg text-content-muted hover:text-rose-400 hover:bg-rose-950/40 transition-colors text-xs"
+                  className="p-2 rounded-lg text-content-muted hover:text-status-error hover:bg-status-error-bg transition-colors text-xs"
                   title="Eliminar campaña"
                 >
                   <FiTrash2 size={14} />
@@ -475,9 +475,9 @@ const CampaignsPage = () => {
 
       {/* Modal de Confirmación para Acciones Críticas */}
       {confirmAction && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
-          <div className="bg-surface border border-brand-border/40 rounded-xl max-w-md w-full p-6 text-content space-y-4 shadow-2xl">
-            <div className="flex items-center space-x-3 text-amber-400">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-content/40 backdrop-blur-xs">
+          <div className="bg-surface border border-border-strong rounded-xl max-w-md w-full p-6 text-content space-y-4 shadow-2xl">
+            <div className="flex items-center space-x-3 text-status-warning">
               <FiAlertTriangle size={24} />
               <h3 className="text-base font-bold font-display text-content">
                 {confirmAction.title}

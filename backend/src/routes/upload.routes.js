@@ -10,7 +10,7 @@ const router = Router();
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: 'nocturna-sexshop',
+    folder: 'paola-calzados',
     allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
     transformation: [{ width: 1200, height: 1200, crop: 'limit' }],
   },

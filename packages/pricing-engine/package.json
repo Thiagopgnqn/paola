@@ -1,7 +1,7 @@
 {
-  "name": "@nocturna/pricing-engine",
+  "name": "@paola-calzados/pricing-engine",
   "version": "1.0.0",
-  "description": "Shared pricing engine for Nocturna SexShop",
+  "description": "Motor centralizado de precios, promociones, cupones y temas de campaña para Paola Calzados",
   "type": "module",
   "main": "index.js",
   "exports": {

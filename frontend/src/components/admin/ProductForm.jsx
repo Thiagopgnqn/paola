@@ -450,12 +450,12 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
         <div className="sm:col-span-2">
           <Input
-            label="Nombre del Producto *"
+            label="Nombre del Calzado *"
             name="name"
             required
             value={formData.name}
             onChange={handleChange}
-            placeholder="Ej: Vibrador Conejo Silicona"
+            placeholder="Ej: Zapatilla Urbana Plataforma"
           />
         </div>
         <Input
@@ -463,7 +463,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
           name="sku"
           value={formData.sku}
           onChange={handleChange}
-          placeholder="Ej: NOC-0010"
+          placeholder="Ej: PAO-0010"
         />
       </div>
 
@@ -488,31 +488,31 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         <Input
-          label="Marca (Opcional)"
+          label="Línea / Marca (Opcional)"
           name="brand"
           value={formData.brand}
           onChange={handleChange}
-          placeholder="Ej: Miss V / Sexy Fantasy"
+          placeholder="Ej: Paola Calzados"
         />
         <Input
           label="Badge / Etiqueta (Opcional)"
           name="badge"
           value={formData.badge}
           onChange={handleChange}
-          placeholder="Ej: Nuevo / Destacado"
+          placeholder="Ej: Nuevo / Ingreso"
         />
       </div>
 
       {/* Etiquetas / Tags de Catálogo */}
       {availableTags.length > 0 && (
         <div className="space-y-1.5">
-          <label className="block text-xs font-medium text-content-secondary tracking-wide">
+          <label className="block text-xs font-semibold text-content-secondary">
             Etiquetas del Catálogo (Tags)
           </label>
-          <div className="flex flex-wrap gap-2 p-2.5 bg-surface-elevated rounded-md border border-brand-border/25">
+          <div className="flex flex-wrap gap-2 p-2.5 bg-surface-elevated rounded-md border border-border">
             {availableTags.map((tag) => {
               const isSelected = selectedTagIds.includes(tag.id);
-              const tagColor = tag.color || '#907878';
+              const tagColor = tag.color || '#E6007E';
               return (
                 <button
                   key={tag.id}
@@ -520,11 +520,11 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
                   onClick={() => toggleTag(tag.id)}
                   className={`text-xs px-2.5 py-1 rounded-full border transition-all inline-flex items-center space-x-1.5 ${
                     isSelected
-                      ? 'border-mauve text-content font-medium ring-1 ring-mauve/40'
-                      : 'border-brand-border/30 text-content-secondary hover:text-content opacity-75 hover:opacity-100'
+                      ? 'border-brand text-content font-semibold ring-1 ring-brand/40'
+                      : 'border-border-strong text-content-secondary hover:text-content opacity-80 hover:opacity-100'
                   }`}
                   style={{
-                    backgroundColor: isSelected ? `${tagColor}40` : `${tagColor}15`,
+                    backgroundColor: isSelected ? `${tagColor}28` : `${tagColor}12`,
                   }}
                 >
                   <span
@@ -536,8 +536,8 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
               );
             })}
           </div>
-          <p className="text-[10px] text-content-muted">
-            Hacé clic en una o más etiquetas para asignarlas a este producto.
+          <p className="text-[10px] text-content-secondary">
+            Hacé clic en una o más etiquetas para asignarlas a este calzado.
           </p>
         </div>
       )}
@@ -584,26 +584,26 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
         />
       </div>
 
-      <label className="inline-flex items-center gap-2 text-xs text-content cursor-pointer">
+      <label className="inline-flex items-center gap-2 text-xs text-content cursor-pointer font-medium">
         <input
           type="checkbox"
           name="active"
           checked={formData.active}
           onChange={handleChange}
-          className="rounded border-brand-border/40 bg-canvas text-brand focus:ring-mauve"
+          className="rounded border-border-strong bg-surface text-brand focus:ring-brand"
         />
         <span>Producto activo y visible en el catálogo público</span>
       </label>
 
       {/* Variantes del producto */}
-      <div className="p-4 rounded-lg border border-brand-border/25 bg-canvas space-y-3">
+      <div className="p-4 rounded-lg border border-border bg-canvas space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
-            <h4 className="font-display text-xs uppercase tracking-widest text-content">
+            <h4 className="font-display font-bold text-xs uppercase tracking-wider text-content">
               Variantes ({formData.variants.length})
             </h4>
-            <p className="text-[11px] text-content-muted">
-              Opcional: agregá variantes por tipo, talle, color, sabor/aroma o volumen.
+            <p className="text-[11px] text-content-secondary">
+              Opcional: agregá variantes por tipo/horma, talle, color o detalle de medida.
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -611,7 +611,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
               <button
                 type="button"
                 onClick={handleSyncPriceToAllVariants}
-                className="text-[11px] px-2.5 py-1 rounded bg-surface-elevated hover:bg-brand text-content border border-brand-border/30 transition-colors"
+                className="text-[11px] px-2.5 py-1 rounded bg-surface-elevated hover:bg-brand text-content hover:text-white border border-border-strong transition-colors font-medium"
                 title="Copiar el Precio Base actual a todas las variantes"
               >
                 Igualar precio (${Number(formData.price || 0).toLocaleString('es-AR')}) en todas
@@ -634,7 +634,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
             {formData.variants.map((v, idx) => (
               <div
                 key={v.id || idx}
-                className="p-3 rounded border border-brand-border/20 bg-surface space-y-2.5"
+                className="p-3 rounded border border-border bg-surface space-y-2.5"
               >
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   <Input
@@ -662,7 +662,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
                     <button
                       type="button"
                       onClick={() => removeVariantRow(idx)}
-                      className="text-xs text-rose-300 hover:text-rose-200 inline-flex items-center gap-1 px-2 py-1.5 rounded bg-rose-950/40 border border-rose-800/40"
+                      className="text-xs text-status-error hover:bg-rose-600 hover:text-white inline-flex items-center gap-1 px-2.5 py-1.5 rounded bg-status-error-bg border border-status-error-border font-medium transition-colors"
                     >
                       <FiTrash2 size={12} /> Quitar
                     </button>
@@ -671,34 +671,34 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
 
                 <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
                   <Input
-                    label="Tipo"
+                    label="Tipo / Modelo"
                     value={v.type}
                     onChange={(e) => handleVariantChange(idx, 'type', e.target.value)}
-                    placeholder="Ej: Anal / Vaginal"
+                    placeholder="Ej: Plataforma / Baja"
                   />
                   <Input
                     label="Talle"
                     value={v.size}
                     onChange={(e) => handleVariantChange(idx, 'size', e.target.value)}
-                    placeholder="Ej: S / M / Único"
+                    placeholder="Ej: 36 / 37 / 38"
                   />
                   <Input
                     label="Color"
                     value={v.color}
                     onChange={(e) => handleVariantChange(idx, 'color', e.target.value)}
-                    placeholder="Ej: Negro / Rosa"
+                    placeholder="Ej: Negro / Rosa / Blanco"
                   />
                   <Input
-                    label="Sabor / Aroma"
+                    label="Material / Acabado"
                     value={v.flavor}
                     onChange={(e) => handleVariantChange(idx, 'flavor', e.target.value)}
-                    placeholder="Ej: Frutilla"
+                    placeholder="Ej: Eco cuero / Lona"
                   />
                   <Input
-                    label="Volumen / Medida"
+                    label="Base / Taco"
                     value={v.volume}
                     onChange={(e) => handleVariantChange(idx, 'volume', e.target.value)}
-                    placeholder="Ej: 100 ml / 15x3 cm"
+                    placeholder="Ej: Base 4 cm"
                   />
                 </div>
               </div>
@@ -708,9 +708,9 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
       </div>
 
       {/* Subida de Imagen */}
-      <div className="p-4 rounded-lg border border-brand-border/25 bg-canvas">
-        <label className="block text-xs font-medium uppercase tracking-wider text-content-secondary mb-2">
-          Imagen del Producto (Opcional — si no tiene, se usa la foto por SKU o placeholder)
+      <div className="p-4 rounded-lg border border-border bg-canvas">
+        <label className="block text-xs font-semibold uppercase tracking-wider text-content-secondary mb-2">
+          Imagen del Calzado (Opcional — si no tiene, se usa la foto por SKU o placeholder)
         </label>
 
         <input
@@ -722,8 +722,8 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
         />
 
         {activePreviewUrl ? (
-          <div className="flex items-center space-x-3.5 bg-surface p-3 rounded-md border border-brand-border/20">
-            <div className="w-16 h-16 bg-canvas rounded overflow-hidden flex-shrink-0 border border-brand-border/25 flex items-center justify-center">
+          <div className="flex items-center space-x-3.5 bg-surface p-3 rounded-md border border-border">
+            <div className="w-16 h-16 bg-surface-elevated rounded overflow-hidden flex-shrink-0 border border-border flex items-center justify-center">
               <img
                 src={activePreviewUrl}
                 alt="Preview"
@@ -735,10 +735,10 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
               />
             </div>
             <div className="flex-1 min-w-0">
-              <span className="text-[10px] font-medium uppercase tracking-wider text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded inline-block mb-1 border border-emerald-800/40">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-status-success bg-status-success-bg px-2 py-0.5 rounded inline-block mb-1 border border-status-success-border">
                 {formData.imageUrl ? '✓ Imagen personalizada' : '✓ Imagen asignada por SKU'}
               </span>
-              <p className="text-xs text-content-muted truncate font-mono">
+              <p className="text-xs text-content-secondary truncate font-mono">
                 {formData.imageUrl || activePreviewUrl}
               </p>
               <div className="flex space-x-2 mt-2">
@@ -746,7 +746,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
                   disabled={uploadingImage}
-                  className="text-xs bg-surface-elevated hover:bg-brand text-content px-2.5 py-1 rounded transition-colors flex items-center border border-brand-border/25"
+                  className="text-xs bg-surface-elevated hover:bg-brand text-content hover:text-white px-2.5 py-1 rounded transition-colors flex items-center border border-border-strong font-medium"
                 >
                   <FiRefreshCw className="mr-1 text-xs" /> Reemplazar foto
                 </button>
@@ -754,7 +754,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
                   <button
                     type="button"
                     onClick={handleRemoveImage}
-                    className="text-xs bg-rose-950/50 hover:bg-rose-900/60 text-rose-300 px-2.5 py-1 rounded transition-colors flex items-center border border-rose-800/40"
+                    className="text-xs bg-status-error-bg hover:bg-rose-600 text-status-error hover:text-white px-2.5 py-1 rounded transition-colors flex items-center border border-status-error-border font-medium"
                   >
                     <FiTrash2 className="mr-1 text-xs" /> Quitar
                   </button>
@@ -768,15 +768,15 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
               type="button"
               onClick={() => fileInputRef.current?.click()}
               disabled={uploadingImage}
-              className="w-full border border-dashed border-brand-border/40 hover:border-mauve rounded-lg p-6 text-center transition-colors cursor-pointer flex flex-col items-center justify-center group bg-surface"
+              className="w-full border border-dashed border-border-strong hover:border-brand rounded-lg p-6 text-center transition-colors cursor-pointer flex flex-col items-center justify-center group bg-surface"
             >
-              <div className="w-10 h-10 rounded-full bg-surface-elevated text-mauve flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-full bg-surface-elevated text-brand-deep flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                 <FiUploadCloud size={20} />
               </div>
-              <span className="text-xs font-medium text-content">
+              <span className="text-xs font-semibold text-content">
                 {uploadingImage ? 'Subiendo imagen...' : 'Seleccionar archivo de imagen'}
               </span>
-              <span className="text-[11px] text-content-muted mt-1">
+              <span className="text-[11px] text-content-secondary mt-1">
                 JPG, PNG o WEBP (Máx. 5MB)
               </span>
             </button>
@@ -784,7 +784,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
         )}
 
         {uploadError && (
-          <p className="text-xs text-rose-300 mt-2 bg-rose-950/60 p-2 rounded border border-rose-800/50">
+          <p className="text-xs text-status-error mt-2 bg-status-error-bg p-2 rounded border border-status-error-border font-medium">
             {uploadError}
           </p>
         )}
@@ -793,7 +793,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
           <button
             type="button"
             onClick={() => setShowUrlInput(!showUrlInput)}
-            className="text-xs text-mauve hover:text-content underline inline-flex items-center transition-colors"
+            className="text-xs text-brand-deep hover:underline inline-flex items-center transition-colors font-semibold"
           >
             <FiLink className="mr-1 text-xs" />
             {showUrlInput ? 'Ocultar URL directa' : 'Ingresar URL de imagen'}
@@ -814,7 +814,7 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
       </div>
 
       <div>
-        <label className="block text-xs font-medium text-content-secondary mb-1.5 tracking-wide">
+        <label className="block text-xs font-semibold text-content-secondary mb-1.5">
           Descripción
         </label>
         <textarea
@@ -822,8 +822,8 @@ const ProductForm = ({ initialData, categories: propCategories = [], onSubmit, l
           rows="3"
           value={formData.description}
           onChange={handleChange}
-          className="block w-full rounded-md border border-brand-border/30 bg-surface-elevated text-content text-xs sm:text-sm p-3 focus:outline-none focus:border-mauve focus:ring-1 focus:ring-mauve placeholder:text-content-muted"
-          placeholder="Descripción de materiales, medidas, modo de uso y cuidados..."
+          className="block w-full rounded-md border border-border-strong bg-surface text-content text-xs sm:text-sm p-3 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 placeholder:text-content-secondary/65"
+          placeholder="Descripción de materiales, capellada, suela y detalles..."
         />
       </div>
 

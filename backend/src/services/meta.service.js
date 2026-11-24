@@ -8,10 +8,8 @@ const sha256 = (value) => {
 
 /**
  * Envía el evento Purchase a la API de Conversiones de Meta (CAPI)
- * MODO PRIVACIDAD ESTRICTA:
  * - Solo se ejecuta si META_PIXEL_ID y META_CAPI_ACCESS_TOKEN están configurados.
- * - JAMÁS envía content_name, descripciones de productos ni nombres de categorías.
- * - Solo envía content_ids (SKU o ID), content_type, value, currency y num_items.
+ * - Envía datos mínimos del pedido: content_ids (SKU o ID), content_type, value, currency y num_items.
  */
 export const sendMetaPurchaseEvent = async (order, items = []) => {
   if (!env.META_PIXEL_ID || !env.META_CAPI_ACCESS_TOKEN) {

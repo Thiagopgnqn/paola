@@ -30,7 +30,7 @@ export const listSubscribers = async (req, res, next) => {
 export const exportCsv = async (req, res, next) => {
   try {
     const csvData = await newsletterService.generateCsv();
-    const filename = `suscriptores-nocturna-${new Date().toISOString().slice(0, 10)}.csv`;
+    const filename = `paola-calzados-suscriptores-${new Date().toISOString().slice(0, 10)}.csv`;
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
     res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
     res.status(200).send(csvData);

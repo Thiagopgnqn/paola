@@ -327,12 +327,12 @@ const PortadaPage = () => {
 
         {selectedCampaign && (
           <div className="flex items-center gap-2 text-xs text-content-secondary">
-            <span className="text-[10px] uppercase tracking-wider text-mauve font-medium">Estado:</span>
-            <span className="px-2 py-0.5 rounded bg-surface-elevated border border-brand-border/30 text-content">
+            <span className="text-[10px] uppercase tracking-wider text-brand-deep font-semibold">Estado:</span>
+            <span className="px-2 py-0.5 rounded bg-surface-elevated border border-border-strong text-content">
               {selectedCampaign.status}
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-mauve font-medium ml-2">Tema:</span>
-            <span className="px-2 py-0.5 rounded bg-surface-elevated border border-brand-border/30 text-content">
+            <span className="text-[10px] uppercase tracking-wider text-brand-deep font-semibold ml-2">Tema:</span>
+            <span className="px-2 py-0.5 rounded bg-surface-elevated border border-border-strong text-content">
               {selectedCampaign.theme || 'neutro'}
             </span>
           </div>
@@ -346,8 +346,8 @@ const PortadaPage = () => {
             Cargando bloques de la portada...
           </div>
         ) : sections.length === 0 ? (
-          <div className="text-center py-16 px-4 rounded-xl border border-dashed border-brand-border/40 bg-surface/30">
-            <FiSliders className="mx-auto text-3xl text-mauve mb-3" />
+          <div className="text-center py-16 px-4 rounded-xl border border-dashed border-border-strong bg-surface/60">
+            <FiSliders className="mx-auto text-3xl text-brand mb-3" />
             <h3 className="font-display text-base uppercase tracking-wider text-content mb-1">
               No hay bloques configurados
             </h3>
@@ -368,13 +368,13 @@ const PortadaPage = () => {
                 key={section.id || idx}
                 className={`p-4 rounded-xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
                   section.enabled
-                    ? 'bg-surface border-brand-border/25 hover:border-brand-border/50'
-                    : 'bg-canvas/50 border-brand-border/15 opacity-60'
+                    ? 'bg-surface border-border hover:border-brand'
+                    : 'bg-canvas/50 border-border/60 opacity-60'
                 }`}
               >
                 {/* Info del Bloque */}
                 <div className="flex items-start sm:items-center gap-3">
-                  <span className="font-mono text-xs font-semibold px-2 py-1 rounded bg-canvas border border-brand-border/20 text-mauve">
+                  <span className="font-mono text-xs font-semibold px-2 py-1 rounded bg-surface-elevated border border-border-strong text-brand-deep">
                     #{idx + 1}
                   </span>
 
@@ -384,7 +384,7 @@ const PortadaPage = () => {
                         {typeLabel}
                       </span>
                       {!section.enabled && (
-                        <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded bg-red-950/60 border border-red-500/30 text-red-300">
+                        <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded bg-status-error-bg border border-status-error-border text-status-error">
                           Desactivado
                         </span>
                       )}
@@ -421,7 +421,7 @@ const PortadaPage = () => {
                     <FiArrowDown size={15} />
                   </button>
 
-                  <div className="w-px h-4 bg-brand-border/30 mx-1" />
+                  <div className="w-px h-4 bg-border mx-1" />
 
                   {/* Switch Activar/Desactivar */}
                   <button
@@ -429,8 +429,8 @@ const PortadaPage = () => {
                     onClick={() => handleToggleEnabled(section)}
                     className={`px-2.5 py-1 rounded text-xs font-medium border transition-colors ${
                       section.enabled
-                        ? 'border-emerald-500/30 bg-emerald-950/40 text-emerald-300 hover:bg-emerald-900/40'
-                        : 'border-brand-border/30 bg-surface-elevated text-content-muted hover:text-content'
+                        ? 'border-status-success-border bg-status-success-bg text-status-success hover:bg-emerald-100'
+                        : 'border-border-strong bg-surface-elevated text-content-muted hover:text-content'
                     }`}
                   >
                     {section.enabled ? 'Activo' : 'Inactivo'}
@@ -466,9 +466,9 @@ const PortadaPage = () => {
 
       {/* Modal de Crear / Editar Bloque */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
-          <div className="w-full max-w-lg bg-surface border border-brand-border/40 rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5">
-            <div className="flex items-center justify-between pb-3 border-b border-brand-border/20">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-content/40 backdrop-blur-sm">
+          <div className="w-full max-w-lg bg-surface border border-border-strong rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <h2 className="font-display text-lg uppercase tracking-wider text-content">
                 {editingSection ? 'Editar Bloque de Portada' : 'Nuevo Bloque de Portada'}
               </h2>
@@ -489,7 +489,7 @@ const PortadaPage = () => {
                 <select
                   value={formData.type}
                   onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                  className="w-full bg-canvas border border-brand-border/30 rounded-lg px-3 py-2 text-xs text-content focus:border-mauve focus:outline-none"
+                  className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-xs text-content focus:border-brand focus:outline-none"
                 >
                   {Object.entries(SECTION_TYPE_LABELS).map(([k, label]) => (
                     <option key={k} value={k}>
@@ -514,8 +514,8 @@ const PortadaPage = () => {
                           ? setFormData({ ...formData, headline: e.target.value })
                           : setFormData({ ...formData, title: e.target.value })
                       }
-                      placeholder="Ej: BLACK FRIDAY NOCTURNA"
-                      className="w-full bg-canvas border border-brand-border/30 rounded-lg px-3 py-2 text-xs text-content focus:border-mauve focus:outline-none"
+                      placeholder="Ej: BLACK FRIDAY PAOLA CALZADOS"
+                      className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-xs text-content focus:border-brand focus:outline-none"
                     />
                   </div>
 
@@ -635,14 +635,14 @@ const PortadaPage = () => {
                   id="section-enabled"
                   checked={formData.enabled}
                   onChange={(e) => setFormData({ ...formData, enabled: e.target.checked })}
-                  className="rounded border-brand-border/30 text-mauve focus:ring-mauve"
+                  className="rounded border-border-strong text-brand focus:ring-brand"
                 />
                 <label htmlFor="section-enabled" className="text-xs text-content select-none">
                   Mostrar este bloque en la tienda (Habilitado)
                 </label>
               </div>
 
-              <div className="flex justify-end gap-2.5 pt-4 border-t border-brand-border/20">
+              <div className="flex justify-end gap-2.5 pt-4 border-t border-border">
                 <Button variant="outline" size="sm" type="button" onClick={() => setIsModalOpen(false)}>
                   Cancelar
                 </Button>
@@ -657,9 +657,9 @@ const PortadaPage = () => {
 
       {/* Modal de Aplicar Plantilla Sugerida */}
       {isTemplateModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
-          <div className="w-full max-w-md bg-surface border border-brand-border/40 rounded-2xl p-6 shadow-2xl space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-brand-border/20">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-content/40 backdrop-blur-sm">
+          <div className="w-full max-w-md bg-surface border border-border-strong rounded-2xl p-6 shadow-2xl space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-border">
               <h2 className="font-display text-base uppercase tracking-wider text-content">
                 Aplicar Plantilla Sugerida
               </h2>
@@ -682,8 +682,8 @@ const PortadaPage = () => {
                   key={tmpl.key}
                   className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
                     selectedTemplateKey === tmpl.key
-                      ? 'bg-surface-elevated border-mauve text-content'
-                      : 'border-brand-border/25 hover:border-brand-border/50 text-content-secondary'
+                      ? 'bg-surface-elevated border-brand text-content'
+                      : 'border-border hover:border-border-strong text-content-secondary'
                   }`}
                 >
                   <input
@@ -692,7 +692,7 @@ const PortadaPage = () => {
                     value={tmpl.key}
                     checked={selectedTemplateKey === tmpl.key}
                     onChange={(e) => setSelectedTemplateKey(e.target.value)}
-                    className="text-mauve focus:ring-mauve"
+                    className="text-brand focus:ring-brand"
                   />
                   <span className="text-xs font-medium">{tmpl.name}</span>
                 </label>

@@ -38,9 +38,9 @@ const SearchBar = ({ initialQuery = '', onSearch }) => {
       </div>
       <input
         type="search"
-        aria-label="Buscar productos en el catálogo"
-        className="block w-full pl-10 pr-8 py-2.5 rounded-md border border-brand-border/30 bg-surface text-content text-xs sm:text-sm placeholder:text-content-muted focus:outline-none focus:border-mauve focus:ring-1 focus:ring-mauve transition-smooth"
-        placeholder="Buscar por nombre, código o descripción..."
+        aria-label="Buscar calzados en el catálogo"
+        className="block w-full pl-10 pr-8 py-2.5 rounded-md border border-border-strong bg-surface text-content text-xs sm:text-sm placeholder:text-content-secondary/70 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-smooth"
+        placeholder="Buscar por modelo, categoría o código..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

@@ -2,6 +2,8 @@
 User-agent: *
 Allow: /
 Allow: /catalogo
+Allow: /ofertas
+Allow: /legal
 Allow: /producto/
 
 # Deshabilitar rastreo de rutas privadas y administrativas
@@ -11,5 +13,5 @@ Disallow: /checkout
 Disallow: /login
 Disallow: /registro
 
-# Sitemap
-Sitemap: https://nocturnasexshop.com.ar/sitemap.xml
+# Sitemap (reemplazar [DOMINIO_PRODUCCION] por el dominio final de la tienda)
+# Sitemap: https://[DOMINIO_PRODUCCION]/sitemap.xml

@@ -1,98 +1,64 @@
-import NewsletterForm from '../newsletter/NewsletterForm';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiShield, FiLock, FiEyeOff, FiMessageCircle, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import {
+  FiArrowRight,
+  FiShield,
+  FiTruck,
+  FiShoppingBag,
+  FiMessageCircle,
+  FiChevronDown,
+  FiChevronUp,
+} from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import Button from '../ui/Button';
+import BrandLogo from '../ui/BrandLogo';
 import ProductGrid from '../catalog/ProductGrid';
 import CountdownTimer from '../campaign/CountdownTimer';
-import themeConfig from '../../config/theme';
+import NewsletterForm from '../newsletter/NewsletterForm';
+import themeConfig, { buildWhatsAppUrl } from '../../config/theme';
 import { getBrandImage } from '../../utils/productImages';
 
 export const CategoryLineIcon = ({ id }) => {
   switch (id) {
-    case 'lenceria':
+    case 'sandalias':
       return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <path d="M20 14v12c0 6 5 11 12 14 7-3 12-8 12-14V14" />
-          <path d="M18 44c4-4 24-4 28 0l-4 8H22l-4-8z" />
-          <path d="M25 22c3 3 11 3 14 0" strokeOpacity="0.55" />
+        <svg viewBox="0 0 48 48" fill="none" className="w-8 h-8 text-brand stroke-current" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M7 33c10 2.2 22 2.2 34 0a2.8 2.8 0 0 1 .5 5.4c-12 1.8-23 1.8-34.5 0a2.5 2.5 0 0 1 0-5.4Z" />
+          <path d="M15 33.5c1.8-6.5 6-10.5 12-11" />
+          <path d="M28 34c1-5.2 3.8-8.8 8-9.5" />
+          <path d="M10.5 33l3-11h4l-1.2 11" />
         </svg>
       );
-    case 'cosmetica-intima':
-    case 'lubricantes':
+    case 'zapatillas':
+    case 'ninos':
+    case 'ninas':
       return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <rect x="23" y="23" width="18" height="28" rx="4" />
-          <path d="M27 23v-6h10v6M29 17v-4h6v4" />
-          <path d="M32 32c-3 4-4 6-4 8a4 4 0 008 0c0-2-1-4-4-8z" />
+        <svg viewBox="0 0 48 48" fill="none" className="w-8 h-8 text-brand stroke-current" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M7 30.5V19c0-1 .8-1.6 1.8-1.2 2.8 1.1 5.4 1.6 7.8 1.6 2.6 0 4.8-1.5 6-3.9.5-1 1.7-1.1 2.4-.4l11 10.4c2.4.6 4.5 2 5.2 4.3.4 1.1-.4 2.2-1.5 2.3H8.8A1.8 1.8 0 0 1 7 30.5Z" />
+          <path d="M7 34h34a1.8 1.8 0 0 1 0 3.5H8.8A1.8 1.8 0 0 1 7 35.7V34Z" />
+          <path d="M25 21l3-1.8M28.5 24.2l3-1.8" />
         </svg>
       );
-    case 'dilatadores-consoladores-y-vibradores':
-    case 'juguetes':
+    case 'mujer':
       return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <path d="M32 11c-7 11-11 19-11 27a11 11 0 0022 0c0-8-4-16-11-27z" />
-          <circle cx="32" cy="39" r="3" />
-          <path d="M20 22c-3 3-3 8 0 11M44 22c3 3 3 8 0 11" strokeOpacity="0.5" />
+        <svg viewBox="0 0 48 48" fill="none" className="w-8 h-8 text-brand stroke-current" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 31.5V18l4.5 1.5c3.2 4.5 6.8 6.8 12.5 7.5 4.2.5 9 2.2 13.5 5.2 1.2.8.8 2.8-.7 2.8H11a2 2 0 0 1-2-2v-1.5Z" />
+          <path d="M11.5 35v5M25 35l4 5h9v-5" />
         </svg>
       );
-    case 'fantasias':
+    case 'hombre':
       return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <path d="M12 28c4-8 13-11 20-5 7-6 16-3 20 5-2 10-11 15-20 11-9 4-18-1-20-11z" />
-          <ellipse cx="23" cy="29" rx="4" ry="2.5" />
-          <ellipse cx="41" cy="29" rx="4" ry="2.5" />
-        </svg>
-      );
-    case 'perfumes-y-feromonas':
-      return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <path d="M22 27h20l3 23a3 3 0 01-3 3H22a3 3 0 01-3-3l3-23z" />
-          <rect x="28" y="19" width="8" height="8" rx="1" />
-          <path d="M30 15h4v4h-4zM36 17h6" />
-          <circle cx="46" cy="15" r="1" fill="currentColor" />
-          <circle cx="49" cy="19" r="1" fill="currentColor" />
-        </svg>
-      );
-    case 'bdsm-y-arneses':
-      return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <circle cx="22" cy="36" r="9" />
-          <circle cx="42" cy="36" r="9" />
-          <path d="M28 29l4-5 4 5" />
-          <circle cx="22" cy="36" r="5" strokeOpacity="0.45" />
-          <circle cx="42" cy="36" r="5" strokeOpacity="0.45" />
-        </svg>
-      );
-    case 'anillos-y-estimuladores':
-      return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <circle cx="32" cy="36" r="13" />
-          <circle cx="32" cy="36" r="7" />
-          <path d="M26 23l3-7h6l3 7" />
-        </svg>
-      );
-    case 'juegos':
-      return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <rect x="15" y="18" width="21" height="29" rx="2.5" />
-          <path d="M27 14h20a2.5 2.5 0 012.5 2.5v26.5" />
-          <path d="M25.5 28.5l4 4-4 4-4-4 4-4z" />
-        </svg>
-      );
-    case 'linea-masculina':
-      return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <path d="M16 22h32l-3 16c-4 1-8 5-13 9-5-4-9-8-13-9l-3-16z" />
-          <line x1="17" y1="27" x2="47" y2="27" strokeOpacity="0.55" />
+        <svg viewBox="0 0 48 48" fill="none" className="w-8 h-8 text-brand stroke-current" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M8 29.5V14h11l1.5 11.5c3 3 7.2 4.5 14 5.5a3.2 3.2 0 0 1 2.8 3.2v2.3H8v-7Z" />
+          <path d="M8 36.5h29.5V40H8z" />
+          <path d="M19 19h-3.5M19.5 23h-3.5" />
         </svg>
       );
     default:
       return (
-        <svg viewBox="0 0 64 64" fill="none" className="w-9 h-9 text-mauve stroke-current" strokeWidth="1.25">
-          <circle cx="32" cy="32" r="14" />
-          <circle cx="32" cy="32" r="4" />
+        <svg viewBox="0 0 48 48" fill="none" className="w-8 h-8 text-brand stroke-current" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="24" cy="24" r="14" />
+          <circle cx="24" cy="24" r="5" />
         </svg>
       );
   }
@@ -101,40 +67,34 @@ export const CategoryLineIcon = ({ id }) => {
 export const HeroBrandVisual = () => (
   <div
     aria-hidden="true"
-    className="relative w-full h-full min-h-[320px] rounded-xl overflow-hidden bg-canvas border border-mauve/20 flex items-center justify-center"
+    className="relative w-full h-full min-h-[340px] rounded-2xl overflow-hidden bg-gradient-to-br from-surface-elevated via-surface to-surface-elevated border border-border flex flex-col items-center justify-center p-8 shadow-lifted"
   >
-    <div className="absolute -top-12 -right-12 w-72 h-72 rounded-full bg-brand/35 blur-3xl animate-silk-drift" />
-    <div className="absolute -bottom-16 -left-10 w-80 h-80 rounded-full bg-surface-elevated/80 blur-3xl animate-silk-drift" />
-    <div className="absolute top-1/3 left-1/4 w-48 h-48 rounded-full bg-mauve/15 blur-2xl animate-silk-drift" />
+    <div className="absolute -top-12 -right-12 w-56 h-56 rounded-full bg-brand/15 blur-2xl pointer-events-none" />
+    <div className="absolute -bottom-14 -left-10 w-64 h-64 rounded-full bg-mauve/45 blur-2xl pointer-events-none" />
 
-    <svg
-      viewBox="0 0 600 500"
-      fill="none"
-      className="relative z-10 w-full h-full object-cover opacity-80 animate-silk-drift"
-    >
-      <defs>
-        <linearGradient id="heroSilk1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#5A2A2E" stopOpacity="0.55" />
-          <stop offset="50%" stopColor="#2B1917" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#0F0A0A" stopOpacity="0.05" />
-        </linearGradient>
-        <linearGradient id="heroSilk2" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#907878" stopOpacity="0.22" />
-          <stop offset="60%" stopColor="#5A2A2E" stopOpacity="0.28" />
-          <stop offset="100%" stopColor="#0F0A0A" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M-40,360 C120,210 290,430 460,250 C540,165 600,210 650,140 L650,520 L-40,520 Z"
-        fill="url(#heroSilk1)"
-      />
-      <path
-        d="M-60,180 C130,310 310,70 510,220 C570,265 610,230 660,180 L660,520 L-60,520 Z"
-        fill="url(#heroSilk2)"
-      />
-      <path d="M60,420 Q280,180 540,320" stroke="#907878" strokeOpacity="0.25" strokeWidth="1" />
-      <path d="M40,260 Q310,390 560,170" stroke="#5A2A2E" strokeOpacity="0.4" strokeWidth="1.2" />
-    </svg>
+    <div className="relative z-10 flex flex-col items-center text-center max-w-sm">
+      <span className="inline-block px-3.5 py-1 rounded-full bg-brand text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-5 shadow-soft">
+        Nueva Colección
+      </span>
+
+      <div className="w-24 h-24 rounded-full bg-surface border-2 border-border flex items-center justify-center text-brand shadow-soft mb-5">
+        <CategoryLineIcon id="zapatillas" />
+      </div>
+
+      <BrandLogo variant="vertical" size="lg" showSubtitle />
+
+      <p className="mt-4 font-script text-xl text-brand-deep">
+        Para toda la familia
+      </p>
+
+      <div className="mt-5 flex flex-wrap justify-center gap-2 text-[11px] font-medium text-content-secondary">
+        <span className="px-2.5 py-1 rounded-full bg-surface border border-border">Mujer</span>
+        <span className="px-2.5 py-1 rounded-full bg-surface border border-border">Hombre</span>
+        <span className="px-2.5 py-1 rounded-full bg-surface border border-border">Niños</span>
+        <span className="px-2.5 py-1 rounded-full bg-surface border border-border">Sandalias</span>
+        <span className="px-2.5 py-1 rounded-full bg-surface border border-border">Zapatillas</span>
+      </div>
+    </div>
   </div>
 );
 
@@ -146,41 +106,42 @@ const DynamicSection = ({
   themeConfig: theme = null,
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
-  const [heroImgError, setHeroImgError] = useState(false);
   const [aboutImgError, setAboutImgError] = useState(false);
 
   if (!section || section.enabled === false) return null;
 
   const config = section.config || {};
-  const heroImageUrl = getBrandImage('hero') || '/images/brand/hero.webp';
-  const heroMobileUrl = getBrandImage('heroMobile') || '/images/brand/hero-mobile.webp';
   const aboutImageUrl = getBrandImage('about');
+  const whatsappUrl = buildWhatsAppUrl(themeConfig.contact.whatsappDefaultMessage);
 
   // =========================================================================
   // 1. HERO (Base o de Campaña)
   // =========================================================================
   if (section.type === 'HERO') {
-    const isCampaignHero = Boolean(section.campaignId || config.headline?.includes('BLACK FRIDAY') || config.headline?.includes('CYBER'));
+    const isCampaignHero = Boolean(
+      section.campaignId ||
+        config.headline?.includes('BLACK FRIDAY') ||
+        config.headline?.includes('CYBER')
+    );
 
     if (isCampaignHero) {
       return (
         <section
-          className={`relative min-h-[440px] lg:min-h-[500px] flex items-center border-b ${
-            theme?.borderAccent || 'border-brand-border/20'
-          } bg-gradient-to-b ${theme?.bgGradient || 'from-canvas via-surface to-canvas'} overflow-hidden py-12 lg:py-16`}
+          className={`relative min-h-[420px] lg:min-h-[480px] flex items-center border-b ${
+            theme?.borderAccent || 'border-border'
+          } bg-gradient-to-b ${theme?.bgGradient || 'from-canvas via-surface-elevated to-canvas'} overflow-hidden py-12 lg:py-16`}
         >
-          {/* Fondo gráfico abstracto por código */}
-          <div aria-hidden="true" className="absolute inset-0 pointer-events-none opacity-40">
+          <div aria-hidden="true" className="absolute inset-0 pointer-events-none opacity-45">
             <svg viewBox="0 0 1200 600" fill="none" className="w-full h-full object-cover">
               <path
                 d="M-50,450 C300,200 600,550 1250,250 L1250,650 L-50,650 Z"
-                fill={theme?.accent || '#5A2A2E'}
-                fillOpacity="0.18"
+                fill={theme?.accent || '#E6007E'}
+                fillOpacity="0.1"
               />
               <path
                 d="M100,500 Q600,150 1100,450"
-                stroke={theme?.accent || '#907878'}
-                strokeOpacity="0.3"
+                stroke={theme?.accent || '#E6007E'}
+                strokeOpacity="0.22"
                 strokeWidth="1.5"
               />
             </svg>
@@ -189,19 +150,21 @@ const DynamicSection = ({
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="max-w-2xl">
               <span
-                className={`inline-block text-[11px] uppercase tracking-[0.28em] px-3.5 py-1 rounded-full mb-4 ${
-                  theme?.badgeBg || 'bg-surface-elevated'
-                } ${theme?.badgeText || 'text-content'}`}
+                className={`inline-block text-[11px] uppercase tracking-[0.22em] px-3.5 py-1 rounded-full mb-4 ${
+                  theme?.badgeBg || 'bg-brand'
+                } ${theme?.badgeText || 'text-white font-semibold'}`}
               >
                 {theme?.tagText || 'CAMPAÑA ESPECIAL'}
               </span>
 
-              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-light uppercase tracking-[0.1em] text-content mb-4 leading-[1.12]">
-                {config.headline || activeCampaign?.headline || 'Edición Especial Nocturna'}
+              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-tight text-content mb-4 leading-[1.12]">
+                {config.headline || activeCampaign?.headline || 'Edición Especial Paola Calzados'}
               </h1>
 
               <p className="text-sm sm:text-base text-content-secondary mb-7 leading-relaxed max-w-xl">
-                {config.subheadline || activeCampaign?.subheadline || 'Aprovechá beneficios exclusivos por tiempo limitado en boutique íntima con envíos 100% confidenciales.'}
+                {config.subheadline ||
+                  activeCampaign?.subheadline ||
+                  'Aprovechá descuentos reales por tiempo limitado en calzado por mayor y por menor.'}
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
@@ -213,22 +176,22 @@ const DynamicSection = ({
                 </Link>
                 {activeCampaign?.slug && (
                   <Link to={`/campanas/${activeCampaign.slug}`}>
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto px-6 py-3.5 bg-canvas/40 backdrop-blur-sm">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto px-6 py-3.5 bg-surface/80">
                       <span>Ver Detalles de Campaña</span>
                     </Button>
                   </Link>
                 )}
               </div>
 
-              <div className="mt-8 pt-5 border-t border-brand-border/25 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-content-secondary">
+              <div className="mt-8 pt-5 border-t border-border flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-content-secondary font-medium">
                 <span className="inline-flex items-center gap-1.5">
-                  <FiEyeOff className="text-mauve" /> Empaque 100% neutro
+                  <FiShoppingBag className="text-brand-deep" /> Por mayor y por menor
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <FiShield className="text-mauve" /> Descuentos reales garantizados
+                  <FiShield className="text-brand-deep" /> Descuentos reales garantizados
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <FiLock className="text-mauve" /> Entrega confidencial en Córdoba
+                  <FiTruck className="text-brand-deep" /> Envíos en {themeConfig.contact.deliveryZone}
                 </span>
               </div>
             </div>
@@ -237,78 +200,68 @@ const DynamicSection = ({
       );
     }
 
-    // Hero Base de la tienda
+    // Hero Base de Paola Calzados
     return (
-      <section className="relative min-h-[480px] lg:min-h-[540px] flex items-center bg-canvas border-b border-brand-border/20 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none select-none">
-          {!heroImgError && heroImageUrl ? (
-            <img
-              src={heroImageUrl}
-              srcSet={`${heroMobileUrl} 900w, ${heroImageUrl} 1920w`}
-              sizes="100vw"
-              width="1920"
-              height="760"
-              {...{ fetchpriority: 'high' }}
-              decoding="async"
-              alt="Ambientación íntima nocturna — Nocturna SexShop"
-              onError={() => setHeroImgError(true)}
-              className="w-full h-full object-cover object-[68%_center] lg:object-center"
-            />
-          ) : (
-            <div className="w-full h-full">
+      <section className="relative py-10 sm:py-14 lg:py-16 paola-soft-bg border-b border-border overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-elevated border border-border text-[11px] uppercase tracking-[0.18em] text-brand-deep font-bold mb-4">
+                Córdoba, Argentina &bull; Venta por Mayor y Menor
+              </span>
+
+              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-content mb-4 leading-[1.12]">
+                {config.headline || (
+                  <>
+                    Calzado con estilo{' '}
+                    <span className="font-script font-normal text-brand block sm:inline">
+                      por mayor y por menor
+                    </span>
+                  </>
+                )}
+              </h1>
+
+              <p className="text-sm sm:text-base text-content-secondary mb-7 font-normal leading-relaxed max-w-xl">
+                {config.subheadline ||
+                  'Zapatillas, sandalias, borcegos y modelos para mujer, hombre, niños y niñas. Armá tu pedido online desde Córdoba y coordiná entrega o retiro directo por WhatsApp.'}
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <Link to={config.ctaLink || '/catalogo'}>
+                  <Button size="lg" variant="primary" className="w-full sm:w-auto px-7 py-3">
+                    <span>{config.ctaText || 'Ver Catálogo'}</span>
+                    <FiArrowRight className="ml-2.5" />
+                  </Button>
+                </Link>
+                {whatsappUrl && (
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" variant="secondary" className="w-full sm:w-auto px-6 py-3">
+                      <FaWhatsapp className="mr-2 text-brand text-base" />
+                      <span>Consultar por WhatsApp</span>
+                    </Button>
+                  </a>
+                )}
+              </div>
+
+              <div className="mt-7 pt-4 border-t border-border flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-content-secondary font-medium">
+                <span className="inline-flex items-center gap-1.5">
+                  <FiShoppingBag className="text-brand-deep" /> Compra minorista y mayorista
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <FiTruck className="text-brand-deep" /> Envíos en {themeConfig.contact.deliveryZone}
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <FiMessageCircle className="text-brand-deep" /> Atención en {themeConfig.contact.hours}
+                </span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
               <HeroBrandVisual />
-            </div>
-          )}
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-canvas/85 via-canvas/45 to-canvas/15" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-canvas via-transparent to-canvas/35" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 w-full">
-          <div className="max-w-2xl">
-            <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-mauve font-medium mb-3">
-              Córdoba, Argentina &bull; Boutique Íntima Online
-            </span>
-
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl font-light uppercase tracking-[0.12em] text-content mb-4 leading-[1.14] drop-shadow-sm">
-              Intimidad, <br />
-              diseño y placer <br />
-              <span className="text-mauve">sin tabúes.</span>
-            </h1>
-
-            <p className="text-xs sm:text-sm lg:text-[15px] text-content-secondary mb-6 font-normal leading-relaxed max-w-xl drop-shadow-sm">
-              Una selección curada de bienestar íntimo, cosmética sensorial y lencería.
-              Comprá con total reserva desde tu casa: envíos 100% discretos en Córdoba y atención personalizada por WhatsApp.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Link to="/catalogo">
-                <Button size="lg" variant="primary" className="w-full sm:w-auto px-7 py-3">
-                  <span>Explorar Colección</span>
-                  <FiArrowRight className="ml-2.5" />
-                </Button>
-              </Link>
-              <a
-                href={`https://wa.me/${themeConfig.contact.whatsapp}?text=${encodeURIComponent(themeConfig.contact.whatsappDefaultMessage)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button size="lg" variant="outline" className="w-full sm:w-auto px-6 py-3 bg-canvas/45 backdrop-blur-[2px]">
-                  <FaWhatsapp className="mr-2 text-mauve text-base" />
-                  <span>Asesoramiento Privado</span>
-                </Button>
-              </a>
-            </div>
-
-            <div className="mt-7 pt-4 border-t border-brand-border/25 flex flex-wrap items-center gap-y-2 gap-x-5 text-[11px] sm:text-xs text-content-secondary">
-              <span className="inline-flex items-center gap-1.5">
-                <FiEyeOff className="text-mauve" /> Empaque neutro sin logos
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <FiShield className="text-mauve" /> Sin mínimo de compra
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <FiLock className="text-mauve" /> Atención confidencial
-              </span>
             </div>
           </div>
         </div>
@@ -325,37 +278,36 @@ const DynamicSection = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`relative overflow-hidden rounded-2xl border ${
-              theme?.borderAccent || 'border-brand-border/30'
-            } bg-gradient-to-r ${theme?.bgGradient || 'from-surface via-surface-elevated to-surface'} p-8 sm:p-12 shadow-2xl`}
+              theme?.borderAccent || 'border-border'
+            } bg-gradient-to-r ${theme?.bgGradient || 'from-surface via-surface-elevated to-surface'} p-8 sm:p-12 shadow-lifted`}
           >
-            {/* Gráficos vectoriales por código */}
             <svg
               aria-hidden="true"
               viewBox="0 0 800 300"
               fill="none"
-              className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"
+              className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
             >
-              <circle cx="700" cy="80" r="140" stroke={theme?.accent || '#5A2A2E'} strokeWidth="1.5" />
-              <path d="M-50,220 C200,80 500,280 850,150" stroke={theme?.accent || '#907878'} strokeWidth="1.5" />
+              <circle cx="700" cy="80" r="140" stroke={theme?.accent || '#E6007E'} strokeWidth="1.5" />
+              <path d="M-50,220 C200,80 500,280 850,150" stroke={theme?.accent || '#B80063'} strokeWidth="1.5" />
             </svg>
 
             <div className="relative z-10 max-w-2xl">
               {config.badge && (
                 <span
-                  className={`inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.25em] px-3.5 py-1 rounded-full mb-3.5 ${
+                  className={`inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.22em] px-3.5 py-1 rounded-full mb-3.5 ${
                     theme?.badgeBg || 'bg-brand'
-                  } ${theme?.badgeText || 'text-white'}`}
+                  } ${theme?.badgeText || 'text-white font-semibold'}`}
                 >
                   {config.badge}
                 </span>
               )}
 
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-light uppercase tracking-wider text-content mb-3 leading-tight">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-content mb-3 leading-tight">
                 {config.title || activeCampaign?.headline || 'Promoción Destacada'}
               </h2>
 
               <p className="text-xs sm:text-sm text-content-secondary mb-6 leading-relaxed">
-                {config.subtitle || activeCampaign?.subheadline || 'Aprovechá beneficios exclusivos y entrega discreta en Córdoba.'}
+                {config.subtitle || activeCampaign?.subheadline || 'Aprovechá beneficios exclusivos en calzado de temporada.'}
               </p>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -366,8 +318,8 @@ const DynamicSection = ({
                   </Button>
                 </Link>
                 {activeCampaign?.conditionsText && (
-                  <span className="text-[11px] text-content-muted">
-                    Condiciones aplicables • Hasta agotar stock
+                  <span className="text-[11px] text-content-secondary">
+                    Condiciones aplicables &bull; Hasta agotar stock
                   </span>
                 )}
               </div>
@@ -414,20 +366,20 @@ const DynamicSection = ({
     }
 
     return (
-      <section className="py-14 sm:py-20 bg-surface/35 border-y border-brand-border/20">
+      <section className="py-14 sm:py-20 bg-surface border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-brand-border/20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-border">
             <div>
-              <span className="text-[11px] uppercase tracking-[0.25em] text-mauve font-medium">
-                {config.subtitle || 'Curaduría'}
+              <span className="text-[11px] uppercase tracking-[0.22em] text-brand-deep font-bold">
+                {config.subtitle || 'Selección'}
               </span>
-              <h2 className="font-display text-2xl sm:text-3xl font-light uppercase tracking-widest text-content mt-1.5">
-                {config.title || 'Seleccionados para Vos'}
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-content mt-1.5">
+                {config.title || 'Destacados de Temporada'}
               </h2>
             </div>
             <Link
               to="/catalogo"
-              className="mt-3 sm:mt-0 text-xs font-medium uppercase tracking-widest text-content-secondary hover:text-content inline-flex items-center gap-1.5 transition-colors"
+              className="mt-3 sm:mt-0 text-xs font-semibold uppercase tracking-wider text-brand-deep hover:text-brand inline-flex items-center gap-1.5 transition-colors"
             >
               <span>Ver todos</span>
               <FiArrowRight size={13} />
@@ -439,7 +391,7 @@ const DynamicSection = ({
           <div className="mt-10 text-center">
             <Link to="/catalogo">
               <Button variant="outline" size="lg" className="px-8">
-                Explorar el catálogo completo
+                Ver el catálogo completo
               </Button>
             </Link>
           </div>
@@ -455,18 +407,18 @@ const DynamicSection = ({
     return (
       <section className="py-16 sm:py-20 bg-canvas">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-brand-border/20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-border">
             <div>
-              <span className="text-[11px] uppercase tracking-[0.25em] text-mauve font-medium">
-                {config.subtitle || 'Universo Nocturna'}
+              <span className="text-[11px] uppercase tracking-[0.22em] text-brand-deep font-bold">
+                {config.subtitle || 'Paola Calzados'}
               </span>
-              <h2 className="font-display text-2xl sm:text-3xl font-light uppercase tracking-widest text-content mt-1.5">
-                {config.title || 'Categorías de la Colección'}
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-content mt-1.5">
+                {config.title || 'Categorías de Calzado'}
               </h2>
             </div>
             <Link
               to="/catalogo"
-              className="mt-3 sm:mt-0 text-xs font-medium uppercase tracking-widest text-content-secondary hover:text-content inline-flex items-center gap-1.5 transition-colors"
+              className="mt-3 sm:mt-0 text-xs font-semibold uppercase tracking-wider text-brand-deep hover:text-brand inline-flex items-center gap-1.5 transition-colors"
             >
               <span>Ver catálogo completo</span>
               <FiArrowRight size={13} />
@@ -478,37 +430,24 @@ const DynamicSection = ({
               <Link
                 key={cat.id}
                 to={`/catalogo?category=${cat.slug}`}
-                className="group flex flex-col border border-brand-border/20 rounded-lg overflow-hidden bg-surface hover:border-mauve/60 transition-smooth"
+                className="group flex flex-col border border-border rounded-xl overflow-hidden bg-surface hover:border-brand hover:shadow-lifted transition-smooth"
               >
-                <div className="h-36 w-full overflow-hidden smoke-card-texture relative flex flex-col items-center justify-center p-5 border-b border-brand-border/15">
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 400 160"
-                    fill="none"
-                    className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
-                  >
-                    <path
-                      d="M-20,130 C90,70 210,150 340,60 C370,40 400,55 420,35 L420,170 L-20,170 Z"
-                      fill="#2B1917"
-                      fillOpacity="0.65"
-                    />
-                    <path d="M10,140 Q200,50 390,110" stroke="#907878" strokeOpacity="0.22" strokeWidth="1" />
-                  </svg>
-                  <div className="relative z-10 w-14 h-14 rounded-full border border-brand-border/30 bg-canvas/60 flex items-center justify-center group-hover:scale-105 group-hover:border-mauve/60 transition-all duration-500">
+                <div className="h-36 w-full overflow-hidden paola-card-texture relative flex flex-col items-center justify-center p-5 border-b border-border">
+                  <div className="relative z-10 w-14 h-14 rounded-full border border-border bg-surface flex items-center justify-center group-hover:scale-105 group-hover:border-brand transition-all duration-300 shadow-sm">
                     <CategoryLineIcon id={cat.id} />
                   </div>
-                  <span className="relative z-10 mt-2.5 text-[10px] font-display uppercase tracking-[0.22em] text-content-muted text-center line-clamp-1">
+                  <span className="relative z-10 mt-2.5 text-[11px] font-medium text-content-secondary text-center line-clamp-1">
                     {cat.subtitle}
                   </span>
                 </div>
                 <div className="p-5 flex flex-col flex-1">
-                  <h3 className="font-display text-base uppercase tracking-wider text-content mb-1.5 group-hover:text-mauve-light transition-colors">
+                  <h3 className="font-display text-base font-bold text-content mb-1.5 group-hover:text-brand-deep transition-colors">
                     {cat.title}
                   </h3>
                   <p className="text-xs text-content-secondary leading-relaxed font-normal mb-4 flex-1">
                     {cat.description}
                   </p>
-                  <span className="text-xs font-medium uppercase tracking-widest text-mauve inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-brand-deep inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
                     <span>Explorar</span>
                     <FiArrowRight size={12} />
                   </span>
@@ -526,57 +465,56 @@ const DynamicSection = ({
   // =========================================================================
   if (section.type === 'TEXT_BLOCK') {
     return (
-      <section id={config.id || 'nosotros'} className="py-16 sm:py-20 smoke-texture border-b border-brand-border/20">
+      <section id={config.id || 'nosotros'} className="py-16 sm:py-20 paola-soft-bg border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">
-              <span className="text-[11px] uppercase tracking-[0.3em] text-mauve font-medium mb-3 block">
-                Sobre Nocturna
+              <span className="text-[11px] uppercase tracking-[0.22em] text-brand-deep font-bold mb-3 block">
+                Sobre Paola Calzados
               </span>
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-light uppercase tracking-widest text-content mb-5 leading-snug">
-                {config.title || 'Una experiencia íntima pensada desde el respeto, la estética y la confidencialidad.'}
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-content mb-5 leading-snug">
+                {config.title || 'Calzado por mayor y por menor con atención personalizada en Córdoba.'}
               </h2>
               <p className="text-xs sm:text-sm text-content-secondary leading-relaxed mb-4">
-                Nacimos en Córdoba con una idea clara: que elegir productos para tu placer o el de tu pareja sea tan cómodo, elegante y natural como cualquier otra compra personal. Sin miradas incómodas, sin apuros y con información honesta sobre materiales, cuidados y usos.
+                En Paola Calzados trabajamos modelos para mujer, hombre, niños y niñas, abarcando zapatillas urbanas y deportivas, sandalias, plataformas, borcegos y calzado diario. Podés comprar desde un par o armar tu pedido mayorista ({themeConfig.policies.wholesaleMinimum}).
               </p>
               <p className="text-xs sm:text-sm text-content-secondary leading-relaxed mb-7">
-                Cada pedido se prepara en empaque completamente neutro —sin cintas impresas, logos ni referencias al contenido— y se coordina de forma directa por WhatsApp para que elijas el horario y punto de entrega que mejor te quede.
+                Coordinamos cada pedido por WhatsApp para confirmar disponibilidad de talles y colores, entregas en {themeConfig.contact.deliveryZone} o retiro en {themeConfig.contact.address}.
               </p>
               <Link to="/legal">
                 <Button variant="secondary" size="md">
-                  Conocé nuestras políticas de privacidad y envíos
+                  Conocé nuestras políticas de envíos y cambios
                 </Button>
               </Link>
             </div>
 
             <div className="lg:col-span-5">
               {aboutImageUrl && !aboutImgError ? (
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-mauve/25 bg-surface shadow-xl">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border bg-surface shadow-lifted">
                   <img
                     src={aboutImageUrl}
                     width="1000"
                     height="750"
                     loading="lazy"
                     decoding="async"
-                    alt="Sobre Nocturna SexShop — Boutique íntima en Córdoba"
+                    alt="Sobre Paola Calzados — Córdoba"
                     onError={() => setAboutImgError(true)}
                     className="w-full h-full object-cover"
                   />
-                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-canvas/80 via-transparent to-canvas/40 pointer-events-none" />
                 </div>
               ) : (
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-brand-border/25 smoke-card-texture p-8 flex flex-col items-center justify-center text-center shadow-xl">
-                  <div className="w-14 h-14 rounded-full border border-mauve/35 bg-canvas/70 flex items-center justify-center mb-4 text-mauve">
-                    <FiLock size={22} />
-                  </div>
-                  <span className="font-display text-2xl uppercase tracking-[0.28em] text-content font-light">
-                    Nocturna
-                  </span>
-                  <span className="font-display text-[11px] uppercase tracking-[0.35em] text-mauve mt-1">
-                    Boutique Íntima &bull; Córdoba
-                  </span>
-                  <p className="mt-4 text-xs text-content-secondary max-w-xs leading-relaxed">
-                    Reserva absoluta desde la consulta hasta la entrega en tus manos.
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border paola-card-texture p-8 flex flex-col items-center justify-center text-center shadow-lifted">
+                  <BrandLogo variant="vertical" size="lg" showSubtitle />
+                  <p className="mt-5 text-xs text-content-secondary max-w-xs leading-relaxed">
+                    Córdoba, Argentina &bull; Seguinos en Instagram{' '}
+                    <a
+                      href={themeConfig.contact.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-deep font-semibold hover:underline"
+                    >
+                      {themeConfig.contact.instagram}
+                    </a>
                   </p>
                 </div>
               )}
@@ -592,61 +530,61 @@ const DynamicSection = ({
   // =========================================================================
   if (section.type === 'BENEFITS') {
     return (
-      <section className="py-14 bg-surface border-b border-brand-border/20">
+      <section className="py-14 bg-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex items-start space-x-3.5">
-              <div className="p-2.5 rounded bg-surface-elevated text-mauve border border-brand-border/25 mt-0.5">
-                <FiEyeOff size={18} />
+              <div className="p-2.5 rounded-lg bg-surface-elevated text-brand-deep border border-border mt-0.5">
+                <FiShoppingBag size={18} />
               </div>
               <div>
-                <h3 className="font-display text-xs uppercase tracking-widest text-content">
-                  Envío 100% Discreto
+                <h3 className="font-display text-xs font-bold uppercase tracking-wider text-content">
+                  Por Mayor y Menor
                 </h3>
                 <p className="text-xs text-content-secondary mt-1.5 leading-relaxed">
-                  Cajas y bolsas cerradas sin logos ni inscripciones externas. Tu privacidad es absoluta.
+                  Llevá desde 1 par o armá tu pedido mayorista ({themeConfig.policies.wholesaleMinimum}).
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-3.5">
-              <div className="p-2.5 rounded bg-surface-elevated text-mauve border border-brand-border/25 mt-0.5">
-                <FiLock size={18} />
+              <div className="p-2.5 rounded-lg bg-surface-elevated text-brand-deep border border-border mt-0.5">
+                <FiTruck size={18} />
               </div>
               <div>
-                <h3 className="font-display text-xs uppercase tracking-widest text-content">
-                  Compra Segura
+                <h3 className="font-display text-xs font-bold uppercase tracking-wider text-content">
+                  Envíos y Retiro
                 </h3>
                 <p className="text-xs text-content-secondary mt-1.5 leading-relaxed">
-                  Sin mínimo de compra y sin cargar tarjetas en la web. Coordinás el pago directo por WhatsApp.
+                  Entregas en {themeConfig.contact.deliveryZone} o retiro en {themeConfig.contact.address}.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-3.5">
-              <div className="p-2.5 rounded bg-surface-elevated text-mauve border border-brand-border/25 mt-0.5">
+              <div className="p-2.5 rounded-lg bg-surface-elevated text-brand-deep border border-border mt-0.5">
                 <FiMessageCircle size={18} />
               </div>
               <div>
-                <h3 className="font-display text-xs uppercase tracking-widest text-content">
+                <h3 className="font-display text-xs font-bold uppercase tracking-wider text-content">
                   Atención por WhatsApp
                 </h3>
                 <p className="text-xs text-content-secondary mt-1.5 leading-relaxed">
-                  Te asesoramos sobre materiales, lubricantes compatibles, talles y modos de uso sin prejuicios.
+                  Consultá disponibilidad de talles, colores y precios mayoristas de forma directa.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-3.5">
-              <div className="p-2.5 rounded bg-surface-elevated text-mauve border border-brand-border/25 mt-0.5">
+              <div className="p-2.5 rounded-lg bg-surface-elevated text-brand-deep border border-border mt-0.5">
                 <FiShield size={18} />
               </div>
               <div>
-                <h3 className="font-display text-xs uppercase tracking-widest text-content">
-                  Higiene y Garantía
+                <h3 className="font-display text-xs font-bold uppercase tracking-wider text-content">
+                  Compra Clara
                 </h3>
                 <p className="text-xs text-content-secondary mt-1.5 leading-relaxed">
-                  Productos sellados y controlados. Garantía ante cualquier falla de funcionamiento de fábrica.
+                  Precios transparentes y descuentos reales verificables sobre historial de 30 días.
                 </p>
               </div>
             </div>
@@ -664,18 +602,18 @@ const DynamicSection = ({
       <section id={config.id || 'faq'} className="py-16 sm:py-20 bg-canvas">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-mauve font-medium">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-brand-deep font-bold">
               Dudas Frecuentes
             </span>
-            <h2 className="font-display text-2xl sm:text-3xl font-light uppercase tracking-widest text-content mt-1.5">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-content mt-1.5">
               {config.title || 'Preguntas Frecuentes'}
             </h2>
             <p className="text-xs sm:text-sm text-content-secondary mt-2">
-              Todo lo que necesitás saber sobre envíos, discreción, pagos y cuidados.
+              Todo lo que necesitás saber sobre compras por mayor y menor, envíos, pagos y cambios.
             </p>
           </div>
 
-          <div className="divide-y divide-brand-border/20 border border-brand-border/20 rounded-lg bg-surface overflow-hidden">
+          <div className="divide-y divide-border border border-border rounded-xl bg-surface overflow-hidden shadow-soft">
             {themeConfig.faq.map((item, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
@@ -683,13 +621,13 @@ const DynamicSection = ({
                   <button
                     type="button"
                     onClick={() => setOpenFaqIndex(isOpen ? -1 : idx)}
-                    className="w-full px-6 py-4 flex items-center justify-between text-left text-xs sm:text-sm font-medium text-content hover:bg-surface-elevated/50 transition-colors"
+                    className="w-full px-6 py-4 flex items-center justify-between text-left text-xs sm:text-sm font-semibold text-content hover:bg-surface-elevated/50 transition-colors"
                   >
                     <span>{item.question}</span>
                     {isOpen ? (
-                      <FiChevronUp className="text-mauve flex-shrink-0 ml-4" />
+                      <FiChevronUp className="text-brand-deep flex-shrink-0 ml-4" />
                     ) : (
-                      <FiChevronDown className="text-content-muted flex-shrink-0 ml-4" />
+                      <FiChevronDown className="text-content-secondary flex-shrink-0 ml-4" />
                     )}
                   </button>
                   {isOpen && (
@@ -706,17 +644,16 @@ const DynamicSection = ({
     );
   }
 
-  
   // =========================================================================
   // 9. NEWSLETTER
   // =========================================================================
   if (section.type === 'NEWSLETTER') {
     return (
-      <section className="py-12 sm:py-16 bg-surface/30 border-y border-brand-border/20">
+      <section className="py-12 sm:py-16 bg-surface border-y border-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <NewsletterForm
             title={config.title || 'Suscribite a nuestro Newsletter'}
-            subtitle={config.subtitle || 'Recibí ofertas exclusivas, lanzamientos y cupones de descuento directo en tu correo.'}
+            subtitle={config.subtitle || 'Recibí ingresos de temporada, promos mayoristas y cupones de descuento en tu correo.'}
           />
         </div>
       </section>

@@ -575,7 +575,7 @@ const ProductsPage = () => {
     link.href = url;
     link.setAttribute(
       'download',
-      `catalogo_nocturna_${new Date().toISOString().slice(0, 10)}.csv`
+      `catalogo_paola_${new Date().toISOString().slice(0, 10)}.csv`
     );
     document.body.appendChild(link);
     link.click();
@@ -601,9 +601,9 @@ const ProductsPage = () => {
   return (
     <div className="space-y-5">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-5 border-b border-brand-border/20">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-5 border-b border-border">
         <div>
-          <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
+          <span className="text-[10px] uppercase tracking-widest text-brand-deep font-semibold">
             Catálogo &bull; Inventario &bull; Precios
           </span>
           <h1 className="font-display text-2xl uppercase tracking-wider text-content mt-0.5">
@@ -618,10 +618,10 @@ const ProductsPage = () => {
           <button
             type="button"
             onClick={handleExportCSV}
-            className="inline-flex items-center px-3 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content-secondary hover:text-content border border-brand-border/30 transition-colors"
+            className="inline-flex items-center px-3 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content-secondary hover:text-content border border-border-strong transition-colors"
             title="Descargar listado en formato Excel / CSV"
           >
-            <FiDownload className="mr-1.5 text-mauve" size={14} />
+            <FiDownload className="mr-1.5 text-brand" size={14} />
             Exportar CSV
           </button>
 
@@ -631,9 +631,9 @@ const ProductsPage = () => {
               setBulkScope(selectedIds.length > 0 ? 'SELECTED' : 'ALL');
               setIsBulkPriceOpen(true);
             }}
-            className="inline-flex items-center px-3.5 py-2 rounded-md text-xs font-medium bg-surface-elevated hover:bg-brand/60 text-content border border-mauve/40 transition-colors"
+            className="inline-flex items-center px-3.5 py-2 rounded-md text-xs font-medium bg-surface-elevated hover:bg-brand text-content hover:text-white border border-border-strong transition-colors"
           >
-            <FiPercent className="mr-1.5 text-mauve" size={14} />
+            <FiPercent className="mr-1.5" size={14} />
             Ajuste Masivo de Precios
           </button>
 
@@ -671,14 +671,14 @@ const ProductsPage = () => {
           onClick={() => setStatusFilter(statusFilter === 'ACTIVE' ? 'ALL' : 'ACTIVE')}
           className={`p-3 rounded-lg border text-left transition-colors ${
             statusFilter === 'ACTIVE'
-              ? 'bg-emerald-950/50 border-emerald-700/60 text-emerald-200'
-              : 'bg-surface border-brand-border/20 text-content-secondary hover:border-brand-border/40'
+              ? 'bg-status-success-bg border-status-success-border text-status-success'
+              : 'bg-surface border-border text-content-secondary hover:border-border-strong'
           }`}
         >
           <span className="text-[10px] uppercase tracking-wider text-content-muted block">
             Activos / Pausados
           </span>
-          <span className="text-lg font-semibold text-emerald-300 mt-0.5 block">
+          <span className="text-lg font-semibold text-status-success mt-0.5 block">
             {summaryStats.active}{' '}
             <span className="text-xs text-content-muted font-normal">
               / {summaryStats.paused} paus.
@@ -693,14 +693,14 @@ const ProductsPage = () => {
           }
           className={`p-3 rounded-lg border text-left transition-colors ${
             statusFilter === 'FEATURED'
-              ? 'bg-amber-950/50 border-amber-700/60 text-amber-200'
-              : 'bg-surface border-brand-border/20 text-content-secondary hover:border-brand-border/40'
+              ? 'bg-status-warning-bg border-status-warning-border text-status-warning'
+              : 'bg-surface border-border text-content-secondary hover:border-border-strong'
           }`}
         >
           <span className="text-[10px] uppercase tracking-wider text-content-muted flex items-center gap-1">
-            <FiStar size={10} className="text-amber-400" /> Destacados Home
+            <FiStar size={10} className="text-status-warning" /> Destacados Home
           </span>
-          <span className="text-lg font-semibold text-amber-300 mt-0.5 block">
+          <span className="text-lg font-semibold text-status-warning mt-0.5 block">
             {summaryStats.featured}
           </span>
         </button>
@@ -712,14 +712,14 @@ const ProductsPage = () => {
           }
           className={`p-3 rounded-lg border text-left transition-colors ${
             statusFilter === 'LOW_STOCK'
-              ? 'bg-amber-950/50 border-amber-700/60 text-amber-200'
-              : 'bg-surface border-brand-border/20 text-content-secondary hover:border-brand-border/40'
+              ? 'bg-status-warning-bg border-status-warning-border text-status-warning'
+              : 'bg-surface border-border text-content-secondary hover:border-border-strong'
           }`}
         >
           <span className="text-[10px] uppercase tracking-wider text-content-muted flex items-center gap-1">
-            <FiAlertTriangle size={10} className="text-amber-400" /> Stock Bajo (≤ 3)
+            <FiAlertTriangle size={10} className="text-status-warning" /> Stock Bajo (≤ 3)
           </span>
-          <span className="text-lg font-semibold text-amber-300 mt-0.5 block">
+          <span className="text-lg font-semibold text-status-warning mt-0.5 block">
             {summaryStats.lowStock}
           </span>
         </button>
@@ -731,14 +731,14 @@ const ProductsPage = () => {
           }
           className={`p-3 rounded-lg border text-left transition-colors ${
             statusFilter === 'OUT_OF_STOCK'
-              ? 'bg-rose-950/50 border-rose-700/60 text-rose-200'
-              : 'bg-surface border-brand-border/20 text-content-secondary hover:border-brand-border/40'
+              ? 'bg-status-error-bg border-status-error-border text-status-error'
+              : 'bg-surface border-border text-content-secondary hover:border-border-strong'
           }`}
         >
           <span className="text-[10px] uppercase tracking-wider text-content-muted block">
             Agotados (0 un.)
           </span>
-          <span className="text-lg font-semibold text-rose-300 mt-0.5 block">
+          <span className="text-lg font-semibold text-status-error mt-0.5 block">
             {summaryStats.outOfStock}
           </span>
         </button>
@@ -750,16 +750,16 @@ const ProductsPage = () => {
           }
           className={`p-3 rounded-lg border text-left transition-colors ${
             statusFilter === 'NO_PHOTO'
-              ? 'bg-brand/40 border-mauve text-content'
-              : 'bg-surface border-brand-border/20 text-content-secondary hover:border-brand-border/40'
+              ? 'bg-surface-elevated border-brand text-content'
+              : 'bg-surface border-border text-content-secondary hover:border-border-strong'
           }`}
         >
           <span className="text-[10px] uppercase tracking-wider text-content-muted flex items-center gap-1">
-            <FiImage size={10} className="text-mauve" /> Cobertura Fotos
+            <FiImage size={10} className="text-brand" /> Cobertura Fotos
           </span>
           <span className="text-lg font-semibold text-content mt-0.5 block">
             {summaryStats.withPhoto}/{summaryStats.total}{' '}
-            <span className="text-[11px] text-amber-300 font-normal">
+            <span className="text-[11px] text-status-warning font-normal">
               ({summaryStats.total - summaryStats.withPhoto} sin foto)
             </span>
           </span>
@@ -885,7 +885,7 @@ const ProductsPage = () => {
             <button
               type="button"
               onClick={clearFilters}
-              className="text-mauve hover:text-content inline-flex items-center gap-1 font-medium"
+              className="text-brand-deep hover:text-brand inline-flex items-center gap-1 font-medium"
             >
               <FiX size={13} /> Limpiar filtros
             </button>
@@ -895,9 +895,9 @@ const ProductsPage = () => {
 
       {/* Multi-select Bulk Actions Bar */}
       {selectedIds.length > 0 && (
-        <div className="bg-brand/30 border border-mauve/50 rounded-lg px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+        <div className="bg-surface-elevated border border-brand/40 rounded-lg px-4 py-3 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-xs text-content">
-            <span className="px-2 py-0.5 rounded bg-brand text-content font-semibold border border-mauve/40">
+            <span className="px-2 py-0.5 rounded bg-brand text-white font-semibold">
               {selectedIds.length}
             </span>
             <span className="font-medium">
@@ -910,21 +910,21 @@ const ProductsPage = () => {
             <button
               type="button"
               onClick={() => handleBulkStatus(true)}
-              className="px-2.5 py-1.5 rounded text-xs font-medium bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-200 border border-emerald-700/50 inline-flex items-center gap-1"
+              className="px-2.5 py-1.5 rounded text-xs font-medium bg-status-success-bg hover:bg-emerald-100 text-status-success border border-status-success-border inline-flex items-center gap-1"
             >
               <FiEye size={12} /> Activar
             </button>
             <button
               type="button"
               onClick={() => handleBulkStatus(false)}
-              className="px-2.5 py-1.5 rounded text-xs font-medium bg-surface-elevated hover:bg-surface text-content-secondary border border-brand-border/30 inline-flex items-center gap-1"
+              className="px-2.5 py-1.5 rounded text-xs font-medium bg-surface hover:bg-surface-hover text-content-secondary border border-border-strong inline-flex items-center gap-1"
             >
               <FiEyeOff size={12} /> Pausar
             </button>
             <button
               type="button"
               onClick={() => handleBulkFeatured(true)}
-              className="px-2.5 py-1.5 rounded text-xs font-medium bg-amber-950/60 hover:bg-amber-900/70 text-amber-200 border border-amber-700/50 inline-flex items-center gap-1"
+              className="px-2.5 py-1.5 rounded text-xs font-medium bg-status-warning-bg hover:bg-amber-100 text-status-warning border border-status-warning-border inline-flex items-center gap-1"
             >
               <FiStar size={12} /> Destacar
             </button>
@@ -934,7 +934,7 @@ const ProductsPage = () => {
                 setBulkScope('SELECTED');
                 setIsBulkPriceOpen(true);
               }}
-              className="px-2.5 py-1.5 rounded text-xs font-medium bg-brand hover:bg-brand/80 text-content border border-mauve/40 inline-flex items-center gap-1"
+              className="px-2.5 py-1.5 rounded text-xs font-semibold bg-brand hover:bg-brand-deep text-white inline-flex items-center gap-1"
             >
               <FiPercent size={12} /> Ajustar Precios ({selectedIds.length})
             </button>
@@ -1141,7 +1141,7 @@ const ProductsPage = () => {
                   onChange={(e) => setBulkTransferDiscount(e.target.value)}
                   className="w-20 px-2.5 py-1 bg-surface border border-brand-border/30 rounded text-xs text-content"
                 />
-                <span className="text-xs text-mauve font-medium">% OFF</span>
+                <span className="text-xs text-brand-deep font-semibold">% OFF</span>
               </div>
             )}
           </div>
@@ -1149,12 +1149,12 @@ const ProductsPage = () => {
           {/* Live Preview */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-[11px] text-content-secondary">
-              <span className="uppercase tracking-wider font-medium text-mauve">
+              <span className="uppercase tracking-wider font-semibold text-brand-deep">
                 Vista previa ({bulkTargetProducts.length} productos afectados)
               </span>
               <span>Muestra de los primeros 5 productos</span>
             </div>
-            <div className="border border-brand-border/20 rounded-md overflow-hidden divide-y divide-brand-border/15 bg-canvas max-h-48 overflow-y-auto">
+            <div className="border border-border rounded-md overflow-hidden divide-y divide-border/60 bg-canvas max-h-48 overflow-y-auto">
               {bulkTargetProducts.slice(0, 5).map((p) => {
                 const currentPrice = Number(p.price || 0);
                 const nextPrice = calculateNewPrice(currentPrice);
@@ -1170,8 +1170,8 @@ const ProductsPage = () => {
                         {themeConfig.brand.currencySymbol}
                         {currentPrice.toLocaleString('es-AR')}
                       </span>
-                      <span className="text-mauve">&rarr;</span>
-                      <span className="text-emerald-300 font-semibold">
+                      <span className="text-brand">&rarr;</span>
+                      <span className="text-status-success font-semibold">
                         {themeConfig.brand.currencySymbol}
                         {nextPrice.toLocaleString('es-AR')}
                       </span>

@@ -94,10 +94,10 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
   const content = (
     <div className="space-y-6">
       {/* 0. Filtro Rápido Solo Ofertas */}
-      <div className="p-3.5 rounded-lg bg-surface-elevated/80 border border-mauve/40 shadow-soft">
+      <div className="p-3.5 rounded-lg bg-surface-elevated border border-border shadow-soft">
         <label className="flex items-center justify-between cursor-pointer">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-mauve animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
             <span className="text-xs font-semibold text-content">Solo ofertas</span>
           </div>
           <input
@@ -110,18 +110,18 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
                 page: 1,
               }))
             }
-            className="w-4 h-4 rounded border-brand-border/40 text-mauve focus:ring-mauve focus:ring-offset-0 bg-canvas cursor-pointer"
+            className="w-4 h-4 rounded border-border-strong text-brand focus:ring-brand focus:ring-offset-0 bg-surface cursor-pointer"
           />
         </label>
-        <p className="text-[10px] text-content-muted mt-1 leading-snug">
-          Ver artículos con promociones y descuentos comprobados.
+        <p className="text-[11px] text-content-secondary mt-1 leading-snug">
+          Ver calzados con promociones y descuentos comprobados.
         </p>
       </div>
 
       {/* 1. Categorías y Subcategorías */}
       <div>
-        <div className="flex items-center justify-between pb-2 mb-3 border-b border-brand-border/20">
-          <h4 className="font-display text-xs text-content uppercase tracking-widest">
+        <div className="flex items-center justify-between pb-2 mb-3 border-b border-border">
+          <h4 className="font-display font-bold text-xs text-content uppercase tracking-wider">
             Categorías
           </h4>
         </div>
@@ -136,10 +136,10 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
                   onClick={() => handleCategorySelect(cat.slug)}
                   className={`w-full flex items-center justify-between px-2.5 py-2 rounded text-xs transition-colors text-left ${
                     isSelected && !filters.subcategory
-                      ? 'bg-brand text-content font-medium'
+                      ? 'bg-brand text-white font-semibold shadow-sm'
                       : isSelected
-                      ? 'bg-surface-elevated text-content font-medium'
-                      : 'text-content-secondary hover:text-content hover:bg-surface-elevated/60'
+                      ? 'bg-surface-elevated text-brand-deep font-semibold'
+                      : 'text-content-secondary hover:text-brand-deep hover:bg-surface-elevated/60'
                   }`}
                 >
                   <span>{cat.name}</span>
@@ -149,7 +149,7 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
                 </button>
 
                 {hasChildren && isSelected && (
-                  <div className="pl-3 ml-2 border-l border-brand-border/25 space-y-1 py-1">
+                  <div className="pl-3 ml-2 border-l border-border-strong space-y-1 py-1">
                     {cat.children.map((sub) => {
                       const isSubSelected =
                         filters.subcategory === sub.slug || filters.subcategory === sub.name;
@@ -160,8 +160,8 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
                           onClick={() => handleSubcategorySelect(cat.slug, sub.slug)}
                           className={`w-full block px-2.5 py-1.5 rounded text-[11px] transition-colors text-left ${
                             isSubSelected
-                              ? 'bg-brand/80 text-content font-medium'
-                              : 'text-content-muted hover:text-content hover:bg-surface-elevated/40'
+                              ? 'bg-brand text-white font-semibold'
+                              : 'text-content-secondary hover:text-brand-deep hover:bg-surface-elevated/60'
                           }`}
                         >
                           {sub.name}
@@ -178,37 +178,37 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
 
       {/* 2. Rango de Precio */}
       <div>
-        <div className="pb-2 mb-3 border-b border-brand-border/20">
-          <h4 className="font-display text-xs text-content uppercase tracking-widest">
+        <div className="pb-2 mb-3 border-b border-border">
+          <h4 className="font-display font-bold text-xs text-content uppercase tracking-wider">
             Rango de Precio
           </h4>
         </div>
         <div className="flex items-center space-x-2">
           <div className="relative flex-1">
-            <span className="absolute inset-y-0 left-0 pl-2.5 flex items-center text-xs text-content-muted">
+            <span className="absolute inset-y-0 left-0 pl-2.5 flex items-center text-xs text-content-secondary">
               $
             </span>
             <input
               type="number"
               placeholder="Mín"
               aria-label="Precio mínimo"
-              className="w-full pl-6 pr-2 py-1.5 text-xs rounded border border-brand-border/30 bg-canvas text-content placeholder:text-content-muted focus:outline-none focus:border-mauve"
+              className="w-full pl-6 pr-2 py-1.5 text-xs rounded border border-border-strong bg-surface text-content placeholder:text-content-secondary/70 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand"
               value={localMinPrice}
               onChange={(e) => setLocalMinPrice(e.target.value)}
               onBlur={applyPrices}
               onKeyDown={(e) => e.key === 'Enter' && applyPrices()}
             />
           </div>
-          <span className="text-content-muted text-xs">-</span>
+          <span className="text-content-secondary text-xs">-</span>
           <div className="relative flex-1">
-            <span className="absolute inset-y-0 left-0 pl-2.5 flex items-center text-xs text-content-muted">
+            <span className="absolute inset-y-0 left-0 pl-2.5 flex items-center text-xs text-content-secondary">
               $
             </span>
             <input
               type="number"
               placeholder="Máx"
               aria-label="Precio máximo"
-              className="w-full pl-6 pr-2 py-1.5 text-xs rounded border border-brand-border/30 bg-canvas text-content placeholder:text-content-muted focus:outline-none focus:border-mauve"
+              className="w-full pl-6 pr-2 py-1.5 text-xs rounded border border-border-strong bg-surface text-content placeholder:text-content-secondary/70 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand"
               value={localMaxPrice}
               onChange={(e) => setLocalMaxPrice(e.target.value)}
               onBlur={applyPrices}
@@ -219,7 +219,7 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
         <button
           type="button"
           onClick={applyPrices}
-          className="mt-2.5 w-full py-1.5 px-3 bg-surface-elevated hover:bg-brand text-content text-xs font-medium rounded border border-brand-border/25 transition-colors"
+          className="mt-2.5 w-full py-1.5 px-3 bg-surface-elevated hover:bg-brand text-content hover:text-white text-xs font-semibold rounded border border-border-strong hover:border-brand transition-colors"
         >
           Aplicar rango
         </button>
@@ -228,8 +228,8 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
       {/* 3. Talle */}
       {variantFacets.sizes.length > 0 && (
         <div>
-          <div className="pb-2 mb-3 border-b border-brand-border/20">
-            <h4 className="font-display text-xs text-content uppercase tracking-widest">
+          <div className="pb-2 mb-3 border-b border-border">
+            <h4 className="font-display font-bold text-xs text-content uppercase tracking-wider">
               Talle
             </h4>
           </div>
@@ -243,8 +243,8 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
                   onClick={() => toggleFacet('size', size)}
                   className={`px-2.5 py-1 rounded text-xs transition-colors border ${
                     isSelected
-                      ? 'bg-brand text-content border-mauve font-medium'
-                      : 'bg-canvas text-content-secondary border-brand-border/25 hover:border-mauve/50 hover:text-content'
+                      ? 'bg-brand text-white border-brand-deep font-semibold'
+                      : 'bg-surface text-content-secondary border-border-strong hover:border-brand hover:text-brand-deep'
                   }`}
                 >
                   {size}
@@ -258,8 +258,8 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
       {/* 4. Color */}
       {variantFacets.colors.length > 0 && (
         <div>
-          <div className="pb-2 mb-3 border-b border-brand-border/20">
-            <h4 className="font-display text-xs text-content uppercase tracking-widest">
+          <div className="pb-2 mb-3 border-b border-border">
+            <h4 className="font-display font-bold text-xs text-content uppercase tracking-wider">
               Color
             </h4>
           </div>
@@ -273,41 +273,11 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
                   onClick={() => toggleFacet('color', color)}
                   className={`px-2.5 py-1 rounded text-[11px] transition-colors border ${
                     isSelected
-                      ? 'bg-brand text-content border-mauve font-medium'
-                      : 'bg-canvas text-content-secondary border-brand-border/25 hover:border-mauve/50 hover:text-content'
+                      ? 'bg-brand text-white border-brand-deep font-semibold'
+                      : 'bg-surface text-content-secondary border-border-strong hover:border-brand hover:text-brand-deep'
                   }`}
                 >
                   {color}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* 5. Sabor / Aroma */}
-      {variantFacets.flavors.length > 0 && (
-        <div>
-          <div className="pb-2 mb-3 border-b border-brand-border/20">
-            <h4 className="font-display text-xs text-content uppercase tracking-widest">
-              Sabor / Aroma
-            </h4>
-          </div>
-          <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pr-1">
-            {variantFacets.flavors.map((flavor) => {
-              const isSelected = filters.flavor === flavor;
-              return (
-                <button
-                  key={flavor}
-                  type="button"
-                  onClick={() => toggleFacet('flavor', flavor)}
-                  className={`px-2.5 py-1 rounded text-[11px] transition-colors border ${
-                    isSelected
-                      ? 'bg-brand text-content border-mauve font-medium'
-                      : 'bg-canvas text-content-secondary border-brand-border/25 hover:border-mauve/50 hover:text-content'
-                  }`}
-                >
-                  {flavor}
                 </button>
               );
             })}
@@ -320,7 +290,7 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
         <button
           type="button"
           onClick={clearFilters}
-          className="w-full flex items-center justify-center py-2 px-3 border border-brand-border/30 text-content-secondary rounded text-xs font-medium hover:bg-surface-elevated hover:text-content transition-colors"
+          className="w-full flex items-center justify-center py-2 px-3 border border-border-strong text-content-secondary rounded text-xs font-medium hover:bg-surface-elevated hover:text-brand-deep transition-colors"
         >
           <FiTrash2 className="mr-1.5 text-xs" />
           Restablecer filtros
@@ -335,20 +305,20 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
       {isOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-xs transition-opacity"
+            className="fixed inset-0 bg-[#141014]/45 backdrop-blur-xs transition-opacity"
             onClick={onClose}
           />
 
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-surface h-full shadow-overlay flex flex-col justify-between border-l border-brand-border/25">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-brand-border/20">
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-surface h-full shadow-overlay flex flex-col justify-between border-l border-border">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-border">
               <div className="flex items-center space-x-2">
-                <FiSliders className="text-mauve text-base" />
-                <h3 className="font-display text-sm uppercase tracking-widest text-content">
+                <FiSliders className="text-brand-deep text-base" />
+                <h3 className="font-display font-bold text-sm uppercase tracking-wider text-content">
                   Filtros
                 </h3>
               </div>
               <button
-                className="text-content-secondary hover:text-content p-1 rounded-md"
+                className="text-content-secondary hover:text-brand-deep p-1 rounded-md"
                 onClick={onClose}
                 aria-label="Cerrar filtros"
               >
@@ -358,7 +328,7 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
 
             <div className="p-5 overflow-y-auto flex-1">{content}</div>
 
-            <div className="p-4 border-t border-brand-border/20 bg-surface">
+            <div className="p-4 border-t border-border bg-surface">
               <Button variant="primary" fullWidth size="md" onClick={onClose}>
                 Ver Resultados
               </Button>
@@ -369,7 +339,7 @@ const FilterSidebar = ({ filters, setFilters, isOpen, onClose }) => {
 
       {/* Sidebar Desktop */}
       <div className="hidden lg:block lg:w-64 flex-shrink-0">
-        <div className="sticky top-24 bg-surface p-5 rounded-lg border border-brand-border/20">
+        <div className="sticky top-24 bg-surface p-5 rounded-xl border border-border shadow-soft">
           {content}
         </div>
       </div>

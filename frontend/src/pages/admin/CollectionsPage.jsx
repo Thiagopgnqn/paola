@@ -20,12 +20,12 @@ import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 
 const TAG_COLOR_PRESETS = [
-  { name: 'Mauve / Borgoña', color: '#907878', bg: 'bg-[#907878]/20', border: 'border-[#907878]/40', text: 'text-[#e5d8d8]' },
-  { name: 'Vino Tinto', color: '#5A2A2E', bg: 'bg-[#5A2A2E]/30', border: 'border-[#5A2A2E]/50', text: 'text-rose-200' },
-  { name: 'Dorado / Ámbar', color: '#D97706', bg: 'bg-amber-500/20', border: 'border-amber-500/40', text: 'text-amber-300' },
-  { name: 'Esmeralda', color: '#059669', bg: 'bg-emerald-500/20', border: 'border-emerald-500/40', text: 'text-emerald-300' },
-  { name: 'Púrpura', color: '#7C3AED', bg: 'bg-purple-500/20', border: 'border-purple-500/40', text: 'text-purple-300' },
-  { name: 'Azul Noche', color: '#2563EB', bg: 'bg-blue-500/20', border: 'border-blue-500/40', text: 'text-blue-300' },
+  { name: 'Fucsia Paola', color: '#E6007E', bg: 'bg-surface-elevated', border: 'border-border-strong', text: 'text-brand-deep' },
+  { name: 'Rosa Intenso', color: '#BE123C', bg: 'bg-rose-50', border: 'border-rose-200', text: 'text-rose-700' },
+  { name: 'Ámbar', color: '#B45309', bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-800' },
+  { name: 'Esmeralda', color: '#15803D', bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700' },
+  { name: 'Violeta', color: '#6D28D9', bg: 'bg-violet-50', border: 'border-violet-200', text: 'text-violet-700' },
+  { name: 'Azul', color: '#1D4ED8', bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-700' },
 ];
 
 const CollectionsPage = () => {
@@ -316,13 +316,13 @@ const CollectionsPage = () => {
           onClick={() => setActiveTab('collections')}
           className={`pb-3 text-xs sm:text-sm font-medium flex items-center space-x-2 transition-colors border-b-2 ${
             activeTab === 'collections'
-              ? 'border-mauve text-content'
+              ? 'border-brand text-content'
               : 'border-transparent text-content-muted hover:text-content-secondary'
           }`}
         >
-          <FiLayers size={14} className={activeTab === 'collections' ? 'text-mauve' : ''} />
+          <FiLayers size={14} className={activeTab === 'collections' ? 'text-brand' : ''} />
           <span>Colecciones</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-surface-elevated text-content-secondary border border-brand-border/20">
+          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-surface-elevated text-content-secondary border border-border">
             {collections.length}
           </span>
         </button>
@@ -332,13 +332,13 @@ const CollectionsPage = () => {
           onClick={() => setActiveTab('tags')}
           className={`pb-3 text-xs sm:text-sm font-medium flex items-center space-x-2 transition-colors border-b-2 ${
             activeTab === 'tags'
-              ? 'border-mauve text-content'
+              ? 'border-brand text-content'
               : 'border-transparent text-content-muted hover:text-content-secondary'
           }`}
         >
-          <FiTag size={14} className={activeTab === 'tags' ? 'text-mauve' : ''} />
+          <FiTag size={14} className={activeTab === 'tags' ? 'text-brand' : ''} />
           <span>Etiquetas (Tags)</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-surface-elevated text-content-secondary border border-brand-border/20">
+          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-surface-elevated text-content-secondary border border-border">
             {tags.length}
           </span>
         </button>
@@ -346,16 +346,16 @@ const CollectionsPage = () => {
 
       {/* Success Notification */}
       {successMsg && (
-        <div className="p-3 bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 text-xs rounded-md flex items-center space-x-2">
-          <FiCheck size={14} className="text-emerald-400 shrink-0" />
+        <div className="p-3 bg-status-success-bg border border-status-success-border text-status-success text-xs rounded-md flex items-center space-x-2">
+          <FiCheck size={14} className="text-status-success shrink-0" />
           <span>{successMsg}</span>
         </div>
       )}
 
       {/* Error Notification */}
       {error && (
-        <div className="p-3 bg-rose-950/40 border border-rose-500/40 text-rose-200 text-xs rounded-md flex items-center space-x-2">
-          <FiAlertCircle size={14} className="text-rose-400 shrink-0" />
+        <div className="p-3 bg-status-error-bg border border-status-error-border text-status-error text-xs rounded-md flex items-center space-x-2">
+          <FiAlertCircle size={14} className="text-status-error shrink-0" />
           <span>{error}</span>
         </div>
       )}
@@ -390,7 +390,7 @@ const CollectionsPage = () => {
                   <div className="space-y-2.5">
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-center space-x-2">
-                        <span className="p-2 rounded bg-surface-elevated border border-brand-border/20 text-mauve">
+                        <span className="p-2 rounded bg-surface-elevated border border-border-strong text-brand">
                           <FiLayers size={14} />
                         </span>
                         <div>
@@ -402,8 +402,8 @@ const CollectionsPage = () => {
                       <span
                         className={`text-[9px] font-semibold uppercase px-2 py-0.5 rounded border ${
                           coll.active !== false
-                            ? 'bg-emerald-950/40 text-emerald-300 border-emerald-500/30'
-                            : 'bg-zinc-800 text-zinc-400 border-zinc-700'
+                            ? 'bg-status-success-bg text-status-success border-status-success-border'
+                            : 'bg-surface-elevated text-content-secondary border-border-strong'
                         }`}
                       >
                         {coll.active !== false ? 'Activa' : 'Inactiva'}
@@ -416,19 +416,19 @@ const CollectionsPage = () => {
                       </p>
                     )}
 
-                    <div className="pt-2 flex items-center justify-between text-[11px] text-content-muted border-t border-brand-border/10">
+                    <div className="pt-2 flex items-center justify-between text-[11px] text-content-muted border-t border-border/50">
                       <span className="flex items-center space-x-1">
-                        <FiPackage size={12} className="text-mauve" />
+                        <FiPackage size={12} className="text-brand" />
                         <span>{itemCount} producto{itemCount === 1 ? '' : 's'}</span>
                       </span>
                     </div>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-brand-border/15 flex items-center justify-end space-x-2">
+                  <div className="pt-4 mt-4 border-t border-border/50 flex items-center justify-end space-x-2">
                     <button
                       type="button"
                       onClick={() => handleOpenEditCollection(coll)}
-                      className="px-2.5 py-1.5 text-xs text-content-secondary hover:text-content bg-surface-elevated hover:bg-brand/40 border border-brand-border/25 rounded transition-colors inline-flex items-center space-x-1"
+                      className="px-2.5 py-1.5 text-xs text-content hover:text-white bg-surface-elevated hover:bg-brand border border-border-strong rounded transition-colors inline-flex items-center space-x-1 font-medium"
                     >
                       <FiEdit2 size={12} />
                       <span>Editar</span>
@@ -436,7 +436,7 @@ const CollectionsPage = () => {
                     <button
                       type="button"
                       onClick={() => handleDeleteCollection(coll)}
-                      className="px-2 py-1.5 text-xs text-rose-300 hover:text-rose-200 hover:bg-rose-950/40 border border-rose-500/20 rounded transition-colors"
+                      className="px-2 py-1.5 text-xs text-status-error hover:text-white hover:bg-rose-600 border border-status-error-border bg-status-error-bg rounded transition-colors"
                       title="Eliminar colección"
                     >
                       <FiTrash2 size={12} />
@@ -451,10 +451,10 @@ const CollectionsPage = () => {
         /* ================= TAGS TAB ================= */
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Create Tag Card */}
-          <div className="bg-surface border border-brand-border/20 rounded-lg p-5 space-y-4">
+          <div className="bg-surface border border-border rounded-lg p-5 space-y-4">
             <div>
               <h2 className="text-sm font-semibold text-content flex items-center space-x-2">
-                <FiTag className="text-mauve" size={14} />
+                <FiTag className="text-brand" size={14} />
                 <span>Nueva Etiqueta</span>
               </h2>
               <p className="text-xs text-content-secondary mt-1">
@@ -562,7 +562,7 @@ const CollectionsPage = () => {
                       <button
                         type="button"
                         onClick={() => handleDeleteTag(tag)}
-                        className="text-content-muted hover:text-rose-300 p-1 rounded hover:bg-rose-950/30 transition-colors shrink-0"
+                        className="text-content-muted hover:text-status-error p-1 rounded hover:bg-status-error-bg transition-colors shrink-0"
                         title="Eliminar etiqueta"
                       >
                         <FiTrash2 size={13} />
@@ -578,7 +578,7 @@ const CollectionsPage = () => {
 
       {/* ================= MODAL: CREATE / EDIT COLLECTION ================= */}
       {isCollectionModalOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-content/40 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-surface border border-brand-border/40 rounded-xl max-w-3xl w-full p-6 shadow-2xl space-y-6 max-h-[90vh] flex flex-col">
             {/* Modal Header */}
             <div className="flex items-center justify-between border-b border-brand-border/20 pb-4">
@@ -675,7 +675,7 @@ const CollectionsPage = () => {
                         className="flex items-center justify-between p-2.5 bg-surface-elevated rounded-md border border-brand-border/20 text-xs"
                       >
                         <div className="flex items-center space-x-3 min-w-0">
-                          <span className="h-6 w-6 rounded bg-brand/50 border border-mauve/30 text-mauve font-mono text-[10px] flex items-center justify-center shrink-0">
+                          <span className="h-6 w-6 rounded bg-brand text-white font-mono text-[10px] font-semibold flex items-center justify-center shrink-0">
                             #{idx + 1}
                           </span>
                           <div className="truncate">
@@ -710,7 +710,7 @@ const CollectionsPage = () => {
                           <button
                             type="button"
                             onClick={() => handleRemoveProductFromCollection(item.productId)}
-                            className="p-1 rounded text-content-muted hover:text-rose-300 ml-1"
+                            className="p-1 rounded text-content-muted hover:text-status-error ml-1"
                             title="Quitar de la colección"
                           >
                             <FiTrash2 size={13} />
@@ -722,7 +722,7 @@ const CollectionsPage = () => {
                 )}
 
                 {/* Product Search & Selector */}
-                <div className="p-3 bg-canvas rounded-lg border border-brand-border/25 space-y-2">
+                <div className="p-3 bg-canvas rounded-lg border border-border space-y-2">
                   <div className="flex items-center space-x-2 text-xs">
                     <FiSearch className="text-content-muted" size={13} />
                     <input
@@ -735,7 +735,7 @@ const CollectionsPage = () => {
                   </div>
 
                   {filteredAvailableProducts.length > 0 && (
-                    <div className="pt-2 border-t border-brand-border/15 max-h-36 overflow-y-auto space-y-1">
+                    <div className="pt-2 border-t border-border/60 max-h-36 overflow-y-auto space-y-1">
                       {filteredAvailableProducts.map((p) => (
                         <div
                           key={p.id}
@@ -748,7 +748,7 @@ const CollectionsPage = () => {
                           <button
                             type="button"
                             onClick={() => handleAddProductToCollection(p)}
-                            className="text-[11px] text-mauve hover:text-content px-2 py-0.5 rounded bg-surface border border-mauve/30 inline-flex items-center space-x-1 shrink-0"
+                            className="text-[11px] text-brand-deep hover:text-white hover:bg-brand px-2 py-0.5 rounded bg-surface border border-border-strong inline-flex items-center space-x-1 shrink-0 transition-colors"
                           >
                             <FiPlus size={11} />
                             <span>Agregar</span>

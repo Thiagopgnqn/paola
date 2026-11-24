@@ -20,7 +20,11 @@ const HomePage = () => {
   const [loadingSections, setLoadingSections] = useState(true);
 
   useSEO({
-    title: activeCampaign?.seoTitle || (previewParam ? 'Vista Previa de Campaña | Nocturna' : 'Nocturna Sexshop — Tienda online en Córdoba | Envíos discretos'),
+    title:
+      activeCampaign?.seoTitle ||
+      (previewParam
+        ? `Vista Previa de Campaña | ${themeConfig.brand.name}`
+        : 'Paola Calzados — Venta por Mayor y por Menor | Córdoba'),
     description: activeCampaign?.seoDescription || themeConfig.brand.description,
     noindex: Boolean(previewParam),
   });
@@ -88,7 +92,7 @@ const HomePage = () => {
 
             <Link
               to="/"
-              className="inline-flex items-center gap-1 bg-black/80 hover:bg-black text-white px-2.5 py-1 rounded text-xs transition-colors"
+              className="inline-flex items-center gap-1 bg-content/85 hover:bg-content text-white px-2.5 py-1 rounded text-xs transition-colors"
             >
               <span>Salir</span>
               <FiX size={13} />

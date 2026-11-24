@@ -48,7 +48,7 @@ describe('Parte 5: Métricas, UTM, Newsletter y Atribución', () => {
         status: 'CONFIRMED',
         createdAt: new Date().toISOString(),
         items: [
-          { productId: 'p1', name: 'Vibrador Lujo', quantity: 1, price: 85000 },
+          { productId: 'p1', name: 'Zapatilla Urbana Plataforma', quantity: 1, price: 85000 },
         ],
       },
       {
@@ -64,7 +64,7 @@ describe('Parte 5: Métricas, UTM, Newsletter y Atribución', () => {
         status: 'CONFIRMED',
         createdAt: new Date().toISOString(),
         items: [
-          { productId: 'p2', name: 'Aceite de Masajes', quantity: 2, price: 22500 },
+          { productId: 'p2', name: 'Sandalia Faja Clásica', quantity: 2, price: 22500 },
         ],
       },
       {
@@ -80,7 +80,7 @@ describe('Parte 5: Métricas, UTM, Newsletter y Atribución', () => {
         status: 'CANCELLED', // Pedido cancelado debe excluirse si se filtra antes
         createdAt: new Date().toISOString(),
         items: [
-          { productId: 'p1', name: 'Vibrador Lujo', quantity: 1, price: 100000 },
+          { productId: 'p1', name: 'Zapatilla Urbana Plataforma', quantity: 1, price: 100000 },
         ],
       },
     ];

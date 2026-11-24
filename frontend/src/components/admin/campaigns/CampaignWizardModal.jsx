@@ -207,13 +207,13 @@ const CampaignWizardModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-surface border border-brand-border/30 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl text-content my-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-content/40 backdrop-blur-xs overflow-y-auto">
+      <div className="bg-surface border border-border-strong rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl text-content my-auto">
         {/* Header con Stepper */}
-        <div className="p-4 sm:p-6 border-b border-brand-border/20 flex-shrink-0">
+        <div className="p-4 sm:p-6 border-b border-border flex-shrink-0">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-mauve font-semibold">
+              <span className="text-[10px] uppercase tracking-widest text-brand-deep font-semibold">
                 Asistente de Marketing
               </span>
               <h2 className="text-lg sm:text-xl font-bold font-display text-content">
@@ -240,7 +240,7 @@ const CampaignWizardModal = ({
                   <div
                     className={`h-7 w-7 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                       currentStep === step.id
-                        ? 'bg-mauve text-canvas ring-2 ring-mauve/40'
+                        ? 'bg-brand text-white ring-2 ring-brand/30'
                         : currentStep > step.id
                         ? 'bg-emerald-600 text-white'
                         : 'bg-surface-elevated text-content-muted'
@@ -274,9 +274,9 @@ const CampaignWizardModal = ({
           {currentStep === 1 && (
             <div className="space-y-6">
               {/* Presets típicos de Argentina */}
-              <div className="p-4 rounded-xl bg-surface-elevated/40 border border-brand-border/25">
+              <div className="p-4 rounded-xl bg-surface-elevated/40 border border-border">
                 <div className="flex items-center space-x-2 mb-2">
-                  <FiStar className="text-mauve" size={15} />
+                  <FiStar className="text-brand" size={15} />
                   <span className="text-xs font-semibold text-content uppercase tracking-wider">
                     Presets de Fechas Comerciales en Argentina
                   </span>
@@ -290,14 +290,14 @@ const CampaignWizardModal = ({
                       key={p.id}
                       type="button"
                       onClick={() => handleApplyPreset(p)}
-                      className="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-canvas border border-brand-border/30 hover:border-mauve hover:bg-surface-elevated text-content-secondary hover:text-content transition-colors flex items-center space-x-1.5"
+                      className="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-canvas border border-border-strong hover:border-brand hover:bg-surface-elevated text-content-secondary hover:text-content transition-colors flex items-center space-x-1.5"
                     >
                       <span>{p.name}</span>
                     </button>
                   ))}
                 </div>
-                <div className="p-2.5 bg-amber-950/20 border border-amber-800/30 rounded-lg text-amber-300 text-[11px] flex items-start gap-2">
-                  <FiInfo className="w-3.5 h-3.5 mt-0.5 shrink-0 text-amber-400" />
+                <div className="p-2.5 bg-status-warning-bg border border-status-warning-border rounded-lg text-status-warning text-[11px] flex items-start gap-2">
+                  <FiInfo className="w-3.5 h-3.5 mt-0.5 shrink-0 text-status-warning" />
                   <span>
                     <strong>Texto sugerido editable:</strong> Recordá que los títulos y descripciones deben ser comprobables según las leyes de lealtad comercial (evitá frases como 'precios récord' o 'los más bajos del año').
                   </span>
@@ -315,8 +315,8 @@ const CampaignWizardModal = ({
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Ej: Hot Sale Nocturna"
-                    className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-mauve"
+                    placeholder="Ej: Liquidación de Temporada"
+                    className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-brand"
                   />
                 </div>
 
@@ -329,7 +329,7 @@ const CampaignWizardModal = ({
                     value={formData.slug}
                     onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
                     placeholder="ej: hot-sale (opcional)"
-                    className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-mauve font-mono text-xs"
+                    className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-brand font-mono text-xs"
                   />
                 </div>
               </div>
@@ -342,8 +342,8 @@ const CampaignWizardModal = ({
                   type="text"
                   value={formData.headline || ''}
                   onChange={(e) => setFormData({ ...formData, headline: e.target.value })}
-                  placeholder="Ej: Las mejores ofertas del año en placer y seducción"
-                  className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-mauve"
+                  placeholder="Ej: Ofertas por mayor y menor en calzado de estación"
+                  className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-brand"
                 />
               </div>
 
@@ -355,8 +355,8 @@ const CampaignWizardModal = ({
                   type="text"
                   value={formData.subheadline || ''}
                   onChange={(e) => setFormData({ ...formData, subheadline: e.target.value })}
-                  placeholder="Ej: Hasta 35% OFF en piezas seleccionadas y envíos 100% discretos."
-                  className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-mauve"
+                  placeholder="Ej: Zapatillas, sandalias y botas seleccionadas con envíos desde Córdoba."
+                  className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-brand"
                 />
               </div>
 
@@ -376,7 +376,7 @@ const CampaignWizardModal = ({
                     <option value="san-valentin">San Valentín (Crimson & Pasión)</option>
                     <option value="navidad">Navidad (Verde Profundo & Dorado)</option>
                     <option value="liquidacion">Liquidación / Outlet (Fuego & Naranja)</option>
-                    <option value="neutro">Neutro de Marca (Paleta Nocturna)</option>
+                    <option value="neutro">Neutro de Marca (Paleta Paola Calzados)</option>
                   </select>
                 </div>
 
@@ -400,7 +400,7 @@ const CampaignWizardModal = ({
                     type="checkbox"
                     checked={formData.showCountdown}
                     onChange={(e) => setFormData({ ...formData, showCountdown: e.target.checked })}
-                    className="rounded border-brand-border/30 text-mauve focus:ring-mauve"
+                    className="rounded border-border-strong text-brand focus:ring-brand"
                   />
                   <span>Mostrar cuenta regresiva a fecha fin</span>
                 </label>
@@ -410,7 +410,7 @@ const CampaignWizardModal = ({
                     type="checkbox"
                     checked={formData.landingEnabled}
                     onChange={(e) => setFormData({ ...formData, landingEnabled: e.target.checked })}
-                    className="rounded border-brand-border/30 text-mauve focus:ring-mauve"
+                    className="rounded border-border-strong text-brand focus:ring-brand"
                   />
                   <span>Habilitar página dedicada (/campanas/:slug)</span>
                 </label>
@@ -425,7 +425,7 @@ const CampaignWizardModal = ({
                   value={formData.conditionsText || ''}
                   onChange={(e) => setFormData({ ...formData, conditionsText: e.target.value })}
                   placeholder="Condiciones específicas, vigencia, límite de stock y alcance en Córdoba."
-                  className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-xs text-content focus:outline-none focus:border-mauve"
+                  className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-xs text-content focus:outline-none focus:border-brand"
                 />
               </div>
 
@@ -438,7 +438,7 @@ const CampaignWizardModal = ({
                   value={formData.description || ''}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   placeholder="Detalles de la campaña, alcance de envíos y términos."
-                  className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-mauve"
+                  className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-brand"
                 />
               </div>
 
@@ -446,7 +446,7 @@ const CampaignWizardModal = ({
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div>
                   <label className="block text-xs font-medium text-content-secondary mb-1 flex items-center space-x-1">
-                    <FiCalendar size={13} className="text-mauve" />
+                    <FiCalendar size={13} className="text-brand" />
                     <span>Fecha y Hora de Inicio</span>
                   </label>
                   <input
@@ -456,13 +456,13 @@ const CampaignWizardModal = ({
                       setFormData({ ...formData, startsAt: e.target.value });
                       setDateError('');
                     }}
-                    className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-xs text-content focus:outline-none focus:border-mauve"
+                    className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-xs text-content focus:outline-none focus:border-brand"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-medium text-content-secondary mb-1 flex items-center space-x-1">
-                    <FiCalendar size={13} className="text-mauve" />
+                    <FiCalendar size={13} className="text-brand" />
                     <span>Fecha y Hora de Fin</span>
                   </label>
                   <input
@@ -492,7 +492,7 @@ const CampaignWizardModal = ({
               </div>
 
               {dateError && (
-                <div className="p-3 bg-rose-950/40 border border-rose-800/40 rounded-lg text-rose-300 text-xs flex items-center space-x-2">
+                <div className="p-3 bg-status-error-bg border border-status-error-border rounded-lg text-status-error text-xs flex items-center space-x-2">
                   <FiAlertTriangle size={15} />
                   <span>{dateError}</span>
                 </div>
@@ -518,7 +518,7 @@ const CampaignWizardModal = ({
             <div className="space-y-5">
               <div className="p-4 rounded-xl bg-surface-elevated/40 border border-brand-border/25 space-y-4">
                 <h4 className="text-xs font-semibold text-content uppercase tracking-wider flex items-center space-x-2">
-                  <FiLayers className="text-mauve" />
+                  <FiLayers className="text-brand" />
                   <span>Condiciones de Visualización y Banner</span>
                 </h4>
 
@@ -531,10 +531,10 @@ const CampaignWizardModal = ({
                     value={formData.bannerUrl || ''}
                     onChange={(e) => setFormData({ ...formData, bannerUrl: e.target.value })}
                     placeholder="https://... o /images/brand/banner.webp"
-                    className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-mauve"
+                    className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-brand"
                   />
                   <p className="text-[11px] text-content-muted mt-1">
-                    Cumplimiento de marca: sin desnudez explícita ni contenido explícito; se conserva el aviso +18.
+                    Recomendación: usar gráficas luminosas acordes a la paleta fucsia y rosa claro de Paola Calzados.
                   </p>
                 </div>
 
@@ -550,8 +550,8 @@ const CampaignWizardModal = ({
                         onClick={() => setFormData({ ...formData, status: st })}
                         className={`p-3 rounded-lg border text-left transition-all ${
                           formData.status === st
-                            ? 'bg-brand/40 border-mauve text-content ring-1 ring-mauve/40'
-                            : 'bg-canvas/60 border-brand-border/25 text-content-secondary hover:text-content'
+                            ? 'bg-surface-elevated border-brand text-content ring-1 ring-brand/40'
+                            : 'bg-canvas border-border text-content-secondary hover:text-content'
                         }`}
                       >
                         <span className="text-xs font-bold block mb-0.5">
@@ -571,13 +571,13 @@ const CampaignWizardModal = ({
               </div>
 
               {/* Banner de Honestidad Legal */}
-              <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-800/40 text-emerald-200 text-xs flex items-start space-x-3">
-                <FiCheckCircle className="text-emerald-400 mt-0.5 shrink-0" size={16} />
+              <div className="p-4 rounded-xl bg-status-success-bg border border-status-success-border text-status-success text-xs flex items-start space-x-3">
+                <FiCheckCircle className="text-status-success mt-0.5 shrink-0" size={16} />
                 <div className="space-y-1">
-                  <p className="font-semibold text-emerald-300">
+                  <p className="font-semibold text-status-success">
                     Regla de Honestidad Comercial y Verificación de Precios
                   </p>
-                  <p className="text-emerald-200/90 leading-relaxed text-[11px]">
+                  <p className="text-content-secondary leading-relaxed text-[11px]">
                     El motor de precios validará cada producto contra el historial real de los últimos 30 días. Si un producto no registra precio de lista comprobable, se exhibirá con precio final transparente sin precio tachado ficticio.
                   </p>
                 </div>
@@ -588,10 +588,10 @@ const CampaignWizardModal = ({
           {/* PASO 4: Resumen y Confirmación */}
           {currentStep === 4 && (
             <div className="space-y-5">
-              <div className="p-5 rounded-xl bg-surface-elevated/40 border border-brand-border/30 space-y-4">
+              <div className="p-5 rounded-xl bg-surface-elevated/40 border border-border space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] text-mauve font-semibold uppercase tracking-wider">
+                    <span className="text-[10px] text-brand-deep font-semibold uppercase tracking-wider">
                       Resumen de la Campaña
                     </span>
                     <h3 className="text-lg font-bold text-content">{formData.name}</h3>
@@ -599,10 +599,10 @@ const CampaignWizardModal = ({
                   <span
                     className={`px-2.5 py-1 rounded-md text-xs font-bold uppercase ${
                       formData.status === 'ACTIVE'
-                        ? 'bg-emerald-950 text-emerald-300 border border-emerald-800/40'
+                        ? 'bg-status-success-bg text-status-success border border-status-success-border'
                         : formData.status === 'SCHEDULED'
-                        ? 'bg-amber-950 text-amber-300 border border-amber-800/40'
-                        : 'bg-zinc-800 text-zinc-300 border border-zinc-700'
+                        ? 'bg-status-warning-bg text-status-warning border border-status-warning-border'
+                        : 'bg-surface-elevated text-content-secondary border border-border-strong'
                     }`}
                   >
                     {formData.status}
@@ -655,16 +655,16 @@ const CampaignWizardModal = ({
               </div>
 
               {confirmActivation && (
-                <div className="p-4 bg-amber-950/40 border border-amber-600/50 rounded-xl text-amber-200 text-xs flex items-center justify-between">
+                <div className="p-4 bg-status-warning-bg border border-status-warning-border rounded-xl text-status-warning text-xs flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <FiAlertTriangle className="text-amber-400" size={18} />
+                    <FiAlertTriangle className="text-status-warning" size={18} />
                     <span>¿Confirmás la activación inmediata de esta campaña en la tienda?</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <button
                       type="button"
                       onClick={() => setConfirmActivation(false)}
-                      className="px-2.5 py-1 bg-surface-elevated text-content rounded-md hover:bg-surface"
+                      className="px-2.5 py-1 bg-surface text-content border border-border rounded-md hover:bg-surface-elevated"
                     >
                       Cancelar
                     </button>
@@ -683,13 +683,13 @@ const CampaignWizardModal = ({
         </div>
 
         {/* Footer con Navegación y Acciones */}
-        <div className="p-4 sm:p-5 border-t border-brand-border/20 bg-surface-elevated/40 flex items-center justify-between flex-shrink-0">
+        <div className="p-4 sm:p-5 border-t border-border bg-surface-elevated/40 flex items-center justify-between flex-shrink-0">
           <div>
             {currentStep > 1 && (
               <button
                 type="button"
                 onClick={handlePrev}
-                className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg text-xs font-medium bg-canvas border border-brand-border/30 text-content-secondary hover:text-content hover:bg-surface transition-colors"
+                className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg text-xs font-medium bg-canvas border border-border-strong text-content-secondary hover:text-content hover:bg-surface transition-colors"
               >
                 <FiChevronLeft size={14} />
                 <span>Anterior</span>
@@ -710,7 +710,7 @@ const CampaignWizardModal = ({
               <button
                 type="button"
                 onClick={handleNext}
-                className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-brand text-content hover:bg-brand/90 transition-colors shadow-sm"
+                className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-brand text-white hover:bg-brand-deep transition-colors shadow-sm"
               >
                 <span>Siguiente</span>
                 <FiChevronRight size={14} />

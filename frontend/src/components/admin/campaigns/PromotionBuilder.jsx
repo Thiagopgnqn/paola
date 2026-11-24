@@ -21,7 +21,7 @@ const PROMO_KINDS = [
     label: 'Porcentaje de Descuento (%)',
     icon: FiPercent,
     description: 'Aplica un descuento proporcional sobre el precio de lista (ej: 15% o 25% OFF).',
-    example: 'Ej: 15% OFF en toda la categoría Lencería.',
+    example: 'Ej: 15% OFF en toda la categoría Zapatillas.',
   },
   {
     id: 'FIXED_AMOUNT',
@@ -35,21 +35,21 @@ const PROMO_KINDS = [
     label: 'Precio Promocional Fijo ($)',
     icon: FiTag,
     description: 'Establece un precio final fijo sin importar el valor de lista original.',
-    example: 'Ej: Todos los geles aromáticos a $8.000.',
+    example: 'Ej: Ojotas seleccionadas a $12.000.',
   },
   {
     id: 'BUY_X_PAY_Y',
     label: 'Promoción por Cantidad (2x1, 3x2, etc.)',
     icon: FiLayers,
     description: 'El cliente lleva X unidades y abona solo Y unidades (se bonifica la de menor valor).',
-    example: 'Ej: 2x1 en Cosmética Sensorial (llevás 2, pagás 1).',
+    example: 'Ej: 2x1 en Sandalias bajas (llevás 2, pagás 1).',
   },
   {
     id: 'BUNDLE_PRICE',
     label: 'Combo de Productos a Precio Fijo',
     icon: FiGift,
     description: 'Define un precio especial al comprar un conjunto específico de productos juntos.',
-    example: 'Ej: Vibrador Luna + Gel Love Potion por $35.000.',
+    example: 'Ej: Zapatilla Urbana + Ojota Liviana por $35.000.',
   },
   {
     id: 'TIERED',
@@ -254,8 +254,8 @@ const PromotionBuilder = ({
 
   if (promotions.length === 0) {
     return (
-      <div className="text-center py-8 bg-surface-elevated/40 rounded-xl border border-dashed border-brand-border/40 p-6">
-        <FiGift className="mx-auto text-mauve h-10 w-10 mb-3 opacity-60" />
+      <div className="text-center py-8 bg-surface-elevated/40 rounded-xl border border-dashed border-border-strong p-6">
+        <FiGift className="mx-auto text-brand h-10 w-10 mb-3 opacity-80" />
         <h4 className="text-sm font-semibold text-content">Esta campaña aún no tiene promociones</h4>
         <p className="text-xs text-content-secondary mt-1 max-w-md mx-auto">
           Podés crear descuentos porcentuales, 2x1, combos, precios fijos o envíos gratis asociados.
@@ -263,7 +263,7 @@ const PromotionBuilder = ({
         <button
           type="button"
           onClick={handleAddPromotion}
-          className="mt-4 inline-flex items-center space-x-2 px-4 py-2 bg-brand text-content rounded-lg text-xs font-medium hover:bg-brand/90 transition-colors shadow-sm"
+          className="mt-4 inline-flex items-center space-x-2 px-4 py-2 bg-brand text-white rounded-lg text-xs font-semibold hover:bg-brand-deep transition-colors shadow-sm"
         >
           <FiPlus size={14} />
           <span>Agregar Primera Promoción</span>
@@ -286,7 +286,7 @@ const PromotionBuilder = ({
               onClick={() => setActivePromoIndex(idx)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center space-x-2 ${
                 activePromoIndex === idx
-                  ? 'bg-brand text-content border border-mauve/40 shadow-xs'
+                  ? 'bg-brand text-white shadow-xs'
                   : 'bg-surface-elevated text-content-secondary hover:text-content hover:bg-surface-elevated/80'
               }`}
             >
@@ -317,15 +317,15 @@ const PromotionBuilder = ({
                 type="text"
                 value={currentPromo.name || ''}
                 onChange={(e) => handleUpdateCurrent('name', e.target.value)}
-                placeholder="Ej: 15% OFF en Toda Lencería"
-                className="w-full bg-canvas border border-brand-border/35 rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-mauve"
+                placeholder="Ej: 15% OFF en Zapatillas Urbanas"
+                className="w-full bg-canvas border border-border-strong rounded-lg px-3 py-2 text-sm text-content focus:outline-none focus:border-brand"
               />
             </div>
             {promotions.length > 1 && (
               <button
                 type="button"
                 onClick={() => handleRemovePromotion(activePromoIndex)}
-                className="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-lg hover:bg-rose-950/40 transition-colors"
+                className="mt-5 text-status-error hover:text-white p-2 rounded-lg hover:bg-rose-600 transition-colors"
                 title="Eliminar esta promoción"
               >
                 <FiTrash2 size={16} />
@@ -349,12 +349,12 @@ const PromotionBuilder = ({
                     onClick={() => handleUpdateCurrent('kind', kind.id)}
                     className={`text-left p-3 rounded-lg border transition-all ${
                       isSelected
-                        ? 'bg-brand/40 border-mauve text-content shadow-xs ring-1 ring-mauve/40'
-                        : 'bg-canvas/60 border-brand-border/25 text-content-secondary hover:text-content hover:bg-surface-elevated'
+                        ? 'bg-surface-elevated border-brand text-content shadow-xs ring-1 ring-brand/40'
+                        : 'bg-canvas border-border text-content-secondary hover:text-content hover:bg-surface-elevated'
                     }`}
                   >
                     <div className="flex items-center space-x-2 mb-1">
-                      <Icon className={isSelected ? 'text-mauve' : 'text-content-muted'} size={15} />
+                      <Icon className={isSelected ? 'text-brand' : 'text-content-muted'} size={15} />
                       <span className="text-xs font-semibold">{kind.label}</span>
                     </div>
                     <p className="text-[11px] text-content-muted line-clamp-2 leading-tight">
@@ -366,8 +366,8 @@ const PromotionBuilder = ({
             </div>
 
             {/* Ayuda y ejemplo contextual */}
-            <div className="mt-2.5 p-2.5 rounded-lg bg-canvas/70 border border-brand-border/20 text-xs flex items-start space-x-2 text-content-secondary">
-              <FiInfo className="text-mauve mt-0.5 shrink-0" size={14} />
+            <div className="mt-2.5 p-2.5 rounded-lg bg-canvas border border-border text-xs flex items-start space-x-2 text-content-secondary">
+              <FiInfo className="text-brand mt-0.5 shrink-0" size={14} />
               <div>
                 <span className="text-content font-medium">Ejemplo de aplicación: </span>
                 <span>{selectedKindObj.example}</span>
@@ -477,20 +477,20 @@ const PromotionBuilder = ({
                     </div>
 
                     {isComboPriceInvalid ? (
-                      <div className="p-3 bg-rose-950/40 border border-rose-800/60 rounded-xl text-rose-300 text-xs flex items-start gap-2.5">
-                        <FiAlertTriangle className="w-4 h-4 text-rose-400 mt-0.5 shrink-0" />
+                      <div className="p-3 bg-status-error-bg border border-status-error-border rounded-xl text-status-error text-xs flex items-start gap-2.5">
+                        <FiAlertTriangle className="w-4 h-4 text-status-error mt-0.5 shrink-0" />
                         <div>
                           <p className="font-semibold">Precio de combo no permitido</p>
-                          <p className="mt-0.5 text-rose-300/90 leading-relaxed text-[11px]">
+                          <p className="mt-0.5 text-status-error/90 leading-relaxed text-[11px]">
                             El precio ingresado (${Number(currentPromo.value || 0).toLocaleString('es-AR')}) es igual o mayor a la suma de comprar los productos por separado (${separateSum.toLocaleString('es-AR')}).
                             Para cumplir con las normas de honestidad y lealtad comercial, el combo debe ser estrictamente más económico.
                           </p>
                         </div>
                       </div>
                     ) : Number(currentPromo.value || 0) > 0 ? (
-                      <div className="p-2.5 bg-emerald-950/30 border border-emerald-800/40 rounded-lg text-emerald-300 text-xs flex items-center justify-between">
+                      <div className="p-2.5 bg-status-success-bg border border-status-success-border rounded-lg text-status-success text-xs flex items-center justify-between">
                         <span>Ahorro real para el cliente:</span>
-                        <span className="font-bold text-emerald-400">
+                        <span className="font-bold text-status-success">
                           ${(separateSum - Number(currentPromo.value)).toLocaleString('es-AR')} (
                           {Math.round(((separateSum - Number(currentPromo.value)) / separateSum) * 100)}% OFF)
                         </span>
@@ -625,7 +625,7 @@ const PromotionBuilder = ({
                       ))}
                   </select>
                   {subcategoriesList.length === 0 && (
-                    <p className="text-[11px] text-amber-400 mt-1">
+                    <p className="text-[11px] text-status-warning mt-1">
                       No hay subcategorías registradas en el catálogo. Podés crearlas en la sección de Categorías.
                     </p>
                   )}
@@ -733,19 +733,19 @@ const PromotionBuilder = ({
                             ${pricing.compareAtPrice.toLocaleString('es-AR')}
                           </span>
                         ) : null}
-                        <span className="text-sm font-bold text-mauve font-mono">
+                        <span className="text-sm font-bold text-brand-deep font-mono">
                           ${pricing.finalPrice.toLocaleString('es-AR')}
                         </span>
                       </div>
                       {pricing.savingsAmount > 0 && (
-                        <span className="text-[10px] bg-emerald-950/80 text-emerald-300 border border-emerald-800/40 px-1.5 py-0.5 rounded font-medium">
+                        <span className="text-[10px] bg-status-success-bg text-status-success border border-status-success-border px-1.5 py-0.5 rounded font-medium">
                           -{pricing.discountPercent}%
                         </span>
                       )}
                     </div>
 
                     {isZeroOrLow && (
-                      <div className="mt-2 text-[10px] text-amber-300 flex items-center space-x-1">
+                      <div className="mt-2 text-[10px] text-status-warning flex items-center space-x-1">
                         <FiAlertTriangle size={12} className="shrink-0" />
                         <span>¡Atención! Precio muy bajo o $0</span>
                       </div>

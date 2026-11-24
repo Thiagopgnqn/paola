@@ -9,19 +9,18 @@ import {
   FiPercent,
   FiArrowRight,
   FiShoppingBag,
-  FiShield,
   FiTruck,
-  FiCheckCircle,
 } from 'react-icons/fi';
 import themeConfig from '../config/theme';
 
 const CATEGORY_TABS = [
   { id: 'all', label: 'Todas las ofertas' },
-  { id: 'lenceria', label: 'Lencería' },
-  { id: 'cosmetica-intima', label: 'Cosmética' },
-  { id: 'dilatadores-consoladores-y-vibradores', label: 'Juguetes' },
-  { id: 'fantasias', label: 'Fantasías' },
-  { id: 'bdsm-y-arneses', label: 'Juegos & BDSM' },
+  { id: 'mujer', label: 'Mujer' },
+  { id: 'hombre', label: 'Hombre' },
+  { id: 'ninos', label: 'Niños' },
+  { id: 'ninas', label: 'Niñas' },
+  { id: 'sandalias', label: 'Sandalias' },
+  { id: 'zapatillas', label: 'Zapatillas' },
 ];
 
 const OffersPage = () => {
@@ -31,9 +30,9 @@ const OffersPage = () => {
   const [sortBy, setSortBy] = useState('discount_desc');
 
   useSEO({
-    title: `Ofertas y Promociones Exclusivas | ${themeConfig.brand.name}`,
+    title: `Ofertas y Promociones | ${themeConfig.brand.name}`,
     description:
-      'Descubrí nuestras promociones vigentes con descuentos reales y validados en lencería, cosmética sensorial y juguetes íntimos en Córdoba.',
+      'Descubrí promociones vigentes con descuentos reales y validados en calzado por mayor y por menor en Córdoba.',
   });
 
   useEffect(() => {
@@ -64,14 +63,14 @@ const OffersPage = () => {
     <div className="bg-canvas min-h-[80vh] py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Header Hero de Ofertas */}
-        <div className="p-6 sm:p-10 rounded-2xl bg-surface border border-brand-border/25 relative overflow-hidden smoke-card-texture">
+        <div className="p-6 sm:p-10 rounded-2xl bg-surface border border-border relative overflow-hidden paola-card-texture shadow-soft">
           <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/50 border border-mauve/40 text-[11px] font-medium text-mauve uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand text-[11px] font-bold text-white uppercase tracking-widest mb-3">
               <FiPercent className="text-xs" />
               <span>Oportunidades &amp; Promociones Reales</span>
             </div>
-            <h1 className="font-display text-3xl sm:text-4xl font-light uppercase tracking-wider text-content mb-3 leading-tight">
-              Ofertas Exclusivas
+            <h1 className="font-display text-3xl sm:text-4xl font-bold text-content mb-3 leading-tight">
+              Ofertas Vigentes
             </h1>
             <p className="text-xs sm:text-sm text-content-secondary leading-relaxed mb-6">
               Todos los precios tachados y porcentajes de descuento son 100% honestos y comprobados
@@ -80,26 +79,25 @@ const OffersPage = () => {
 
             {/* Badges de beneficios activos */}
             <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="px-3 py-1 rounded-md bg-canvas/80 border border-brand-border/25 text-content-secondary inline-flex items-center gap-1.5">
-                <FiTruck className="text-mauve" />
-                <span>Envío gratis desde $50.000</span>
+              <span className="px-3 py-1.5 rounded-md bg-surface border border-border text-content font-medium inline-flex items-center gap-1.5">
+                <FiTruck className="text-brand-deep" />
+                <span>Envíos en {themeConfig.contact.deliveryZone}</span>
               </span>
-              <span className="px-3 py-1 rounded-md bg-canvas/80 border border-brand-border/25 text-content-secondary inline-flex items-center gap-1.5">
-                <FiPercent className="text-emerald-400" />
-                <span>10% OFF extra por Transferencia</span>
+              <span className="px-3 py-1.5 rounded-md bg-surface border border-border text-status-success font-semibold inline-flex items-center gap-1.5">
+                <FiPercent />
+                <span>Descuento por Transferencia</span>
               </span>
-              <span className="px-3 py-1 rounded-md bg-canvas/80 border border-brand-border/25 text-content-secondary inline-flex items-center gap-1.5">
-                <FiShield className="text-mauve" />
-                <span>Empaque 100% discreto</span>
+              <span className="px-3 py-1.5 rounded-md bg-surface border border-border text-content font-medium inline-flex items-center gap-1.5">
+                <FiShoppingBag className="text-brand-deep" />
+                <span>Por mayor y por menor</span>
               </span>
             </div>
           </div>
         </div>
 
         {/* Filtros por Categoría y Ordenamiento */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-brand-border/15">
-          {/* Pills de categorías */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1">
             {CATEGORY_TABS.map((tab) => {
               const isActive = selectedCategory === tab.id;
               return (
@@ -107,10 +105,10 @@ const OffersPage = () => {
                   key={tab.id}
                   type="button"
                   onClick={() => setSelectedCategory(tab.id)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all border ${
                     isActive
-                      ? 'bg-brand text-content border border-mauve'
-                      : 'bg-surface text-content-secondary border border-brand-border/25 hover:text-content hover:border-mauve/40'
+                      ? 'bg-brand text-white border-brand-deep shadow-sm'
+                      : 'bg-surface text-content-secondary border-border-strong hover:text-brand-deep hover:border-brand'
                   }`}
                 >
                   {tab.label}
@@ -119,14 +117,13 @@ const OffersPage = () => {
             })}
           </div>
 
-          {/* Ordenador */}
           <div className="flex items-center gap-2 flex-shrink-0 self-end sm:self-auto">
-            <span className="text-xs text-content-muted">Ordenar:</span>
+            <span className="text-xs text-content-secondary">Ordenar:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
               aria-label="Ordenar ofertas"
-              className="rounded-md border border-brand-border/30 text-xs text-content focus:border-mauve focus:ring-1 focus:ring-mauve py-1.5 pl-2.5 pr-8 bg-surface shadow-soft"
+              className="rounded-md border border-border-strong text-xs text-content focus:border-brand focus:ring-1 focus:ring-brand py-1.5 pl-2.5 pr-8 bg-surface shadow-soft"
             >
               <option value="discount_desc">Mayor descuento</option>
               <option value="price_asc">Precio: Menor a Mayor</option>
@@ -143,14 +140,14 @@ const OffersPage = () => {
           </div>
         ) : products.length === 0 ? (
           <div className="py-20 text-center max-w-md mx-auto">
-            <div className="w-14 h-14 mx-auto mb-4 rounded-full border border-mauve/30 bg-surface flex items-center justify-center text-mauve">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-full border border-border bg-surface-elevated flex items-center justify-center text-brand-deep">
               <FiPercent size={24} />
             </div>
-            <h3 className="font-display text-lg uppercase tracking-wider text-content mb-2">
+            <h3 className="font-display font-bold text-lg text-content mb-2">
               No hay ofertas activas en esta categoría
             </h3>
             <p className="text-xs text-content-secondary mb-6 leading-relaxed">
-              Actualmente no encontramos artículos con promociones en la sección seleccionada. Te invitamos a explorar el catálogo completo.
+              Actualmente no encontramos modelos con promociones en la sección seleccionada. Te invitamos a ver el catálogo completo.
             </p>
             <Link to="/catalogo">
               <Button variant="primary">
@@ -161,7 +158,7 @@ const OffersPage = () => {
           </div>
         ) : (
           <div>
-            <div className="mb-4 flex items-center justify-between text-xs text-content-muted">
+            <div className="mb-4 flex items-center justify-between text-xs text-content-secondary">
               <span>{products.length} {products.length === 1 ? 'oferta disponible' : 'ofertas disponibles'}</span>
             </div>
 

@@ -6,9 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      // Los tokens se resuelven con variables CSS (ver src/index.css) para que el
-      // panel de administración (.theme-admin) use una variante más suave y clara
-      // del mismo tema, sin duplicar clases en los componentes.
       colors: {
         canvas: 'rgb(var(--c-canvas) / <alpha-value>)',
         surface: {
@@ -19,20 +16,20 @@ export default {
         },
         brand: {
           DEFAULT: 'rgb(var(--c-brand) / <alpha-value>)',
-          hover: 'rgb(var(--c-brand-hover) / <alpha-value>)',
-          deep: 'rgb(var(--c-surface-elevated) / <alpha-value>)',
+          hover: 'rgb(var(--c-brand-deep) / <alpha-value>)',
+          deep: 'rgb(var(--c-brand-deep) / <alpha-value>)',
           muted: 'rgb(var(--c-mauve) / <alpha-value>)',
           border: 'rgb(var(--c-line) / <alpha-value>)',
         },
         mauve: {
           DEFAULT: 'rgb(var(--c-mauve) / <alpha-value>)',
-          light: 'rgb(var(--c-mauve-light) / <alpha-value>)',
-          dark: 'rgb(var(--c-surface-elevated) / <alpha-value>)',
+          light: 'rgb(var(--c-surface-elevated) / <alpha-value>)',
+          dark: 'rgb(var(--c-brand-deep) / <alpha-value>)',
         },
         border: {
-          DEFAULT: 'rgb(var(--c-line) / 0.26)',
-          subtle: 'rgb(var(--c-line) / 0.15)',
-          strong: 'rgb(var(--c-line) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--c-line) / <alpha-value>)',
+          subtle: 'rgb(var(--c-line) / 0.65)',
+          strong: '#D99AB9',
           accent: 'rgb(var(--c-brand) / <alpha-value>)',
         },
         content: {
@@ -43,38 +40,38 @@ export default {
           subtle: 'rgb(var(--c-content-subtle) / <alpha-value>)',
         },
         status: {
-          success: '#86EFAC',
-          'success-bg': 'rgba(20, 83, 45, 0.32)',
-          'success-border': 'rgba(134, 239, 172, 0.3)',
-          warning: '#FCD34D',
-          'warning-bg': 'rgba(120, 53, 15, 0.32)',
-          'warning-border': 'rgba(252, 211, 77, 0.3)',
-          error: '#FCA5A5',
-          'error-bg': 'rgba(127, 29, 29, 0.35)',
-          'error-border': 'rgba(252, 165, 165, 0.35)',
+          success: '#15803D',
+          'success-bg': '#DCFCE7',
+          'success-border': '#86EFAC',
+          warning: '#B45309',
+          'warning-bg': '#FEF3C7',
+          'warning-border': '#FCD34D',
+          error: '#BE123C',
+          'error-bg': '#FFE4E6',
+          'error-border': '#FDA4AF',
         },
       },
-      // Borde por defecto (cuando un elemento usa `border` sin color explícito):
-      // malva translúcido en vez del gris claro de Tailwind, que encandila.
       borderColor: {
-        DEFAULT: 'rgb(var(--c-line) / 0.22)',
+        DEFAULT: 'rgb(var(--c-line) / <alpha-value>)',
       },
       fontFamily: {
-        display: ['Jost', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        script: ['Pacifico', 'cursive'],
       },
       boxShadow: {
-        'soft': '0 1px 2px 0 rgba(0, 0, 0, 0.18), 0 2px 8px -2px rgba(0, 0, 0, 0.22)',
-        'lifted': '0 10px 30px -8px rgba(0, 0, 0, 0.45)',
-        'overlay': '0 24px 60px -16px rgba(0, 0, 0, 0.6)',
+        'soft': '0 1px 2px 0 rgba(20, 16, 20, 0.05), 0 3px 10px -3px rgba(230, 0, 126, 0.08)',
+        'lifted': '0 10px 28px -8px rgba(20, 16, 20, 0.14), 0 4px 12px -4px rgba(230, 0, 126, 0.12)',
+        'overlay': '0 24px 60px -16px rgba(20, 16, 20, 0.24)',
+        'brand': '0 8px 20px -4px rgba(230, 0, 126, 0.28)',
       },
       borderRadius: {
-        'sm': '4px',
-        'DEFAULT': '6px',
-        'md': '6px',
-        'lg': '8px',
-        'xl': '10px',
-        '2xl': '12px',
+        'sm': '6px',
+        'DEFAULT': '8px',
+        'md': '8px',
+        'lg': '10px',
+        'xl': '14px',
+        '2xl': '18px',
       },
     },
   },

@@ -1,68 +1,41 @@
 grupo,categoria,subcategoria,nombre,descripcion,sku,variante_tipo,variante_talle,variante_color,variante_sabor_aroma,variante_volumen_medida,precio_ars,estado,nota
-Baby Doll Venecia,Lencería,Baby dolls,Baby Doll Venecia,Confeccionado en tela microtul con terminaciones de puntilla,4580,,,,,,32000,ok,Descripción tomada de la nota del catálogo (inferida para este grupo)
-Baby Doll Rose,Lencería,Baby dolls,Baby Doll Rose,,221,,,,,,26000,ok,
-Vestido Vinilo Verona,Lencería,Vestidos,Vestido Vinilo Verona,,4510,,,,,,39500,ok,
-Body Marley,Lencería,Bodys,Body Marley Rojo,,145R,,,Rojo,,,16000,ok,
-Body Marley,Lencería,Bodys,Body Marley Negro,,145N,,,Negro,,,16000,ok,
-Conjunto Hera,Lencería,Conjuntos,Conjunto Hera,,503,,,,,,24000,ok,
-Liguero Pandora,Lencería,"Ligueros, arneses y máscaras",Liguero Pandora,,128,,,,,,16000,ok,
-Zunga,Línea masculina,,Zunga,,184,,,,,,17000,ok,
-Fantasía Enfermera Pasionel,Fantasías,Línea Pasionel,Fantasía Enfermera Pasionel,,P002,,,,,,42000,ok,
-Fantasía Conejita Pasionel,Fantasías,Línea Pasionel,Fantasía Conejita Pasionel,,P012,,,,,,42000,ok,
-Fantasía Colegiala FT (FT.03),Fantasías,Línea Free Size,Fantasía Colegiala FT Negra,,FT.03-NEGRA,,,Negra,,,28000,ok,SKU derivado del código + color
-Fantasía Colegiala FT (FT.03),Fantasías,Línea Free Size,Fantasía Colegiala FT Blanca,,FT.03-BLANCA,,,Blanca,,,28000,ok,SKU derivado del código + color
-Catsuit Colegiala,Fantasías,Línea Free Size,Catsuit Colegiala (3),,Cat.03,Modelo 3,,,,,18000,ok,
-Catsuit Colegiala,Fantasías,Línea Free Size,Catsuit Colegiala (4),,Cat.04,Modelo 4,,,,,18000,ok,
-Gel Natural,Cosmética íntima,Geles y lubricantes,Gel Natural,,Art.611,,,,,80 ml,13000,ok,
-Gel Natural,Cosmética íntima,Geles y lubricantes,Gel Natural,,Art.627,,,,,200 ml,18000,ok,
-Gel Efecto Calor,Cosmética íntima,Geles y lubricantes,Gel Efecto Calor,,Art.621,,,,,80 ml,13000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D63,,,,BE,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D659,,,,Frutos Rojos,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D62,,,,Latte Capuccino y Dulce de Leche,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D64,,,,Body Soufflé Mango y Maracuyá,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D659-MYHEMP,,,,My Hemp,30 g,12000,ok,Código D659 repetido con Frutos Rojos
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D61,,,,Champagne Rose,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D58,,,,Crazy Girl,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D51,,,,Sweet Beauty Rush Caramel Strawberries,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,D55,,,,Body Soufflé Strawberries,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,MMA01,,,,Mon Amour,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,CT01,,,,Desire Coconut,30 g,12000,ok,
-Vela de masaje 30 g,Cosmética íntima,Velas y cremas de masaje,Vela de masaje 30 g,,,,,,Sweet Beauty Rush Vainilla Coconut,30 g,12000,ok,Sin código ni precio propio en el catálogo; precio asumido igual al resto
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A27,,,,Algodón de azúcar,30 ml,13000,ok,
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A28,,,,Banana,30 ml,13000,ok,
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A26,,,,Frutilla,30 ml,13000,ok,Código A26 inferido para Frutilla; confirmar
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A01,,,,Chocolate,30 ml,13000,ok,
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A03,,,,Frutos rojos,30 ml,13000,ok,
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A04,,,,Dulce de leche,30 ml,13000,ok,
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A06,,,,Champagne,30 ml,13000,ok,
-Aceite comestible Love Potion,Cosmética íntima,Aceites comestibles y de masaje,Aceite comestible Love Potion,,A24,,,,Mint Cream,30 ml,13000,ok,
-Crema corporal para masaje,Cosmética íntima,Velas y cremas de masaje,Crema corporal para masaje,,,,,,BE,,18000,ok,
-Crema corporal para masaje,Cosmética íntima,Velas y cremas de masaje,Crema corporal para masaje,,,,,,Coconut,,18000,ok,
-Gel íntimo Sens Bomb,Cosmética íntima,Geles y lubricantes,Gel íntimo Sens Bomb,,S01,,,,Maca,,12000,ok,
-Gel íntimo Sens Bomb,Cosmética íntima,Geles y lubricantes,Gel íntimo Sens Bomb,,S02,,,,Sándalo Rojo,,12000,ok,
-Perfume Hot Inevitable,Perfumes y feromonas,Perfumes,Perfume Hot Inevitable,,CV01-1,,,,Privée,100 ml,37000,ok,
-Perfume Hot Inevitable,Perfumes y feromonas,Perfumes,Perfume Hot Inevitable,,C01,,,,So Excited,100 ml,37000,ok,
-Perfume Hot Inevitable,Perfumes y feromonas,Perfumes,Perfume Hot Inevitable,,C02,,,,Con feromonas,100 ml,37000,ok,SKU C02 repetido con Body Splash Hot Inevitable
-Perfume Petit Mort,Perfumes y feromonas,Perfumes,Perfume Petit Mort,,PM03,,,,,50 ml,32000,ok,
-Perfume IT Femme,Perfumes y feromonas,Perfumes,Perfume IT Femme,,IT01,,,,Clásico,50 ml,30000,ok,
-Perfume IT Femme,Perfumes y feromonas,Perfumes,Perfume IT Femme,,IT02,,,,Florale Aphrodisiac,50 ml,30000,ok,
-Jenga Sex,Juegos,Juegos de mesa y otros,Jenga Sex,,JS,,,,,,24000,ok,
-Naipe Kamasutra,Juegos,Dados y cartas,Naipe Kamasutra,,,,,,,,15000,ok,
-Anillo Jelly,Anillos y estimuladores,,Anillo Jelly,,AN01,,,,,,6000,ok,
-Torito Vibrador,Anillos y estimuladores,,Torito Vibrador,,AN4,,,,,,26000,ok,
-Esposas,BDSM y arneses,Esposas,Esposas,,BDSM9,Fina,,,,,17000,ok,
-Esposas,BDSM y arneses,Esposas,Esposas,,BDSM10,Mediana,,,,,19000,ok,
-Esposas,BDSM y arneses,Esposas,Esposas,,BDSM11,Ancha,,,,,22000,ok,
-Esposas,BDSM y arneses,Esposas,Esposas,,BDSM4,Cadena larga,,,,,26000,ok,
-Esposas,BDSM y arneses,Esposas,Esposas,,,Metal con peluche,,,,,16000,ok,
-Esposas,BDSM y arneses,Esposas,Esposas,,,Cuero con peluche,,,,,17000,ok,
-Antifaz Ciego,BDSM y arneses,Mordazas y antifaces,Antifaz Ciego,,BDSM12,,,,,,11000,ok,
-Fusta,BDSM y arneses,Látigos y fustas,Fusta,,BDSM5,Clásica,,,,,19000,ok,
-Fusta,BDSM y arneses,Látigos y fustas,Fusta,,BDSM6,Peluche,,,,,22000,ok,
-Kit negro,BDSM y arneses,Kits y accesorios,Kit negro,,,4 piezas,,,,,29000,ok,
-Kit negro,BDSM y arneses,Kits y accesorios,Kit negro,,BDSM7,11 piezas,,,,,44000,ok,
-Safary,"Dilatadores, consoladores y vibradores",Dilatadores y consoladores anales,Safary,,420,Estándar,,,,16 x 3 cm,20000,ok,
-Safary,"Dilatadores, consoladores y vibradores",Dilatadores y consoladores anales,Safary,,421,SCV,,,,16 x 3 cm,27000,ok,"SCV: sigla del catálogo, confirmar significado"
-Safary,"Dilatadores, consoladores y vibradores",Dilatadores y consoladores anales,Safary,,422,Completo SCV,,,,16 x 3 cm,29000,ok,"SCV: sigla del catálogo, confirmar significado"
-Escorpión,"Dilatadores, consoladores y vibradores",Dilatadores y consoladores anales,Escorpión,,403-C,Consolador,,,,8 x 2 cm,16000,ok,Interpretación del formato del catálogo (Consolador / Vibrador); confirmar con el cliente
-Escorpión,"Dilatadores, consoladores y vibradores",Dilatadores y consoladores anales,Escorpión,,403-V,Vibrador,,,,8 x 2 cm,27000,ok,Interpretación del formato del catálogo (Consolador / Vibrador); confirmar con el cliente
+Zapatilla Urbana Clásica,Zapatillas,Urbanas,Zapatilla Urbana Clásica Blanca,Zapatilla urbana liviana con suela flexible. Disponible por mayor y por menor.,ZAP-URB-01B,,,Blanco,,,28500,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Urbana Clásica,Zapatillas,Urbanas,Zapatilla Urbana Clásica Negra,Zapatilla urbana liviana con suela flexible. Disponible por mayor y por menor.,ZAP-URB-01N,,,Negro,,,28500,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Urbana Clásica,Zapatillas,Urbanas,Zapatilla Urbana Clásica Fucsia,Zapatilla urbana liviana con suela flexible. Disponible por mayor y por menor.,ZAP-URB-01F,,,Fucsia,,,28500,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Plataforma Baja,Zapatillas,Urbanas,Zapatilla Plataforma Baja Crudo,Diseño urbano con base alta cómoda para uso diario. Venta por mayor y menor.,ZAP-PLT-02C,,,Crudo,,,32000,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Plataforma Baja,Zapatillas,Urbanas,Zapatilla Plataforma Baja Negra,Diseño urbano con base alta cómoda para uso diario. Venta por mayor y menor.,ZAP-PLT-02N,,,Negro,,,32000,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Lona Acordonada,Zapatillas,Urbanas,Zapatilla Lona Acordonada Negra,Capellada de lona respirable con puntera reforzada. Ideal para vidriera y uso diario.,ZAP-LON-03N,,,Negro,,,21500,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Running Liviana,Zapatillas,Deportivas livianas,Zapatilla Running Liviana Gris,Tejido mesh respirable con suela amortiguada liviana. Disponible por mayor y menor.,ZAP-DEP-04G,,,Gris,,,34000,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Running Liviana,Zapatillas,Deportivas livianas,Zapatilla Running Liviana Rosa,Tejido mesh respirable con suela amortiguada liviana. Disponible por mayor y menor.,ZAP-DEP-04R,,,Rosa,,,34000,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Deportiva Sin Cordones,Zapatillas,Deportivas livianas,Zapatilla Deportiva Sin Cordones Negra,Calce rápido elástico y base liviana antideslizante.,ZAP-DEP-05N,,,Negro,,,29900,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Urbana Combinada,Zapatillas,Urbanas,Zapatilla Urbana Combinada Suela,Recortes sintéticos en tonos neutros con base caramel.,ZAP-URB-06S,,,Suela,,,31000,ok,PRECIO FICTICIO DE PRUEBA
+Sandalia Dos Hebillas,Sandalias,Sandalias bajas,Sandalia Dos Hebillas Negra,Fajas regulables con hebillas metálicas y plantilla anatómica. Venta por mayor y menor.,SAN-BAJ-01N,,,Negro,,,19500,ok,PRECIO FICTICIO DE PRUEBA
+Sandalia Dos Hebillas,Sandalias,Sandalias bajas,Sandalia Dos Hebillas Rosa,Fajas regulables con hebillas metálicas y plantilla anatómica. Venta por mayor y menor.,SAN-BAJ-01R,,,Rosa,,,19500,ok,PRECIO FICTICIO DE PRUEBA
+Sandalia Tiras Cruzadas,Sandalias,Sandalias bajas,Sandalia Tiras Cruzadas Beige,Sandalia baja liviana ideal para verano y media estación.,SAN-BAJ-02B,,,Beige,,,18000,ok,PRECIO FICTICIO DE PRUEBA
+Sandalia Chata Minimal,Sandalias,Sandalias bajas,Sandalia Chata Minimal Plateada,Acabado metalizado con base plana flexible.,SAN-BAJ-03P,,,Plateado,,,17500,ok,PRECIO FICTICIO DE PRUEBA
+Ojota Faja Ancha,Sandalias,Ojotas y fajas,Ojota Faja Ancha Fucsia,Material liviano inyectado resistente al agua. Surtido disponible por mayor y menor.,SAN-OJO-04F,,,Fucsia,,,12000,ok,PRECIO FICTICIO DE PRUEBA
+Ojota Faja Ancha,Sandalias,Ojotas y fajas,Ojota Faja Ancha Negra,Material liviano inyectado resistente al agua. Surtido disponible por mayor y menor.,SAN-OJO-04N,,,Negro,,,12000,ok,PRECIO FICTICIO DE PRUEBA
+Ojota Anatómica Unisex,Sandalias,Ojotas y fajas,Ojota Anatómica Unisex Blanca,Base ergonómica antideslizante para uso diario o pileta.,SAN-OJO-05B,,,Blanco,,,13500,ok,PRECIO FICTICIO DE PRUEBA
+Sandalia Plataforma Corcho,Sandalias,Sandalias con base,Sandalia Plataforma Corcho Beige,Base alta liviana con pulsera regulable al tobillo.,SAN-BAS-06B,,,Beige,,,29500,ok,PRECIO FICTICIO DE PRUEBA
+Sandalia Taco Cuadrado,Sandalias,Sandalias con base,Sandalia Taco Cuadrado Negra,Faja delantera amplia y taco ancho estable para eventos o noche.,SAN-BAS-07N,,,Negro,,,31500,ok,PRECIO FICTICIO DE PRUEBA
+Sandalia Taco Cuadrado,Sandalias,Sandalias con base,Sandalia Taco Cuadrado Fucsia,Faja delantera amplia y taco ancho estable para eventos o noche.,SAN-BAS-07F,,,Fucsia,,,31500,ok,PRECIO FICTICIO DE PRUEBA
+Borcego Mujer Base Tractor,Mujer,Botas y borcegos,Borcego Mujer Base Tractor Negro,Acordonado clásico con cierre lateral y base tractor antideslizante. Venta por mayor y menor.,MUJ-BOT-01N,,,Negro,,,42000,ok,PRECIO FICTICIO DE PRUEBA
+Borcego Mujer Base Tractor,Mujer,Botas y borcegos,Borcego Mujer Base Tractor Borgoña,Acordonado clásico con cierre lateral y base tractor antideslizante. Venta por mayor y menor.,MUJ-BOT-01B,,,Borgoña,,,42000,ok,PRECIO FICTICIO DE PRUEBA
+Bota Caña Corta Elastizada,Mujer,Botas y borcegos,Bota Caña Corta Elastizada Suela,Botineta versátil con elásticos laterales para calce rápido.,MUJ-BOT-02S,,,Suela,,,39000,ok,PRECIO FICTICIO DE PRUEBA
+Mocasín Mujer Cadena,Mujer,Zapatos y mocasines,Mocasín Mujer Cadena Negro,Detalle metálico frontal y suela con relieve de agarre.,MUJ-MOC-03N,,,Negro,,,33500,ok,PRECIO FICTICIO DE PRUEBA
+Stiletto Punta Fina,Mujer,Zapatos y mocasines,Stiletto Punta Fina Nude,Zapato clásico de vestir disponible por menor y mayor.,MUJ-ZAP-04U,,,Nude,,,36000,ok,PRECIO FICTICIO DE PRUEBA
+Sueco Plataforma Mujer,Mujer,Plataformas,Sueco Plataforma Mujer Negro,Base liviana en una sola pieza con calce abierto y cómodo.,MUJ-PLT-05N,,,Negro,,,27500,ok,PRECIO FICTICIO DE PRUEBA
+Borcego Hombre Clásico,Hombre,Borcegos y botas,Borcego Hombre Clásico Negro,Construcción robusta con cordones encerados y base cosida. Disponible por mayor y menor.,HOM-BOR-01N,,,Negro,,,44500,ok,PRECIO FICTICIO DE PRUEBA
+Borcego Hombre Clásico,Hombre,Borcegos y botas,Borcego Hombre Clásico Marrón,Construcción robusta con cordones encerados y base cosida. Disponible por mayor y menor.,HOM-BOR-01M,,,Marrón,,,44500,ok,PRECIO FICTICIO DE PRUEBA
+Bota Urbana Hombre Cuero Sintético,Hombre,Borcegos y botas,Bota Urbana Hombre Cuero Sintético Gris,Diseño urbano caña media con cuello acolchado.,HOM-BOR-02G,,,Gris,,,41000,ok,PRECIO FICTICIO DE PRUEBA
+Mocasín Hombre Casual,Hombre,Mocasines y náuticos,Mocasín Hombre Casual Azul,Calce slip-on liviano para uso diario y media estación.,HOM-MOC-03A,,,Azul Marino,,,31500,ok,PRECIO FICTICIO DE PRUEBA
+Náutico Hombre Acordonado,Hombre,Mocasines y náuticos,Náutico Hombre Acordonado Suela,Costura reforzada con base clara antideslizante.,HOM-NAU-04S,,,Suela,,,32500,ok,PRECIO FICTICIO DE PRUEBA
+Zapato Escolar Niño Velcro,Niños,Escolares,Zapato Escolar Niño Velcro Negro,Doble abrojo reforzado y puntera resistente para uso escolar. Venta por mayor y menor.,NIN-ESC-01N,,,Negro,,,22000,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Infantil Abrojo,Niños,Deportivos infantiles,Zapatilla Infantil Abrojo Azul,Liviana, flexible y fácil de calzar con abrojo y cordón elástico.,NIN-DEP-02A,,,Azul,,,23500,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Infantil Abrojo,Niños,Deportivos infantiles,Zapatilla Infantil Abrojo Negra,Liviana, flexible y fácil de calzar con abrojo y cordón elástico.,NIN-DEP-02N,,,Negro,,,23500,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Niños Bota Urbana,Niños,Deportivos infantiles,Zapatilla Niños Bota Urbana Gris,Caña media acolchada con suela de goma flexible.,NIN-DEP-03G,,,Gris,,,25500,ok,PRECIO FICTICIO DE PRUEBA
+Guillermina Escolar Niña,Niñas,Guillerminas y escolares,Guillermina Escolar Niña Negra,Presilla con velcro regulable y plantilla acolchada. Venta por mayor y menor.,NNA-GUI-01N,,,Negro,,,21500,ok,PRECIO FICTICIO DE PRUEBA
+Guillermina Charol Fiesta,Niñas,Guillerminas y escolares,Guillermina Charol Fiesta Rosa,Terminación brillante con hebilla lateral y suela flexible.,NNA-GUI-02R,,,Rosa,,,22500,ok,PRECIO FICTICIO DE PRUEBA
+Botita Urbana Niña,Niñas,Botitas y urbanas,Botita Urbana Niña Fucsia,Diseño alegre con cierre lateral y detalle en contraste. Disponible por mayor y menor.,NNA-BOT-03F,,,Fucsia,,,26500,ok,PRECIO FICTICIO DE PRUEBA
+Zapatilla Niña Luces Liviana,Niñas,Botitas y urbanas,Zapatilla Niña Luces Liviana Lila,Doble ajuste elástico y suela amortiguada liviana.,NNA-ZAP-04L,Con luces,,,,27500,ok,PRECIO FICTICIO DE PRUEBA
+Panchita Niña Estampada,Niñas,Botitas y urbanas,Panchita Niña Estampada Rosa,Calce sin cordones en lona liviana lavable.,NNA-PAN-05R,Estampada,,,,16500,ok,PRECIO FICTICIO DE PRUEBA

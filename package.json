@@ -1,9 +1,9 @@
 {
-  "name": "nocturna-sexshop",
+  "name": "paola-calzados",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Tienda online de Nocturna SexShop — Córdoba, Argentina",
+  "description": "Paola Calzados — Tienda online de calzado por mayor y por menor (Córdoba, Argentina)",
   "scripts": {
     "sync:engine": "node scripts/sync-engine.js",
     "sync:engine:check": "node scripts/sync-engine.js --check",

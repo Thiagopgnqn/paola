@@ -66,7 +66,7 @@ const Toast = ({ show, message, product, onClose, duration = 3500 }) => {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <FiShoppingBag className="text-mauve text-lg" />
+                <FiShoppingBag className="text-brand text-lg" />
               )}
             </div>
 
@@ -92,7 +92,7 @@ const Toast = ({ show, message, product, onClose, duration = 3500 }) => {
             <Link
               to="/carrito"
               onClick={handleClose}
-              className="flex-1 inline-flex items-center justify-center space-x-1.5 bg-brand hover:bg-brand-hover text-content font-medium py-2 px-3 rounded-md text-xs transition-colors border border-mauve/30"
+              className="flex-1 inline-flex items-center justify-center space-x-1.5 bg-brand hover:bg-brand-deep text-white font-semibold py-2 px-3 rounded-md text-xs transition-colors shadow-soft"
             >
               <FiShoppingBag size={13} />
               <span>Ver Carrito</span>

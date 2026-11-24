@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T03:10:20.427Z",
+  "generatedAt": "2026-11-24T21:25:13.928Z",
   "settings": {
     "shippingCost": 4500,
     "freeShippingThreshold": 45000,
@@ -7,1593 +7,550 @@
     "transferDiscountPercent": 10,
     "transferDiscountEnabled": true,
     "priceHistoryDays": 30,
-    "generalTermsText": "Envíos 100% discretos en empaque neutro sin identificación del contenido.",
-    "shippingNoticeText": "Envío gratis a todo el país superando el monto mínimo de compra.",
+    "generalTermsText": "Venta de calzado por mayor y por menor desde Córdoba. Consultá [COSTOS Y PLAZOS DE ENVÍO] y [MÍNIMO DE COMPRA MAYORISTA] por WhatsApp.",
+    "shippingNoticeText": "Consultá envíos en [ZONA DE ENVÍO] y retiro en [DIRECCIÓN DEL LOCAL].",
     "bankTransferInstructions": "Transferencia bancaria. Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp."
   },
   "categories": [
     {
-      "id": "cat_lenceria",
-      "name": "Lencería",
-      "slug": "lenceria",
+      "id": "cat_zapatillas",
+      "name": "Zapatillas",
+      "slug": "zapatillas",
       "parentId": null,
       "order": 1,
       "children": [
         {
-          "id": "sub_lenceria-baby-dolls",
-          "name": "Baby dolls",
-          "slug": "lenceria-baby-dolls",
-          "parentId": "cat_lenceria",
+          "id": "sub_zapatillas-urbanas",
+          "name": "Urbanas",
+          "slug": "zapatillas-urbanas",
+          "parentId": "cat_zapatillas",
           "order": 1,
           "parent": {
-            "id": "cat_lenceria",
-            "name": "Lencería",
-            "slug": "lenceria"
+            "id": "cat_zapatillas",
+            "name": "Zapatillas",
+            "slug": "zapatillas"
           },
           "children": []
         },
         {
-          "id": "sub_lenceria-vestidos",
-          "name": "Vestidos",
-          "slug": "lenceria-vestidos",
-          "parentId": "cat_lenceria",
+          "id": "sub_zapatillas-deportivas-livianas",
+          "name": "Deportivas livianas",
+          "slug": "zapatillas-deportivas-livianas",
+          "parentId": "cat_zapatillas",
           "order": 2,
           "parent": {
-            "id": "cat_lenceria",
-            "name": "Lencería",
-            "slug": "lenceria"
+            "id": "cat_zapatillas",
+            "name": "Zapatillas",
+            "slug": "zapatillas"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_zapatillas-urbanas",
+      "name": "Urbanas",
+      "slug": "zapatillas-urbanas",
+      "parentId": "cat_zapatillas",
+      "order": 1,
+      "parent": {
+        "id": "cat_zapatillas",
+        "name": "Zapatillas",
+        "slug": "zapatillas"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_zapatillas-deportivas-livianas",
+      "name": "Deportivas livianas",
+      "slug": "zapatillas-deportivas-livianas",
+      "parentId": "cat_zapatillas",
+      "order": 2,
+      "parent": {
+        "id": "cat_zapatillas",
+        "name": "Zapatillas",
+        "slug": "zapatillas"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_sandalias",
+      "name": "Sandalias",
+      "slug": "sandalias",
+      "parentId": null,
+      "order": 2,
+      "children": [
+        {
+          "id": "sub_sandalias-sandalias-bajas",
+          "name": "Sandalias bajas",
+          "slug": "sandalias-sandalias-bajas",
+          "parentId": "cat_sandalias",
+          "order": 1,
+          "parent": {
+            "id": "cat_sandalias",
+            "name": "Sandalias",
+            "slug": "sandalias"
           },
           "children": []
         },
         {
-          "id": "sub_lenceria-bodys",
-          "name": "Bodys",
-          "slug": "lenceria-bodys",
-          "parentId": "cat_lenceria",
+          "id": "sub_sandalias-ojotas-y-fajas",
+          "name": "Ojotas y fajas",
+          "slug": "sandalias-ojotas-y-fajas",
+          "parentId": "cat_sandalias",
+          "order": 2,
+          "parent": {
+            "id": "cat_sandalias",
+            "name": "Sandalias",
+            "slug": "sandalias"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_sandalias-sandalias-con-base",
+          "name": "Sandalias con base",
+          "slug": "sandalias-sandalias-con-base",
+          "parentId": "cat_sandalias",
           "order": 3,
           "parent": {
-            "id": "cat_lenceria",
-            "name": "Lencería",
-            "slug": "lenceria"
-          },
-          "children": []
-        },
-        {
-          "id": "sub_lenceria-conjuntos",
-          "name": "Conjuntos",
-          "slug": "lenceria-conjuntos",
-          "parentId": "cat_lenceria",
-          "order": 4,
-          "parent": {
-            "id": "cat_lenceria",
-            "name": "Lencería",
-            "slug": "lenceria"
-          },
-          "children": []
-        },
-        {
-          "id": "sub_lenceria-ligueros-arneses-y-mascaras",
-          "name": "Ligueros, arneses y máscaras",
-          "slug": "lenceria-ligueros-arneses-y-mascaras",
-          "parentId": "cat_lenceria",
-          "order": 5,
-          "parent": {
-            "id": "cat_lenceria",
-            "name": "Lencería",
-            "slug": "lenceria"
+            "id": "cat_sandalias",
+            "name": "Sandalias",
+            "slug": "sandalias"
           },
           "children": []
         }
       ]
     },
     {
-      "id": "sub_lenceria-baby-dolls",
-      "name": "Baby dolls",
-      "slug": "lenceria-baby-dolls",
-      "parentId": "cat_lenceria",
+      "id": "sub_sandalias-sandalias-bajas",
+      "name": "Sandalias bajas",
+      "slug": "sandalias-sandalias-bajas",
+      "parentId": "cat_sandalias",
       "order": 1,
       "parent": {
-        "id": "cat_lenceria",
-        "name": "Lencería",
-        "slug": "lenceria"
+        "id": "cat_sandalias",
+        "name": "Sandalias",
+        "slug": "sandalias"
       },
       "children": []
     },
     {
-      "id": "sub_lenceria-vestidos",
-      "name": "Vestidos",
-      "slug": "lenceria-vestidos",
-      "parentId": "cat_lenceria",
+      "id": "sub_sandalias-ojotas-y-fajas",
+      "name": "Ojotas y fajas",
+      "slug": "sandalias-ojotas-y-fajas",
+      "parentId": "cat_sandalias",
       "order": 2,
       "parent": {
-        "id": "cat_lenceria",
-        "name": "Lencería",
-        "slug": "lenceria"
+        "id": "cat_sandalias",
+        "name": "Sandalias",
+        "slug": "sandalias"
       },
       "children": []
     },
     {
-      "id": "sub_lenceria-bodys",
-      "name": "Bodys",
-      "slug": "lenceria-bodys",
-      "parentId": "cat_lenceria",
+      "id": "sub_sandalias-sandalias-con-base",
+      "name": "Sandalias con base",
+      "slug": "sandalias-sandalias-con-base",
+      "parentId": "cat_sandalias",
       "order": 3,
       "parent": {
-        "id": "cat_lenceria",
-        "name": "Lencería",
-        "slug": "lenceria"
+        "id": "cat_sandalias",
+        "name": "Sandalias",
+        "slug": "sandalias"
       },
       "children": []
     },
     {
-      "id": "sub_lenceria-conjuntos",
-      "name": "Conjuntos",
-      "slug": "lenceria-conjuntos",
-      "parentId": "cat_lenceria",
-      "order": 4,
-      "parent": {
-        "id": "cat_lenceria",
-        "name": "Lencería",
-        "slug": "lenceria"
-      },
-      "children": []
-    },
-    {
-      "id": "sub_lenceria-ligueros-arneses-y-mascaras",
-      "name": "Ligueros, arneses y máscaras",
-      "slug": "lenceria-ligueros-arneses-y-mascaras",
-      "parentId": "cat_lenceria",
-      "order": 5,
-      "parent": {
-        "id": "cat_lenceria",
-        "name": "Lencería",
-        "slug": "lenceria"
-      },
-      "children": []
-    },
-    {
-      "id": "cat_linea-masculina",
-      "name": "Línea masculina",
-      "slug": "linea-masculina",
-      "parentId": null,
-      "order": 2,
-      "children": []
-    },
-    {
-      "id": "cat_fantasias",
-      "name": "Fantasías",
-      "slug": "fantasias",
+      "id": "cat_mujer",
+      "name": "Mujer",
+      "slug": "mujer",
       "parentId": null,
       "order": 3,
       "children": [
         {
-          "id": "sub_fantasias-linea-pasionel",
-          "name": "Línea Pasionel",
-          "slug": "fantasias-linea-pasionel",
-          "parentId": "cat_fantasias",
+          "id": "sub_mujer-botas-y-borcegos",
+          "name": "Botas y borcegos",
+          "slug": "mujer-botas-y-borcegos",
+          "parentId": "cat_mujer",
           "order": 1,
           "parent": {
-            "id": "cat_fantasias",
-            "name": "Fantasías",
-            "slug": "fantasias"
+            "id": "cat_mujer",
+            "name": "Mujer",
+            "slug": "mujer"
           },
           "children": []
         },
         {
-          "id": "sub_fantasias-linea-free-size",
-          "name": "Línea Free Size",
-          "slug": "fantasias-linea-free-size",
-          "parentId": "cat_fantasias",
+          "id": "sub_mujer-zapatos-y-mocasines",
+          "name": "Zapatos y mocasines",
+          "slug": "mujer-zapatos-y-mocasines",
+          "parentId": "cat_mujer",
           "order": 2,
           "parent": {
-            "id": "cat_fantasias",
-            "name": "Fantasías",
-            "slug": "fantasias"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "sub_fantasias-linea-pasionel",
-      "name": "Línea Pasionel",
-      "slug": "fantasias-linea-pasionel",
-      "parentId": "cat_fantasias",
-      "order": 1,
-      "parent": {
-        "id": "cat_fantasias",
-        "name": "Fantasías",
-        "slug": "fantasias"
-      },
-      "children": []
-    },
-    {
-      "id": "sub_fantasias-linea-free-size",
-      "name": "Línea Free Size",
-      "slug": "fantasias-linea-free-size",
-      "parentId": "cat_fantasias",
-      "order": 2,
-      "parent": {
-        "id": "cat_fantasias",
-        "name": "Fantasías",
-        "slug": "fantasias"
-      },
-      "children": []
-    },
-    {
-      "id": "cat_cosmetica-intima",
-      "name": "Cosmética íntima",
-      "slug": "cosmetica-intima",
-      "parentId": null,
-      "order": 4,
-      "children": [
-        {
-          "id": "sub_cosmetica-intima-geles-y-lubricantes",
-          "name": "Geles y lubricantes",
-          "slug": "cosmetica-intima-geles-y-lubricantes",
-          "parentId": "cat_cosmetica-intima",
-          "order": 1,
-          "parent": {
-            "id": "cat_cosmetica-intima",
-            "name": "Cosmética íntima",
-            "slug": "cosmetica-intima"
+            "id": "cat_mujer",
+            "name": "Mujer",
+            "slug": "mujer"
           },
           "children": []
         },
         {
-          "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
-          "name": "Velas y cremas de masaje",
-          "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
-          "parentId": "cat_cosmetica-intima",
-          "order": 2,
-          "parent": {
-            "id": "cat_cosmetica-intima",
-            "name": "Cosmética íntima",
-            "slug": "cosmetica-intima"
-          },
-          "children": []
-        },
-        {
-          "id": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
-          "name": "Aceites comestibles y de masaje",
-          "slug": "cosmetica-intima-aceites-comestibles-y-de-masaje",
-          "parentId": "cat_cosmetica-intima",
+          "id": "sub_mujer-plataformas",
+          "name": "Plataformas",
+          "slug": "mujer-plataformas",
+          "parentId": "cat_mujer",
           "order": 3,
           "parent": {
-            "id": "cat_cosmetica-intima",
-            "name": "Cosmética íntima",
-            "slug": "cosmetica-intima"
+            "id": "cat_mujer",
+            "name": "Mujer",
+            "slug": "mujer"
           },
           "children": []
         }
       ]
     },
     {
-      "id": "sub_cosmetica-intima-geles-y-lubricantes",
-      "name": "Geles y lubricantes",
-      "slug": "cosmetica-intima-geles-y-lubricantes",
-      "parentId": "cat_cosmetica-intima",
+      "id": "sub_mujer-botas-y-borcegos",
+      "name": "Botas y borcegos",
+      "slug": "mujer-botas-y-borcegos",
+      "parentId": "cat_mujer",
       "order": 1,
       "parent": {
-        "id": "cat_cosmetica-intima",
-        "name": "Cosmética íntima",
-        "slug": "cosmetica-intima"
+        "id": "cat_mujer",
+        "name": "Mujer",
+        "slug": "mujer"
       },
       "children": []
     },
     {
-      "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
-      "name": "Velas y cremas de masaje",
-      "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
-      "parentId": "cat_cosmetica-intima",
+      "id": "sub_mujer-zapatos-y-mocasines",
+      "name": "Zapatos y mocasines",
+      "slug": "mujer-zapatos-y-mocasines",
+      "parentId": "cat_mujer",
       "order": 2,
       "parent": {
-        "id": "cat_cosmetica-intima",
-        "name": "Cosmética íntima",
-        "slug": "cosmetica-intima"
+        "id": "cat_mujer",
+        "name": "Mujer",
+        "slug": "mujer"
       },
       "children": []
     },
     {
-      "id": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
-      "name": "Aceites comestibles y de masaje",
-      "slug": "cosmetica-intima-aceites-comestibles-y-de-masaje",
-      "parentId": "cat_cosmetica-intima",
+      "id": "sub_mujer-plataformas",
+      "name": "Plataformas",
+      "slug": "mujer-plataformas",
+      "parentId": "cat_mujer",
       "order": 3,
       "parent": {
-        "id": "cat_cosmetica-intima",
-        "name": "Cosmética íntima",
-        "slug": "cosmetica-intima"
+        "id": "cat_mujer",
+        "name": "Mujer",
+        "slug": "mujer"
       },
       "children": []
     },
     {
-      "id": "cat_perfumes-y-feromonas",
-      "name": "Perfumes y feromonas",
-      "slug": "perfumes-y-feromonas",
+      "id": "cat_hombre",
+      "name": "Hombre",
+      "slug": "hombre",
+      "parentId": null,
+      "order": 4,
+      "children": [
+        {
+          "id": "sub_hombre-borcegos-y-botas",
+          "name": "Borcegos y botas",
+          "slug": "hombre-borcegos-y-botas",
+          "parentId": "cat_hombre",
+          "order": 1,
+          "parent": {
+            "id": "cat_hombre",
+            "name": "Hombre",
+            "slug": "hombre"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_hombre-mocasines-y-nauticos",
+          "name": "Mocasines y náuticos",
+          "slug": "hombre-mocasines-y-nauticos",
+          "parentId": "cat_hombre",
+          "order": 2,
+          "parent": {
+            "id": "cat_hombre",
+            "name": "Hombre",
+            "slug": "hombre"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "sub_hombre-borcegos-y-botas",
+      "name": "Borcegos y botas",
+      "slug": "hombre-borcegos-y-botas",
+      "parentId": "cat_hombre",
+      "order": 1,
+      "parent": {
+        "id": "cat_hombre",
+        "name": "Hombre",
+        "slug": "hombre"
+      },
+      "children": []
+    },
+    {
+      "id": "sub_hombre-mocasines-y-nauticos",
+      "name": "Mocasines y náuticos",
+      "slug": "hombre-mocasines-y-nauticos",
+      "parentId": "cat_hombre",
+      "order": 2,
+      "parent": {
+        "id": "cat_hombre",
+        "name": "Hombre",
+        "slug": "hombre"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_ninos",
+      "name": "Niños",
+      "slug": "ninos",
       "parentId": null,
       "order": 5,
       "children": [
         {
-          "id": "sub_perfumes-y-feromonas-perfumes",
-          "name": "Perfumes",
-          "slug": "perfumes-y-feromonas-perfumes",
-          "parentId": "cat_perfumes-y-feromonas",
+          "id": "sub_ninos-escolares",
+          "name": "Escolares",
+          "slug": "ninos-escolares",
+          "parentId": "cat_ninos",
           "order": 1,
           "parent": {
-            "id": "cat_perfumes-y-feromonas",
-            "name": "Perfumes y feromonas",
-            "slug": "perfumes-y-feromonas"
+            "id": "cat_ninos",
+            "name": "Niños",
+            "slug": "ninos"
+          },
+          "children": []
+        },
+        {
+          "id": "sub_ninos-deportivos-infantiles",
+          "name": "Deportivos infantiles",
+          "slug": "ninos-deportivos-infantiles",
+          "parentId": "cat_ninos",
+          "order": 2,
+          "parent": {
+            "id": "cat_ninos",
+            "name": "Niños",
+            "slug": "ninos"
           },
           "children": []
         }
       ]
     },
     {
-      "id": "sub_perfumes-y-feromonas-perfumes",
-      "name": "Perfumes",
-      "slug": "perfumes-y-feromonas-perfumes",
-      "parentId": "cat_perfumes-y-feromonas",
+      "id": "sub_ninos-escolares",
+      "name": "Escolares",
+      "slug": "ninos-escolares",
+      "parentId": "cat_ninos",
       "order": 1,
       "parent": {
-        "id": "cat_perfumes-y-feromonas",
-        "name": "Perfumes y feromonas",
-        "slug": "perfumes-y-feromonas"
+        "id": "cat_ninos",
+        "name": "Niños",
+        "slug": "ninos"
       },
       "children": []
     },
     {
-      "id": "cat_juegos",
-      "name": "Juegos",
-      "slug": "juegos",
+      "id": "sub_ninos-deportivos-infantiles",
+      "name": "Deportivos infantiles",
+      "slug": "ninos-deportivos-infantiles",
+      "parentId": "cat_ninos",
+      "order": 2,
+      "parent": {
+        "id": "cat_ninos",
+        "name": "Niños",
+        "slug": "ninos"
+      },
+      "children": []
+    },
+    {
+      "id": "cat_ninas",
+      "name": "Niñas",
+      "slug": "ninas",
       "parentId": null,
       "order": 6,
       "children": [
         {
-          "id": "sub_juegos-juegos-de-mesa-y-otros",
-          "name": "Juegos de mesa y otros",
-          "slug": "juegos-juegos-de-mesa-y-otros",
-          "parentId": "cat_juegos",
+          "id": "sub_ninas-guillerminas-y-escolares",
+          "name": "Guillerminas y escolares",
+          "slug": "ninas-guillerminas-y-escolares",
+          "parentId": "cat_ninas",
           "order": 1,
           "parent": {
-            "id": "cat_juegos",
-            "name": "Juegos",
-            "slug": "juegos"
+            "id": "cat_ninas",
+            "name": "Niñas",
+            "slug": "ninas"
           },
           "children": []
         },
         {
-          "id": "sub_juegos-dados-y-cartas",
-          "name": "Dados y cartas",
-          "slug": "juegos-dados-y-cartas",
-          "parentId": "cat_juegos",
+          "id": "sub_ninas-botitas-y-urbanas",
+          "name": "Botitas y urbanas",
+          "slug": "ninas-botitas-y-urbanas",
+          "parentId": "cat_ninas",
           "order": 2,
           "parent": {
-            "id": "cat_juegos",
-            "name": "Juegos",
-            "slug": "juegos"
+            "id": "cat_ninas",
+            "name": "Niñas",
+            "slug": "ninas"
           },
           "children": []
         }
       ]
     },
     {
-      "id": "sub_juegos-juegos-de-mesa-y-otros",
-      "name": "Juegos de mesa y otros",
-      "slug": "juegos-juegos-de-mesa-y-otros",
-      "parentId": "cat_juegos",
+      "id": "sub_ninas-guillerminas-y-escolares",
+      "name": "Guillerminas y escolares",
+      "slug": "ninas-guillerminas-y-escolares",
+      "parentId": "cat_ninas",
       "order": 1,
       "parent": {
-        "id": "cat_juegos",
-        "name": "Juegos",
-        "slug": "juegos"
+        "id": "cat_ninas",
+        "name": "Niñas",
+        "slug": "ninas"
       },
       "children": []
     },
     {
-      "id": "sub_juegos-dados-y-cartas",
-      "name": "Dados y cartas",
-      "slug": "juegos-dados-y-cartas",
-      "parentId": "cat_juegos",
+      "id": "sub_ninas-botitas-y-urbanas",
+      "name": "Botitas y urbanas",
+      "slug": "ninas-botitas-y-urbanas",
+      "parentId": "cat_ninas",
       "order": 2,
       "parent": {
-        "id": "cat_juegos",
-        "name": "Juegos",
-        "slug": "juegos"
-      },
-      "children": []
-    },
-    {
-      "id": "cat_anillos-y-estimuladores",
-      "name": "Anillos y estimuladores",
-      "slug": "anillos-y-estimuladores",
-      "parentId": null,
-      "order": 7,
-      "children": []
-    },
-    {
-      "id": "cat_bdsm-y-arneses",
-      "name": "BDSM y arneses",
-      "slug": "bdsm-y-arneses",
-      "parentId": null,
-      "order": 8,
-      "children": [
-        {
-          "id": "sub_bdsm-y-arneses-esposas",
-          "name": "Esposas",
-          "slug": "bdsm-y-arneses-esposas",
-          "parentId": "cat_bdsm-y-arneses",
-          "order": 1,
-          "parent": {
-            "id": "cat_bdsm-y-arneses",
-            "name": "BDSM y arneses",
-            "slug": "bdsm-y-arneses"
-          },
-          "children": []
-        },
-        {
-          "id": "sub_bdsm-y-arneses-mordazas-y-antifaces",
-          "name": "Mordazas y antifaces",
-          "slug": "bdsm-y-arneses-mordazas-y-antifaces",
-          "parentId": "cat_bdsm-y-arneses",
-          "order": 2,
-          "parent": {
-            "id": "cat_bdsm-y-arneses",
-            "name": "BDSM y arneses",
-            "slug": "bdsm-y-arneses"
-          },
-          "children": []
-        },
-        {
-          "id": "sub_bdsm-y-arneses-latigos-y-fustas",
-          "name": "Látigos y fustas",
-          "slug": "bdsm-y-arneses-latigos-y-fustas",
-          "parentId": "cat_bdsm-y-arneses",
-          "order": 3,
-          "parent": {
-            "id": "cat_bdsm-y-arneses",
-            "name": "BDSM y arneses",
-            "slug": "bdsm-y-arneses"
-          },
-          "children": []
-        },
-        {
-          "id": "sub_bdsm-y-arneses-kits-y-accesorios",
-          "name": "Kits y accesorios",
-          "slug": "bdsm-y-arneses-kits-y-accesorios",
-          "parentId": "cat_bdsm-y-arneses",
-          "order": 4,
-          "parent": {
-            "id": "cat_bdsm-y-arneses",
-            "name": "BDSM y arneses",
-            "slug": "bdsm-y-arneses"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "sub_bdsm-y-arneses-esposas",
-      "name": "Esposas",
-      "slug": "bdsm-y-arneses-esposas",
-      "parentId": "cat_bdsm-y-arneses",
-      "order": 1,
-      "parent": {
-        "id": "cat_bdsm-y-arneses",
-        "name": "BDSM y arneses",
-        "slug": "bdsm-y-arneses"
-      },
-      "children": []
-    },
-    {
-      "id": "sub_bdsm-y-arneses-mordazas-y-antifaces",
-      "name": "Mordazas y antifaces",
-      "slug": "bdsm-y-arneses-mordazas-y-antifaces",
-      "parentId": "cat_bdsm-y-arneses",
-      "order": 2,
-      "parent": {
-        "id": "cat_bdsm-y-arneses",
-        "name": "BDSM y arneses",
-        "slug": "bdsm-y-arneses"
-      },
-      "children": []
-    },
-    {
-      "id": "sub_bdsm-y-arneses-latigos-y-fustas",
-      "name": "Látigos y fustas",
-      "slug": "bdsm-y-arneses-latigos-y-fustas",
-      "parentId": "cat_bdsm-y-arneses",
-      "order": 3,
-      "parent": {
-        "id": "cat_bdsm-y-arneses",
-        "name": "BDSM y arneses",
-        "slug": "bdsm-y-arneses"
-      },
-      "children": []
-    },
-    {
-      "id": "sub_bdsm-y-arneses-kits-y-accesorios",
-      "name": "Kits y accesorios",
-      "slug": "bdsm-y-arneses-kits-y-accesorios",
-      "parentId": "cat_bdsm-y-arneses",
-      "order": 4,
-      "parent": {
-        "id": "cat_bdsm-y-arneses",
-        "name": "BDSM y arneses",
-        "slug": "bdsm-y-arneses"
-      },
-      "children": []
-    },
-    {
-      "id": "cat_dilatadores-consoladores-y-vibradores",
-      "name": "Dilatadores, consoladores y vibradores",
-      "slug": "dilatadores-consoladores-y-vibradores",
-      "parentId": null,
-      "order": 9,
-      "children": [
-        {
-          "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-          "name": "Dilatadores y consoladores anales",
-          "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-          "parentId": "cat_dilatadores-consoladores-y-vibradores",
-          "order": 1,
-          "parent": {
-            "id": "cat_dilatadores-consoladores-y-vibradores",
-            "name": "Dilatadores, consoladores y vibradores",
-            "slug": "dilatadores-consoladores-y-vibradores"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-      "name": "Dilatadores y consoladores anales",
-      "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-      "parentId": "cat_dilatadores-consoladores-y-vibradores",
-      "order": 1,
-      "parent": {
-        "id": "cat_dilatadores-consoladores-y-vibradores",
-        "name": "Dilatadores, consoladores y vibradores",
-        "slug": "dilatadores-consoladores-y-vibradores"
+        "id": "cat_ninas",
+        "name": "Niñas",
+        "slug": "ninas"
       },
       "children": []
     }
   ],
   "products": [
     {
-      "id": "demo_prod_001_baby-doll-venecia",
-      "name": "Baby Doll Venecia",
-      "description": "Confeccionado en tela microtul con terminaciones de puntilla",
-      "sku": "4580",
-      "price": 32000,
-      "transferPrice": 28800,
-      "stock": 10,
+      "id": "demo_prod_001_zapatilla-urbana-clasica",
+      "name": "Zapatilla Urbana Clásica",
+      "description": "Zapatilla urbana liviana con suela flexible. Disponible por mayor y por menor.",
+      "sku": "ZAP-URB-01B-GRP",
+      "price": 28500,
+      "transferPrice": 25650,
+      "stock": 30,
       "imageUrl": null,
       "badge": "Destacado",
       "featured": true,
-      "brand": "Nocturna",
-      "categoryId": "sub_lenceria-baby-dolls",
+      "brand": "Paola Calzados",
+      "categoryId": "sub_zapatillas-urbanas",
       "category": {
-        "id": "sub_lenceria-baby-dolls",
-        "name": "Baby dolls",
-        "slug": "lenceria-baby-dolls",
-        "parentId": "cat_lenceria",
+        "id": "sub_zapatillas-urbanas",
+        "name": "Urbanas",
+        "slug": "zapatillas-urbanas",
+        "parentId": "cat_zapatillas",
         "parent": {
-          "id": "cat_lenceria",
-          "name": "Lencería",
-          "slug": "lenceria"
+          "id": "cat_zapatillas",
+          "name": "Zapatillas",
+          "slug": "zapatillas"
         }
       },
       "active": true,
       "soldCount": 24,
-      "createdAt": "2026-10-26T02:10:20.424Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_002_baby-doll-rose",
-      "name": "Baby Doll Rose",
-      "description": "Baby Doll Rose — Selección Lencería (Baby dolls). Empaque 100% discreto.",
-      "sku": "221",
-      "price": 26000,
-      "transferPrice": 23400,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_lenceria-baby-dolls",
-      "category": {
-        "id": "sub_lenceria-baby-dolls",
-        "name": "Baby dolls",
-        "slug": "lenceria-baby-dolls",
-        "parentId": "cat_lenceria",
-        "parent": {
-          "id": "cat_lenceria",
-          "name": "Lencería",
-          "slug": "lenceria"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-26T01:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_003_vestido-vinilo-verona",
-      "name": "Vestido Vinilo Verona",
-      "description": "Vestido Vinilo Verona — Selección Lencería (Vestidos). Empaque 100% discreto.",
-      "sku": "4510",
-      "price": 39500,
-      "transferPrice": 35550,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_lenceria-vestidos",
-      "category": {
-        "id": "sub_lenceria-vestidos",
-        "name": "Vestidos",
-        "slug": "lenceria-vestidos",
-        "parentId": "cat_lenceria",
-        "parent": {
-          "id": "cat_lenceria",
-          "name": "Lencería",
-          "slug": "lenceria"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-26T00:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_004_body-marley",
-      "name": "Body Marley",
-      "description": "Body Marley — Selección Lencería (Bodys). Empaque 100% discreto.",
-      "sku": "145R-GRP",
-      "price": 16000,
-      "transferPrice": 14400,
-      "stock": 20,
-      "imageUrl": null,
-      "badge": "Destacado",
-      "featured": true,
-      "brand": "Nocturna",
-      "categoryId": "sub_lenceria-bodys",
-      "category": {
-        "id": "sub_lenceria-bodys",
-        "name": "Bodys",
-        "slug": "lenceria-bodys",
-        "parentId": "cat_lenceria",
-        "parent": {
-          "id": "cat_lenceria",
-          "name": "Lencería",
-          "slug": "lenceria"
-        }
-      },
-      "active": true,
-      "soldCount": 21,
-      "createdAt": "2026-10-25T23:10:20.426Z",
+      "createdAt": "2026-11-24T20:25:13.925Z",
       "variants": [
         {
           "id": "demo_var_001",
-          "productId": "demo_prod_004_body-marley",
-          "sku": "145R",
+          "productId": "demo_prod_001_zapatilla-urbana-clasica",
+          "sku": "ZAP-URB-01B",
           "type": null,
-          "size": "Talle Único",
-          "color": "Rojo",
+          "size": null,
+          "color": "Blanco",
           "flavor": null,
           "volume": null,
-          "price": 16000,
+          "price": 28500,
           "stock": 10,
           "active": true
         },
         {
           "id": "demo_var_002",
-          "productId": "demo_prod_004_body-marley",
-          "sku": "145N",
+          "productId": "demo_prod_001_zapatilla-urbana-clasica",
+          "sku": "ZAP-URB-01N",
           "type": null,
-          "size": "Talle Único",
+          "size": null,
           "color": "Negro",
           "flavor": null,
           "volume": null,
-          "price": 16000,
+          "price": 28500,
           "stock": 10,
           "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_005_conjunto-hera",
-      "name": "Conjunto Hera",
-      "description": "Conjunto Hera — Selección Lencería (Conjuntos). Empaque 100% discreto.",
-      "sku": "503",
-      "price": 24000,
-      "transferPrice": 21600,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_lenceria-conjuntos",
-      "category": {
-        "id": "sub_lenceria-conjuntos",
-        "name": "Conjuntos",
-        "slug": "lenceria-conjuntos",
-        "parentId": "cat_lenceria",
-        "parent": {
-          "id": "cat_lenceria",
-          "name": "Lencería",
-          "slug": "lenceria"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T22:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_006_liguero-pandora",
-      "name": "Liguero Pandora",
-      "description": "Liguero Pandora — Selección Lencería (Ligueros, arneses y máscaras). Empaque 100% discreto.",
-      "sku": "128",
-      "price": 16000,
-      "transferPrice": 14400,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_lenceria-ligueros-arneses-y-mascaras",
-      "category": {
-        "id": "sub_lenceria-ligueros-arneses-y-mascaras",
-        "name": "Ligueros, arneses y máscaras",
-        "slug": "lenceria-ligueros-arneses-y-mascaras",
-        "parentId": "cat_lenceria",
-        "parent": {
-          "id": "cat_lenceria",
-          "name": "Lencería",
-          "slug": "lenceria"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T21:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_007_zunga",
-      "name": "Zunga",
-      "description": "Zunga — Selección Línea masculina. Empaque 100% discreto.",
-      "sku": "184",
-      "price": 17000,
-      "transferPrice": 15300,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "cat_linea-masculina",
-      "category": {
-        "id": "cat_linea-masculina",
-        "name": "Línea masculina",
-        "slug": "linea-masculina",
-        "parentId": null,
-        "parent": null
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T20:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_008_fantasia-enfermera-pasionel",
-      "name": "Fantasía Enfermera Pasionel",
-      "description": "Fantasía Enfermera Pasionel — Selección Fantasías (Línea Pasionel). Empaque 100% discreto.",
-      "sku": "P002",
-      "price": 42000,
-      "transferPrice": 37800,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_fantasias-linea-pasionel",
-      "category": {
-        "id": "sub_fantasias-linea-pasionel",
-        "name": "Línea Pasionel",
-        "slug": "fantasias-linea-pasionel",
-        "parentId": "cat_fantasias",
-        "parent": {
-          "id": "cat_fantasias",
-          "name": "Fantasías",
-          "slug": "fantasias"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T19:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_009_fantasia-conejita-pasionel",
-      "name": "Fantasía Conejita Pasionel",
-      "description": "Fantasía Conejita Pasionel — Selección Fantasías (Línea Pasionel). Empaque 100% discreto.",
-      "sku": "P012",
-      "price": 42000,
-      "transferPrice": 37800,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_fantasias-linea-pasionel",
-      "category": {
-        "id": "sub_fantasias-linea-pasionel",
-        "name": "Línea Pasionel",
-        "slug": "fantasias-linea-pasionel",
-        "parentId": "cat_fantasias",
-        "parent": {
-          "id": "cat_fantasias",
-          "name": "Fantasías",
-          "slug": "fantasias"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T18:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_010_fantasia-colegiala-ft-ft-03",
-      "name": "Fantasía Colegiala FT (FT.03)",
-      "description": "Fantasía Colegiala FT (FT.03) — Selección Fantasías (Línea Free Size). Empaque 100% discreto.",
-      "sku": "FT.03-NEGRA-GRP",
-      "price": 28000,
-      "transferPrice": 25200,
-      "stock": 20,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_fantasias-linea-free-size",
-      "category": {
-        "id": "sub_fantasias-linea-free-size",
-        "name": "Línea Free Size",
-        "slug": "fantasias-linea-free-size",
-        "parentId": "cat_fantasias",
-        "parent": {
-          "id": "cat_fantasias",
-          "name": "Fantasías",
-          "slug": "fantasias"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T17:10:20.426Z",
-      "variants": [
+        },
         {
           "id": "demo_var_003",
-          "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
-          "sku": "FT.03-NEGRA",
+          "productId": "demo_prod_001_zapatilla-urbana-clasica",
+          "sku": "ZAP-URB-01F",
           "type": null,
-          "size": "Free Size",
-          "color": "Negra",
+          "size": null,
+          "color": "Fucsia",
           "flavor": null,
           "volume": null,
-          "price": 28000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_004",
-          "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
-          "sku": "FT.03-BLANCA",
-          "type": null,
-          "size": "Free Size",
-          "color": "Blanca",
-          "flavor": null,
-          "volume": null,
-          "price": 28000,
+          "price": 28500,
           "stock": 10,
           "active": true
         }
       ]
     },
     {
-      "id": "demo_prod_011_catsuit-colegiala",
-      "name": "Catsuit Colegiala",
-      "description": "Catsuit Colegiala — Selección Fantasías (Línea Free Size). Empaque 100% discreto.",
-      "sku": "Cat.03-GRP",
-      "price": 18000,
-      "transferPrice": 16200,
-      "stock": 20,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_fantasias-linea-free-size",
-      "category": {
-        "id": "sub_fantasias-linea-free-size",
-        "name": "Línea Free Size",
-        "slug": "fantasias-linea-free-size",
-        "parentId": "cat_fantasias",
-        "parent": {
-          "id": "cat_fantasias",
-          "name": "Fantasías",
-          "slug": "fantasias"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T16:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_005",
-          "productId": "demo_prod_011_catsuit-colegiala",
-          "sku": "Cat.03",
-          "type": "Modelo 3",
-          "size": "Free Size",
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 18000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_006",
-          "productId": "demo_prod_011_catsuit-colegiala",
-          "sku": "Cat.04",
-          "type": "Modelo 4",
-          "size": "Free Size",
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 18000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_012_gel-natural",
-      "name": "Gel Natural",
-      "description": "Gel Natural — Selección Cosmética íntima (Geles y lubricantes). Empaque 100% discreto.",
-      "sku": "Art.611-GRP",
-      "price": 13000,
-      "transferPrice": 11700,
-      "stock": 20,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_cosmetica-intima-geles-y-lubricantes",
-      "category": {
-        "id": "sub_cosmetica-intima-geles-y-lubricantes",
-        "name": "Geles y lubricantes",
-        "slug": "cosmetica-intima-geles-y-lubricantes",
-        "parentId": "cat_cosmetica-intima",
-        "parent": {
-          "id": "cat_cosmetica-intima",
-          "name": "Cosmética íntima",
-          "slug": "cosmetica-intima"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T15:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_007",
-          "productId": "demo_prod_012_gel-natural",
-          "sku": "Art.611",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": "80 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_008",
-          "productId": "demo_prod_012_gel-natural",
-          "sku": "Art.627",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": "200 ml",
-          "price": 18000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_013_gel-efecto-calor",
-      "name": "Gel Efecto Calor",
-      "description": "Gel Efecto Calor — Selección Cosmética íntima (Geles y lubricantes). Empaque 100% discreto.",
-      "sku": "Art.621-GRP",
-      "price": 13000,
-      "transferPrice": 11700,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_cosmetica-intima-geles-y-lubricantes",
-      "category": {
-        "id": "sub_cosmetica-intima-geles-y-lubricantes",
-        "name": "Geles y lubricantes",
-        "slug": "cosmetica-intima-geles-y-lubricantes",
-        "parentId": "cat_cosmetica-intima",
-        "parent": {
-          "id": "cat_cosmetica-intima",
-          "name": "Cosmética íntima",
-          "slug": "cosmetica-intima"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T14:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_009",
-          "productId": "demo_prod_013_gel-efecto-calor",
-          "sku": "Art.621",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": "80 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_014_vela-de-masaje-30-g",
-      "name": "Vela de masaje 30 g",
-      "description": "Vela de masaje 30 g — Selección Cosmética íntima (Velas y cremas de masaje). Empaque 100% discreto.",
-      "sku": "D63-GRP",
-      "price": 12000,
-      "transferPrice": 10800,
-      "stock": 120,
-      "imageUrl": null,
-      "badge": "Destacado",
-      "featured": true,
-      "brand": "Nocturna",
-      "categoryId": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
-      "category": {
-        "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
-        "name": "Velas y cremas de masaje",
-        "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
-        "parentId": "cat_cosmetica-intima",
-        "parent": {
-          "id": "cat_cosmetica-intima",
-          "name": "Cosmética íntima",
-          "slug": "cosmetica-intima"
-        }
-      },
-      "active": true,
-      "soldCount": 11,
-      "createdAt": "2026-10-25T13:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_010",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D63",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "BE",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_011",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D659",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Frutos Rojos",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_012",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D62",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Latte Capuccino y Dulce de Leche",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_013",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D64",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Body Soufflé Mango y Maracuyá",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_014",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D659-MYHEMP",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "My Hemp",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_015",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D61",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Champagne Rose",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_016",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D58",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Crazy Girl",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_017",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D51",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Sweet Beauty Rush Caramel Strawberries",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_018",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "D55",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Body Soufflé Strawberries",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_019",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "MMA01",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Mon Amour",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_020",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "CT01",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Desire Coconut",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_021",
-          "productId": "demo_prod_014_vela-de-masaje-30-g",
-          "sku": "DEMO-0001",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Sweet Beauty Rush Vainilla Coconut",
-          "volume": "30 g",
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_015_aceite-comestible-love-potion",
-      "name": "Aceite comestible Love Potion",
-      "description": "Aceite comestible Love Potion — Selección Cosmética íntima (Aceites comestibles y de masaje). Empaque 100% discreto.",
-      "sku": "A27-GRP",
-      "price": 13000,
-      "transferPrice": 11700,
-      "stock": 80,
-      "imageUrl": null,
-      "badge": "Destacado",
-      "featured": true,
-      "brand": "Nocturna",
-      "categoryId": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
-      "category": {
-        "id": "sub_cosmetica-intima-aceites-comestibles-y-de-masaje",
-        "name": "Aceites comestibles y de masaje",
-        "slug": "cosmetica-intima-aceites-comestibles-y-de-masaje",
-        "parentId": "cat_cosmetica-intima",
-        "parent": {
-          "id": "cat_cosmetica-intima",
-          "name": "Cosmética íntima",
-          "slug": "cosmetica-intima"
-        }
-      },
-      "active": true,
-      "soldCount": 10,
-      "createdAt": "2026-10-25T12:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_022",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A27",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Algodón de azúcar",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_023",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A28",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Banana",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_024",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A26",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Frutilla",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_025",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A01",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Chocolate",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_026",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A03",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Frutos rojos",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_027",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A04",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Dulce de leche",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_028",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A06",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Champagne",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_029",
-          "productId": "demo_prod_015_aceite-comestible-love-potion",
-          "sku": "A24",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Mint Cream",
-          "volume": "30 ml",
-          "price": 13000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_016_crema-corporal-para-masaje",
-      "name": "Crema corporal para masaje",
-      "description": "Crema corporal para masaje — Selección Cosmética íntima (Velas y cremas de masaje). Empaque 100% discreto.",
-      "sku": "DEMO-0004",
-      "price": 18000,
-      "transferPrice": 16200,
-      "stock": 20,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
-      "category": {
-        "id": "sub_cosmetica-intima-velas-y-cremas-de-masaje",
-        "name": "Velas y cremas de masaje",
-        "slug": "cosmetica-intima-velas-y-cremas-de-masaje",
-        "parentId": "cat_cosmetica-intima",
-        "parent": {
-          "id": "cat_cosmetica-intima",
-          "name": "Cosmética íntima",
-          "slug": "cosmetica-intima"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T11:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_030",
-          "productId": "demo_prod_016_crema-corporal-para-masaje",
-          "sku": "DEMO-0002",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "BE",
-          "volume": null,
-          "price": 18000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_031",
-          "productId": "demo_prod_016_crema-corporal-para-masaje",
-          "sku": "DEMO-0003",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Coconut",
-          "volume": null,
-          "price": 18000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_017_gel-intimo-sens-bomb",
-      "name": "Gel íntimo Sens Bomb",
-      "description": "Gel íntimo Sens Bomb — Selección Cosmética íntima (Geles y lubricantes). Empaque 100% discreto.",
-      "sku": "S01-GRP",
-      "price": 12000,
-      "transferPrice": 10800,
-      "stock": 20,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_cosmetica-intima-geles-y-lubricantes",
-      "category": {
-        "id": "sub_cosmetica-intima-geles-y-lubricantes",
-        "name": "Geles y lubricantes",
-        "slug": "cosmetica-intima-geles-y-lubricantes",
-        "parentId": "cat_cosmetica-intima",
-        "parent": {
-          "id": "cat_cosmetica-intima",
-          "name": "Cosmética íntima",
-          "slug": "cosmetica-intima"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T10:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_032",
-          "productId": "demo_prod_017_gel-intimo-sens-bomb",
-          "sku": "S01",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Maca",
-          "volume": null,
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_033",
-          "productId": "demo_prod_017_gel-intimo-sens-bomb",
-          "sku": "S02",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Sándalo Rojo",
-          "volume": null,
-          "price": 12000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_018_perfume-hot-inevitable",
-      "name": "Perfume Hot Inevitable",
-      "description": "Perfume Hot Inevitable — Selección Perfumes y feromonas (Perfumes). Empaque 100% discreto.",
-      "sku": "CV01-1-GRP",
-      "price": 37000,
-      "transferPrice": 33300,
-      "stock": 30,
-      "imageUrl": null,
-      "badge": "Destacado",
-      "featured": true,
-      "brand": "Nocturna",
-      "categoryId": "sub_perfumes-y-feromonas-perfumes",
-      "category": {
-        "id": "sub_perfumes-y-feromonas-perfumes",
-        "name": "Perfumes",
-        "slug": "perfumes-y-feromonas-perfumes",
-        "parentId": "cat_perfumes-y-feromonas",
-        "parent": {
-          "id": "cat_perfumes-y-feromonas",
-          "name": "Perfumes y feromonas",
-          "slug": "perfumes-y-feromonas"
-        }
-      },
-      "active": true,
-      "soldCount": 7,
-      "createdAt": "2026-10-25T09:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_034",
-          "productId": "demo_prod_018_perfume-hot-inevitable",
-          "sku": "CV01-1",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Privée",
-          "volume": "100 ml",
-          "price": 37000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_035",
-          "productId": "demo_prod_018_perfume-hot-inevitable",
-          "sku": "C01",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "So Excited",
-          "volume": "100 ml",
-          "price": 37000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_036",
-          "productId": "demo_prod_018_perfume-hot-inevitable",
-          "sku": "C02",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Con feromonas",
-          "volume": "100 ml",
-          "price": 37000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_019_perfume-petit-mort",
-      "name": "Perfume Petit Mort",
-      "description": "Perfume Petit Mort — Selección Perfumes y feromonas (Perfumes). Empaque 100% discreto.",
-      "sku": "PM03-GRP",
+      "id": "demo_prod_002_zapatilla-plataforma-baja",
+      "name": "Zapatilla Plataforma Baja",
+      "description": "Diseño urbano con base alta cómoda para uso diario. Venta por mayor y menor.",
+      "sku": "ZAP-PLT-02C-GRP",
       "price": 32000,
       "transferPrice": 28800,
-      "stock": 10,
+      "stock": 20,
       "imageUrl": null,
       "badge": null,
       "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_perfumes-y-feromonas-perfumes",
+      "brand": "Paola Calzados",
+      "categoryId": "sub_zapatillas-urbanas",
       "category": {
-        "id": "sub_perfumes-y-feromonas-perfumes",
-        "name": "Perfumes",
-        "slug": "perfumes-y-feromonas-perfumes",
-        "parentId": "cat_perfumes-y-feromonas",
+        "id": "sub_zapatillas-urbanas",
+        "name": "Urbanas",
+        "slug": "zapatillas-urbanas",
+        "parentId": "cat_zapatillas",
         "parent": {
-          "id": "cat_perfumes-y-feromonas",
-          "name": "Perfumes y feromonas",
-          "slug": "perfumes-y-feromonas"
+          "id": "cat_zapatillas",
+          "name": "Zapatillas",
+          "slug": "zapatillas"
         }
       },
       "active": true,
       "soldCount": 5,
-      "createdAt": "2026-10-25T08:10:20.426Z",
+      "createdAt": "2026-11-24T19:25:13.927Z",
       "variants": [
         {
-          "id": "demo_var_037",
-          "productId": "demo_prod_019_perfume-petit-mort",
-          "sku": "PM03",
+          "id": "demo_var_004",
+          "productId": "demo_prod_002_zapatilla-plataforma-baja",
+          "sku": "ZAP-PLT-02C",
           "type": null,
           "size": null,
-          "color": null,
+          "color": "Crudo",
           "flavor": null,
-          "volume": "50 ml",
+          "volume": null,
+          "price": 32000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_005",
+          "productId": "demo_prod_002_zapatilla-plataforma-baja",
+          "sku": "ZAP-PLT-02N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
           "price": 32000,
           "stock": 10,
           "active": true
@@ -1601,538 +558,1295 @@
       ]
     },
     {
-      "id": "demo_prod_020_perfume-it-femme",
-      "name": "Perfume IT Femme",
-      "description": "Perfume IT Femme — Selección Perfumes y feromonas (Perfumes). Empaque 100% discreto.",
-      "sku": "IT01-GRP",
-      "price": 30000,
-      "transferPrice": 27000,
-      "stock": 20,
+      "id": "demo_prod_003_zapatilla-lona-acordonada",
+      "name": "Zapatilla Lona Acordonada",
+      "description": "Capellada de lona respirable con puntera reforzada. Ideal para vidriera y uso diario.",
+      "sku": "ZAP-LON-03N-GRP",
+      "price": 21500,
+      "transferPrice": 19350,
+      "stock": 10,
       "imageUrl": null,
       "badge": null,
       "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_perfumes-y-feromonas-perfumes",
+      "brand": "Paola Calzados",
+      "categoryId": "sub_zapatillas-urbanas",
       "category": {
-        "id": "sub_perfumes-y-feromonas-perfumes",
-        "name": "Perfumes",
-        "slug": "perfumes-y-feromonas-perfumes",
-        "parentId": "cat_perfumes-y-feromonas",
+        "id": "sub_zapatillas-urbanas",
+        "name": "Urbanas",
+        "slug": "zapatillas-urbanas",
+        "parentId": "cat_zapatillas",
         "parent": {
-          "id": "cat_perfumes-y-feromonas",
-          "name": "Perfumes y feromonas",
-          "slug": "perfumes-y-feromonas"
+          "id": "cat_zapatillas",
+          "name": "Zapatillas",
+          "slug": "zapatillas"
         }
       },
       "active": true,
       "soldCount": 5,
-      "createdAt": "2026-10-25T07:10:20.426Z",
+      "createdAt": "2026-11-24T18:25:13.927Z",
       "variants": [
         {
-          "id": "demo_var_038",
-          "productId": "demo_prod_020_perfume-it-femme",
-          "sku": "IT01",
+          "id": "demo_var_006",
+          "productId": "demo_prod_003_zapatilla-lona-acordonada",
+          "sku": "ZAP-LON-03N",
           "type": null,
           "size": null,
-          "color": null,
-          "flavor": "Clásico",
-          "volume": "50 ml",
-          "price": 30000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_039",
-          "productId": "demo_prod_020_perfume-it-femme",
-          "sku": "IT02",
-          "type": null,
-          "size": null,
-          "color": null,
-          "flavor": "Florale Aphrodisiac",
-          "volume": "50 ml",
-          "price": 30000,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 21500,
           "stock": 10,
           "active": true
         }
       ]
     },
     {
-      "id": "demo_prod_021_jenga-sex",
-      "name": "Jenga Sex",
-      "description": "Jenga Sex — Selección Juegos (Juegos de mesa y otros). Empaque 100% discreto.",
-      "sku": "JS",
-      "price": 24000,
-      "transferPrice": 21600,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_juegos-juegos-de-mesa-y-otros",
-      "category": {
-        "id": "sub_juegos-juegos-de-mesa-y-otros",
-        "name": "Juegos de mesa y otros",
-        "slug": "juegos-juegos-de-mesa-y-otros",
-        "parentId": "cat_juegos",
-        "parent": {
-          "id": "cat_juegos",
-          "name": "Juegos",
-          "slug": "juegos"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T06:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_022_naipe-kamasutra",
-      "name": "Naipe Kamasutra",
-      "description": "Naipe Kamasutra — Selección Juegos (Dados y cartas). Empaque 100% discreto.",
-      "sku": "DEMO-0005",
-      "price": 15000,
-      "transferPrice": 13500,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_juegos-dados-y-cartas",
-      "category": {
-        "id": "sub_juegos-dados-y-cartas",
-        "name": "Dados y cartas",
-        "slug": "juegos-dados-y-cartas",
-        "parentId": "cat_juegos",
-        "parent": {
-          "id": "cat_juegos",
-          "name": "Juegos",
-          "slug": "juegos"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T05:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_023_anillo-jelly",
-      "name": "Anillo Jelly",
-      "description": "Anillo Jelly — Selección Anillos y estimuladores. Empaque 100% discreto.",
-      "sku": "AN01",
-      "price": 6000,
-      "transferPrice": 5400,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "cat_anillos-y-estimuladores",
-      "category": {
-        "id": "cat_anillos-y-estimuladores",
-        "name": "Anillos y estimuladores",
-        "slug": "anillos-y-estimuladores",
-        "parentId": null,
-        "parent": null
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T04:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_024_torito-vibrador",
-      "name": "Torito Vibrador",
-      "description": "Torito Vibrador — Selección Anillos y estimuladores. Empaque 100% discreto.",
-      "sku": "AN4",
-      "price": 26000,
-      "transferPrice": 23400,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "cat_anillos-y-estimuladores",
-      "category": {
-        "id": "cat_anillos-y-estimuladores",
-        "name": "Anillos y estimuladores",
-        "slug": "anillos-y-estimuladores",
-        "parentId": null,
-        "parent": null
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T03:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_025_esposas",
-      "name": "Esposas",
-      "description": "Esposas — Selección BDSM y arneses (Esposas). Empaque 100% discreto.",
-      "sku": "BDSM9-GRP",
-      "price": 16000,
-      "transferPrice": 14400,
-      "stock": 60,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_bdsm-y-arneses-esposas",
-      "category": {
-        "id": "sub_bdsm-y-arneses-esposas",
-        "name": "Esposas",
-        "slug": "bdsm-y-arneses-esposas",
-        "parentId": "cat_bdsm-y-arneses",
-        "parent": {
-          "id": "cat_bdsm-y-arneses",
-          "name": "BDSM y arneses",
-          "slug": "bdsm-y-arneses"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T02:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_040",
-          "productId": "demo_prod_025_esposas",
-          "sku": "BDSM9",
-          "type": "Fina",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 17000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_041",
-          "productId": "demo_prod_025_esposas",
-          "sku": "BDSM10",
-          "type": "Mediana",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 19000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_042",
-          "productId": "demo_prod_025_esposas",
-          "sku": "BDSM11",
-          "type": "Ancha",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 22000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_043",
-          "productId": "demo_prod_025_esposas",
-          "sku": "BDSM4",
-          "type": "Cadena larga",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 26000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_044",
-          "productId": "demo_prod_025_esposas",
-          "sku": "DEMO-0006",
-          "type": "Metal con peluche",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 16000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_045",
-          "productId": "demo_prod_025_esposas",
-          "sku": "DEMO-0007",
-          "type": "Cuero con peluche",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 17000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_026_antifaz-ciego",
-      "name": "Antifaz Ciego",
-      "description": "Antifaz Ciego — Selección BDSM y arneses (Mordazas y antifaces). Empaque 100% discreto.",
-      "sku": "BDSM12",
-      "price": 11000,
-      "transferPrice": 9900,
-      "stock": 10,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_bdsm-y-arneses-mordazas-y-antifaces",
-      "category": {
-        "id": "sub_bdsm-y-arneses-mordazas-y-antifaces",
-        "name": "Mordazas y antifaces",
-        "slug": "bdsm-y-arneses-mordazas-y-antifaces",
-        "parentId": "cat_bdsm-y-arneses",
-        "parent": {
-          "id": "cat_bdsm-y-arneses",
-          "name": "BDSM y arneses",
-          "slug": "bdsm-y-arneses"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T01:10:20.426Z",
-      "variants": []
-    },
-    {
-      "id": "demo_prod_027_fusta",
-      "name": "Fusta",
-      "description": "Fusta — Selección BDSM y arneses (Látigos y fustas). Empaque 100% discreto.",
-      "sku": "BDSM5-GRP",
-      "price": 19000,
-      "transferPrice": 17100,
+      "id": "demo_prod_004_zapatilla-running-liviana",
+      "name": "Zapatilla Running Liviana",
+      "description": "Tejido mesh respirable con suela amortiguada liviana. Disponible por mayor y menor.",
+      "sku": "ZAP-DEP-04G-GRP",
+      "price": 34000,
+      "transferPrice": 30600,
       "stock": 20,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_bdsm-y-arneses-latigos-y-fustas",
-      "category": {
-        "id": "sub_bdsm-y-arneses-latigos-y-fustas",
-        "name": "Látigos y fustas",
-        "slug": "bdsm-y-arneses-latigos-y-fustas",
-        "parentId": "cat_bdsm-y-arneses",
-        "parent": {
-          "id": "cat_bdsm-y-arneses",
-          "name": "BDSM y arneses",
-          "slug": "bdsm-y-arneses"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-25T00:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_046",
-          "productId": "demo_prod_027_fusta",
-          "sku": "BDSM5",
-          "type": "Clásica",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 19000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_047",
-          "productId": "demo_prod_027_fusta",
-          "sku": "BDSM6",
-          "type": "Peluche",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 22000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_028_kit-negro",
-      "name": "Kit negro",
-      "description": "Kit negro — Selección BDSM y arneses (Kits y accesorios). Empaque 100% discreto.",
-      "sku": "DEMO-0009",
-      "price": 29000,
-      "transferPrice": 26100,
-      "stock": 20,
-      "imageUrl": null,
-      "badge": null,
-      "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_bdsm-y-arneses-kits-y-accesorios",
-      "category": {
-        "id": "sub_bdsm-y-arneses-kits-y-accesorios",
-        "name": "Kits y accesorios",
-        "slug": "bdsm-y-arneses-kits-y-accesorios",
-        "parentId": "cat_bdsm-y-arneses",
-        "parent": {
-          "id": "cat_bdsm-y-arneses",
-          "name": "BDSM y arneses",
-          "slug": "bdsm-y-arneses"
-        }
-      },
-      "active": true,
-      "soldCount": 5,
-      "createdAt": "2026-10-24T23:10:20.426Z",
-      "variants": [
-        {
-          "id": "demo_var_048",
-          "productId": "demo_prod_028_kit-negro",
-          "sku": "DEMO-0008",
-          "type": "4 piezas",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 29000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_049",
-          "productId": "demo_prod_028_kit-negro",
-          "sku": "BDSM7",
-          "type": "11 piezas",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": null,
-          "price": 44000,
-          "stock": 10,
-          "active": true
-        }
-      ]
-    },
-    {
-      "id": "demo_prod_029_safary",
-      "name": "Safary",
-      "description": "Safary — Selección Dilatadores, consoladores y vibradores (Dilatadores y consoladores anales). Empaque 100% discreto.",
-      "sku": "420-GRP",
-      "price": 20000,
-      "transferPrice": 18000,
-      "stock": 30,
       "imageUrl": null,
       "badge": "Destacado",
       "featured": true,
-      "brand": "Nocturna",
-      "categoryId": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+      "brand": "Paola Calzados",
+      "categoryId": "sub_zapatillas-deportivas-livianas",
       "category": {
-        "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-        "name": "Dilatadores y consoladores anales",
-        "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-        "parentId": "cat_dilatadores-consoladores-y-vibradores",
+        "id": "sub_zapatillas-deportivas-livianas",
+        "name": "Deportivas livianas",
+        "slug": "zapatillas-deportivas-livianas",
+        "parentId": "cat_zapatillas",
         "parent": {
-          "id": "cat_dilatadores-consoladores-y-vibradores",
-          "name": "Dilatadores, consoladores y vibradores",
-          "slug": "dilatadores-consoladores-y-vibradores"
+          "id": "cat_zapatillas",
+          "name": "Zapatillas",
+          "slug": "zapatillas"
         }
       },
       "active": true,
-      "soldCount": -4,
-      "createdAt": "2026-10-24T22:10:20.427Z",
+      "soldCount": 21,
+      "createdAt": "2026-11-24T17:25:13.927Z",
       "variants": [
         {
-          "id": "demo_var_050",
-          "productId": "demo_prod_029_safary",
-          "sku": "420",
-          "type": "Estándar",
+          "id": "demo_var_007",
+          "productId": "demo_prod_004_zapatilla-running-liviana",
+          "sku": "ZAP-DEP-04G",
+          "type": null,
           "size": null,
-          "color": null,
+          "color": "Gris",
           "flavor": null,
-          "volume": "16 x 3 cm",
-          "price": 20000,
+          "volume": null,
+          "price": 34000,
           "stock": 10,
           "active": true
         },
         {
-          "id": "demo_var_051",
-          "productId": "demo_prod_029_safary",
-          "sku": "421",
-          "type": "SCV",
+          "id": "demo_var_008",
+          "productId": "demo_prod_004_zapatilla-running-liviana",
+          "sku": "ZAP-DEP-04R",
+          "type": null,
           "size": null,
-          "color": null,
+          "color": "Rosa",
           "flavor": null,
-          "volume": "16 x 3 cm",
-          "price": 27000,
-          "stock": 10,
-          "active": true
-        },
-        {
-          "id": "demo_var_052",
-          "productId": "demo_prod_029_safary",
-          "sku": "422",
-          "type": "Completo SCV",
-          "size": null,
-          "color": null,
-          "flavor": null,
-          "volume": "16 x 3 cm",
-          "price": 29000,
+          "volume": null,
+          "price": 34000,
           "stock": 10,
           "active": true
         }
       ]
     },
     {
-      "id": "demo_prod_030_escorpion",
-      "name": "Escorpión",
-      "description": "Escorpión — Selección Dilatadores, consoladores y vibradores (Dilatadores y consoladores anales). Empaque 100% discreto.",
-      "sku": "403-C-GRP",
-      "price": 16000,
-      "transferPrice": 14400,
-      "stock": 20,
+      "id": "demo_prod_005_zapatilla-deportiva-sin-cordones",
+      "name": "Zapatilla Deportiva Sin Cordones",
+      "description": "Calce rápido elástico y base liviana antideslizante.",
+      "sku": "ZAP-DEP-05N-GRP",
+      "price": 29900,
+      "transferPrice": 26910,
+      "stock": 10,
       "imageUrl": null,
       "badge": null,
       "featured": false,
-      "brand": "Nocturna",
-      "categoryId": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
+      "brand": "Paola Calzados",
+      "categoryId": "sub_zapatillas-deportivas-livianas",
       "category": {
-        "id": "sub_dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-        "name": "Dilatadores y consoladores anales",
-        "slug": "dilatadores-consoladores-y-vibradores-dilatadores-y-consoladores-anales",
-        "parentId": "cat_dilatadores-consoladores-y-vibradores",
+        "id": "sub_zapatillas-deportivas-livianas",
+        "name": "Deportivas livianas",
+        "slug": "zapatillas-deportivas-livianas",
+        "parentId": "cat_zapatillas",
         "parent": {
-          "id": "cat_dilatadores-consoladores-y-vibradores",
-          "name": "Dilatadores, consoladores y vibradores",
-          "slug": "dilatadores-consoladores-y-vibradores"
+          "id": "cat_zapatillas",
+          "name": "Zapatillas",
+          "slug": "zapatillas"
         }
       },
       "active": true,
       "soldCount": 5,
-      "createdAt": "2026-10-24T21:10:20.427Z",
+      "createdAt": "2026-11-24T16:25:13.927Z",
       "variants": [
         {
-          "id": "demo_var_053",
-          "productId": "demo_prod_030_escorpion",
-          "sku": "403-C",
-          "type": "Consolador",
+          "id": "demo_var_009",
+          "productId": "demo_prod_005_zapatilla-deportiva-sin-cordones",
+          "sku": "ZAP-DEP-05N",
+          "type": null,
           "size": null,
-          "color": null,
+          "color": "Negro",
           "flavor": null,
-          "volume": "8 x 2 cm",
-          "price": 16000,
+          "volume": null,
+          "price": 29900,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_006_zapatilla-urbana-combinada",
+      "name": "Zapatilla Urbana Combinada",
+      "description": "Recortes sintéticos en tonos neutros con base caramel.",
+      "sku": "ZAP-URB-06S-GRP",
+      "price": 31000,
+      "transferPrice": 27900,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_zapatillas-urbanas",
+      "category": {
+        "id": "sub_zapatillas-urbanas",
+        "name": "Urbanas",
+        "slug": "zapatillas-urbanas",
+        "parentId": "cat_zapatillas",
+        "parent": {
+          "id": "cat_zapatillas",
+          "name": "Zapatillas",
+          "slug": "zapatillas"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T15:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_010",
+          "productId": "demo_prod_006_zapatilla-urbana-combinada",
+          "sku": "ZAP-URB-06S",
+          "type": null,
+          "size": null,
+          "color": "Suela",
+          "flavor": null,
+          "volume": null,
+          "price": 31000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_007_sandalia-dos-hebillas",
+      "name": "Sandalia Dos Hebillas",
+      "description": "Fajas regulables con hebillas metálicas y plantilla anatómica. Venta por mayor y menor.",
+      "sku": "SAN-BAJ-01N-GRP",
+      "price": 19500,
+      "transferPrice": 17550,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_sandalias-sandalias-bajas",
+      "category": {
+        "id": "sub_sandalias-sandalias-bajas",
+        "name": "Sandalias bajas",
+        "slug": "sandalias-sandalias-bajas",
+        "parentId": "cat_sandalias",
+        "parent": {
+          "id": "cat_sandalias",
+          "name": "Sandalias",
+          "slug": "sandalias"
+        }
+      },
+      "active": true,
+      "soldCount": 18,
+      "createdAt": "2026-11-24T14:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_011",
+          "productId": "demo_prod_007_sandalia-dos-hebillas",
+          "sku": "SAN-BAJ-01N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 19500,
           "stock": 10,
           "active": true
         },
         {
-          "id": "demo_var_054",
-          "productId": "demo_prod_030_escorpion",
-          "sku": "403-V",
-          "type": "Vibrador",
+          "id": "demo_var_012",
+          "productId": "demo_prod_007_sandalia-dos-hebillas",
+          "sku": "SAN-BAJ-01R",
+          "type": null,
+          "size": null,
+          "color": "Rosa",
+          "flavor": null,
+          "volume": null,
+          "price": 19500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_008_sandalia-tiras-cruzadas",
+      "name": "Sandalia Tiras Cruzadas",
+      "description": "Sandalia baja liviana ideal para verano y media estación.",
+      "sku": "SAN-BAJ-02B-GRP",
+      "price": 18000,
+      "transferPrice": 16200,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_sandalias-sandalias-bajas",
+      "category": {
+        "id": "sub_sandalias-sandalias-bajas",
+        "name": "Sandalias bajas",
+        "slug": "sandalias-sandalias-bajas",
+        "parentId": "cat_sandalias",
+        "parent": {
+          "id": "cat_sandalias",
+          "name": "Sandalias",
+          "slug": "sandalias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T13:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_013",
+          "productId": "demo_prod_008_sandalia-tiras-cruzadas",
+          "sku": "SAN-BAJ-02B",
+          "type": null,
+          "size": null,
+          "color": "Beige",
+          "flavor": null,
+          "volume": null,
+          "price": 18000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_009_sandalia-chata-minimal",
+      "name": "Sandalia Chata Minimal",
+      "description": "Acabado metalizado con base plana flexible.",
+      "sku": "SAN-BAJ-03P-GRP",
+      "price": 17500,
+      "transferPrice": 15750,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_sandalias-sandalias-bajas",
+      "category": {
+        "id": "sub_sandalias-sandalias-bajas",
+        "name": "Sandalias bajas",
+        "slug": "sandalias-sandalias-bajas",
+        "parentId": "cat_sandalias",
+        "parent": {
+          "id": "cat_sandalias",
+          "name": "Sandalias",
+          "slug": "sandalias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T12:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_014",
+          "productId": "demo_prod_009_sandalia-chata-minimal",
+          "sku": "SAN-BAJ-03P",
+          "type": null,
+          "size": null,
+          "color": "Plateado",
+          "flavor": null,
+          "volume": null,
+          "price": 17500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_010_ojota-faja-ancha",
+      "name": "Ojota Faja Ancha",
+      "description": "Material liviano inyectado resistente al agua. Surtido disponible por mayor y menor.",
+      "sku": "SAN-OJO-04F-GRP",
+      "price": 12000,
+      "transferPrice": 10800,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_sandalias-ojotas-y-fajas",
+      "category": {
+        "id": "sub_sandalias-ojotas-y-fajas",
+        "name": "Ojotas y fajas",
+        "slug": "sandalias-ojotas-y-fajas",
+        "parentId": "cat_sandalias",
+        "parent": {
+          "id": "cat_sandalias",
+          "name": "Sandalias",
+          "slug": "sandalias"
+        }
+      },
+      "active": true,
+      "soldCount": 15,
+      "createdAt": "2026-11-24T11:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_015",
+          "productId": "demo_prod_010_ojota-faja-ancha",
+          "sku": "SAN-OJO-04F",
+          "type": null,
+          "size": null,
+          "color": "Fucsia",
+          "flavor": null,
+          "volume": null,
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_016",
+          "productId": "demo_prod_010_ojota-faja-ancha",
+          "sku": "SAN-OJO-04N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 12000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_011_ojota-anatomica-unisex",
+      "name": "Ojota Anatómica Unisex",
+      "description": "Base ergonómica antideslizante para uso diario o pileta.",
+      "sku": "SAN-OJO-05B-GRP",
+      "price": 13500,
+      "transferPrice": 12150,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_sandalias-ojotas-y-fajas",
+      "category": {
+        "id": "sub_sandalias-ojotas-y-fajas",
+        "name": "Ojotas y fajas",
+        "slug": "sandalias-ojotas-y-fajas",
+        "parentId": "cat_sandalias",
+        "parent": {
+          "id": "cat_sandalias",
+          "name": "Sandalias",
+          "slug": "sandalias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T10:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_017",
+          "productId": "demo_prod_011_ojota-anatomica-unisex",
+          "sku": "SAN-OJO-05B",
+          "type": null,
+          "size": null,
+          "color": "Blanco",
+          "flavor": null,
+          "volume": null,
+          "price": 13500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_012_sandalia-plataforma-corcho",
+      "name": "Sandalia Plataforma Corcho",
+      "description": "Base alta liviana con pulsera regulable al tobillo.",
+      "sku": "SAN-BAS-06B-GRP",
+      "price": 29500,
+      "transferPrice": 26550,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_sandalias-sandalias-con-base",
+      "category": {
+        "id": "sub_sandalias-sandalias-con-base",
+        "name": "Sandalias con base",
+        "slug": "sandalias-sandalias-con-base",
+        "parentId": "cat_sandalias",
+        "parent": {
+          "id": "cat_sandalias",
+          "name": "Sandalias",
+          "slug": "sandalias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T09:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_018",
+          "productId": "demo_prod_012_sandalia-plataforma-corcho",
+          "sku": "SAN-BAS-06B",
+          "type": null,
+          "size": null,
+          "color": "Beige",
+          "flavor": null,
+          "volume": null,
+          "price": 29500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_013_sandalia-taco-cuadrado",
+      "name": "Sandalia Taco Cuadrado",
+      "description": "Faja delantera amplia y taco ancho estable para eventos o noche.",
+      "sku": "SAN-BAS-07N-GRP",
+      "price": 31500,
+      "transferPrice": 28350,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_sandalias-sandalias-con-base",
+      "category": {
+        "id": "sub_sandalias-sandalias-con-base",
+        "name": "Sandalias con base",
+        "slug": "sandalias-sandalias-con-base",
+        "parentId": "cat_sandalias",
+        "parent": {
+          "id": "cat_sandalias",
+          "name": "Sandalias",
+          "slug": "sandalias"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T08:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_019",
+          "productId": "demo_prod_013_sandalia-taco-cuadrado",
+          "sku": "SAN-BAS-07N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 31500,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_020",
+          "productId": "demo_prod_013_sandalia-taco-cuadrado",
+          "sku": "SAN-BAS-07F",
+          "type": null,
+          "size": null,
+          "color": "Fucsia",
+          "flavor": null,
+          "volume": null,
+          "price": 31500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_014_borcego-mujer-base-tractor",
+      "name": "Borcego Mujer Base Tractor",
+      "description": "Acordonado clásico con cierre lateral y base tractor antideslizante. Venta por mayor y menor.",
+      "sku": "MUJ-BOT-01N-GRP",
+      "price": 42000,
+      "transferPrice": 37800,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_mujer-botas-y-borcegos",
+      "category": {
+        "id": "sub_mujer-botas-y-borcegos",
+        "name": "Botas y borcegos",
+        "slug": "mujer-botas-y-borcegos",
+        "parentId": "cat_mujer",
+        "parent": {
+          "id": "cat_mujer",
+          "name": "Mujer",
+          "slug": "mujer"
+        }
+      },
+      "active": true,
+      "soldCount": 11,
+      "createdAt": "2026-11-24T07:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_021",
+          "productId": "demo_prod_014_borcego-mujer-base-tractor",
+          "sku": "MUJ-BOT-01N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 42000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_022",
+          "productId": "demo_prod_014_borcego-mujer-base-tractor",
+          "sku": "MUJ-BOT-01B",
+          "type": null,
+          "size": null,
+          "color": "Borgoña",
+          "flavor": null,
+          "volume": null,
+          "price": 42000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_015_bota-cana-corta-elastizada",
+      "name": "Bota Caña Corta Elastizada",
+      "description": "Botineta versátil con elásticos laterales para calce rápido.",
+      "sku": "MUJ-BOT-02S-GRP",
+      "price": 39000,
+      "transferPrice": 35100,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_mujer-botas-y-borcegos",
+      "category": {
+        "id": "sub_mujer-botas-y-borcegos",
+        "name": "Botas y borcegos",
+        "slug": "mujer-botas-y-borcegos",
+        "parentId": "cat_mujer",
+        "parent": {
+          "id": "cat_mujer",
+          "name": "Mujer",
+          "slug": "mujer"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T06:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_023",
+          "productId": "demo_prod_015_bota-cana-corta-elastizada",
+          "sku": "MUJ-BOT-02S",
+          "type": null,
+          "size": null,
+          "color": "Suela",
+          "flavor": null,
+          "volume": null,
+          "price": 39000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_016_mocasin-mujer-cadena",
+      "name": "Mocasín Mujer Cadena",
+      "description": "Detalle metálico frontal y suela con relieve de agarre.",
+      "sku": "MUJ-MOC-03N-GRP",
+      "price": 33500,
+      "transferPrice": 30150,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_mujer-zapatos-y-mocasines",
+      "category": {
+        "id": "sub_mujer-zapatos-y-mocasines",
+        "name": "Zapatos y mocasines",
+        "slug": "mujer-zapatos-y-mocasines",
+        "parentId": "cat_mujer",
+        "parent": {
+          "id": "cat_mujer",
+          "name": "Mujer",
+          "slug": "mujer"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T05:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_024",
+          "productId": "demo_prod_016_mocasin-mujer-cadena",
+          "sku": "MUJ-MOC-03N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 33500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_017_stiletto-punta-fina",
+      "name": "Stiletto Punta Fina",
+      "description": "Zapato clásico de vestir disponible por menor y mayor.",
+      "sku": "MUJ-ZAP-04U-GRP",
+      "price": 36000,
+      "transferPrice": 32400,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_mujer-zapatos-y-mocasines",
+      "category": {
+        "id": "sub_mujer-zapatos-y-mocasines",
+        "name": "Zapatos y mocasines",
+        "slug": "mujer-zapatos-y-mocasines",
+        "parentId": "cat_mujer",
+        "parent": {
+          "id": "cat_mujer",
+          "name": "Mujer",
+          "slug": "mujer"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T04:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_025",
+          "productId": "demo_prod_017_stiletto-punta-fina",
+          "sku": "MUJ-ZAP-04U",
+          "type": null,
+          "size": null,
+          "color": "Nude",
+          "flavor": null,
+          "volume": null,
+          "price": 36000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_018_sueco-plataforma-mujer",
+      "name": "Sueco Plataforma Mujer",
+      "description": "Base liviana en una sola pieza con calce abierto y cómodo.",
+      "sku": "MUJ-PLT-05N-GRP",
+      "price": 27500,
+      "transferPrice": 24750,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_mujer-plataformas",
+      "category": {
+        "id": "sub_mujer-plataformas",
+        "name": "Plataformas",
+        "slug": "mujer-plataformas",
+        "parentId": "cat_mujer",
+        "parent": {
+          "id": "cat_mujer",
+          "name": "Mujer",
+          "slug": "mujer"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T03:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_026",
+          "productId": "demo_prod_018_sueco-plataforma-mujer",
+          "sku": "MUJ-PLT-05N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 27500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_019_borcego-hombre-clasico",
+      "name": "Borcego Hombre Clásico",
+      "description": "Construcción robusta con cordones encerados y base cosida. Disponible por mayor y menor.",
+      "sku": "HOM-BOR-01N-GRP",
+      "price": 44500,
+      "transferPrice": 40050,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_hombre-borcegos-y-botas",
+      "category": {
+        "id": "sub_hombre-borcegos-y-botas",
+        "name": "Borcegos y botas",
+        "slug": "hombre-borcegos-y-botas",
+        "parentId": "cat_hombre",
+        "parent": {
+          "id": "cat_hombre",
+          "name": "Hombre",
+          "slug": "hombre"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T02:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_027",
+          "productId": "demo_prod_019_borcego-hombre-clasico",
+          "sku": "HOM-BOR-01N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 44500,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_028",
+          "productId": "demo_prod_019_borcego-hombre-clasico",
+          "sku": "HOM-BOR-01M",
+          "type": null,
+          "size": null,
+          "color": "Marrón",
+          "flavor": null,
+          "volume": null,
+          "price": 44500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_020_bota-urbana-hombre-cuero-sintetico",
+      "name": "Bota Urbana Hombre Cuero Sintético",
+      "description": "Diseño urbano caña media con cuello acolchado.",
+      "sku": "HOM-BOR-02G-GRP",
+      "price": 41000,
+      "transferPrice": 36900,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_hombre-borcegos-y-botas",
+      "category": {
+        "id": "sub_hombre-borcegos-y-botas",
+        "name": "Borcegos y botas",
+        "slug": "hombre-borcegos-y-botas",
+        "parentId": "cat_hombre",
+        "parent": {
+          "id": "cat_hombre",
+          "name": "Hombre",
+          "slug": "hombre"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T01:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_029",
+          "productId": "demo_prod_020_bota-urbana-hombre-cuero-sintetico",
+          "sku": "HOM-BOR-02G",
+          "type": null,
+          "size": null,
+          "color": "Gris",
+          "flavor": null,
+          "volume": null,
+          "price": 41000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_021_mocasin-hombre-casual",
+      "name": "Mocasín Hombre Casual",
+      "description": "Calce slip-on liviano para uso diario y media estación.",
+      "sku": "HOM-MOC-03A-GRP",
+      "price": 31500,
+      "transferPrice": 28350,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_hombre-mocasines-y-nauticos",
+      "category": {
+        "id": "sub_hombre-mocasines-y-nauticos",
+        "name": "Mocasines y náuticos",
+        "slug": "hombre-mocasines-y-nauticos",
+        "parentId": "cat_hombre",
+        "parent": {
+          "id": "cat_hombre",
+          "name": "Hombre",
+          "slug": "hombre"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-24T00:25:13.927Z",
+      "variants": [
+        {
+          "id": "demo_var_030",
+          "productId": "demo_prod_021_mocasin-hombre-casual",
+          "sku": "HOM-MOC-03A",
+          "type": null,
+          "size": null,
+          "color": "Azul Marino",
+          "flavor": null,
+          "volume": null,
+          "price": 31500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_022_nautico-hombre-acordonado",
+      "name": "Náutico Hombre Acordonado",
+      "description": "Costura reforzada con base clara antideslizante.",
+      "sku": "HOM-NAU-04S-GRP",
+      "price": 32500,
+      "transferPrice": 29250,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_hombre-mocasines-y-nauticos",
+      "category": {
+        "id": "sub_hombre-mocasines-y-nauticos",
+        "name": "Mocasines y náuticos",
+        "slug": "hombre-mocasines-y-nauticos",
+        "parentId": "cat_hombre",
+        "parent": {
+          "id": "cat_hombre",
+          "name": "Hombre",
+          "slug": "hombre"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T23:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_031",
+          "productId": "demo_prod_022_nautico-hombre-acordonado",
+          "sku": "HOM-NAU-04S",
+          "type": null,
+          "size": null,
+          "color": "Suela",
+          "flavor": null,
+          "volume": null,
+          "price": 32500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_023_zapato-escolar-nino-velcro",
+      "name": "Zapato Escolar Niño Velcro",
+      "description": "Doble abrojo reforzado y puntera resistente para uso escolar. Venta por mayor y menor.",
+      "sku": "NIN-ESC-01N-GRP",
+      "price": 22000,
+      "transferPrice": 19800,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninos-escolares",
+      "category": {
+        "id": "sub_ninos-escolares",
+        "name": "Escolares",
+        "slug": "ninos-escolares",
+        "parentId": "cat_ninos",
+        "parent": {
+          "id": "cat_ninos",
+          "name": "Niños",
+          "slug": "ninos"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T22:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_032",
+          "productId": "demo_prod_023_zapato-escolar-nino-velcro",
+          "sku": "NIN-ESC-01N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 22000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_024_zapatilla-infantil-abrojo",
+      "name": "Zapatilla Infantil Abrojo",
+      "description": "Liviana",
+      "sku": "flexible y fácil de calzar con abrojo y cordón elástico.-GRP",
+      "price": 15000,
+      "transferPrice": 13500,
+      "stock": 20,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninos-deportivos-infantiles",
+      "category": {
+        "id": "sub_ninos-deportivos-infantiles",
+        "name": "Deportivos infantiles",
+        "slug": "ninos-deportivos-infantiles",
+        "parentId": "cat_ninos",
+        "parent": {
+          "id": "cat_ninos",
+          "name": "Niños",
+          "slug": "ninos"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T21:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_033",
+          "productId": "demo_prod_024_zapatilla-infantil-abrojo",
+          "sku": "flexible y fácil de calzar con abrojo y cordón elástico.",
+          "type": "NIN-DEP-02A",
+          "size": null,
+          "color": null,
+          "flavor": "Azul",
+          "volume": null,
+          "price": 15000,
+          "stock": 10,
+          "active": true
+        },
+        {
+          "id": "demo_var_034",
+          "productId": "demo_prod_024_zapatilla-infantil-abrojo",
+          "sku": "flexible y fácil de calzar con abrojo y cordón elástico.-2",
+          "type": "NIN-DEP-02N",
+          "size": null,
+          "color": null,
+          "flavor": "Negro",
+          "volume": null,
+          "price": 15000,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_025_zapatilla-ninos-bota-urbana",
+      "name": "Zapatilla Niños Bota Urbana",
+      "description": "Caña media acolchada con suela de goma flexible.",
+      "sku": "NIN-DEP-03G-GRP",
+      "price": 25500,
+      "transferPrice": 22950,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninos-deportivos-infantiles",
+      "category": {
+        "id": "sub_ninos-deportivos-infantiles",
+        "name": "Deportivos infantiles",
+        "slug": "ninos-deportivos-infantiles",
+        "parentId": "cat_ninos",
+        "parent": {
+          "id": "cat_ninos",
+          "name": "Niños",
+          "slug": "ninos"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T20:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_035",
+          "productId": "demo_prod_025_zapatilla-ninos-bota-urbana",
+          "sku": "NIN-DEP-03G",
+          "type": null,
+          "size": null,
+          "color": "Gris",
+          "flavor": null,
+          "volume": null,
+          "price": 25500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_026_guillermina-escolar-nina",
+      "name": "Guillermina Escolar Niña",
+      "description": "Presilla con velcro regulable y plantilla acolchada. Venta por mayor y menor.",
+      "sku": "NNA-GUI-01N-GRP",
+      "price": 21500,
+      "transferPrice": 19350,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninas-guillerminas-y-escolares",
+      "category": {
+        "id": "sub_ninas-guillerminas-y-escolares",
+        "name": "Guillerminas y escolares",
+        "slug": "ninas-guillerminas-y-escolares",
+        "parentId": "cat_ninas",
+        "parent": {
+          "id": "cat_ninas",
+          "name": "Niñas",
+          "slug": "ninas"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T19:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_036",
+          "productId": "demo_prod_026_guillermina-escolar-nina",
+          "sku": "NNA-GUI-01N",
+          "type": null,
+          "size": null,
+          "color": "Negro",
+          "flavor": null,
+          "volume": null,
+          "price": 21500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_027_guillermina-charol-fiesta",
+      "name": "Guillermina Charol Fiesta",
+      "description": "Terminación brillante con hebilla lateral y suela flexible.",
+      "sku": "NNA-GUI-02R-GRP",
+      "price": 22500,
+      "transferPrice": 20250,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninas-guillerminas-y-escolares",
+      "category": {
+        "id": "sub_ninas-guillerminas-y-escolares",
+        "name": "Guillerminas y escolares",
+        "slug": "ninas-guillerminas-y-escolares",
+        "parentId": "cat_ninas",
+        "parent": {
+          "id": "cat_ninas",
+          "name": "Niñas",
+          "slug": "ninas"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T18:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_037",
+          "productId": "demo_prod_027_guillermina-charol-fiesta",
+          "sku": "NNA-GUI-02R",
+          "type": null,
+          "size": null,
+          "color": "Rosa",
+          "flavor": null,
+          "volume": null,
+          "price": 22500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_028_botita-urbana-nina",
+      "name": "Botita Urbana Niña",
+      "description": "Diseño alegre con cierre lateral y detalle en contraste. Disponible por mayor y menor.",
+      "sku": "NNA-BOT-03F-GRP",
+      "price": 26500,
+      "transferPrice": 23850,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": "Destacado",
+      "featured": true,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninas-botitas-y-urbanas",
+      "category": {
+        "id": "sub_ninas-botitas-y-urbanas",
+        "name": "Botitas y urbanas",
+        "slug": "ninas-botitas-y-urbanas",
+        "parentId": "cat_ninas",
+        "parent": {
+          "id": "cat_ninas",
+          "name": "Niñas",
+          "slug": "ninas"
+        }
+      },
+      "active": true,
+      "soldCount": -3,
+      "createdAt": "2026-11-23T17:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_038",
+          "productId": "demo_prod_028_botita-urbana-nina",
+          "sku": "NNA-BOT-03F",
+          "type": null,
+          "size": null,
+          "color": "Fucsia",
+          "flavor": null,
+          "volume": null,
+          "price": 26500,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_029_zapatilla-nina-luces-liviana",
+      "name": "Zapatilla Niña Luces Liviana",
+      "description": "Doble ajuste elástico y suela amortiguada liviana.",
+      "sku": "NNA-ZAP-04L-GRP",
+      "price": null,
+      "transferPrice": null,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninas-botitas-y-urbanas",
+      "category": {
+        "id": "sub_ninas-botitas-y-urbanas",
+        "name": "Botitas y urbanas",
+        "slug": "ninas-botitas-y-urbanas",
+        "parentId": "cat_ninas",
+        "parent": {
+          "id": "cat_ninas",
+          "name": "Niñas",
+          "slug": "ninas"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T16:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_039",
+          "productId": "demo_prod_029_zapatilla-nina-luces-liviana",
+          "sku": "NNA-ZAP-04L",
+          "type": "Con luces",
           "size": null,
           "color": null,
           "flavor": null,
-          "volume": "8 x 2 cm",
-          "price": 27000,
+          "volume": "27500",
+          "price": null,
+          "stock": 10,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "demo_prod_030_panchita-nina-estampada",
+      "name": "Panchita Niña Estampada",
+      "description": "Calce sin cordones en lona liviana lavable.",
+      "sku": "NNA-PAN-05R-GRP",
+      "price": null,
+      "transferPrice": null,
+      "stock": 10,
+      "imageUrl": null,
+      "badge": null,
+      "featured": false,
+      "brand": "Paola Calzados",
+      "categoryId": "sub_ninas-botitas-y-urbanas",
+      "category": {
+        "id": "sub_ninas-botitas-y-urbanas",
+        "name": "Botitas y urbanas",
+        "slug": "ninas-botitas-y-urbanas",
+        "parentId": "cat_ninas",
+        "parent": {
+          "id": "cat_ninas",
+          "name": "Niñas",
+          "slug": "ninas"
+        }
+      },
+      "active": true,
+      "soldCount": 5,
+      "createdAt": "2026-11-23T15:25:13.928Z",
+      "variants": [
+        {
+          "id": "demo_var_040",
+          "productId": "demo_prod_030_panchita-nina-estampada",
+          "sku": "NNA-PAN-05R",
+          "type": "Estampada",
+          "size": null,
+          "color": null,
+          "flavor": null,
+          "volume": "16500",
+          "price": null,
           "stock": 10,
           "active": true
         }
@@ -2141,842 +1855,702 @@
   ],
   "priceHistory": [
     {
-      "id": "demo_ph_demo_prod_001_baby-doll-venecia_base",
-      "productId": "demo_prod_001_baby-doll-venecia",
+      "id": "demo_ph_demo_prod_001_zapatilla-urbana-clasica_base",
+      "productId": "demo_prod_001_zapatilla-urbana-clasica",
       "variantId": null,
-      "oldPrice": 32000,
-      "newPrice": 32000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_002_baby-doll-rose_base",
-      "productId": "demo_prod_002_baby-doll-rose",
-      "variantId": null,
-      "oldPrice": 26000,
-      "newPrice": 26000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_003_vestido-vinilo-verona_base",
-      "productId": "demo_prod_003_vestido-vinilo-verona",
-      "variantId": null,
-      "oldPrice": 39500,
-      "newPrice": 39500,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_004_body-marley_base",
-      "productId": "demo_prod_004_body-marley",
-      "variantId": null,
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 28500,
+      "newPrice": 28500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_001",
-      "productId": "demo_prod_004_body-marley",
+      "productId": "demo_prod_001_zapatilla-urbana-clasica",
       "variantId": "demo_var_001",
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 28500,
+      "newPrice": 28500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
       "id": "demo_ph_demo_var_002",
-      "productId": "demo_prod_004_body-marley",
+      "productId": "demo_prod_001_zapatilla-urbana-clasica",
       "variantId": "demo_var_002",
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 28500,
+      "newPrice": 28500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_005_conjunto-hera_base",
-      "productId": "demo_prod_005_conjunto-hera",
-      "variantId": null,
-      "oldPrice": 24000,
-      "newPrice": 24000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_006_liguero-pandora_base",
-      "productId": "demo_prod_006_liguero-pandora",
-      "variantId": null,
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_007_zunga_base",
-      "productId": "demo_prod_007_zunga",
-      "variantId": null,
-      "oldPrice": 17000,
-      "newPrice": 17000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_008_fantasia-enfermera-pasionel_base",
-      "productId": "demo_prod_008_fantasia-enfermera-pasionel",
-      "variantId": null,
-      "oldPrice": 42000,
-      "newPrice": 42000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_009_fantasia-conejita-pasionel_base",
-      "productId": "demo_prod_009_fantasia-conejita-pasionel",
-      "variantId": null,
-      "oldPrice": 42000,
-      "newPrice": 42000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_010_fantasia-colegiala-ft-ft-03_base",
-      "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
-      "variantId": null,
-      "oldPrice": 28000,
-      "newPrice": 28000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_003",
-      "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+      "productId": "demo_prod_001_zapatilla-urbana-clasica",
       "variantId": "demo_var_003",
-      "oldPrice": 28000,
-      "newPrice": 28000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 28500,
+      "newPrice": 28500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_var_004",
-      "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
-      "variantId": "demo_var_004",
-      "oldPrice": 28000,
-      "newPrice": 28000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_011_catsuit-colegiala_base",
-      "productId": "demo_prod_011_catsuit-colegiala",
+      "id": "demo_ph_demo_prod_002_zapatilla-plataforma-baja_base",
+      "productId": "demo_prod_002_zapatilla-plataforma-baja",
       "variantId": null,
-      "oldPrice": 18000,
-      "newPrice": 18000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 32000,
+      "newPrice": 32000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
-      "id": "demo_ph_demo_var_005",
-      "productId": "demo_prod_011_catsuit-colegiala",
-      "variantId": "demo_var_005",
-      "oldPrice": 18000,
-      "newPrice": 18000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "id": "demo_ph_demo_var_004",
+      "productId": "demo_prod_002_zapatilla-plataforma-baja",
+      "variantId": "demo_var_004",
+      "oldPrice": 32000,
+      "newPrice": 32000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_005",
+      "productId": "demo_prod_002_zapatilla-plataforma-baja",
+      "variantId": "demo_var_005",
+      "oldPrice": 32000,
+      "newPrice": 32000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_003_zapatilla-lona-acordonada_base",
+      "productId": "demo_prod_003_zapatilla-lona-acordonada",
+      "variantId": null,
+      "oldPrice": 21500,
+      "newPrice": 21500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_006",
-      "productId": "demo_prod_011_catsuit-colegiala",
+      "productId": "demo_prod_003_zapatilla-lona-acordonada",
       "variantId": "demo_var_006",
-      "oldPrice": 18000,
-      "newPrice": 18000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 21500,
+      "newPrice": 21500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_012_gel-natural_base",
-      "productId": "demo_prod_012_gel-natural",
+      "id": "demo_ph_demo_prod_004_zapatilla-running-liviana_base",
+      "productId": "demo_prod_004_zapatilla-running-liviana",
       "variantId": null,
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 34000,
+      "newPrice": 34000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_007",
-      "productId": "demo_prod_012_gel-natural",
+      "productId": "demo_prod_004_zapatilla-running-liviana",
       "variantId": "demo_var_007",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 34000,
+      "newPrice": 34000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
       "id": "demo_ph_demo_var_008",
-      "productId": "demo_prod_012_gel-natural",
+      "productId": "demo_prod_004_zapatilla-running-liviana",
       "variantId": "demo_var_008",
-      "oldPrice": 18000,
-      "newPrice": 18000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 34000,
+      "newPrice": 34000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_013_gel-efecto-calor_base",
-      "productId": "demo_prod_013_gel-efecto-calor",
+      "id": "demo_ph_demo_prod_005_zapatilla-deportiva-sin-cordones_base",
+      "productId": "demo_prod_005_zapatilla-deportiva-sin-cordones",
       "variantId": null,
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 29900,
+      "newPrice": 29900,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_009",
-      "productId": "demo_prod_013_gel-efecto-calor",
+      "productId": "demo_prod_005_zapatilla-deportiva-sin-cordones",
       "variantId": "demo_var_009",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 29900,
+      "newPrice": 29900,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_014_vela-de-masaje-30-g_base",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "id": "demo_ph_demo_prod_006_zapatilla-urbana-combinada_base",
+      "productId": "demo_prod_006_zapatilla-urbana-combinada",
       "variantId": null,
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 31000,
+      "newPrice": 31000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_010",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_006_zapatilla-urbana-combinada",
       "variantId": "demo_var_010",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 31000,
+      "newPrice": 31000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
+      "id": "demo_ph_demo_prod_007_sandalia-dos-hebillas_base",
+      "productId": "demo_prod_007_sandalia-dos-hebillas",
+      "variantId": null,
+      "oldPrice": 19500,
+      "newPrice": 19500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
       "id": "demo_ph_demo_var_011",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_007_sandalia-dos-hebillas",
       "variantId": "demo_var_011",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 19500,
+      "newPrice": 19500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
       "id": "demo_ph_demo_var_012",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_007_sandalia-dos-hebillas",
       "variantId": "demo_var_012",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 19500,
+      "newPrice": 19500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_008_sandalia-tiras-cruzadas_base",
+      "productId": "demo_prod_008_sandalia-tiras-cruzadas",
+      "variantId": null,
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_013",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_008_sandalia-tiras-cruzadas",
       "variantId": "demo_var_013",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 18000,
+      "newPrice": 18000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_009_sandalia-chata-minimal_base",
+      "productId": "demo_prod_009_sandalia-chata-minimal",
+      "variantId": null,
+      "oldPrice": 17500,
+      "newPrice": 17500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_014",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_009_sandalia-chata-minimal",
       "variantId": "demo_var_014",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 17500,
+      "newPrice": 17500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
+      "id": "demo_ph_demo_prod_010_ojota-faja-ancha_base",
+      "productId": "demo_prod_010_ojota-faja-ancha",
+      "variantId": null,
+      "oldPrice": 12000,
+      "newPrice": 12000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
       "id": "demo_ph_demo_var_015",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_010_ojota-faja-ancha",
       "variantId": "demo_var_015",
       "oldPrice": 12000,
       "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
       "id": "demo_ph_demo_var_016",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_010_ojota-faja-ancha",
       "variantId": "demo_var_016",
       "oldPrice": 12000,
       "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_011_ojota-anatomica-unisex_base",
+      "productId": "demo_prod_011_ojota-anatomica-unisex",
+      "variantId": null,
+      "oldPrice": 13500,
+      "newPrice": 13500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_017",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_011_ojota-anatomica-unisex",
       "variantId": "demo_var_017",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 13500,
+      "newPrice": 13500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_012_sandalia-plataforma-corcho_base",
+      "productId": "demo_prod_012_sandalia-plataforma-corcho",
+      "variantId": null,
+      "oldPrice": 29500,
+      "newPrice": 29500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_018",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_012_sandalia-plataforma-corcho",
       "variantId": "demo_var_018",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 29500,
+      "newPrice": 29500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
+      "id": "demo_ph_demo_prod_013_sandalia-taco-cuadrado_base",
+      "productId": "demo_prod_013_sandalia-taco-cuadrado",
+      "variantId": null,
+      "oldPrice": 31500,
+      "newPrice": 31500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
       "id": "demo_ph_demo_var_019",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_013_sandalia-taco-cuadrado",
       "variantId": "demo_var_019",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 31500,
+      "newPrice": 31500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
       "id": "demo_ph_demo_var_020",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
+      "productId": "demo_prod_013_sandalia-taco-cuadrado",
       "variantId": "demo_var_020",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 31500,
+      "newPrice": 31500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_var_021",
-      "productId": "demo_prod_014_vela-de-masaje-30-g",
-      "variantId": "demo_var_021",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_015_aceite-comestible-love-potion_base",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "id": "demo_ph_demo_prod_014_borcego-mujer-base-tractor_base",
+      "productId": "demo_prod_014_borcego-mujer-base-tractor",
       "variantId": null,
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 42000,
+      "newPrice": 42000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
-      "id": "demo_ph_demo_var_022",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
-      "variantId": "demo_var_022",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "id": "demo_ph_demo_var_021",
+      "productId": "demo_prod_014_borcego-mujer-base-tractor",
+      "variantId": "demo_var_021",
+      "oldPrice": 42000,
+      "newPrice": 42000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_022",
+      "productId": "demo_prod_014_borcego-mujer-base-tractor",
+      "variantId": "demo_var_022",
+      "oldPrice": 42000,
+      "newPrice": 42000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_015_bota-cana-corta-elastizada_base",
+      "productId": "demo_prod_015_bota-cana-corta-elastizada",
+      "variantId": null,
+      "oldPrice": 39000,
+      "newPrice": 39000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_023",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "productId": "demo_prod_015_bota-cana-corta-elastizada",
       "variantId": "demo_var_023",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 39000,
+      "newPrice": 39000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_016_mocasin-mujer-cadena_base",
+      "productId": "demo_prod_016_mocasin-mujer-cadena",
+      "variantId": null,
+      "oldPrice": 33500,
+      "newPrice": 33500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_024",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "productId": "demo_prod_016_mocasin-mujer-cadena",
       "variantId": "demo_var_024",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 33500,
+      "newPrice": 33500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_017_stiletto-punta-fina_base",
+      "productId": "demo_prod_017_stiletto-punta-fina",
+      "variantId": null,
+      "oldPrice": 36000,
+      "newPrice": 36000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_025",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "productId": "demo_prod_017_stiletto-punta-fina",
       "variantId": "demo_var_025",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 36000,
+      "newPrice": 36000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_018_sueco-plataforma-mujer_base",
+      "productId": "demo_prod_018_sueco-plataforma-mujer",
+      "variantId": null,
+      "oldPrice": 27500,
+      "newPrice": 27500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_026",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "productId": "demo_prod_018_sueco-plataforma-mujer",
       "variantId": "demo_var_026",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 27500,
+      "newPrice": 27500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
+      "id": "demo_ph_demo_prod_019_borcego-hombre-clasico_base",
+      "productId": "demo_prod_019_borcego-hombre-clasico",
+      "variantId": null,
+      "oldPrice": 44500,
+      "newPrice": 44500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
+    },
+    {
       "id": "demo_ph_demo_var_027",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "productId": "demo_prod_019_borcego-hombre-clasico",
       "variantId": "demo_var_027",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 44500,
+      "newPrice": 44500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
       "id": "demo_ph_demo_var_028",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "productId": "demo_prod_019_borcego-hombre-clasico",
       "variantId": "demo_var_028",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 44500,
+      "newPrice": 44500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_020_bota-urbana-hombre-cuero-sintetico_base",
+      "productId": "demo_prod_020_bota-urbana-hombre-cuero-sintetico",
+      "variantId": null,
+      "oldPrice": 41000,
+      "newPrice": 41000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_029",
-      "productId": "demo_prod_015_aceite-comestible-love-potion",
+      "productId": "demo_prod_020_bota-urbana-hombre-cuero-sintetico",
       "variantId": "demo_var_029",
-      "oldPrice": 13000,
-      "newPrice": 13000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 41000,
+      "newPrice": 41000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_016_crema-corporal-para-masaje_base",
-      "productId": "demo_prod_016_crema-corporal-para-masaje",
+      "id": "demo_ph_demo_prod_021_mocasin-hombre-casual_base",
+      "productId": "demo_prod_021_mocasin-hombre-casual",
       "variantId": null,
-      "oldPrice": 18000,
-      "newPrice": 18000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 31500,
+      "newPrice": 31500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_030",
-      "productId": "demo_prod_016_crema-corporal-para-masaje",
+      "productId": "demo_prod_021_mocasin-hombre-casual",
       "variantId": "demo_var_030",
-      "oldPrice": 18000,
-      "newPrice": 18000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 31500,
+      "newPrice": 31500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_022_nautico-hombre-acordonado_base",
+      "productId": "demo_prod_022_nautico-hombre-acordonado",
+      "variantId": null,
+      "oldPrice": 32500,
+      "newPrice": 32500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_031",
-      "productId": "demo_prod_016_crema-corporal-para-masaje",
+      "productId": "demo_prod_022_nautico-hombre-acordonado",
       "variantId": "demo_var_031",
-      "oldPrice": 18000,
-      "newPrice": 18000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 32500,
+      "newPrice": 32500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_017_gel-intimo-sens-bomb_base",
-      "productId": "demo_prod_017_gel-intimo-sens-bomb",
+      "id": "demo_ph_demo_prod_023_zapato-escolar-nino-velcro_base",
+      "productId": "demo_prod_023_zapato-escolar-nino-velcro",
       "variantId": null,
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 22000,
+      "newPrice": 22000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_032",
-      "productId": "demo_prod_017_gel-intimo-sens-bomb",
+      "productId": "demo_prod_023_zapato-escolar-nino-velcro",
       "variantId": "demo_var_032",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 22000,
+      "newPrice": 22000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_var_033",
-      "productId": "demo_prod_017_gel-intimo-sens-bomb",
-      "variantId": "demo_var_033",
-      "oldPrice": 12000,
-      "newPrice": 12000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_018_perfume-hot-inevitable_base",
-      "productId": "demo_prod_018_perfume-hot-inevitable",
+      "id": "demo_ph_demo_prod_024_zapatilla-infantil-abrojo_base",
+      "productId": "demo_prod_024_zapatilla-infantil-abrojo",
       "variantId": null,
-      "oldPrice": 37000,
-      "newPrice": 37000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 15000,
+      "newPrice": 15000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
-      "id": "demo_ph_demo_var_034",
-      "productId": "demo_prod_018_perfume-hot-inevitable",
-      "variantId": "demo_var_034",
-      "oldPrice": 37000,
-      "newPrice": 37000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "id": "demo_ph_demo_var_033",
+      "productId": "demo_prod_024_zapatilla-infantil-abrojo",
+      "variantId": "demo_var_033",
+      "oldPrice": 15000,
+      "newPrice": 15000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_var_034",
+      "productId": "demo_prod_024_zapatilla-infantil-abrojo",
+      "variantId": "demo_var_034",
+      "oldPrice": 15000,
+      "newPrice": 15000,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_025_zapatilla-ninos-bota-urbana_base",
+      "productId": "demo_prod_025_zapatilla-ninos-bota-urbana",
+      "variantId": null,
+      "oldPrice": 25500,
+      "newPrice": 25500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_035",
-      "productId": "demo_prod_018_perfume-hot-inevitable",
+      "productId": "demo_prod_025_zapatilla-ninos-bota-urbana",
       "variantId": "demo_var_035",
-      "oldPrice": 37000,
-      "newPrice": 37000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 25500,
+      "newPrice": 25500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_026_guillermina-escolar-nina_base",
+      "productId": "demo_prod_026_guillermina-escolar-nina",
+      "variantId": null,
+      "oldPrice": 21500,
+      "newPrice": 21500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_036",
-      "productId": "demo_prod_018_perfume-hot-inevitable",
+      "productId": "demo_prod_026_guillermina-escolar-nina",
       "variantId": "demo_var_036",
-      "oldPrice": 37000,
-      "newPrice": 37000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 21500,
+      "newPrice": 21500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_019_perfume-petit-mort_base",
-      "productId": "demo_prod_019_perfume-petit-mort",
+      "id": "demo_ph_demo_prod_027_guillermina-charol-fiesta_base",
+      "productId": "demo_prod_027_guillermina-charol-fiesta",
       "variantId": null,
-      "oldPrice": 32000,
-      "newPrice": 32000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 22500,
+      "newPrice": 22500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_037",
-      "productId": "demo_prod_019_perfume-petit-mort",
+      "productId": "demo_prod_027_guillermina-charol-fiesta",
       "variantId": "demo_var_037",
-      "oldPrice": 32000,
-      "newPrice": 32000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 22500,
+      "newPrice": 22500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_020_perfume-it-femme_base",
-      "productId": "demo_prod_020_perfume-it-femme",
+      "id": "demo_ph_demo_prod_028_botita-urbana-nina_base",
+      "productId": "demo_prod_028_botita-urbana-nina",
       "variantId": null,
-      "oldPrice": 30000,
-      "newPrice": 30000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 26500,
+      "newPrice": 26500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_038",
-      "productId": "demo_prod_020_perfume-it-femme",
+      "productId": "demo_prod_028_botita-urbana-nina",
       "variantId": "demo_var_038",
-      "oldPrice": 30000,
-      "newPrice": 30000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": 26500,
+      "newPrice": 26500,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
+    },
+    {
+      "id": "demo_ph_demo_prod_029_zapatilla-nina-luces-liviana_base",
+      "productId": "demo_prod_029_zapatilla-nina-luces-liviana",
+      "variantId": null,
+      "oldPrice": null,
+      "newPrice": null,
+      "changedAt": "2026-10-10T21:25:13.928Z",
+      "changedBy": "DEMO_SEED",
+      "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_039",
-      "productId": "demo_prod_020_perfume-it-femme",
+      "productId": "demo_prod_029_zapatilla-nina-luces-liviana",
       "variantId": "demo_var_039",
-      "oldPrice": 30000,
-      "newPrice": 30000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": null,
+      "newPrice": null,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     },
     {
-      "id": "demo_ph_demo_prod_021_jenga-sex_base",
-      "productId": "demo_prod_021_jenga-sex",
+      "id": "demo_ph_demo_prod_030_panchita-nina-estampada_base",
+      "productId": "demo_prod_030_panchita-nina-estampada",
       "variantId": null,
-      "oldPrice": 24000,
-      "newPrice": 24000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_022_naipe-kamasutra_base",
-      "productId": "demo_prod_022_naipe-kamasutra",
-      "variantId": null,
-      "oldPrice": 15000,
-      "newPrice": 15000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_023_anillo-jelly_base",
-      "productId": "demo_prod_023_anillo-jelly",
-      "variantId": null,
-      "oldPrice": 6000,
-      "newPrice": 6000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_024_torito-vibrador_base",
-      "productId": "demo_prod_024_torito-vibrador",
-      "variantId": null,
-      "oldPrice": 26000,
-      "newPrice": 26000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_025_esposas_base",
-      "productId": "demo_prod_025_esposas",
-      "variantId": null,
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": null,
+      "newPrice": null,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_CATALOGO"
     },
     {
       "id": "demo_ph_demo_var_040",
-      "productId": "demo_prod_025_esposas",
+      "productId": "demo_prod_030_panchita-nina-estampada",
       "variantId": "demo_var_040",
-      "oldPrice": 17000,
-      "newPrice": 17000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_041",
-      "productId": "demo_prod_025_esposas",
-      "variantId": "demo_var_041",
-      "oldPrice": 19000,
-      "newPrice": 19000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_042",
-      "productId": "demo_prod_025_esposas",
-      "variantId": "demo_var_042",
-      "oldPrice": 22000,
-      "newPrice": 22000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_043",
-      "productId": "demo_prod_025_esposas",
-      "variantId": "demo_var_043",
-      "oldPrice": 26000,
-      "newPrice": 26000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_044",
-      "productId": "demo_prod_025_esposas",
-      "variantId": "demo_var_044",
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_045",
-      "productId": "demo_prod_025_esposas",
-      "variantId": "demo_var_045",
-      "oldPrice": 17000,
-      "newPrice": 17000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_026_antifaz-ciego_base",
-      "productId": "demo_prod_026_antifaz-ciego",
-      "variantId": null,
-      "oldPrice": 11000,
-      "newPrice": 11000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_prod_027_fusta_base",
-      "productId": "demo_prod_027_fusta",
-      "variantId": null,
-      "oldPrice": 19000,
-      "newPrice": 19000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_var_046",
-      "productId": "demo_prod_027_fusta",
-      "variantId": "demo_var_046",
-      "oldPrice": 19000,
-      "newPrice": 19000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_047",
-      "productId": "demo_prod_027_fusta",
-      "variantId": "demo_var_047",
-      "oldPrice": 22000,
-      "newPrice": 22000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_028_kit-negro_base",
-      "productId": "demo_prod_028_kit-negro",
-      "variantId": null,
-      "oldPrice": 29000,
-      "newPrice": 29000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_var_048",
-      "productId": "demo_prod_028_kit-negro",
-      "variantId": "demo_var_048",
-      "oldPrice": 29000,
-      "newPrice": 29000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_049",
-      "productId": "demo_prod_028_kit-negro",
-      "variantId": "demo_var_049",
-      "oldPrice": 44000,
-      "newPrice": 44000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_029_safary_base",
-      "productId": "demo_prod_029_safary",
-      "variantId": null,
-      "oldPrice": 20000,
-      "newPrice": 20000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_var_050",
-      "productId": "demo_prod_029_safary",
-      "variantId": "demo_var_050",
-      "oldPrice": 20000,
-      "newPrice": 20000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_051",
-      "productId": "demo_prod_029_safary",
-      "variantId": "demo_var_051",
-      "oldPrice": 27000,
-      "newPrice": 27000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_052",
-      "productId": "demo_prod_029_safary",
-      "variantId": "demo_var_052",
-      "oldPrice": 29000,
-      "newPrice": 29000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_prod_030_escorpion_base",
-      "productId": "demo_prod_030_escorpion",
-      "variantId": null,
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_CATALOGO"
-    },
-    {
-      "id": "demo_ph_demo_var_053",
-      "productId": "demo_prod_030_escorpion",
-      "variantId": "demo_var_053",
-      "oldPrice": 16000,
-      "newPrice": 16000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
-      "changedBy": "DEMO_SEED",
-      "reason": "PRECIO_INICIAL_VARIANTE"
-    },
-    {
-      "id": "demo_ph_demo_var_054",
-      "productId": "demo_prod_030_escorpion",
-      "variantId": "demo_var_054",
-      "oldPrice": 27000,
-      "newPrice": 27000,
-      "changedAt": "2026-09-11T03:10:20.427Z",
+      "oldPrice": null,
+      "newPrice": null,
+      "changedAt": "2026-10-10T21:25:13.928Z",
       "changedBy": "DEMO_SEED",
       "reason": "PRECIO_INICIAL_VARIANTE"
     }
@@ -2987,46 +2561,46 @@
       "name": "Black Friday",
       "slug": "black-friday",
       "status": "ACTIVE",
-      "startsAt": "2026-10-25T03:10:20.427Z",
-      "endsAt": "2026-11-02T03:10:20.427Z",
+      "startsAt": "2026-11-23T21:25:13.928Z",
+      "endsAt": "2026-12-01T21:25:13.928Z",
       "priority": 20,
       "active": true,
-      "headline": "Black Friday Nocturna: Descuentos de Temporada",
-      "subheadline": "Hasta 30% OFF en productos seleccionados y promociones por tiempo limitado con envíos confidenciales.",
-      "description": "Campaña activa de Black Friday con promociones de temporada y combos de ahorro.",
+      "headline": "Black Friday en Paola Calzados",
+      "subheadline": "Ofertas de temporada por mayor y por menor en zapatillas, sandalias y botas desde Córdoba.",
+      "description": "Campaña activa de Black Friday con promociones de temporada y combos de ejemplo.",
       "theme": "black-friday",
-      "announcementText": "⚡ Black Friday: Hasta 30% OFF en productos seleccionados + Envíos discretos",
+      "announcementText": "⚡ Black Friday Paola Calzados: Ofertas por mayor y menor en modelos seleccionados",
       "announcementLink": "/campanas/black-friday",
-      "conditionsText": "Válido durante el período de Black Friday o hasta agotar stock disponible. Descuentos no acumulables con otros cupones. Envíos 100% discretos en Córdoba.",
+      "conditionsText": "Válido durante el período de Black Friday o hasta agotar stock disponible. Descuentos no acumulables con otros cupones. [ZONA DE ENVÍO].",
       "showCountdown": true,
       "landingEnabled": true,
-      "seoTitle": "Black Friday Nocturna | Ofertas Exclusivas",
-      "seoDescription": "Aprovechá las promociones destacadas en boutique íntima con envíos confidenciales.",
-      "createdAt": "2026-10-26T03:10:20.427Z",
-      "updatedAt": "2026-10-26T03:10:20.427Z"
+      "seoTitle": "Black Friday | Paola Calzados Córdoba",
+      "seoDescription": "Aprovechá las promociones de calzado por mayor y por menor en Paola Calzados.",
+      "createdAt": "2026-11-24T21:25:13.928Z",
+      "updatedAt": "2026-11-24T21:25:13.928Z"
     },
     {
       "id": "demo_camp_cyberweek",
       "name": "Cyber Week",
       "slug": "cyber-week",
       "status": "SCHEDULED",
-      "startsAt": "2026-11-10T03:10:20.427Z",
-      "endsAt": "2026-11-17T03:10:20.427Z",
+      "startsAt": "2026-12-09T21:25:13.928Z",
+      "endsAt": "2026-12-16T21:25:13.928Z",
       "priority": 15,
       "active": true,
       "headline": "Cyber Week: Anticipo de Promociones Online",
-      "subheadline": "Próximamente beneficios exclusivos y combos para parejas.",
+      "subheadline": "Próximamente beneficios en zapatillas urbanas, sandalias y línea infantil.",
       "description": "Campaña programada de Cyber Week.",
       "theme": "cyber-sale",
-      "announcementText": "🚀 Próximamente: Cyber Week con beneficios exclusivos",
+      "announcementText": "🚀 Próximamente: Cyber Week en Paola Calzados",
       "announcementLink": "/campanas/cyber-week",
-      "conditionsText": "Promoción programada. Envíos discretos a todo el país.",
+      "conditionsText": "Promoción programada. Consultá condiciones por mayor y menor.",
       "showCountdown": true,
       "landingEnabled": true,
-      "seoTitle": "Cyber Week en Nocturna | Próximamente",
-      "seoDescription": "Anticipate a las ofertas de Cyber Week en Nocturna SexShop.",
-      "createdAt": "2026-10-26T03:10:20.427Z",
-      "updatedAt": "2026-10-26T03:10:20.427Z"
+      "seoTitle": "Cyber Week en Paola Calzados | Próximamente",
+      "seoDescription": "Anticipate a las ofertas de Cyber Week en Paola Calzados Córdoba.",
+      "createdAt": "2026-11-24T21:25:13.928Z",
+      "updatedAt": "2026-11-24T21:25:13.928Z"
     },
     {
       "id": "demo_camp_navidad",
@@ -3037,27 +2611,27 @@
       "endsAt": null,
       "priority": 5,
       "active": false,
-      "headline": "Regalos íntimos para estas fiestas",
+      "headline": "Regalá calzado estas fiestas",
       "subheadline": "Borrador de campaña navideña y fin de año.",
       "description": "Borrador de campaña navideña y fin de año.",
       "theme": "navidad",
-      "announcementText": "✨ Anticipo de Navidad: Sets exclusivos para regalar",
+      "announcementText": "✨ Anticipo de Navidad: Modelos seleccionados para regalar",
       "announcementLink": "/campanas/navidad",
-      "conditionsText": "Promoción especial para las fiestas. Entregas programadas en Córdoba.",
+      "conditionsText": "Promoción especial para las fiestas. Entregas y retiros en [DIRECCIÓN DEL LOCAL].",
       "showCountdown": true,
       "landingEnabled": true,
-      "seoTitle": "Navidad en Nocturna | Regalos Íntimos",
-      "seoDescription": "Encontrá el regalo ideal para estas fiestas con empaque 100% neutro.",
-      "createdAt": "2026-10-26T03:10:20.427Z",
-      "updatedAt": "2026-10-26T03:10:20.427Z"
+      "seoTitle": "Navidad en Paola Calzados | Córdoba",
+      "seoDescription": "Encontrá zapatillas, sandalias y botas para regalar estas fiestas en Paola Calzados.",
+      "createdAt": "2026-11-24T21:25:13.928Z",
+      "updatedAt": "2026-11-24T21:25:13.928Z"
     },
     {
       "id": "demo_camp_madre",
       "name": "Día de la Madre",
       "slug": "dia-de-la-madre",
       "status": "ENDED",
-      "startsAt": "2026-10-06T03:10:20.427Z",
-      "endsAt": "2026-10-16T03:10:20.427Z",
+      "startsAt": "2026-11-04T21:25:13.928Z",
+      "endsAt": "2026-11-14T21:25:13.928Z",
       "priority": 0,
       "active": false,
       "headline": "Especial Día de la Madre",
@@ -3069,17 +2643,17 @@
       "conditionsText": "Campaña finalizada.",
       "showCountdown": false,
       "landingEnabled": false,
-      "seoTitle": "Especial Día de la Madre | Nocturna Sexshop",
+      "seoTitle": "Especial Día de la Madre | Paola Calzados",
       "seoDescription": "Campaña de archivo.",
-      "createdAt": "2026-10-01T03:10:20.427Z",
-      "updatedAt": "2026-10-16T03:10:20.427Z"
+      "createdAt": "2026-10-30T21:25:13.928Z",
+      "updatedAt": "2026-11-14T21:25:13.928Z"
     }
   ],
   "promotions": [
     {
-      "id": "demo_promo_bf_lenceria",
+      "id": "demo_promo_bf_zapatillas",
       "campaignId": "demo_camp_blackfriday",
-      "name": "20% OFF en Lencería",
+      "name": "20% OFF en Zapatillas (Demo)",
       "kind": "PERCENT",
       "value": 20,
       "stackable": true,
@@ -3090,15 +2664,15 @@
       "targets": [
         {
           "targetType": "CATEGORY",
-          "targetId": "cat_lenceria",
+          "targetId": "cat_zapatillas",
           "excluded": false
         }
       ]
     },
     {
-      "id": "demo_promo_2x1_cosmetica",
+      "id": "demo_promo_2x1_sandalias",
       "campaignId": "demo_camp_blackfriday",
-      "name": "2x1 en Cosmética íntima",
+      "name": "2x1 en Sandalias seleccionadas (Demo)",
       "kind": "BUY_X_PAY_Y",
       "buyQuantity": 2,
       "payQuantity": 1,
@@ -3110,30 +2684,30 @@
       "targets": [
         {
           "targetType": "CATEGORY",
-          "targetId": "cat_cosmetica-intima",
+          "targetId": "cat_sandalias",
           "excluded": false
         }
       ]
     },
     {
-      "id": "demo_promo_combo_parejas",
+      "id": "demo_promo_combo_calzado",
       "campaignId": "demo_camp_blackfriday",
-      "name": "Combo Sensorial: Aceite + Vela a $22.000",
+      "name": "Combo Verano Demo: Zapatilla + Sandalia a $36.000",
       "kind": "BUNDLE_PRICE",
-      "bundleSkus": "[\"A27-GRP\",\"D63-GRP\"]",
-      "value": 22000,
+      "bundleSkus": "[\"ZAP-URB-01B-GRP\",\"ZAP-PLT-02C-GRP\"]",
+      "value": 36000,
       "stackable": false,
       "active": true,
       "priority": 9,
       "targets": [
         {
           "targetType": "PRODUCT",
-          "targetId": "demo_prod_015_aceite-comestible-love-potion",
+          "targetId": "demo_prod_001_zapatilla-urbana-clasica",
           "excluded": false
         },
         {
           "targetType": "PRODUCT",
-          "targetId": "demo_prod_014_vela-de-masaje-30-g",
+          "targetId": "demo_prod_002_zapatilla-plataforma-baja",
           "excluded": false
         }
       ]
@@ -3163,8 +2737,8 @@
       "value": 10,
       "minOrderAmount": 20000,
       "maxDiscountAmount": 10000,
-      "startsAt": "2026-09-26T03:10:20.427Z",
-      "endsAt": "2026-12-25T03:10:20.427Z",
+      "startsAt": "2026-10-25T21:25:13.928Z",
+      "endsAt": "2027-01-23T21:25:13.928Z",
       "usageLimitTotal": 100,
       "usageLimitPerCustomer": 1,
       "usedCount": 3,
@@ -3172,8 +2746,8 @@
       "stackableWithPromotions": true,
       "campaignId": "demo_camp_madre",
       "appliesTo": "ALL",
-      "createdAt": "2026-10-26T03:10:20.427Z",
-      "updatedAt": "2026-10-26T03:10:20.427Z"
+      "createdAt": "2026-11-24T21:25:13.928Z",
+      "updatedAt": "2026-11-24T21:25:13.928Z"
     },
     {
       "id": "demo_coupon_enviogratis",
@@ -3181,8 +2755,8 @@
       "kind": "FREE_SHIPPING",
       "value": 0,
       "minOrderAmount": 15000,
-      "startsAt": "2026-10-11T03:10:20.427Z",
-      "endsAt": "2026-12-10T03:10:20.427Z",
+      "startsAt": "2026-11-09T21:25:13.928Z",
+      "endsAt": "2027-01-08T21:25:13.928Z",
       "usageLimitTotal": 200,
       "usageLimitPerCustomer": 2,
       "usedCount": 1,
@@ -3190,8 +2764,8 @@
       "stackableWithPromotions": true,
       "campaignId": null,
       "appliesTo": "ALL",
-      "createdAt": "2026-10-26T03:10:20.427Z",
-      "updatedAt": "2026-10-26T03:10:20.427Z"
+      "createdAt": "2026-11-24T21:25:13.928Z",
+      "updatedAt": "2026-11-24T21:25:13.928Z"
     },
     {
       "id": "demo_coupon_vip5000",
@@ -3200,8 +2774,8 @@
       "value": 5000,
       "minOrderAmount": 40000,
       "maxDiscountAmount": 5000,
-      "startsAt": "2026-10-21T03:10:20.427Z",
-      "endsAt": "2026-11-15T03:10:20.427Z",
+      "startsAt": "2026-11-19T21:25:13.928Z",
+      "endsAt": "2026-12-14T21:25:13.928Z",
       "usageLimitTotal": 30,
       "usageLimitPerCustomer": 1,
       "usedCount": 0,
@@ -3209,8 +2783,8 @@
       "stackableWithPromotions": true,
       "campaignId": "demo_camp_madre",
       "appliesTo": "ALL",
-      "createdAt": "2026-10-26T03:10:20.427Z",
-      "updatedAt": "2026-10-26T03:10:20.427Z"
+      "createdAt": "2026-11-24T21:25:13.928Z",
+      "updatedAt": "2026-11-24T21:25:13.928Z"
     }
   ],
   "tags": [
@@ -3230,71 +2804,71 @@
       "slug": "nuevo"
     },
     {
-      "id": "tag_sensual",
-      "name": "Sensual",
-      "slug": "sensual"
+      "id": "tag_mayorista",
+      "name": "Mayorista",
+      "slug": "mayorista"
     },
     {
       "id": "tag_edicion_limitada",
-      "name": "Edición Limitada",
-      "slug": "edicion-limitada"
+      "name": "Temporada",
+      "slug": "temporada"
     }
   ],
   "collections": [
     {
-      "id": "coll_regalos_ella",
-      "name": "Regalos para ella",
-      "slug": "regalos-para-ella",
-      "description": "Lencería, prendas seductoras y aromas cautivantes",
+      "id": "coll_zapatillas_urbanas",
+      "name": "Zapatillas Urbanas",
+      "slug": "zapatillas-urbanas",
+      "description": "Modelos urbanos y deportivos para uso diario por mayor y menor",
       "active": true,
       "products": [
         {
-          "collectionId": "coll_regalos_ella",
-          "productId": "demo_prod_001_baby-doll-venecia",
+          "collectionId": "coll_zapatillas_urbanas",
+          "productId": "demo_prod_001_zapatilla-urbana-clasica",
           "order": 0
         },
         {
-          "collectionId": "coll_regalos_ella",
-          "productId": "demo_prod_002_baby-doll-rose",
+          "collectionId": "coll_zapatillas_urbanas",
+          "productId": "demo_prod_002_zapatilla-plataforma-baja",
           "order": 1
         },
         {
-          "collectionId": "coll_regalos_ella",
-          "productId": "demo_prod_003_vestido-vinilo-verona",
+          "collectionId": "coll_zapatillas_urbanas",
+          "productId": "demo_prod_003_zapatilla-lona-acordonada",
           "order": 2
         },
         {
-          "collectionId": "coll_regalos_ella",
-          "productId": "demo_prod_004_body-marley",
+          "collectionId": "coll_zapatillas_urbanas",
+          "productId": "demo_prod_004_zapatilla-running-liviana",
           "order": 3
         }
       ]
     },
     {
-      "id": "coll_parejas",
-      "name": "Para parejas",
-      "slug": "para-parejas",
-      "description": "Juegos, geles y cosmética para disfrutar de a dos",
+      "id": "coll_sandalias_verano",
+      "name": "Sandalias y Verano",
+      "slug": "sandalias-y-verano",
+      "description": "Sandalias bajas, ojotas y plataformas livianas de estación",
       "active": true,
       "products": [
         {
-          "collectionId": "coll_parejas",
-          "productId": "demo_prod_005_conjunto-hera",
+          "collectionId": "coll_sandalias_verano",
+          "productId": "demo_prod_005_zapatilla-deportiva-sin-cordones",
           "order": 0
         },
         {
-          "collectionId": "coll_parejas",
-          "productId": "demo_prod_006_liguero-pandora",
+          "collectionId": "coll_sandalias_verano",
+          "productId": "demo_prod_006_zapatilla-urbana-combinada",
           "order": 1
         },
         {
-          "collectionId": "coll_parejas",
-          "productId": "demo_prod_007_zunga",
+          "collectionId": "coll_sandalias_verano",
+          "productId": "demo_prod_007_sandalia-dos-hebillas",
           "order": 2
         },
         {
-          "collectionId": "coll_parejas",
-          "productId": "demo_prod_008_fantasia-enfermera-pasionel",
+          "collectionId": "coll_sandalias_verano",
+          "productId": "demo_prod_008_sandalia-tiras-cruzadas",
           "order": 3
         }
       ]
@@ -3303,27 +2877,27 @@
       "id": "coll_novedades",
       "name": "Novedades",
       "slug": "novedades",
-      "description": "Los últimos ingresos de la temporada",
+      "description": "Los últimos ingresos de la temporada en calzado",
       "active": true,
       "products": [
         {
           "collectionId": "coll_novedades",
-          "productId": "demo_prod_009_fantasia-conejita-pasionel",
+          "productId": "demo_prod_009_sandalia-chata-minimal",
           "order": 0
         },
         {
           "collectionId": "coll_novedades",
-          "productId": "demo_prod_010_fantasia-colegiala-ft-ft-03",
+          "productId": "demo_prod_010_ojota-faja-ancha",
           "order": 1
         },
         {
           "collectionId": "coll_novedades",
-          "productId": "demo_prod_011_catsuit-colegiala",
+          "productId": "demo_prod_011_ojota-anatomica-unisex",
           "order": 2
         },
         {
           "collectionId": "coll_novedades",
-          "productId": "demo_prod_012_gel-natural",
+          "productId": "demo_prod_012_sandalia-plataforma-corcho",
           "order": 3
         }
       ]
@@ -3337,9 +2911,9 @@
       "order": 0,
       "enabled": true,
       "config": {
-        "headline": "Intimidad, diseño y placer sin tabúes.",
-        "subheadline": "Una selección curada de bienestar íntimo, cosmética sensorial y lencería. Comprá con total reserva desde tu casa: envíos 100% discretos en Córdoba y atención personalizada por WhatsApp.",
-        "ctaText": "Explorar Colección",
+        "headline": "Calzado por mayor y por menor desde Córdoba.",
+        "subheadline": "Zapatillas, sandalias, botas y línea infantil para tu local o para vos. Elegí tus pares favoritos y hacé tu pedido directo por WhatsApp.",
+        "ctaText": "Ver Catálogo",
         "ctaLink": "/catalogo"
       }
     },
@@ -3350,8 +2924,8 @@
       "order": 1,
       "enabled": true,
       "config": {
-        "title": "Categorías de la Colección",
-        "subtitle": "Universo Nocturna"
+        "title": "Categorías de Calzado",
+        "subtitle": "Paola Calzados"
       }
     },
     {
@@ -3361,8 +2935,8 @@
       "order": 2,
       "enabled": true,
       "config": {
-        "title": "Seleccionados para Vos",
-        "subtitle": "Curaduría",
+        "title": "Destacados de Temporada",
+        "subtitle": "Selección",
         "limit": 6
       }
     },
@@ -3373,7 +2947,7 @@
       "order": 3,
       "enabled": true,
       "config": {
-        "title": "Una experiencia íntima pensada desde el respeto, la estética y la confidencialidad.",
+        "title": "Atención cercana en Córdoba para compras mayoristas y minoristas.",
         "id": "nosotros"
       }
     },
@@ -3402,8 +2976,8 @@
       "order": 0,
       "enabled": true,
       "config": {
-        "headline": "BLACK FRIDAY NOCTURNA",
-        "subheadline": "Promociones de temporada en bienestar íntimo y lencería. Envíos 100% discretos en Córdoba.",
+        "headline": "BLACK FRIDAY PAOLA CALZADOS",
+        "subheadline": "Promociones de temporada en zapatillas, sandalias y botas por mayor y menor.",
         "ctaText": "Aprovechar Ofertas",
         "ctaLink": "/campanas/black-friday"
       }
@@ -3417,7 +2991,7 @@
       "config": {
         "title": "La campaña de Black Friday finaliza en:",
         "message": "Promociones válidas por tiempo limitado o hasta agotar stock físico.",
-        "targetDate": "2026-11-02T03:10:20.427Z"
+        "targetDate": "2026-12-01T21:25:13.928Z"
       }
     },
     {
@@ -3428,7 +3002,7 @@
       "enabled": true,
       "config": {
         "title": "Ofertas Destacadas de Black Friday",
-        "subtitle": "Hasta 30% OFF en productos seleccionados",
+        "subtitle": "Promociones en modelos seleccionados",
         "filter": "campaign",
         "limit": 8
       }
@@ -3449,7 +3023,7 @@
       "enabled": false,
       "config": {
         "title": "Especial Día de la Madre",
-        "subtitle": "15% OFF en Lencería y 2x1 en Cosmética íntima con envíos discretos en Córdoba.",
+        "subtitle": "Modelos seleccionados para mujer, sandalias y zapatillas en Córdoba.",
         "badge": "Campaña Finalizada",
         "ctaText": "Ver Colección",
         "ctaLink": "/campanas/dia-de-la-madre"

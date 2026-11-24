@@ -8,95 +8,33 @@ const __dirname = path.dirname(__filename);
 
 const brandDir = path.resolve(__dirname, '../public/images/brand');
 const publicDir = path.resolve(__dirname, '../public');
-const pexelsSourceUrl =
-  'https://images.pexels.com/photos/10229385/pexels-photo-10229385.jpeg?auto=compress&cs=tinysrgb&w=1920';
-const localCachedSource =
-  'C:/Users/PC/.gemini/antigravity/brain/720e34ca-c04a-4f76-ac9b-eb756fc45ef2/scratch/real-candidates/pexels-10229385.jpg';
 
-async function getHeroSourceBuffer() {
-  if (fs.existsSync(localCachedSource)) {
-    return fs.readFileSync(localCachedSource);
-  }
-  const res = await fetch(pexelsSourceUrl);
-  if (!res.ok) {
-    throw new Error(`No se pudo descargar imagen origen de Pexels: HTTP ${res.status}`);
-  }
-  return Buffer.from(await res.arrayBuffer());
-}
-
-async function buildHeroImages() {
-  fs.mkdirSync(brandDir, { recursive: true });
-  const srcBuffer = await getHeroSourceBuffer();
-
-  const width = 1920;
-  const height = 760;
-
-  const heroPath = path.join(brandDir, 'hero.webp');
-  const heroMobilePath = path.join(brandDir, 'hero-mobile.webp');
-
-  // Escalar la figura completa (1140x760) para que entre de pies a cabeza en el Hero panorámico
-  const subjectBuffer = await sharp(srcBuffer)
-    .resize(1140, height, { fit: 'cover', position: 'center' })
-    .modulate({
-      brightness: 1.08,
-      saturation: 1.1,
-    })
-    .toBuffer();
-
-  // Fundir el borde izquierdo de la foto (x=660..960) con el fondo #0F0A0A del lado izquierdo
-  const blendMaskSvg = Buffer.from(`
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="leftBlend" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#0F0A0A" stop-opacity="1"/>
-          <stop offset="34%" stop-color="#0F0A0A" stop-opacity="1"/>
-          <stop offset="52%" stop-color="#0F0A0A" stop-opacity="0"/>
-          <stop offset="92%" stop-color="#0F0A0A" stop-opacity="0"/>
-          <stop offset="100%" stop-color="#0F0A0A" stop-opacity="0.75"/>
-        </linearGradient>
-        <linearGradient id="vertBlend" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#0F0A0A" stop-opacity="0.45"/>
-          <stop offset="15%" stop-color="#0F0A0A" stop-opacity="0"/>
-          <stop offset="85%" stop-color="#0F0A0A" stop-opacity="0"/>
-          <stop offset="100%" stop-color="#0F0A0A" stop-opacity="0.75"/>
-        </linearGradient>
-      </defs>
-      <rect width="${width}" height="${height}" fill="url(#leftBlend)"/>
-      <rect width="${width}" height="${height}" fill="url(#vertBlend)"/>
+async function buildFavicons() {
+  const iconSvg = (size) => Buffer.from(`
+    <svg width="${size}" height="${size}" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <rect width="64" height="64" rx="14" fill="#E6007E" />
+      <rect x="2" y="2" width="60" height="60" rx="12" stroke="#FDE4F1" stroke-width="2" stroke-opacity="0.7" fill="none" />
+      <text x="32" y="45" text-anchor="middle" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="40" font-weight="700">P</text>
     </svg>
   `);
 
-  await sharp({
-    create: {
-      width,
-      height,
-      channels: 3,
-      background: { r: 15, g: 10, b: 10 },
-    },
-  })
-    .composite([
-      { input: subjectBuffer, left: 640, top: 0 },
-      { input: blendMaskSvg, left: 0, top: 0 },
-    ])
-    .webp({ quality: 86, effort: 5 })
-    .toFile(heroPath);
+  const targets = [
+    { file: 'favicon-16x16.png', size: 16 },
+    { file: 'favicon-32x32.png', size: 32 },
+    { file: 'favicon.png', size: 48 },
+    { file: 'favicon.ico', size: 32 },
+    { file: 'apple-touch-icon.png', size: 180 },
+    { file: 'android-chrome-192x192.png', size: 192 },
+    { file: 'android-chrome-512x512.png', size: 512 },
+  ];
 
-  await sharp(srcBuffer)
-    .resize(900, 750, { fit: 'cover', position: 'center' })
-    .modulate({
-      brightness: 1.05,
-      saturation: 1.08,
-    })
-    .webp({ quality: 82, effort: 5 })
-    .toFile(heroMobilePath);
-
-  const heroSize = fs.statSync(heroPath).size;
-  const mobileSize = fs.statSync(heroMobilePath).size;
-  console.log(
-    `[brand-images] hero.webp (${(heroSize / 1024).toFixed(1)} KB, ${width}x${height}) y hero-mobile.webp (${(
-      mobileSize / 1024
-    ).toFixed(1)} KB, 900x750) generados.`
-  );
+  for (const t of targets) {
+    await sharp(iconSvg(t.size))
+      .resize(t.size, t.size)
+      .png({ compressionLevel: 9 })
+      .toFile(path.join(publicDir, t.file));
+  }
+  console.log('[brand-images] Favicons e íconos PWA regenerados en /public.');
 }
 
 async function buildOgImage() {
@@ -104,83 +42,69 @@ async function buildOgImage() {
   const ogSvg = Buffer.from(`
     <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="glow1" cx="72%" cy="42%" r="55%">
-          <stop offset="0%" stop-color="#5A2A2E" stop-opacity="0.52"/>
-          <stop offset="48%" stop-color="#2B1917" stop-opacity="0.34"/>
-          <stop offset="100%" stop-color="#0F0A0A" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="glow2" cx="25%" cy="68%" r="50%">
-          <stop offset="0%" stop-color="#2B1917" stop-opacity="0.65"/>
-          <stop offset="65%" stop-color="#1A1212" stop-opacity="0.25"/>
-          <stop offset="100%" stop-color="#0F0A0A" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="silkWave" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#907878" stop-opacity="0.08"/>
-          <stop offset="50%" stop-color="#5A2A2E" stop-opacity="0.28"/>
-          <stop offset="100%" stop-color="#2B1917" stop-opacity="0.06"/>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFF7FB" />
+          <stop offset="55%" stop-color="#FDE4F1" />
+          <stop offset="100%" stop-color="#FFF7FB" />
         </linearGradient>
+        <radialGradient id="pinkGlow" cx="78%" cy="32%" r="48%">
+          <stop offset="0%" stop-color="#E6007E" stop-opacity="0.16" />
+          <stop offset="100%" stop-color="#FFF7FB" stop-opacity="0" />
+        </radialGradient>
       </defs>
 
-      <!-- Fondo principal -->
-      <rect width="1200" height="630" fill="#0F0A0A"/>
-      <rect width="1200" height="630" fill="url(#glow1)"/>
-      <rect width="1200" height="630" fill="url(#glow2)"/>
+      <rect width="1200" height="630" fill="url(#bg)" />
+      <rect width="1200" height="630" fill="url(#pinkGlow)" />
 
-      <!-- Ondas abstractas tipo seda bordó -->
-      <path d="M-100,480 C260,310 540,610 920,370 C1080,270 1190,320 1300,240 L1300,680 L-100,680 Z" fill="url(#silkWave)"/>
-      <path d="M-80,140 C300,290 680,40 1050,230 C1150,280 1220,240 1280,190 L1280,-40 L-80,-40 Z" fill="url(#silkWave)" opacity="0.7"/>
+      <!-- Marco suave -->
+      <rect x="44" y="44" width="1112" height="542" rx="18" fill="#FFFFFF" fill-opacity="0.78" stroke="#F2C4DD" stroke-width="2" />
 
-      <!-- Marco arquitectónico sutil -->
-      <rect x="44" y="44" width="1112" height="542" rx="6" fill="none" stroke="#907878" stroke-opacity="0.24" stroke-width="1"/>
-      <line x1="480" y1="450" x2="720" y2="450" stroke="#907878" stroke-opacity="0.35" stroke-width="1"/>
-
-      <!-- Etiqueta superior -->
       <text
         x="600"
-        y="195"
+        y="178"
         text-anchor="middle"
-        fill="#907878"
+        fill="#B80063"
         font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="14"
-        font-weight="400"
-        letter-spacing="8"
-      >CÓRDOBA, ARGENTINA  •  BOUTIQUE ÍNTIMA</text>
+        font-size="16"
+        font-weight="700"
+        letter-spacing="6"
+      >CÓRDOBA, ARGENTINA  •  @PAOLA_CALZADOSS</text>
 
-      <!-- Wordmark NOCTURNA -->
       <text
         x="600"
-        y="310"
+        y="292"
         text-anchor="middle"
-        fill="#F2EDE8"
-        font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="86"
-        font-weight="300"
-        letter-spacing="18"
-      >Nocturna</text>
+        fill="#E6007E"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic"
+        font-size="108"
+        font-weight="700"
+      >Paola</text>
 
-      <!-- Subtítulo SexShop -->
       <text
         x="600"
         y="366"
         text-anchor="middle"
-        fill="#B8ABA6"
+        fill="#141014"
         font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="26"
-        font-weight="300"
-        letter-spacing="10"
-      >SexShop</text>
+        font-size="40"
+        font-weight="700"
+        letter-spacing="14"
+      >CALZADOS</text>
 
-      <!-- Propuesta de valor inferior -->
+      <line x1="420" y1="416" x2="780" y2="416" stroke="#F2C4DD" stroke-width="2" />
+
+      <rect x="355" y="454" width="490" height="52" rx="26" fill="#E6007E" />
       <text
         x="600"
-        y="495"
+        y="486"
         text-anchor="middle"
-        fill="#B8ABA6"
+        fill="#FFFFFF"
         font-family="Segoe UI, Arial, Helvetica, sans-serif"
-        font-size="15"
-        font-weight="400"
-        letter-spacing="4"
-      >BIENESTAR ÍNTIMO  •  LENCERÍA  •  COSMÉTICA SENSORIAL  •  ENVÍOS 100% DISCRETOS</text>
+        font-size="17"
+        font-weight="700"
+        letter-spacing="3"
+      >VENTA POR MAYOR Y POR MENOR</text>
     </svg>
   `);
 
@@ -197,7 +121,7 @@ async function buildOgImage() {
 }
 
 export async function buildBrandImages() {
-  await buildHeroImages();
+  await buildFavicons();
   await buildOgImage();
 }
 

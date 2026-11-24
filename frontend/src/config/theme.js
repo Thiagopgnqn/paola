@@ -1,187 +1,204 @@
 /**
- * CONFIGURACIÓN CENTRAL DE MARCA Y TEMA — NOCTURNA SEXSHOP
- * Boutique íntima online en Córdoba, Argentina.
+ * CONFIGURACIÓN CENTRAL DE MARCA Y TEMA — PAOLA CALZADOS
+ * Tienda de calzado por mayor y por menor en Córdoba, Argentina.
+ *
+ * IMPORTANTE: Los datos aún no confirmados con la clienta permanecen
+ * expresamente marcados entre corchetes [PLACEHOLDER].
  */
 
-const DISCREET_NOTICE =
-  'Envío y empaque 100% discreto, sin logos ni referencias al contenido. [Confirmar la redacción con el cliente.]';
+const isDemoMode = import.meta.env.VITE_DEMO_MODE === 'true';
+
+const DEMO_WHATSAPP_TEST = String(
+  import.meta.env.VITE_DEMO_WHATSAPP || '5493510000000'
+).replace(/\D/g, '');
+
+const SHIPPING_NOTICE =
+  'Envíos en [ZONA DE ENVÍO] — [COSTOS Y PLAZOS DE ENVÍO]. También podés retirar en [DIRECCIÓN DEL LOCAL] en [HORARIOS].';
 
 const RETURNS_POLICY_NOTICE =
-  'Política de cambios: los productos de uso íntimo e higiene no tienen cambio salvo falla de fábrica. [Confirmar con el cliente.]';
+  'Cambios y devoluciones: [PLAZO DE CAMBIOS] · [CONDICIONES DE CAMBIO POR TALLE O FALLA].';
 
-const AGE_DISCLAIMER =
-  '+18 · Sitio exclusivo para mayores de 18 años. Prohibida la venta a menores de edad.';
+const WHOLESALE_NOTICE =
+  'Venta por mayor y por menor. Compra mayorista: [MÍNIMO DE COMPRA MAYORISTA].';
+
+const REGRET_BUTTON_NOTICE =
+  '[TEXTO Y CANAL DE GESTIÓN DEL BOTÓN DE ARREPENTIMIENTO — VERIFICAR NORMATIVA VIGENTE (LEY 24.240 / RES. 424/2020 SCI)]';
+
+const resolveWhatsAppDigits = (raw) => {
+  const val = String(raw || '').trim();
+  if (!val || val.includes('[') || val.includes(']')) return null;
+  const digits = val.replace(/\D/g, '');
+  return digits.length >= 8 ? digits : null;
+};
+
+/**
+ * Construye un enlace seguro a WhatsApp.
+ * Si no hay número real configurado:
+ * - En modo demo usa el número ficticio de prueba (TEST).
+ * - En producción devuelve null para evitar enlaces rotos.
+ */
+export const buildWhatsAppUrl = (message = '') => {
+  const configured = resolveWhatsAppDigits(import.meta.env.VITE_DEMO_WHATSAPP);
+  const digits = configured || (isDemoMode ? DEMO_WHATSAPP_TEST : null);
+  if (!digits) return null;
+  const textParam = message ? `?text=${encodeURIComponent(message)}` : '';
+  return `https://wa.me/${digits}${textParam}`;
+};
 
 const FAQ_ITEMS = [
   {
-    question: '¿Cómo es el empaque de los pedidos?',
+    question: '¿Venden por mayor y por menor?',
     answer:
-      'Todos los pedidos se entregan en bolsas o cajas totalmente neutras, cerradas y sin cintas publicitarias, logos ni menciones a Nocturna SexShop. Nadie, ni siquiera quien transporta el paquete, conoce su contenido.',
+      'Sí, en Paola Calzados vendemos tanto por menor (desde 1 par) como por mayor para comercios y revendedores. Para compras mayoristas: [MÍNIMO DE COMPRA MAYORISTA].',
   },
   {
-    question: '¿Cómo funcionan los envíos y retiros en Córdoba?',
+    question: '¿Cómo funcionan los envíos y el retiro en Córdoba?',
     answer:
-      'Realizamos envíos discretos en Córdoba, Argentina ([ZONA DE ENTREGA]) y también ofrecemos punto de retiro previa coordinación por WhatsApp en el horario de [HORARIOS]. Al finalizar tu pedido coordinamos el día y la franja horaria que mejor te quede.',
+      'Realizamos envíos en [ZONA DE ENVÍO] ([COSTOS Y PLAZOS DE ENVÍO]). También podés retirar tu pedido por nuestro local en [DIRECCIÓN DEL LOCAL] dentro del horario de [HORARIOS], coordinando previamente por WhatsApp.',
   },
   {
-    question: '¿Qué medios de pago aceptan y qué aparece en el comprobante?',
+    question: '¿Qué medios de pago aceptan?',
     answer:
-      'Aceptamos transferencia bancaria y efectivo al retirar. En las transferencias figura únicamente el titular personal o razón social ([RAZÓN SOCIAL]), nunca el nombre comercial del sexshop.',
+      'Podés abonar por transferencia bancaria (con el descuento configurado en tienda si corresponde) o coordinar otros medios disponibles al confirmar tu pedido por WhatsApp.',
   },
   {
-    question: '¿Cómo elijo el talle adecuado en lencería y fantasías?',
+    question: '¿Cómo consulto disponibilidad de talles o modelos?',
     answer:
-      'Muchas de nuestras prendas en microtul y red son elastizadas (talle único / Free Size, adaptables aproximadamente de S a L), y contamos con líneas específicas en talle XL y Línea Queen. Si tenés dudas con las medidas de un modelo, escribinos por WhatsApp antes de confirmar.',
+      'Escribinos directo por WhatsApp o por Instagram (@paola_calzadoss) con el nombre o código del calzado y te confirmamos los talles y colores disponibles en stock.',
   },
   {
-    question: '¿Cuál es la política de cambios y garantía?',
+    question: '¿Cuál es la política de cambios y devoluciones?',
     answer:
-      'Por normas de higiene y cuidado íntimo, los artículos de uso íntimo, cosmética y lencería no admiten cambios ni devoluciones una vez entregados, salvo que presenten una falla de fábrica verificable al momento de recibirlos.',
+      'Los cambios se gestionan dentro de [PLAZO DE CAMBIOS] cumpliendo con [CONDICIONES DE CAMBIO POR TALLE O FALLA]. Para iniciar una gestión escribinos por WhatsApp o a [EMAIL].',
   },
 ];
 
 export const themeConfig = {
   brand: {
-    name: 'Nocturna',
-    subtitle: 'SexShop',
-    fullName: 'NOCTURNA SEXSHOP',
-    tagline: 'Boutique íntima en Córdoba · Envíos 100% discretos',
+    name: 'Paola Calzados',
+    shortName: 'Paola',
+    subtitle: 'Calzados',
+    fullName: 'PAOLA CALZADOS',
+    tagline: 'Calzado por mayor y por menor · Córdoba, Argentina',
     logo: '/brand/logo-horizontal.svg',
     logoVertical: '/brand/logo-vertical.svg',
-    profileImage: '/brand/instagram-profile.jpg',
     ogImage: '/images/brand/og-image.png',
     favicon: '/favicon.svg',
     description:
-      'Boutique íntima online en Córdoba, Argentina. Lencería, cosmética sensorial, juegos y bienestar íntimo con asesoramiento cercano y envíos 100% discretos.',
+      'Tienda de calzado por mayor y por menor en Córdoba, Argentina. Modelos para mujer, hombre, niños y niñas: zapatillas, sandalias y urbanos con atención directa por WhatsApp.',
     currencySymbol: '$',
     currencyCode: 'ARS',
-    unitName: 'artículo',
-    unitNamePlural: 'artículos',
+    unitName: 'par',
+    unitNamePlural: 'pares',
   },
 
   navigation: [
+    { label: 'Inicio', href: '/' },
     { label: 'Catálogo', href: '/catalogo' },
+    { label: 'Mujer', href: '/catalogo?category=mujer' },
+    { label: 'Hombre', href: '/catalogo?category=hombre' },
+    { label: 'Niños y Niñas', href: '/catalogo?category=ninos' },
+    { label: 'Sandalias', href: '/catalogo?category=sandalias' },
+    { label: 'Zapatillas', href: '/catalogo?category=zapatillas' },
     { label: 'Ofertas', href: '/ofertas' },
-    { label: 'Lencería', href: '/catalogo?category=lenceria' },
-    { label: 'Cosmética', href: '/catalogo?category=cosmetica-intima' },
-    { label: 'Juguetes', href: '/catalogo?category=dilatadores-consoladores-y-vibradores' },
-    { label: 'Fantasías', href: '/catalogo?category=fantasias' },
-    { label: 'Juegos & BDSM', href: '/catalogo?category=bdsm-y-arneses' },
-    { label: 'FAQ', href: '/#faq' },
   ],
 
   benefits: [
     {
-      id: 'privacy',
-      title: 'Envío 100% discreto',
+      id: 'wholesale',
+      title: 'Por mayor y por menor',
       description:
-        'Empaque cerrado y neutro, sin logos ni referencias al contenido ni al remitente.',
+        'Comprá desde 1 par o armá tu pedido mayorista ([MÍNIMO DE COMPRA MAYORISTA]).',
     },
     {
-      id: 'payment',
-      title: 'Compra segura y privada',
+      id: 'shipping',
+      title: 'Envíos y retiro',
       description:
-        'Coordinación directa por transferencia o efectivo, con total reserva en el resumen de pago.',
+        'Entregas en [ZONA DE ENVÍO] ([COSTOS Y PLAZOS DE ENVÍO]) o retiro en [DIRECCIÓN DEL LOCAL].',
     },
     {
-      id: 'support',
+      id: 'whatsapp',
       title: 'Atención por WhatsApp',
       description:
-        'Asesoramiento cercano, respetuoso y confidencial sobre talles, materiales y cuidados.',
+        'Consultá talles, colores, curvas mayoristas y disponibilidad de forma directa.',
     },
     {
-      id: 'cordoba',
-      title: 'Entregas en Córdoba',
+      id: 'transfer',
+      title: 'Beneficio por transferencia',
       description:
-        'Envíos ágiles en Córdoba Capital y alrededores ([ZONA DE ENTREGA]) o retiro coordinado.',
+        'Ahorrá en el total de tu compra abonando por transferencia bancaria según promos vigentes.',
     },
   ],
 
   featuredCategories: [
     {
-      id: 'lenceria',
-      slug: 'lenceria',
-      title: 'Lencería',
-      subtitle: 'Baby dolls, bodys, vestidos y conjuntos',
+      id: 'mujer',
+      slug: 'mujer',
+      title: 'Mujer',
+      subtitle: 'Botas, borcegos, chatitas y urbanos',
       description:
-        'Encajes, microtul y vinilo diseñados para realzar la silueta con delicadeza y carácter.',
-      iconType: 'lingerie',
+        'Calzado femenino de temporada para todos los días y ocasiones especiales.',
+      iconType: 'mujer',
     },
     {
-      id: 'cosmetica-intima',
-      slug: 'cosmetica-intima',
-      title: 'Cosmética Íntima',
-      subtitle: 'Geles, aceites comestibles y velas de masaje',
+      id: 'hombre',
+      slug: 'hombre',
+      title: 'Hombre',
+      subtitle: 'Urbanos, borcegos y náuticos',
       description:
-        'Fórmulas sensoriales, efectos térmicos y aromas envolventes para el cuidado y el masaje.',
-      iconType: 'cosmetics',
+        'Modelos versátiles y cómodos para uso diario o formal.',
+      iconType: 'hombre',
     },
     {
-      id: 'dilatadores-consoladores-y-vibradores',
-      slug: 'dilatadores-consoladores-y-vibradores',
-      title: 'Bienestar & Juguetes',
-      subtitle: 'Vibradores, consoladores y dilatadores',
+      id: 'ninos',
+      slug: 'ninos',
+      title: 'Niños',
+      subtitle: 'Deportivas, urbanas y escolares',
       description:
-        'Selección curada para explorar en solitario o en pareja con materiales seguros.',
-      iconType: 'toys',
+        'Calzado resistente y liviano pensado para acompañar cada actividad.',
+      iconType: 'ninos',
     },
     {
-      id: 'fantasias',
-      slug: 'fantasias',
-      title: 'Fantasías',
-      subtitle: 'Línea Pasionel, Free Size y Queen',
+      id: 'ninas',
+      slug: 'ninas',
+      title: 'Niñas',
+      subtitle: 'Guillerminas, deportivas y sandalias',
       description:
-        'Conjuntos temáticos y propuestas de rol en talles adaptables y líneas especiales.',
-      iconType: 'fantasies',
+        'Diseños cómodos y coloridos con abrojo, cordones o hebilla.',
+      iconType: 'ninas',
     },
     {
-      id: 'perfumes-y-feromonas',
-      slug: 'perfumes-y-feromonas',
-      title: 'Perfumes & Feromonas',
-      subtitle: 'Fragancias íntimas y body splash',
+      id: 'sandalias',
+      slug: 'sandalias',
+      title: 'Sandalias',
+      subtitle: 'Plataformas, fajas bajas y ojotas',
       description:
-        'Notas envolventes y extractos con feromonas pensados para acompañar momentos cercanos.',
-      iconType: 'perfumes',
+        'Opciones frescas y livianas de verano con distintas alturas de base.',
+      iconType: 'sandalias',
     },
     {
-      id: 'bdsm-y-arneses',
-      slug: 'bdsm-y-arneses',
-      title: 'BDSM & Arneses',
-      subtitle: 'Esposas, antifaces, fustas y kits',
+      id: 'zapatillas',
+      slug: 'zapatillas',
+      title: 'Zapatillas',
+      subtitle: 'Urbanas, plataformas y deportivas',
       description:
-        'Accesorios de sujeción suave, antifaces de satén y kits coordinados para explorar.',
-      iconType: 'bdsm',
-    },
-    {
-      id: 'anillos-y-estimuladores',
-      slug: 'anillos-y-estimuladores',
-      title: 'Anillos & Estimuladores',
-      subtitle: 'Anillos con vibración y texturas',
-      description:
-        'Complementos compactos y silenciosos diseñados para prolongar y potenciar el placer.',
-      iconType: 'rings',
-    },
-    {
-      id: 'juegos',
-      slug: 'juegos',
-      title: 'Juegos para Parejas',
-      subtitle: 'Dados, naipes y juegos de mesa',
-      description:
-        'Dinámicas lúdicas y desafíos pensados para romper la rutina y conectar desde el juego.',
-      iconType: 'games',
-    },
-    {
-      id: 'linea-masculina',
-      slug: 'linea-masculina',
-      title: 'Línea Masculina',
-      subtitle: 'Prendas y diseños masculinos',
-      description:
-        'Cortes anatómicos y telas elastizadas con estilo nocturno y ajuste cómodo.',
-      iconType: 'mens',
+        'Líneas urbanas y deportivas para renovar stock por mayor o elegir tu par.',
+      iconType: 'zapatillas',
     },
   ],
 
-  privacyNotice: DISCREET_NOTICE,
+  policies: {
+    shippingNotice: SHIPPING_NOTICE,
+    returnsPolicyNotice: RETURNS_POLICY_NOTICE,
+    wholesaleNotice: WHOLESALE_NOTICE,
+    regretButtonNotice: REGRET_BUTTON_NOTICE,
+    exchangeWindow: '[PLAZO DE CAMBIOS]',
+    exchangeConditions: '[CONDICIONES DE CAMBIO POR TALLE O FALLA]',
+    wholesaleMinimum: '[MÍNIMO DE COMPRA MAYORISTA]',
+    shippingCostsAndTimes: '[COSTOS Y PLAZOS DE ENVÍO]',
+  },
+
+  shippingNotice: SHIPPING_NOTICE,
   returnPolicyNotice: RETURNS_POLICY_NOTICE,
 
   faq: FAQ_ITEMS,
@@ -189,33 +206,32 @@ export const themeConfig = {
 
   contact: {
     city: 'Córdoba, Argentina',
-    deliveryZone: '[ZONA DE ENTREGA]',
-    phone: '+54 9 3517 57-2841',
-    phoneDisplay: '+54 9 3517 57-2841',
-    whatsapp: '5493517572841',
-    whatsappNumber: '5493517572841',
+    address: '[DIRECCIÓN DEL LOCAL]',
+    deliveryZone: '[ZONA DE ENVÍO]',
+    phone: '[WHATSAPP]',
+    phoneDisplay: '[WHATSAPP]',
+    whatsapp: isDemoMode ? DEMO_WHATSAPP_TEST : '[WHATSAPP]',
+    whatsappNumber: isDemoMode ? DEMO_WHATSAPP_TEST : '[WHATSAPP]',
+    whatsappTestNumber: DEMO_WHATSAPP_TEST,
+    isWhatsAppTestMode: isDemoMode && !resolveWhatsAppDigits(import.meta.env.VITE_DEMO_WHATSAPP),
     whatsappDefaultMessage:
-      'Hola Nocturna! Quería hacer una consulta sobre el catálogo.',
+      'Hola Paola Calzados, quería hacer una consulta sobre calzado por mayor o menor.',
+    buildWhatsAppUrl,
     hours: '[HORARIOS]',
     schedule: '[HORARIOS]',
     email: '[EMAIL]',
-    instagram: '@nocturna.sexshop.cba',
-    instagramUrl: 'https://www.instagram.com/nocturna.sexshop.cba/',
-    legalEntity: '[RAZÓN SOCIAL]',
-    legalName: '[RAZÓN SOCIAL]',
+    instagram: '@paola_calzadoss',
+    instagramUrl: 'https://www.instagram.com/paola_calzadoss/',
+    legalEntity: '[RAZÓN SOCIAL / CUIT]',
+    legalName: '[RAZÓN SOCIAL / CUIT]',
   },
 
   legal: {
-    copyright: `© ${new Date().getFullYear()} Nocturna SexShop ([RAZÓN SOCIAL]). Todos los derechos reservados.`,
-    note: AGE_DISCLAIMER,
-    ageDisclaimer: AGE_DISCLAIMER,
-    discreetNotice: DISCREET_NOTICE,
+    copyright: `© ${new Date().getFullYear()} Paola Calzados ([RAZÓN SOCIAL / CUIT]). Todos los derechos reservados.`,
+    note: WHOLESALE_NOTICE,
+    shippingNotice: SHIPPING_NOTICE,
     returnsPolicyNotice: RETURNS_POLICY_NOTICE,
-  },
-
-  developer: {
-    name: 'Scroll Studio',
-    url: 'https://thiagopgnqn.github.io/ScrollStudio/',
+    regretButtonNotice: REGRET_BUTTON_NOTICE,
   },
 };
 

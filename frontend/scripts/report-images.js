@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const rootDir = path.resolve(__dirname, '../..');
 const demoCsvPath = path.resolve(rootDir, 'catalogo_demo.csv');
-const fullCsvPath = path.resolve(rootDir, 'catalogo_nocturna.csv');
+const fullCsvPath = path.resolve(rootDir, 'catalogo_paola.csv');
 const manifestPath = path.resolve(__dirname, '../src/api/demo/images-manifest.json');
 const outputProductsDir = path.resolve(__dirname, '../public/images/products');
 const outputBrandDir = path.resolve(__dirname, '../public/images/brand');
@@ -164,7 +164,7 @@ function generateReport() {
     : [];
 
   const demoRows = assignNormalizedSkus(demoRowsRaw, 'DEMO');
-  const fullRows = assignNormalizedSkus(fullRowsRaw, 'NOC');
+  const fullRows = assignNormalizedSkus(fullRowsRaw, 'PAO');
 
   const demoTable = buildTableRows(demoRows, availableSkus);
   const fullTable = buildTableRows(fullRows, availableSkus);
@@ -174,7 +174,7 @@ function generateReport() {
   const hasAbout = fs.existsSync(path.join(outputBrandDir, 'about.webp'));
   const hasOg = fs.existsSync(path.join(outputBrandDir, 'og-image.png'));
 
-  const md = `# Reporte de Imágenes de Productos y Marca — Nocturna SexShop
+  const md = `# Reporte de Imágenes de Productos y Marca — Paola Calzados
 
 Generado automáticamente mediante \`npm run images:report\`.
 
@@ -183,15 +183,15 @@ Generado automáticamente mediante \`npm run images:report\`.
 ## Cómo Cargar Nuevas Imágenes de Productos
 
 1. Guardá las fotos originales en la carpeta \`images-source/products/\` usando como nombre de archivo el **SKU exacto** del producto o variante que figura en las tablas de abajo:
-   - Ejemplo imagen principal: \`4580.jpg\`, \`145R.png\`, \`422.webp\`
-   - Ejemplo galería adicional (opcional): \`4580-2.jpg\`, \`4580-3.jpg\`
+   - Ejemplo imagen principal: \`ZAP-URB-01B.jpg\`, \`SAN-BAJ-01N.png\`, \`MUJ-BOT-01N.webp\`
+   - Ejemplo galería adicional (opcional): \`ZAP-URB-01B-2.jpg\`, \`ZAP-URB-01B-3.jpg\`
 2. Ejecutá en la terminal:
    \`\`\`bash
    npm run images:build
    npm run images:report
    \`\`\`
 3. El script \`images:build\` convierte cada imagen a WebP en \`frontend/public/images/products/{SKU}.webp\` (\`800 px\`) y \`{SKU}-thumb.webp\` (\`400 px\`), y actualiza \`frontend/src/api/demo/images-manifest.json\`.
-4. Si un producto tiene variantes (por ejemplo distintos colores) y subís la foto de cada SKU de variante (\`145R.jpg\`, \`145N.jpg\`), la ficha de producto cambia automáticamente la foto al elegir esa variante. Si solo subís la foto de una variante o del SKU del producto, todas las demás variantes usan esa foto como respaldo. Cuando un producto no tiene foto cargada, la tienda muestra automáticamente el \`ProductPlaceholder\` de marca.
+4. Si un producto tiene variantes (por ejemplo distintos colores) y subís la foto de cada SKU de variante (\`ZAP-URB-01B.jpg\`, \`ZAP-URB-01N.jpg\`), la ficha de producto cambia automáticamente la foto al elegir esa variante. Si solo subís la foto de una variante o del SKU del producto, todas las demás variantes usan esa foto como respaldo. Cuando un producto no tiene foto cargada, la tienda muestra automáticamente el \`ProductPlaceholder\` de Paola Calzados.
 
 ---
 
@@ -199,9 +199,9 @@ Generado automáticamente mediante \`npm run images:report\`.
 
 | Archivo Destino | Fuente Opcional | Medidas Recomendadas | Estado Actual |
 |-----------------|-----------------|----------------------|---------------|
-| \`frontend/public/images/brand/hero.webp\` | *(Generada por script)* | \`1400 x 1050 px\` (4:3, WebP < 300 KB) | ${hasHero ? '✅ Con foto (Resuelta)' : '⏳ Sin foto (usa visual CSS/SVG)'} |
-| \`frontend/public/images/brand/hero-mobile.webp\` | *(Generada por script)* | \`800 x 600 px\` (4:3, WebP < 150 KB) | ${hasHeroMobile ? '✅ Con foto (Resuelta)' : '⏳ Sin foto (usa visual CSS/SVG)'} |
-| \`frontend/public/images/brand/about.webp\` | \`images-source/brand/about.jpg\` | \`1200 x 900 px\` (proporción 4:3, estética íntima/oscura sin rostros) | ${hasAbout ? '✅ Con foto' : '⏳ Sin foto (usa composición de marca en código)'} |
+| \`frontend/public/images/brand/hero.webp\` | \`images-source/brand/hero.jpg\` | \`1400 x 1050 px\` (4:3, WebP < 300 KB) | ${hasHero ? '✅ Con foto (Resuelta)' : '⏳ Sin foto (usa visual CSS/SVG)'} |
+| \`frontend/public/images/brand/hero-mobile.webp\` | \`images-source/brand/hero-mobile.jpg\` | \`800 x 600 px\` (4:3, WebP < 150 KB) | ${hasHeroMobile ? '✅ Con foto (Resuelta)' : '⏳ Sin foto (usa visual CSS/SVG)'} |
+| \`frontend/public/images/brand/about.webp\` | \`images-source/brand/about.jpg\` | \`1200 x 900 px\` (proporción 4:3, estética luminosa rosa/fucsia) | ${hasAbout ? '✅ Con foto' : '⏳ Sin foto (usa composición de marca en código)'} |
 | \`frontend/public/images/brand/og-image.png\` | *(Generada por script)* | \`1200 x 630 px\` (Open Graph / Redes) | ${hasOg ? '✅ Generada (1200x630 PNG)' : '⏳ Pendiente'} |
 
 ---
@@ -218,7 +218,7 @@ ${demoTable.lines.join('\n')}
 
 ---
 
-## 3. Catálogo Completo (\`catalogo_nocturna.csv\`)
+## 3. Catálogo Principal (\`catalogo_paola.csv\`)
 
 - **Total de filas (productos/variantes):** ${fullTable.totalCount}
 - **Con foto:** ${fullTable.withPhotoCount}

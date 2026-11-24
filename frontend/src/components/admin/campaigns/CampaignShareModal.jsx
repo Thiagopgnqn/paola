@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode';
 import {
   FiX,
@@ -16,12 +16,9 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
   const [copiedKey, setCopiedKey] = useState(null);
   const [selectedChannel, setSelectedChannel] = useState('instagram');
   const [qrDataUrl, setQrDataUrl] = useState('');
-  const [customSource, setCustomSource] = useState('');
-  const [customMedium, setCustomMedium] = useState('');
-  const canvasRef = useRef(null);
 
   const origin =
-    typeof window !== 'undefined' ? window.location.origin : 'https://tiendanocturna.com.ar';
+    typeof window !== 'undefined' ? window.location.origin : 'https://paolacalzados.example';
   const campaignSlug = campaign?.slug || '';
   const basePath = `/campanas/${campaignSlug}`;
   const baseFullUrl = `${origin}${basePath}`;
@@ -31,16 +28,16 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
       id: 'instagram',
       name: 'Instagram (Bio / Historias)',
       icon: FiInstagram,
-      color: 'text-pink-400',
+      color: 'text-brand-deep',
       utm_source: 'instagram',
       utm_medium: 'social',
-      description: 'Ideal para colocar en el enlace del perfil o stickers de historias.',
+      description: 'Ideal para colocar en @paola_calzadoss o stickers de historias.',
     },
     {
       id: 'whatsapp',
       name: 'WhatsApp (Chats / Difusión)',
       icon: FaWhatsapp,
-      color: 'text-emerald-400',
+      color: 'text-status-success',
       utm_source: 'whatsapp',
       utm_medium: 'chat',
       description: 'Para compartir en listas de difusión o mensajes directos.',
@@ -49,7 +46,7 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
       id: 'meta_ads',
       name: 'Meta Ads (Facebook / Instagram Ads)',
       icon: FaFacebook,
-      color: 'text-blue-400',
+      color: 'text-blue-700',
       utm_source: 'facebook',
       utm_medium: 'cpc',
       description: 'Para configurar como URL de destino en tus anuncios pagos.',
@@ -58,7 +55,7 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
       id: 'newsletter',
       name: 'Email / Newsletter',
       icon: FiMail,
-      color: 'text-amber-400',
+      color: 'text-amber-700',
       utm_source: 'newsletter',
       utm_medium: 'email',
       description: 'Para incluir en tus campañas de email marketing periódicas.',
@@ -67,7 +64,7 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
       id: 'direct',
       name: 'Enlace directo (Sin UTM)',
       icon: FiExternalLink,
-      color: 'text-purple-400',
+      color: 'text-brand-deep',
       utm_source: null,
       utm_medium: null,
       description: 'Enlace limpio a la landing page de la campaña.',
@@ -85,9 +82,6 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
   };
 
   const getActiveUrl = () => {
-    if (selectedChannel === 'custom') {
-      return buildUrl(customSource || 'personalizado', customMedium || 'canal');
-    }
     const ch = channels.find((c) => c.id === selectedChannel);
     if (!ch) return baseFullUrl;
     return buildUrl(ch.utm_source, ch.utm_medium);
@@ -95,7 +89,6 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
 
   const activeUrl = getActiveUrl();
 
-  // Generate QR code whenever activeUrl changes
   useEffect(() => {
     if (!isOpen || !campaign || !activeUrl) return;
     let active = true;
@@ -103,7 +96,7 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
       width: 320,
       margin: 2,
       color: {
-        dark: '#0f172a',
+        dark: '#141014',
         light: '#ffffff',
       },
     })
@@ -149,44 +142,43 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#141014]/50 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="bg-neutral-900 border border-neutral-800 rounded-2xl max-w-3xl w-full p-6 shadow-2xl my-8 relative text-neutral-100"
+        className="bg-surface border border-border rounded-2xl max-w-3xl w-full p-6 shadow-overlay my-8 relative text-content"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="flex items-start justify-between pb-4 border-b border-neutral-800">
+        <div className="flex items-start justify-between pb-4 border-b border-border">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-purple-900/40 text-purple-400 flex items-center justify-center border border-purple-700/50">
+            <div className="w-10 h-10 rounded-xl bg-surface-elevated text-brand-deep flex items-center justify-center border border-border">
               <FiShare2 className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+              <h3 className="text-xl font-bold text-content flex items-center gap-2">
                 Compartir Campaña y Códigos QR
               </h3>
-              <p className="text-xs text-neutral-400">
+              <p className="text-xs text-content-secondary">
                 Campaña:{' '}
-                <span className="font-semibold text-purple-300">{campaign.name}</span>{' '}
-                <span className="text-neutral-500 font-mono">({campaign.slug})</span>
+                <span className="font-semibold text-brand-deep">{campaign.name}</span>{' '}
+                <span className="text-content-secondary font-mono">({campaign.slug})</span>
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-neutral-400 hover:text-white rounded-lg hover:bg-neutral-800 transition"
+            className="p-2 text-content-secondary hover:text-brand-deep rounded-lg hover:bg-surface-elevated transition"
+            aria-label="Cerrar"
           >
             <FiX className="w-5 h-5" />
           </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-6">
-          {/* Left Column: UTM Links */}
           <div className="md:col-span-7 space-y-4">
-            <h4 className="text-sm font-semibold text-neutral-300 flex items-center gap-2">
+            <h4 className="text-sm font-semibold text-content flex items-center gap-2">
               <span>Enlaces prearmados con atribución UTM</span>
-              <span className="text-[10px] bg-neutral-800 text-neutral-400 px-2 py-0.5 rounded-full font-mono">
+              <span className="text-[10px] bg-surface-elevated text-brand-deep px-2 py-0.5 rounded-full font-mono font-bold">
                 1-click copy
               </span>
             </h4>
@@ -202,20 +194,20 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
                     key={ch.id}
                     className={`p-3 rounded-xl border transition ${
                       isSelected
-                        ? 'bg-neutral-800/80 border-purple-500/50 ring-1 ring-purple-500/30'
-                        : 'bg-neutral-900/50 border-neutral-800 hover:border-neutral-700'
+                        ? 'bg-surface-elevated border-brand ring-1 ring-brand/30'
+                        : 'bg-canvas border-border hover:border-brand'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1.5">
                       <button
                         type="button"
                         onClick={() => setSelectedChannel(ch.id)}
-                        className="flex items-center gap-2 font-medium text-xs text-left hover:text-purple-300"
+                        className="flex items-center gap-2 font-medium text-xs text-left hover:text-brand-deep"
                       >
                         <Icon className={`w-4 h-4 ${ch.color}`} />
-                        <span className="text-white font-medium">{ch.name}</span>
+                        <span className="text-content font-semibold">{ch.name}</span>
                         {isSelected && (
-                          <span className="text-[10px] bg-purple-500/20 text-purple-300 px-1.5 py-0.2 rounded font-mono">
+                          <span className="text-[10px] bg-brand text-white px-1.5 py-0.5 rounded font-mono font-semibold">
                             QR activo
                           </span>
                         )}
@@ -225,10 +217,10 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
                         <button
                           type="button"
                           onClick={() => handleCopy(link, ch.id)}
-                          className={`text-xs px-2.5 py-1 rounded-lg font-medium flex items-center gap-1.5 transition ${
+                          className={`text-xs px-2.5 py-1 rounded-lg font-semibold flex items-center gap-1.5 transition ${
                             copiedKey === ch.id
-                              ? 'bg-emerald-600 text-white'
-                              : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white'
+                              ? 'bg-emerald-700 text-white'
+                              : 'bg-surface border border-border-strong text-content hover:bg-brand hover:border-brand hover:text-white'
                           }`}
                         >
                           {copiedKey === ch.id ? (
@@ -246,33 +238,31 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
                       </div>
                     </div>
 
-                    <div className="text-[11px] font-mono text-neutral-400 truncate bg-neutral-950/60 p-1.5 rounded border border-neutral-800/60 select-all">
+                    <div className="text-[11px] font-mono text-content-secondary truncate bg-surface p-1.5 rounded border border-border select-all">
                       {link}
                     </div>
-                    <p className="text-[11px] text-neutral-500 mt-1">{ch.description}</p>
+                    <p className="text-[11px] text-content-secondary mt-1">{ch.description}</p>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          {/* Right Column: Offline QR Generator */}
-          <div className="md:col-span-5 flex flex-col justify-between bg-neutral-950/50 p-5 rounded-2xl border border-neutral-800">
+          <div className="md:col-span-5 flex flex-col justify-between bg-surface-elevated/50 p-5 rounded-2xl border border-border">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h4 className="text-sm font-semibold text-neutral-200">
+                <h4 className="text-sm font-bold text-content">
                   Código QR (Offline)
                 </h4>
-                <span className="text-[10px] text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded font-mono">
+                <span className="text-[10px] text-status-success bg-status-success-bg border border-status-success-border px-2 py-0.5 rounded font-mono font-semibold">
                   100% por código
                 </span>
               </div>
-              <p className="text-xs text-neutral-400 mb-4">
-                Generado localmente en tu navegador sin enviar datos a servidores externos. Listo para imprimir en packaging, folletos o carteles en el local.
+              <p className="text-xs text-content-secondary mb-4">
+                Generado localmente en tu navegador. Listo para imprimir en tarjetas, bolsas o carteles en el local.
               </p>
 
-              {/* QR Preview Box */}
-              <div className="bg-white p-3 rounded-xl shadow-lg inline-block mx-auto flex flex-col items-center justify-center border border-neutral-300">
+              <div className="bg-white p-3 rounded-xl shadow-soft mx-auto flex flex-col items-center justify-center border border-border">
                 {qrDataUrl ? (
                   <img
                     src={qrDataUrl}
@@ -280,12 +270,12 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
                     className="w-48 h-48 object-contain rounded"
                   />
                 ) : (
-                  <div className="w-48 h-48 flex items-center justify-center text-xs text-neutral-400">
+                  <div className="w-48 h-48 flex items-center justify-center text-xs text-content-secondary">
                     Generando QR...
                   </div>
                 )}
-                <div className="text-[10px] text-neutral-700 font-mono mt-1 text-center font-bold">
-                  Tienda Nocturna • {campaign.slug}
+                <div className="text-[10px] text-content font-mono mt-1 text-center font-bold">
+                  Paola Calzados &bull; {campaign.slug}
                 </div>
               </div>
             </div>
@@ -295,7 +285,7 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
                 type="button"
                 onClick={handleDownloadQR}
                 disabled={!qrDataUrl}
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium text-xs rounded-xl transition shadow-lg shadow-purple-950/40 disabled:opacity-50"
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-brand hover:bg-brand-deep text-white font-semibold text-xs rounded-xl transition shadow-soft disabled:opacity-50"
               >
                 <FiDownload className="w-4 h-4" />
                 <span>Descargar Código QR (PNG)</span>
@@ -304,12 +294,12 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
               <button
                 type="button"
                 onClick={() => handleCopy(activeUrl, 'qr_url')}
-                className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 text-xs rounded-xl transition"
+                className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-surface hover:bg-surface-elevated border border-border-strong text-content font-semibold text-xs rounded-xl transition"
               >
                 {copiedKey === 'qr_url' ? (
                   <>
-                    <FiCheck className="w-3.5 h-3.5 text-emerald-400" />
-                    <span className="text-emerald-400">¡URL copiada!</span>
+                    <FiCheck className="w-3.5 h-3.5 text-status-success" />
+                    <span className="text-status-success">¡URL copiada!</span>
                   </>
                 ) : (
                   <>
@@ -322,14 +312,13 @@ export default function CampaignShareModal({ campaign, isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Footer info */}
-        <div className="mt-6 pt-4 border-t border-neutral-800/80 flex items-center justify-between text-[11px] text-neutral-500">
+        <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-[11px] text-content-secondary">
           <span>
-            Los pedidos realizados a través de estos enlaces registrarán automáticamente la atribución en el panel de métricas.
+            Los pedidos realizados mediante estos enlaces registrarán automáticamente la atribución en Métricas.
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-lg text-xs font-medium"
+            className="px-4 py-1.5 bg-surface-elevated hover:bg-surface-hover border border-border text-content rounded-lg text-xs font-semibold"
           >
             Cerrar
           </button>

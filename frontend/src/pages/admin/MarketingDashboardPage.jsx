@@ -83,7 +83,7 @@ export default function MarketingDashboardPage() {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `suscriptores-nocturna-${new Date().toISOString().slice(0, 10)}.csv`;
+      a.download = `suscriptores-paola-${new Date().toISOString().slice(0, 10)}.csv`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -128,7 +128,7 @@ export default function MarketingDashboardPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-brand-border/40">
         <div>
           <h1 className="text-2xl font-bold font-display text-content flex items-center gap-2.5">
-            <FiTrendingUp className="text-mauve" />
+            <FiTrendingUp className="text-brand" />
             <span>Marketing, Métricas y Atribución UTM</span>
           </h1>
           <p className="text-xs text-content-secondary mt-1">
@@ -138,7 +138,7 @@ export default function MarketingDashboardPage() {
 
         {/* Date Filter Pills */}
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="bg-surface border border-brand-border/40 rounded-xl p-1 flex items-center gap-1">
+          <div className="bg-surface border border-border rounded-xl p-1 flex items-center gap-1">
             {DATE_RANGES.map((r) => (
               <button
                 key={r.id}
@@ -146,7 +146,7 @@ export default function MarketingDashboardPage() {
                 onClick={() => setSelectedRange(r.id)}
                 className={`text-xs px-3 py-1.5 rounded-lg font-medium transition ${
                   selectedRange === r.id
-                    ? 'bg-mauve text-white shadow'
+                    ? 'bg-brand text-white shadow'
                     : 'text-content-secondary hover:text-content hover:bg-surface-elevated'
                 }`}
               >
@@ -159,7 +159,7 @@ export default function MarketingDashboardPage() {
             type="button"
             onClick={() => fetchMetrics(selectedRange)}
             disabled={loading}
-            className="p-2 bg-surface hover:bg-surface-elevated border border-brand-border/40 rounded-xl text-content-secondary hover:text-content transition"
+            className="p-2 bg-surface hover:bg-surface-elevated border border-border rounded-xl text-content-secondary hover:text-content transition"
             title="Actualizar datos"
           >
             <FiRefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
@@ -170,12 +170,12 @@ export default function MarketingDashboardPage() {
       {/* Overview Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Ingresos */}
-        <div className="p-5 rounded-2xl bg-surface border border-brand-border/40 shadow-xs relative overflow-hidden">
+        <div className="p-5 rounded-2xl bg-surface border border-border shadow-xs relative overflow-hidden">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-content-secondary">
               Ingresos Totales
             </span>
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-status-success-bg text-status-success flex items-center justify-center">
               <FiDollarSign className="w-4 h-4" />
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function MarketingDashboardPage() {
             <span className="text-xs font-medium text-content-secondary">
               Ticket Promedio
             </span>
-            <div className="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-status-warning-bg text-status-warning flex items-center justify-center">
               <FiTrendingUp className="w-4 h-4" />
             </div>
           </div>
@@ -246,13 +246,13 @@ export default function MarketingDashboardPage() {
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-brand-border/40 flex items-center space-x-1">
+      <div className="border-b border-border flex items-center space-x-1">
         <button
           type="button"
           onClick={() => setActiveTab('campaigns')}
           className={`px-4 py-2.5 text-xs font-semibold border-b-2 transition ${
             activeTab === 'campaigns'
-              ? 'border-mauve text-mauve'
+              ? 'border-brand text-brand-deep'
               : 'border-transparent text-content-secondary hover:text-content'
           }`}
         >
@@ -264,7 +264,7 @@ export default function MarketingDashboardPage() {
           onClick={() => setActiveTab('coupons')}
           className={`px-4 py-2.5 text-xs font-semibold border-b-2 transition ${
             activeTab === 'coupons'
-              ? 'border-mauve text-mauve'
+              ? 'border-brand text-brand-deep'
               : 'border-transparent text-content-secondary hover:text-content'
           }`}
         >
@@ -276,7 +276,7 @@ export default function MarketingDashboardPage() {
           onClick={() => setActiveTab('attribution')}
           className={`px-4 py-2.5 text-xs font-semibold border-b-2 transition ${
             activeTab === 'attribution'
-              ? 'border-mauve text-mauve'
+              ? 'border-brand text-brand-deep'
               : 'border-transparent text-content-secondary hover:text-content'
           }`}
         >
@@ -288,7 +288,7 @@ export default function MarketingDashboardPage() {
           onClick={() => setActiveTab('subscribers')}
           className={`px-4 py-2.5 text-xs font-semibold border-b-2 transition ${
             activeTab === 'subscribers'
-              ? 'border-mauve text-mauve'
+              ? 'border-brand text-brand-deep'
               : 'border-transparent text-content-secondary hover:text-content'
           }`}
         >
@@ -303,12 +303,12 @@ export default function MarketingDashboardPage() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold text-content flex items-center gap-2">
-              <FiLayers className="text-mauve" />
+              <FiLayers className="text-brand" />
               <span>Métricas individuales por Campaña</span>
             </h2>
             <Link
               to="/admin/campanas"
-              className="text-xs text-mauve hover:text-mauve/80 flex items-center gap-1 font-medium"
+              className="text-xs text-brand-deep hover:text-brand flex items-center gap-1 font-medium"
             >
               <span>Gestionar campañas</span>
               <FiArrowUpRight />
@@ -351,10 +351,10 @@ export default function MarketingDashboardPage() {
                             <span
                               className={`text-[9px] px-1.5 py-0.2 rounded uppercase font-bold tracking-wider ${
                                 camp.status === 'ACTIVE'
-                                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                                  ? 'bg-status-success-bg text-status-success border border-status-success-border'
                                   : camp.status === 'SCHEDULED'
-                                  ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
-                                  : 'bg-neutral-800 text-neutral-400'
+                                  ? 'bg-sky-50 text-sky-700 border border-sky-200'
+                                  : 'bg-surface-elevated text-content-secondary border border-border'
                               }`}
                             >
                               {camp.status}
@@ -370,7 +370,7 @@ export default function MarketingDashboardPage() {
                           {camp.ordersCount || 0}
                         </td>
                         <td className="py-3 px-3 text-center">
-                          <span className="font-semibold text-mauve">
+                          <span className="font-semibold text-brand-deep">
                             {camp.conversionRate}%
                           </span>
                         </td>
@@ -380,7 +380,7 @@ export default function MarketingDashboardPage() {
                         <td className="py-3 px-3 text-right font-bold text-content">
                           {formatMoney(camp.revenue)}
                         </td>
-                        <td className="py-3 px-3 text-right text-rose-400 font-mono">
+                        <td className="py-3 px-3 text-right text-status-error font-mono">
                           {formatMoney(camp.discountsGranted)}
                         </td>
                         <td className="py-3 px-3 text-right font-mono text-content">
@@ -390,7 +390,7 @@ export default function MarketingDashboardPage() {
                           <button
                             type="button"
                             onClick={() => setShareCampaign(camp)}
-                            className="p-1.5 bg-surface-elevated hover:bg-mauve/20 text-mauve rounded-lg transition inline-flex items-center gap-1 text-[11px]"
+                            className="p-1.5 bg-surface-elevated hover:bg-brand text-brand-deep hover:text-white rounded-lg transition inline-flex items-center gap-1 text-[11px] font-medium"
                             title="Compartir con UTM y Código QR"
                           >
                             <FiShare2 className="w-3.5 h-3.5" />
@@ -412,12 +412,12 @@ export default function MarketingDashboardPage() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold text-content flex items-center gap-2">
-              <FiPercent className="text-mauve" />
+              <FiPercent className="text-brand" />
               <span>Eficacia y redenciones de Cupones</span>
             </h2>
             <Link
               to="/admin/cupones"
-              className="text-xs text-mauve hover:text-mauve/80 flex items-center gap-1 font-medium"
+              className="text-xs text-brand-deep hover:text-brand flex items-center gap-1 font-medium"
             >
               <span>Gestionar cupones</span>
               <FiArrowUpRight />
@@ -452,7 +452,7 @@ export default function MarketingDashboardPage() {
                         className="hover:bg-surface-elevated/40 transition-colors"
                       >
                         <td className="py-3 px-4">
-                          <span className="font-mono font-bold text-mauve bg-mauve/10 border border-mauve/20 px-2 py-0.5 rounded">
+                          <span className="font-mono font-bold text-brand-deep bg-surface-elevated border border-border-strong px-2 py-0.5 rounded">
                             {cp.code}
                           </span>
                         </td>
@@ -466,7 +466,7 @@ export default function MarketingDashboardPage() {
                         <td className="py-3 px-3 text-center font-bold text-content">
                           {cp.redemptionsCount || 0}
                         </td>
-                        <td className="py-3 px-3 text-right text-rose-400 font-mono">
+                        <td className="py-3 px-3 text-right text-status-error font-mono">
                           {formatMoney(cp.totalDiscountGranted)}
                         </td>
                         <td className="py-3 px-3 text-right font-bold text-content">
@@ -479,8 +479,8 @@ export default function MarketingDashboardPage() {
                           <span
                             className={`text-[9px] px-2 py-0.5 rounded-full font-bold uppercase ${
                               cp.active
-                                ? 'bg-emerald-500/10 text-emerald-400'
-                                : 'bg-neutral-800 text-neutral-400'
+                                ? 'bg-status-success-bg text-status-success'
+                                : 'bg-surface-elevated text-content-secondary'
                             }`}
                           >
                             {cp.active ? 'Activo' : 'Pausado'}
@@ -620,7 +620,7 @@ export default function MarketingDashboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h2 className="text-sm font-bold text-content flex items-center gap-2">
-                <FiUsers className="text-mauve" />
+                <FiUsers className="text-brand" />
                 <span>Suscriptores al Newsletter (Conformidad Ley 25.326)</span>
               </h2>
               <p className="text-xs text-content-secondary mt-0.5">
@@ -674,7 +674,7 @@ export default function MarketingDashboardPage() {
                           {sub.email}
                         </td>
                         <td className="py-3 px-3 text-center">
-                          <span className="inline-flex items-center gap-1 text-[11px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full font-semibold">
+                          <span className="inline-flex items-center gap-1 text-[11px] text-status-success bg-status-success-bg px-2 py-0.5 rounded-full font-semibold">
                             <FiCheckCircle className="w-3.5 h-3.5" />
                             <span>Explícito</span>
                           </span>
@@ -686,8 +686,8 @@ export default function MarketingDashboardPage() {
                           <span
                             className={`text-[9px] px-2 py-0.5 rounded-full font-bold uppercase ${
                               sub.active !== false
-                                ? 'bg-emerald-500/10 text-emerald-400'
-                                : 'bg-rose-500/10 text-rose-400'
+                                ? 'bg-status-success-bg text-status-success'
+                                : 'bg-status-error-bg text-status-error'
                             }`}
                           >
                             {sub.active !== false ? 'Activo' : 'Baja'}

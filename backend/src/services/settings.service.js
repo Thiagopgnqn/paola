@@ -11,8 +11,8 @@ const DEFAULT_SETTINGS = {
   transferDiscountPercent: 10,
   transferDiscountEnabled: true,
   priceHistoryDays: 30,
-  generalTermsText: 'Envíos 100% discretos en empaque neutro sin identificación del contenido.',
-  shippingNoticeText: 'Envío gratis a todo el país superando el monto mínimo.',
+  generalTermsText: 'Venta de calzado por mayor y por menor en Córdoba. Consultá por mínimos mayoristas y disponibilidad de talles.',
+  shippingNoticeText: 'Envíos en [ZONA DE ENVÍO] — [COSTOS Y PLAZOS DE ENVÍO].',
   bankTransferInstructions: 'Transferencia bancaria. Te enviaremos los datos de CBU y Alias al confirmar el pedido por WhatsApp.',
 };
 

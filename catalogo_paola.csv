@@ -1,0 +1,4 @@
+grupo,categoria,subcategoria,nombre,descripcion,sku,variante_tipo,variante_talle,variante_color,variante_sabor_aroma,variante_volumen_medida,precio_ars,estado,nota
+Zapatilla Urbana Modelo Base,Zapatillas,Urbanas,Zapatilla Urbana Modelo Base Blanca,Modelo de ejemplo genérico disponible para venta por mayor y menor.,PAO-EJ-001,,,Blanco,,,25000,ok,Fila de ejemplo con PRECIO FICTICIO DE PRUEBA — reemplazar por catálogo real
+Zapatilla Urbana Modelo Base,Zapatillas,Urbanas,Zapatilla Urbana Modelo Base Negra,Modelo de ejemplo genérico disponible para venta por mayor y menor.,PAO-EJ-002,,,Negro,,,25000,ok,Fila de ejemplo con PRECIO FICTICIO DE PRUEBA — reemplazar por catálogo real
+Sandalia Faja Ejemplo,Sandalias,Sandalias bajas,Sandalia Faja Ejemplo Rosa,Modelo de ejemplo genérico disponible para venta por mayor y menor.,PAO-EJ-003,,,Rosa,,,18000,ok,Fila de ejemplo con PRECIO FICTICIO DE PRUEBA — reemplazar por catálogo real

@@ -222,11 +222,11 @@ const OrdersPage = () => {
 
     let message = '';
     if (templateType === 'PAYMENT') {
-      message = `Hola ${name}! Te escribimos de Nocturna por tu pedido #${shortId} (Total: $${total}). Te confirmamos que tenemos stock separado para vos. En cuanto nos envíes el comprobante coordinamos la entrega discreta.`;
+      message = `Hola ${name}! Te escribimos de Paola Calzados por tu pedido #${shortId} (Total: $${total}). Te confirmamos que tenemos stock separado para vos. En cuanto nos envíes el comprobante coordinamos la entrega.`;
     } else if (templateType === 'SHIPPING') {
-      message = `Hola ${name}! Te avisamos que tu pedido #${shortId} ya fue despachado hacia ${addr}. Va en paquete 100% discreto, cerrado y sin logos ni referencias externas.`;
+      message = `Hola ${name}! Te avisamos que tu pedido #${shortId} ya fue despachado hacia ${addr}.`;
     } else if (templateType === 'PICKUP') {
-      message = `Hola ${name}! Tu pedido #${shortId} ya está preparado en paquete 100% discreto listo para retirar. Avisanos en qué horario pasás.`;
+      message = `Hola ${name}! Tu pedido #${shortId} ya está preparado y listo para retirar. Avisanos en qué horario pasás.`;
     }
 
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -275,7 +275,7 @@ const OrdersPage = () => {
       <html lang="es">
       <head>
         <meta charset="UTF-8" />
-        <title>Etiqueta Discreta y Hoja de Armado #${shortId}</title>
+        <title>Etiqueta de Envío y Hoja de Armado #${shortId}</title>
         <style>
           body { font-family: Arial, sans-serif; color: #111; margin: 24px; }
           .label-box { border: 2px solid #000; padding: 20px; border-radius: 6px; margin-bottom: 28px; }
@@ -292,12 +292,12 @@ const OrdersPage = () => {
           </button>
         </div>
 
-        <!-- ETIQUETA EXTERNA 100% DISCRETA (SIN LOGOS NI MENCION AL RUBRO) -->
+        <!-- ETIQUETA DE ENVÍO -->
         <div class="label-box">
           <div style="display:flex; justify-content:space-between; border-bottom:1px solid #000; padding-bottom:10px; margin-bottom:14px;">
             <div>
-              <strong style="font-size:12px; text-transform:uppercase; letter-spacing:1px;">ENVÍO CONFIDENCIAL / PAQUETE CERRADO</strong>
-              <div style="font-size:11px; color:#444; margin-top:2px;">Remitente: N.C. Logística Córdoba</div>
+              <strong style="font-size:12px; text-transform:uppercase; letter-spacing:1px;">ENVÍO PAOLA CALZADOS</strong>
+              <div style="font-size:11px; color:#444; margin-top:2px;">Remitente: Paola Calzados — Córdoba</div>
             </div>
             <div style="text-align:right;">
               <strong style="font-size:16px; font-family:monospace;">ORDEN #${shortId}</strong>
@@ -321,7 +321,7 @@ const OrdersPage = () => {
 
         <!-- HOJA DE ARMADO INTERNA -->
         <div>
-          <h3 style="margin:0 0 4px 0; font-size:15px; text-transform:uppercase;">Hoja de Armado Interna — Nocturna SexShop (#${shortId})</h3>
+          <h3 style="margin:0 0 4px 0; font-size:15px; text-transform:uppercase;">Hoja de Armado Interna — Paola Calzados (#${shortId})</h3>
           <p style="margin:0 0 12px 0; font-size:12px; color:#555;">Estado: ${order.status} | Método: ${
       order.deliveryMethod === 'PICKUP' ? 'Retiro' : 'Envío'
     }</p>
@@ -403,7 +403,7 @@ const OrdersPage = () => {
     link.href = url;
     link.setAttribute(
       'download',
-      `pedidos_nocturna_${new Date().toISOString().slice(0, 10)}.csv`
+      `pedidos_paola_${new Date().toISOString().slice(0, 10)}.csv`
     );
     document.body.appendChild(link);
     link.click();
@@ -471,8 +471,8 @@ const OrdersPage = () => {
     try {
       const res = await client.post('/orders', {
         customerName: manualCustomerName || 'Cliente WhatsApp / Instagram',
-        customerPhone: manualCustomerPhone || '5493517572841',
-        customerEmail: manualCustomerEmail || 'venta.manual@nocturna.demo',
+        customerPhone: manualCustomerPhone || '5493510000000',
+        customerEmail: manualCustomerEmail || 'venta.manual@paolacalzados.demo',
         deliveryMethod: manualDeliveryMethod,
         customerAddress:
           manualDeliveryMethod === 'PICKUP'
@@ -518,14 +518,14 @@ const OrdersPage = () => {
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-5 border-b border-brand-border/20">
         <div>
-          <span className="text-[10px] uppercase tracking-widest text-mauve font-medium">
-            Operaciones &bull; Ventas &bull; Despacho Discreto
+          <span className="text-[10px] uppercase tracking-widest text-brand-deep font-semibold">
+            Operaciones &bull; Ventas &bull; Despacho y Armado
           </span>
           <h1 className="font-display text-2xl uppercase tracking-wider text-content mt-0.5">
             Gestión de Pedidos
           </h1>
           <p className="text-xs text-content-secondary mt-0.5">
-            Seguimiento de órdenes, contacto rápido por WhatsApp, etiquetas discretas y ventas manuales
+            Seguimiento de órdenes, contacto rápido por WhatsApp, etiquetas de envío y ventas manuales
           </p>
         </div>
 
@@ -533,9 +533,9 @@ const OrdersPage = () => {
           <button
             type="button"
             onClick={handleExportOrdersCSV}
-            className="inline-flex items-center px-3 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content-secondary hover:text-content border border-brand-border/30 transition-colors"
+            className="inline-flex items-center px-3 py-2 rounded-md text-xs font-medium bg-surface hover:bg-surface-elevated text-content-secondary hover:text-content border border-border-strong transition-colors"
           >
-            <FiDownload className="mr-1.5 text-mauve" size={14} />
+            <FiDownload className="mr-1.5 text-brand" size={14} />
             Exportar CSV
           </button>
 
@@ -551,7 +551,7 @@ const OrdersPage = () => {
 
       {/* KPI Summary Strip */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <div className="bg-surface p-3.5 rounded-lg border border-brand-border/20">
+        <div className="bg-surface p-3.5 rounded-lg border border-border">
           <span className="text-[10px] uppercase tracking-wider text-content-muted block">
             Total Pedidos
           </span>
@@ -560,26 +560,26 @@ const OrdersPage = () => {
           </span>
         </div>
 
-        <div className="bg-surface p-3.5 rounded-lg border border-brand-border/20">
+        <div className="bg-surface p-3.5 rounded-lg border border-border">
           <span className="text-[10px] uppercase tracking-wider text-content-muted block">
             Pendientes de Confirmar
           </span>
-          <span className="text-xl font-semibold text-amber-300 mt-0.5 block">
+          <span className="text-xl font-semibold text-status-warning mt-0.5 block">
             {orderMetrics.pendingCount}
           </span>
         </div>
 
-        <div className="bg-surface p-3.5 rounded-lg border border-brand-border/20">
+        <div className="bg-surface p-3.5 rounded-lg border border-border">
           <span className="text-[10px] uppercase tracking-wider text-content-muted block">
             Facturación Acumulada
           </span>
-          <span className="text-xl font-semibold text-emerald-300 mt-0.5 block">
+          <span className="text-xl font-semibold text-status-success mt-0.5 block">
             {themeConfig.brand.currencySymbol}
             {orderMetrics.totalRevenue.toLocaleString('es-AR')}
           </span>
         </div>
 
-        <div className="bg-surface p-3.5 rounded-lg border border-brand-border/20">
+        <div className="bg-surface p-3.5 rounded-lg border border-border">
           <span className="text-[10px] uppercase tracking-wider text-content-muted block">
             Ticket Promedio
           </span>
@@ -593,7 +593,7 @@ const OrdersPage = () => {
       {/* Search & Filters Row */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
         {/* Status tabs */}
-        <div className="flex items-center gap-1.5 p-1 bg-surface rounded-lg overflow-x-auto border border-brand-border/20">
+        <div className="flex items-center gap-1.5 p-1 bg-surface rounded-lg overflow-x-auto border border-border">
           {statusTabs.map((tab) => {
             const isActive = filter === tab.id;
             const count =
@@ -605,9 +605,9 @@ const OrdersPage = () => {
                 key={tab.id}
                 type="button"
                 onClick={() => setFilter(tab.id)}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium tracking-normal whitespace-nowrap transition-colors ${
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold tracking-normal whitespace-nowrap transition-colors ${
                   isActive
-                    ? 'bg-brand text-content border border-mauve/30 shadow-soft'
+                    ? 'bg-brand text-white shadow-soft'
                     : 'text-content-secondary hover:text-content'
                 }`}
               >
@@ -701,11 +701,11 @@ const OrdersPage = () => {
                   <button
                     type="button"
                     onClick={() => handlePrintPackingSlip(selectedOrder)}
-                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] bg-surface-elevated hover:bg-brand text-content border border-brand-border/30 transition-colors"
-                    title="Imprimir etiqueta confidencial para el paquete y hoja de armado"
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] bg-surface-elevated hover:bg-brand text-content hover:text-white border border-border-strong transition-colors"
+                    title="Imprimir etiqueta para el paquete y hoja de armado"
                   >
-                    <FiPrinter size={11} className="text-mauve" />
-                    <span>Etiqueta Discreta / Armado</span>
+                    <FiPrinter size={11} className="text-brand" />
+                    <span>Etiqueta de Envío / Armado</span>
                   </button>
                 </div>
                 <p className="text-xs text-content-secondary mt-1">
@@ -722,22 +722,22 @@ const OrdersPage = () => {
                     {
                       value: 'PENDING',
                       label: 'Pendiente',
-                      color: 'bg-amber-950/50 text-amber-300 border-amber-800/40',
+                      color: 'bg-status-warning-bg text-status-warning border-status-warning-border',
                     },
                     {
                       value: 'CONFIRMED',
                       label: 'Confirmado',
-                      color: 'bg-blue-950/50 text-blue-300 border-blue-800/40',
+                      color: 'bg-sky-50 text-sky-700 border-sky-200',
                     },
                     {
                       value: 'DELIVERED',
                       label: 'Entregado',
-                      color: 'bg-emerald-950/50 text-emerald-300 border-emerald-800/40',
+                      color: 'bg-status-success-bg text-status-success border-status-success-border',
                     },
                     {
                       value: 'CANCELLED',
                       label: 'Cancelado',
-                      color: 'bg-rose-950/50 text-rose-300 border-rose-800/40',
+                      color: 'bg-status-error-bg text-status-error border-status-error-border',
                     },
                   ].map((s) => {
                     const isActive =
@@ -752,7 +752,7 @@ const OrdersPage = () => {
                         }
                         className={`px-2.5 py-1 rounded text-xs font-medium border transition-colors ${
                           isActive
-                            ? 'bg-brand text-content border-mauve shadow-soft cursor-default font-semibold'
+                            ? 'bg-brand text-white border-brand shadow-soft cursor-default font-semibold'
                             : `${s.color} hover:opacity-80 cursor-pointer`
                         }`}
                       >
@@ -766,8 +766,8 @@ const OrdersPage = () => {
 
             {/* Customer & Delivery Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-canvas p-3.5 rounded-md border border-brand-border/20">
-                <h4 className="text-[10px] uppercase font-medium text-mauve tracking-wider mb-1.5">
+              <div className="bg-canvas p-3.5 rounded-md border border-border">
+                <h4 className="text-[10px] uppercase font-semibold text-brand-deep tracking-wider mb-1.5">
                   Datos del Cliente
                 </h4>
                 <p className="text-xs sm:text-sm font-medium text-content">
@@ -781,9 +781,9 @@ const OrdersPage = () => {
                 </p>
               </div>
 
-              <div className="bg-canvas p-3.5 rounded-md border border-brand-border/20">
-                <h4 className="text-[10px] uppercase font-medium text-mauve tracking-wider mb-1.5">
-                  Entrega ({selectedOrder.deliveryMethod === 'PICKUP' ? 'Retiro' : 'Envío Discreto'})
+              <div className="bg-canvas p-3.5 rounded-md border border-border">
+                <h4 className="text-[10px] uppercase font-semibold text-brand-deep tracking-wider mb-1.5">
+                  Entrega ({selectedOrder.deliveryMethod === 'PICKUP' ? 'Retiro' : 'Envío a domicilio'})
                 </h4>
                 <p className="text-xs sm:text-sm text-content">
                   {selectedOrder.customerAddress || 'No especificada'}
@@ -798,8 +798,8 @@ const OrdersPage = () => {
 
             {/* Quick WhatsApp Templates */}
             {(selectedOrder.customerPhone || selectedOrder.phone) && (
-              <div className="bg-emerald-950/20 border border-emerald-800/30 rounded-md p-3.5 space-y-2">
-                <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-300">
+              <div className="bg-status-success-bg border border-status-success-border rounded-md p-3.5 space-y-2">
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-status-success">
                   <FiMessageCircle size={14} />
                   <span>Respuestas Rápidas por WhatsApp al Cliente:</span>
                 </div>
@@ -808,7 +808,7 @@ const OrdersPage = () => {
                     href={getWhatsAppTemplateUrl(selectedOrder, 'PAYMENT')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2.5 py-1.5 rounded text-xs bg-surface hover:bg-surface-elevated text-content border border-brand-border/30 transition-colors"
+                    className="px-2.5 py-1.5 rounded text-xs bg-surface hover:bg-surface-elevated text-content border border-border-strong transition-colors"
                   >
                     1. Confirmar stock y pedir comprobante
                   </a>
@@ -816,15 +816,15 @@ const OrdersPage = () => {
                     href={getWhatsAppTemplateUrl(selectedOrder, 'SHIPPING')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2.5 py-1.5 rounded text-xs bg-surface hover:bg-surface-elevated text-content border border-brand-border/30 transition-colors"
+                    className="px-2.5 py-1.5 rounded text-xs bg-surface hover:bg-surface-elevated text-content border border-border-strong transition-colors"
                   >
-                    2. Avisar envío discreto en camino
+                    2. Avisar envío en camino
                   </a>
                   <a
                     href={getWhatsAppTemplateUrl(selectedOrder, 'PICKUP')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2.5 py-1.5 rounded text-xs bg-surface hover:bg-surface-elevated text-content border border-brand-border/30 transition-colors"
+                    className="px-2.5 py-1.5 rounded text-xs bg-surface hover:bg-surface-elevated text-content border border-border-strong transition-colors"
                   >
                     3. Avisar pedido listo para retirar
                   </a>
@@ -837,7 +837,7 @@ const OrdersPage = () => {
               <h4 className="text-xs font-display uppercase tracking-widest text-content mb-2">
                 Artículos del Pedido
               </h4>
-              <div className="border border-brand-border/20 rounded-md overflow-hidden divide-y divide-brand-border/15 bg-canvas">
+              <div className="border border-border rounded-md overflow-hidden divide-y divide-border/60 bg-canvas">
                 {selectedOrder.items?.map((item, idx) => {
                   const origPrice = Number(item.originalUnitPrice || item.price || item.product?.price || 0);
                   const effectivePrice = Number(item.unitPrice || item.price || item.product?.price || 0);
@@ -857,7 +857,7 @@ const OrdersPage = () => {
                             {item.product?.name || item.name || 'Producto'}
                           </span>
                           {item.variantDescription && (
-                            <span className="text-mauve text-[11px]">
+                            <span className="text-brand-deep text-[11px]">
                               ({item.variantDescription})
                             </span>
                           )}
@@ -867,7 +867,7 @@ const OrdersPage = () => {
                         {/* Etiquetas de promoción o campaña asociada */}
                         {(item.promotion || item.campaign || item.promotionId) && (
                           <div className="flex items-center gap-1.5 mt-1">
-                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-brand/50 text-mauve border border-mauve/30">
+                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-surface-elevated text-brand-deep border border-border-strong font-medium">
                               {item.promotion?.name || 'Promoción aplicada'}
                             </span>
                             {item.campaign?.name && (
@@ -890,7 +890,7 @@ const OrdersPage = () => {
                               {themeConfig.brand.currencySymbol}
                               {(origPrice * item.quantity).toLocaleString('es-AR')}
                             </span>
-                            <span className="text-emerald-400 font-medium">
+                            <span className="text-status-success font-medium">
                               (-{themeConfig.brand.currencySymbol}
                               {(
                                 (discountPerUnit || origPrice - effectivePrice) *
@@ -908,7 +908,7 @@ const OrdersPage = () => {
             </div>
 
             {/* Desglose comercial completo del pedido */}
-            <div className="bg-canvas p-3.5 rounded-md border border-brand-border/20 text-xs space-y-1.5">
+            <div className="bg-canvas p-3.5 rounded-md border border-border text-xs space-y-1.5">
               <div className="flex justify-between text-content-secondary">
                 <span>Subtotal lista</span>
                 <span className="font-semibold text-content">
@@ -920,7 +920,7 @@ const OrdersPage = () => {
               </div>
 
               {selectedOrder.couponCode && (
-                <div className="flex justify-between text-emerald-400">
+                <div className="flex justify-between text-status-success">
                   <span>Cupón aplicado ({selectedOrder.couponCode})</span>
                   <span className="font-medium">
                     -{themeConfig.brand.currencySymbol}
@@ -930,7 +930,7 @@ const OrdersPage = () => {
               )}
 
               {selectedOrder.paymentMethodDiscount > 0 && (
-                <div className="flex justify-between text-emerald-400">
+                <div className="flex justify-between text-status-success">
                   <span>Bonificación Transferencia (10% OFF)</span>
                   <span className="font-medium">
                     -{themeConfig.brand.currencySymbol}
@@ -953,7 +953,7 @@ const OrdersPage = () => {
               </div>
 
               {selectedOrder.totalSavings > 0 && (
-                <div className="pt-1.5 border-t border-brand-border/15 flex justify-between text-emerald-400 font-medium">
+                <div className="pt-1.5 border-t border-border/60 flex justify-between text-status-success font-medium">
                   <span>Ahorro total otorgado al cliente</span>
                   <span>
                     {themeConfig.brand.currencySymbol}
@@ -964,13 +964,13 @@ const OrdersPage = () => {
             </div>
 
             {/* Internal Admin Notes */}
-            <div className="bg-canvas p-3.5 rounded-md border border-brand-border/20 space-y-2">
+            <div className="bg-canvas p-3.5 rounded-md border border-border space-y-2">
               <div className="flex items-center justify-between">
-                <label className="text-[10px] uppercase tracking-wider font-medium text-mauve">
+                <label className="text-[10px] uppercase tracking-wider font-semibold text-brand-deep">
                   Nota Interna del Administrador (privada)
                 </label>
                 {notesSavedMsg && (
-                  <span className="text-[11px] text-emerald-300 inline-flex items-center gap-1">
+                  <span className="text-[11px] text-status-success inline-flex items-center gap-1 font-medium">
                     <FiCheck size={12} /> Guardada
                   </span>
                 )}
@@ -1056,7 +1056,7 @@ const OrdersPage = () => {
                 onChange={(e) => setManualDeliveryMethod(e.target.value)}
                 className="w-full px-3 py-2 bg-canvas border border-brand-border/30 rounded-md text-xs text-content focus:outline-none focus:border-mauve"
               >
-                <option value="SHIPPING">Envío discreto a domicilio</option>
+                <option value="SHIPPING">Envío a domicilio</option>
                 <option value="PICKUP">Retiro acordado</option>
               </select>
             </div>
@@ -1093,8 +1093,8 @@ const OrdersPage = () => {
           </div>
 
           {/* Add Products to Manual Order */}
-          <div className="p-3.5 rounded-md bg-canvas border border-brand-border/20 space-y-3">
-            <span className="text-[11px] font-medium uppercase tracking-wider text-mauve block">
+          <div className="p-3.5 rounded-md bg-canvas border border-border space-y-3">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-deep block">
               Agregar Productos a la Orden
             </span>
 
@@ -1159,7 +1159,7 @@ const OrdersPage = () => {
                   type="button"
                   onClick={handleAddManualItem}
                   disabled={!selectedProductId}
-                  className="flex-1 py-2 px-2.5 bg-brand hover:bg-brand/80 disabled:opacity-40 text-content rounded text-xs font-medium border border-mauve/40"
+                  className="flex-1 py-2 px-2.5 bg-brand hover:bg-brand-deep disabled:opacity-40 text-white rounded text-xs font-semibold transition-colors"
                 >
                   + Agregar
                 </button>
@@ -1168,7 +1168,7 @@ const OrdersPage = () => {
 
             {/* Items list */}
             {manualItems.length > 0 && (
-              <div className="border border-brand-border/20 rounded divide-y divide-brand-border/15 bg-surface mt-2">
+              <div className="border border-border rounded divide-y divide-border/60 bg-surface mt-2">
                 {manualItems.map((item, idx) => (
                   <div
                     key={idx}
@@ -1177,7 +1177,7 @@ const OrdersPage = () => {
                     <div>
                       <span className="font-medium text-content">{item.name}</span>
                       {item.variantDescription && (
-                        <span className="text-mauve ml-1">({item.variantDescription})</span>
+                        <span className="text-brand-deep ml-1">({item.variantDescription})</span>
                       )}
                       <span className="text-content-muted ml-2">x {item.quantity}</span>
                     </div>
@@ -1188,7 +1188,7 @@ const OrdersPage = () => {
                       <button
                         type="button"
                         onClick={() => handleRemoveManualItem(idx)}
-                        className="text-rose-400 hover:text-rose-300"
+                        className="text-status-error hover:opacity-80"
                       >
                         <FiTrash2 size={13} />
                       </button>
@@ -1197,7 +1197,7 @@ const OrdersPage = () => {
                 ))}
                 <div className="px-3 py-2 flex justify-between items-center text-xs font-semibold bg-surface-elevated">
                   <span>Total a cobrar</span>
-                  <span className="text-sm text-emerald-300">
+                  <span className="text-sm text-status-success">
                     ${manualOrderTotal.toLocaleString('es-AR')}
                   </span>
                 </div>

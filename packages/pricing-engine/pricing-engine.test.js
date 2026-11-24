@@ -8,27 +8,27 @@ import {
   getEffectiveCampaignStatus,
 } from './index.js';
 
-describe('Pricing Engine — Nocturna SexShop', () => {
+describe('Pricing Engine — Paola Calzados', () => {
   // Base mock product & variant
   const mockProduct = {
-    id: 'prod_vibrador_luna',
-    name: 'Vibrador Luna',
+    id: 'prod_zapatilla_urbana',
+    name: 'Zapatilla Urbana',
     price: 30000,
     badge: 'Popular',
-    categoryId: 'cat_vibradores',
-    sku: 'VIB-01',
+    categoryId: 'cat_zapatillas',
+    sku: 'ZAP-01',
     variants: [],
   };
 
   const mockProductWithVariants = {
-    id: 'prod_baby_doll',
-    name: 'Baby Doll Venecia',
+    id: 'prod_sandalia_verano',
+    name: 'Sandalia Verano',
     price: 32000,
-    categoryId: 'cat_lenceria',
-    sku: 'GRP-LENCERIA',
+    categoryId: 'cat_sandalias',
+    sku: 'GRP-SANDALIA',
     variants: [
-      { id: 'var_s', sku: 'LENC-S', size: 'S', price: 32000, stock: 10 },
-      { id: 'var_xl', sku: 'LENC-XL', size: 'XL', price: 36000, stock: 5 },
+      { id: 'var_s', sku: 'SAN-37', size: '37', price: 32000, stock: 10 },
+      { id: 'var_xl', sku: 'SAN-39', size: '39', price: 36000, stock: 5 },
     ],
   };
 
@@ -38,7 +38,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
   const validHistory = [
     {
       id: 'ph_1',
-      productId: 'prod_vibrador_luna',
+      productId: 'prod_zapatilla_urbana',
       variantId: null,
       oldPrice: 30000,
       newPrice: 30000,
@@ -46,7 +46,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
     },
     {
       id: 'ph_2',
-      productId: 'prod_baby_doll',
+      productId: 'prod_sandalia_verano',
       variantId: 'var_xl',
       oldPrice: 36000,
       newPrice: 36000,
@@ -58,11 +58,11 @@ describe('Pricing Engine — Nocturna SexShop', () => {
   it('1. Aplica correctamente promoción porcentual (PERCENT)', () => {
     const promo = {
       id: 'promo_perc',
-      name: '20% OFF en Vibradores',
+      name: '20% OFF en Zapatillas',
       kind: 'PERCENT',
       value: 20,
       active: true,
-      targets: [{ targetType: 'PRODUCT', targetId: 'prod_vibrador_luna' }],
+      targets: [{ targetType: 'PRODUCT', targetId: 'prod_zapatilla_urbana' }],
     };
 
     const res = getItemPricing(
@@ -74,7 +74,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
     expect(res.finalPrice).toBe(24000); // 30000 * 0.8
     expect(res.savingsAmount).toBe(6000);
     expect(res.discountPercent).toBe(20);
-    expect(res.promotionLabel).toBe('20% OFF en Vibradores');
+    expect(res.promotionLabel).toBe('20% OFF en Zapatillas');
   });
 
   // 2. Monto fijo (FIXED_AMOUNT)
@@ -106,7 +106,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
       kind: 'FIXED_PRICE',
       value: 22000,
       active: true,
-      targets: [{ targetType: 'PRODUCT', targetId: 'prod_vibrador_luna' }],
+      targets: [{ targetType: 'PRODUCT', targetId: 'prod_zapatilla_urbana' }],
     };
 
     const res = getItemPricing(
@@ -175,18 +175,18 @@ describe('Pricing Engine — Nocturna SexShop', () => {
   // 5. Combo (BUNDLE_PRICE)
   it('5. Aplica combo/bundle promocional cuando están presentes los productos requeridos', () => {
     const promoBundle = {
-      id: 'promo_combo_pareja',
-      name: 'Combo Parejas: Vibrador + Gel a $35.000',
+      id: 'promo_combo_calzado',
+      name: 'Combo Temporada: Zapatilla + Ojota a $35.000',
       kind: 'BUNDLE_PRICE',
-      bundleSkus: ['VIB-01', 'GEL-01'],
+      bundleSkus: ['ZAP-01', 'OJO-01'],
       value: 35000,
       active: true,
     };
 
     const cartWithBundle = {
       items: [
-        { product: { id: 'p1', name: 'Vibrador', sku: 'VIB-01', price: 30000 }, quantity: 1 },
-        { product: { id: 'p2', name: 'Gel Lubricante', sku: 'GEL-01', price: 12000 }, quantity: 1 },
+        { product: { id: 'p1', name: 'Zapatilla Urbana', sku: 'ZAP-01', price: 30000 }, quantity: 1 },
+        { product: { id: 'p2', name: 'Ojota Playa', sku: 'OJO-01', price: 12000 }, quantity: 1 },
       ],
     };
 
@@ -213,7 +213,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
 
     // 4 unidades: alcanza el primer nivel (10% off)
     const cart4 = {
-      items: [{ product: { id: 'p1', name: 'Preservativos', price: 5000 }, quantity: 4 }],
+      items: [{ product: { id: 'p1', name: 'Medias Deportivas', price: 5000 }, quantity: 4 }],
     };
     const res4 = quoteCart(cart4, { promotions: [promoTiered], now, baseShippingCost: 0 });
     expect(res4.subtotal).toBe(20000);
@@ -222,7 +222,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
 
     // 5 unidades: alcanza el segundo nivel (20% off)
     const cart5 = {
-      items: [{ product: { id: 'p1', name: 'Preservativos', price: 5000 }, quantity: 5 }],
+      items: [{ product: { id: 'p1', name: 'Medias Deportivas', price: 5000 }, quantity: 5 }],
     };
     const res5 = quoteCart(cart5, { promotions: [promoTiered], now, baseShippingCost: 0 });
     expect(res5.subtotal).toBe(25000);
@@ -500,7 +500,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
         now: new Date('2026-11-03T12:00:00Z'),
         priceHistory: [
           {
-            productId: 'prod_vibrador_luna',
+            productId: 'prod_zapatilla_urbana',
             oldPrice: 30000,
             newPrice: 30000,
             changedAt: '2026-11-01T00:00:00Z',
@@ -646,7 +646,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
     const todayHistory = [
       {
         id: 'ph_today',
-        productId: 'prod_vibrador_luna',
+        productId: 'prod_zapatilla_urbana',
         newPrice: 30000,
         changedAt: now.toISOString(), // Creado hoy (0 días de antigüedad < 30 días)
       },
@@ -662,7 +662,7 @@ describe('Pricing Engine — Nocturna SexShop', () => {
       ...validHistory,
       {
         id: 'ph_change',
-        productId: 'prod_vibrador_luna',
+        productId: 'prod_zapatilla_urbana',
         oldPrice: 30000,
         newPrice: 22000,
         changedAt: new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000).toISOString(),

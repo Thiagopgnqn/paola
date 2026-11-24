@@ -1,18 +1,18 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: nocturna-postgres
+    container_name: paola-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: nocturna
-      POSTGRES_PASSWORD: nocturna_local_dev
-      POSTGRES_DB: nocturna_sexshop
+      POSTGRES_USER: paola
+      POSTGRES_PASSWORD: paola_local_dev
+      POSTGRES_DB: paola_calzados
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U nocturna -d nocturna_sexshop"]
+      test: ["CMD-SHELL", "pg_isready -U paola -d paola_calzados"]
       interval: 5s
       timeout: 5s
       retries: 5

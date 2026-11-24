@@ -40,14 +40,14 @@ class ErrorBoundary extends React.Component {
           role="alert"
           className="min-h-[65vh] flex flex-col items-center justify-center px-4 py-16 text-center bg-canvas text-content"
         >
-          <div className="max-w-md w-full bg-surface border border-brand-border/25 rounded-2xl p-8 shadow-2xl">
-            <div className="w-12 h-12 rounded-full bg-surface-elevated border border-brand-border/30 flex items-center justify-center mx-auto mb-4 text-mauve">
+          <div className="max-w-md w-full bg-surface border border-border rounded-2xl p-8 shadow-lifted">
+            <div className="w-12 h-12 rounded-full bg-surface-elevated border border-border flex items-center justify-center mx-auto mb-4 text-brand-deep">
               <FiAlertTriangle size={22} />
             </div>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-mauve font-medium">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-brand-deep font-semibold">
               Aviso del Sistema
             </span>
-            <h2 className="font-display text-xl uppercase tracking-widest text-content mt-1 mb-2">
+            <h2 className="font-display text-xl font-bold text-content mt-1 mb-2">
               Ocurrió un inconveniente al cargar esta sección
             </h2>
             <p className="text-xs text-content-secondary leading-relaxed mb-6">
@@ -56,24 +56,26 @@ class ErrorBoundary extends React.Component {
                 : 'No pudimos mostrar esta vista en este momento. Podés intentar recargar la sección o volver al inicio de la tienda.'}
             </p>
             {this.state.error?.message && (
-              <p className="text-[11px] font-mono text-rose-400 bg-neutral-950/80 border border-brand-border/20 rounded px-3 py-2 mb-6 break-words select-all">
+              <p className="text-[11px] font-mono text-status-error bg-status-error-bg border border-status-error-border rounded px-3 py-2 mb-6 break-words select-all">
                 {this.state.error.message}
               </p>
             )}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               {demo && (
-                <button
+                <Button
                   type="button"
+                  variant="primary"
+                  size="md"
                   onClick={this.handleResetDemo}
-                  className="w-full sm:w-auto px-4 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-xs rounded-xl transition shadow-lg shadow-purple-950/50 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto"
                 >
-                  <FiRefreshCw className="text-xs" />
+                  <FiRefreshCw className="mr-2 text-xs" />
                   <span>Restablecer Demo</span>
-                </button>
+                </Button>
               )}
               <Button
                 type="button"
-                variant="outline"
+                variant="secondary"
                 size="md"
                 onClick={this.handleReset}
                 className="w-full sm:w-auto"

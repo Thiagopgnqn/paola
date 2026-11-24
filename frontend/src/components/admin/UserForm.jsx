@@ -70,13 +70,13 @@ const UserForm = ({ initialData, currentUserId, onSubmit, loading, onCancel }) =
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="Ej: 351 757 2841"
+            placeholder="Ej: 351 000 0000"
           />
         </div>
 
         {/* Selección de Rol */}
         <div className="pt-2">
-          <label className="block text-xs font-medium uppercase tracking-wider text-content-secondary mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider text-content-secondary mb-2">
             Rol de Acceso
           </label>
 
@@ -86,14 +86,14 @@ const UserForm = ({ initialData, currentUserId, onSubmit, loading, onCancel }) =
               onClick={() => handleRoleSelect('CUSTOMER')}
               className={`p-3 rounded-lg border cursor-pointer transition-colors flex items-start space-x-3 ${
                 formData.role === 'CUSTOMER'
-                  ? 'border-mauve bg-brand/30'
-                  : 'border-brand-border/25 hover:border-mauve/40 bg-canvas'
+                  ? 'border-brand bg-surface-elevated ring-1 ring-brand/30'
+                  : 'border-border-strong hover:border-brand bg-surface'
               } ${isSelf ? 'opacity-40 cursor-not-allowed' : ''}`}
             >
               <div
                 className={`p-2 rounded mt-0.5 ${
                   formData.role === 'CUSTOMER'
-                    ? 'bg-brand text-content'
+                    ? 'bg-brand text-white'
                     : 'bg-surface-elevated text-content-secondary'
                 }`}
               >
@@ -101,7 +101,7 @@ const UserForm = ({ initialData, currentUserId, onSubmit, loading, onCancel }) =
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-content">Cliente</span>
+                  <span className="text-xs font-semibold text-content">Cliente</span>
                   <input
                     type="radio"
                     name="role"
@@ -109,10 +109,10 @@ const UserForm = ({ initialData, currentUserId, onSubmit, loading, onCancel }) =
                     checked={formData.role === 'CUSTOMER'}
                     onChange={() => handleRoleSelect('CUSTOMER')}
                     disabled={isSelf}
-                    className="text-brand focus:ring-mauve h-3.5 w-3.5"
+                    className="text-brand focus:ring-brand h-3.5 w-3.5"
                   />
                 </div>
-                <p className="text-[11px] text-content-muted mt-1 leading-normal">
+                <p className="text-[11px] text-content-secondary mt-1 leading-normal">
                   Acceso estándar para compras y seguimiento de órdenes.
                 </p>
               </div>
@@ -123,14 +123,14 @@ const UserForm = ({ initialData, currentUserId, onSubmit, loading, onCancel }) =
               onClick={() => handleRoleSelect('ADMIN')}
               className={`p-3 rounded-lg border cursor-pointer transition-colors flex items-start space-x-3 ${
                 formData.role === 'ADMIN'
-                  ? 'border-mauve bg-brand/30'
-                  : 'border-brand-border/25 hover:border-mauve/40 bg-canvas'
+                  ? 'border-brand bg-surface-elevated ring-1 ring-brand/30'
+                  : 'border-border-strong hover:border-brand bg-surface'
               }`}
             >
               <div
                 className={`p-2 rounded mt-0.5 ${
                   formData.role === 'ADMIN'
-                    ? 'bg-brand text-content'
+                    ? 'bg-brand text-white'
                     : 'bg-surface-elevated text-content-secondary'
                 }`}
               >
@@ -138,17 +138,17 @@ const UserForm = ({ initialData, currentUserId, onSubmit, loading, onCancel }) =
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-content">Administrador</span>
+                  <span className="text-xs font-semibold text-content">Administrador</span>
                   <input
                     type="radio"
                     name="role"
                     value="ADMIN"
                     checked={formData.role === 'ADMIN'}
                     onChange={() => handleRoleSelect('ADMIN')}
-                    className="text-brand focus:ring-mauve h-3.5 w-3.5"
+                    className="text-brand focus:ring-brand h-3.5 w-3.5"
                   />
                 </div>
-                <p className="text-[11px] text-content-muted mt-1 leading-normal">
+                <p className="text-[11px] text-content-secondary mt-1 leading-normal">
                   Acceso completo a productos, pedidos, estadísticas y cuentas.
                 </p>
               </div>
@@ -156,7 +156,7 @@ const UserForm = ({ initialData, currentUserId, onSubmit, loading, onCancel }) =
           </div>
 
           {isSelf && (
-            <p className="text-xs text-amber-300 bg-amber-950/50 border border-amber-800/40 rounded p-2.5 mt-2.5 flex items-center space-x-2">
+            <p className="text-xs text-status-warning bg-status-warning-bg border border-status-warning-border rounded p-2.5 mt-2.5 flex items-center space-x-2 font-medium">
               <FiInfo className="flex-shrink-0" size={14} />
               <span>
                 Estás editando tu propia cuenta. Por seguridad no podés removerte el rol de Administrador.

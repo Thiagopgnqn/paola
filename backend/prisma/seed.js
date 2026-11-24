@@ -23,7 +23,7 @@ async function main() {
     create: {
       email: env.ADMIN_EMAIL,
       passwordHash: adminPasswordHash,
-      name: 'Admin Nocturna',
+      name: 'Admin Paola Calzados',
       role: 'ADMIN',
     },
   });

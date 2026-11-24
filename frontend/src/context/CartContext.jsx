@@ -32,7 +32,7 @@ export const CartProvider = ({ children }) => {
           return demoState.cart;
         }
       }
-      const saved = localStorage.getItem('nocturna_cart');
+      const saved = localStorage.getItem('paola_cart');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -41,7 +41,7 @@ export const CartProvider = ({ children }) => {
 
   const [couponCode, setCouponCode] = useState(() => {
     try {
-      return localStorage.getItem('nocturna_coupon') || '';
+      return localStorage.getItem('paola_coupon') || '';
     } catch {
       return '';
     }
@@ -67,7 +67,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('nocturna_cart', JSON.stringify(items));
+      localStorage.setItem('paola_cart', JSON.stringify(items));
       if (isDemoMode()) {
         const demoState = loadDemoState();
         demoState.cart = items;
@@ -131,7 +131,7 @@ export const CartProvider = ({ children }) => {
     }
     setCouponCode(clean);
     try {
-      localStorage.setItem('nocturna_coupon', clean);
+      localStorage.setItem('paola_coupon', clean);
     } catch {
       // ignore
     }
@@ -143,7 +143,7 @@ export const CartProvider = ({ children }) => {
     setCouponError(null);
     setCouponSuccess(null);
     try {
-      localStorage.removeItem('nocturna_coupon');
+      localStorage.removeItem('paola_coupon');
     } catch {
       // ignore
     }
@@ -285,19 +285,8 @@ export const CartProvider = ({ children }) => {
     Math.round((subtotalForShipping / freeShippingThreshold) * 100)
   );
 
-  // Aviso de promoción por cantidad (ej: 2x1 en Cosmética íntima)
+  // Aviso de promoción por cantidad (calculado dinámicamente según promos activas)
   const quantityPromoNotice = useMemo(() => {
-    if (!Array.isArray(items) || items.length === 0) return null;
-    for (const it of items) {
-      const cat = it.product?.category?.slug || it.product?.category?.name || it.product?.categoryId || '';
-      if (cat.toLowerCase().includes('cosmetica') && it.quantity % 2 !== 0) {
-        return {
-          title: '¡Promoción 2x1 en Cosmética!',
-          text: 'Agregá 1 unidad más de Cosmética íntima y llevate el 2x1 en tu compra.',
-          type: '2x1',
-        };
-      }
-    }
     return null;
   }, [items]);
 

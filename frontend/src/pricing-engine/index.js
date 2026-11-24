@@ -1,5 +1,5 @@
 /**
- * Nocturna SexShop — Pricing Engine
+ * Paola Calzados — Pricing Engine
  * Módulo único compartido de lógica de precios, promociones, cupones y validación de historial.
  * Compatible con Node.js (backend) y Vite/ESM en navegador (modo demo).
  * Zona horaria de referencia: America/Argentina/Cordoba.
@@ -969,93 +969,93 @@ export const enrichProductWithPricing = (product, context = {}) => {
 
 /**
  * Presets de Temas de Campaña (Black Friday, Cyber/Hot Sale, Día de la Madre, San Valentín, Navidad, Liquidación, Neutro)
- * Diseñados estrictamente con contraste AA verificado sobre fondo oscuro (#0F0A0A / #1A1212).
- * Gráficos y texturas 100% por código (CSS/SVG), sin imágenes de internet y nada explícito.
+ * Diseñados con contraste AA verificado sobre el sistema de diseño claro de Paola Calzados (#FFF7FB / #FFFFFF / #FDE4F1).
+ * Gráficos y texturas 100% por código (CSS/SVG).
  */
 export const CAMPAIGN_THEMES = {
   'black-friday': {
     id: 'black-friday',
     name: 'Black Friday',
-    accent: '#E5A93C', // Ratio > 11:1 sobre negro
-    bgGradient: 'from-[#0A0708] via-[#1E1114] to-[#0A0708]',
-    badgeBg: 'bg-[#E5A93C]',
-    badgeText: 'text-[#0A0708] font-bold',
-    accentText: 'text-[#E5A93C]',
-    borderAccent: 'border-[#E5A93C]/40',
+    accent: '#141014', // Negro intenso de la marca sobre fondo claro
+    bgGradient: 'from-[#FFF7FB] via-[#F4ECF0] to-[#FDE4F1]',
+    badgeBg: 'bg-[#141014]',
+    badgeText: 'text-white font-bold',
+    accentText: 'text-[#B80063]',
+    borderAccent: 'border-[#141014]/25',
     tagText: 'BLACK FRIDAY',
     pattern: 'laser-grid',
   },
   'cyber-sale': {
     id: 'cyber-sale',
     name: 'Cyber / Hot Sale',
-    accent: '#38BDF8', // Ratio > 10.5:1 sobre negro
-    bgGradient: 'from-[#0B0F19] via-[#0F172A] to-[#0B0F19]',
-    badgeBg: 'bg-[#38BDF8]',
-    badgeText: 'text-[#0F172A] font-bold',
-    accentText: 'text-[#38BDF8]',
-    borderAccent: 'border-[#38BDF8]/40',
+    accent: '#0284C7',
+    bgGradient: 'from-[#FFF7FB] via-[#E0F2FE] to-[#FFF7FB]',
+    badgeBg: 'bg-[#0369A1]',
+    badgeText: 'text-white font-bold',
+    accentText: 'text-[#0369A1]',
+    borderAccent: 'border-[#0284C7]/35',
     tagText: 'CYBER SALE',
     pattern: 'cyber-glow',
   },
   'dia-de-la-madre': {
     id: 'dia-de-la-madre',
     name: 'Día de la Madre',
-    accent: '#E0A899', // Ratio > 9:1 sobre #0F0A0A
-    bgGradient: 'from-[#140D0F] via-[#2A161A] to-[#140D0F]',
-    badgeBg: 'bg-[#5A2A2E]',
-    badgeText: 'text-[#EDE4E4] font-medium border border-[#E0A899]/30',
-    accentText: 'text-[#E0A899]',
-    borderAccent: 'border-[#E0A899]/35',
+    accent: '#E6007E',
+    bgGradient: 'from-[#FFF7FB] via-[#FDE4F1] to-[#FFF7FB]',
+    badgeBg: 'bg-[#E6007E]',
+    badgeText: 'text-white font-semibold',
+    accentText: 'text-[#B80063]',
+    borderAccent: 'border-[#F2C4DD]',
     tagText: 'DÍA DE LA MADRE',
     pattern: 'silk-curves',
   },
   'san-valentin': {
     id: 'san-valentin',
     name: 'San Valentín',
-    accent: '#FB7185', // Ratio > 9.5:1 sobre fondo oscuro
-    bgGradient: 'from-[#170B10] via-[#2E101D] to-[#170B10]',
-    badgeBg: 'bg-[#9F1239]',
-    badgeText: 'text-[#FFE4E6] font-medium',
-    accentText: 'text-[#FB7185]',
-    borderAccent: 'border-[#FB7185]/40',
+    accent: '#E11D48',
+    bgGradient: 'from-[#FFF7FB] via-[#FFE4E6] to-[#FFF7FB]',
+    badgeBg: 'bg-[#BE123C]',
+    badgeText: 'text-white font-semibold',
+    accentText: 'text-[#BE123C]',
+    borderAccent: 'border-[#FDA4AF]',
     tagText: 'SAN VALENTÍN',
     pattern: 'passion-waves',
   },
   navidad: {
     id: 'navidad',
     name: 'Navidad',
-    accent: '#FBBF24', // Ratio > 11:1 sobre verde oscuro/negro
-    bgGradient: 'from-[#0A140F] via-[#11241A] to-[#0A140F]',
-    badgeBg: 'bg-[#14532D]',
-    badgeText: 'text-[#FDE68A] font-medium border border-[#FBBF24]/30',
-    accentText: 'text-[#FBBF24]',
-    borderAccent: 'border-[#FBBF24]/40',
+    accent: '#15803D',
+    bgGradient: 'from-[#FFF7FB] via-[#DCFCE7] to-[#FFF7FB]',
+    badgeBg: 'bg-[#15803D]',
+    badgeText: 'text-white font-semibold',
+    accentText: 'text-[#166534]',
+    borderAccent: 'border-[#86EFAC]',
     tagText: 'NAVIDAD',
     pattern: 'starlight',
   },
   liquidacion: {
     id: 'liquidacion',
     name: 'Liquidación',
-    accent: '#FB923C', // Ratio > 9.8:1 sobre negro
-    bgGradient: 'from-[#190E08] via-[#2E180E] to-[#190E08]',
+    accent: '#C2410C',
+    bgGradient: 'from-[#FFF7FB] via-[#FFEDD5] to-[#FFF7FB]',
     badgeBg: 'bg-[#C2410C]',
-    badgeText: 'text-[#FFEDD5] font-bold',
-    accentText: 'text-[#FB923C]',
-    borderAccent: 'border-[#FB923C]/40',
+    badgeText: 'text-white font-bold',
+    accentText: 'text-[#9A3412]',
+    borderAccent: 'border-[#FDBA74]',
     tagText: 'LIQUIDACIÓN',
     pattern: 'flame-burst',
   },
   neutro: {
     id: 'neutro',
     name: 'Neutro de Marca',
-    accent: '#907878',
-    bgGradient: 'from-[#0F0A0A] via-[#1A1212] to-[#0F0A0A]',
-    badgeBg: 'bg-[#2B1917]',
-    badgeText: 'text-[#EDE4E4] font-medium border border-[#907878]/30',
-    accentText: 'text-[#907878]',
-    borderAccent: 'border-[#907878]/30',
-    tagText: 'NOCTURNA',
-    pattern: 'nocturna-smoke',
+    accent: '#E6007E',
+    bgGradient: 'from-[#FFF7FB] via-[#FDE4F1] to-[#FFF7FB]',
+    badgeBg: 'bg-[#E6007E]',
+    badgeText: 'text-white font-semibold',
+    accentText: 'text-[#B80063]',
+    borderAccent: 'border-[#F2C4DD]',
+    tagText: 'PAOLA CALZADOS',
+    pattern: 'paola-soft-bg',
   },
 };
 
@@ -1077,9 +1077,9 @@ export const getSuggestedHomeSectionsTemplate = (templateKey, campaign = null) =
           order: 0,
           enabled: true,
           config: {
-            headline: 'BLACK FRIDAY NOCTURNA',
-            subheadline: 'Precios récord y descuentos salvajes en bienestar íntimo y lencería. Envíos 100% discretos en Córdoba.',
-            ctaText: 'Ver Ofertas Exclusivas',
+            headline: 'BLACK FRIDAY PAOLA CALZADOS',
+            subheadline: 'Descuentos reales en zapatillas, sandalias y calzado para toda la familia. Venta por mayor y por menor en Córdoba.',
+            ctaText: 'Ver Ofertas',
             ctaLink: '/ofertas',
           },
         },
@@ -1126,8 +1126,8 @@ export const getSuggestedHomeSectionsTemplate = (templateKey, campaign = null) =
           enabled: true,
           config: {
             title: 'Especial Día de la Madre',
-            subtitle: '15% OFF en Lencería Fina y 2x1 en Cosmética Sensorial',
-            badge: 'Edición Limitada',
+            subtitle: 'Sandalias, plataformas y zapatillas urbanas con descuentos especiales por tiempo limitado.',
+            badge: 'Edición Especial',
             ctaText: 'Ver Colección Completa',
             ctaLink: campaign?.slug ? `/campanas/${campaign.slug}` : '/ofertas',
           },
@@ -1183,8 +1183,8 @@ export const getSuggestedHomeSectionsTemplate = (templateKey, campaign = null) =
           order: 0,
           enabled: true,
           config: {
-            headline: 'CYBER SALE NOCTURNA',
-            subheadline: 'Hasta 35% OFF en productos seleccionados y 10% adicional por Transferencia.',
+            headline: 'CYBER SALE PAOLA CALZADOS',
+            subheadline: 'Descuentos reales en pares seleccionados y beneficios adicionales pagando por transferencia.',
             ctaText: 'Aprovechar Descuentos',
             ctaLink: '/ofertas',
           },
@@ -1225,9 +1225,9 @@ export const getSuggestedHomeSectionsTemplate = (templateKey, campaign = null) =
           order: 0,
           enabled: true,
           config: {
-            headline: 'Intimidad, diseño y placer sin tabúes.',
-            subheadline: 'Una selección curada de bienestar íntimo, cosmética sensorial y lencería. Comprá con total reserva desde tu casa: envíos 100% discretos en Córdoba y atención personalizada por WhatsApp.',
-            ctaText: 'Explorar Colección',
+            headline: 'Calzado por mayor y por menor en Córdoba.',
+            subheadline: 'Descubrí modelos para mujer, hombre, niños y niñas: zapatillas, sandalias y urbanos. Hacé tu pedido online o coordiná por WhatsApp con envío en [ZONA DE ENVÍO].',
+            ctaText: 'Ver Catálogo',
             ctaLink: '/catalogo',
           },
         },
@@ -1236,8 +1236,8 @@ export const getSuggestedHomeSectionsTemplate = (templateKey, campaign = null) =
           order: 1,
           enabled: true,
           config: {
-            title: 'Categorías de la Colección',
-            subtitle: 'Universo Nocturna',
+            title: 'Categorías de Calzado',
+            subtitle: 'Paola Calzados',
           },
         },
         {
@@ -1245,8 +1245,8 @@ export const getSuggestedHomeSectionsTemplate = (templateKey, campaign = null) =
           order: 2,
           enabled: true,
           config: {
-            title: 'Seleccionados para Vos',
-            subtitle: 'Curaduría',
+            title: 'Destacados de Temporada',
+            subtitle: 'Selección',
             limit: 6,
           },
         },
@@ -1255,7 +1255,7 @@ export const getSuggestedHomeSectionsTemplate = (templateKey, campaign = null) =
           order: 3,
           enabled: true,
           config: {
-            title: 'Una experiencia íntima pensada desde el respeto, la estética y la confidencialidad.',
+            title: 'Venta por mayor y por menor con atención personalizada en Córdoba.',
             id: 'nosotros',
           },
         },

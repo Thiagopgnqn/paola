@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import Button from '../ui/Button';
-import Badge from '../ui/Badge';
 import {
   FiShield,
   FiArrowRight,
   FiLock,
   FiTruck,
   FiTag,
-  FiPercent,
   FiX,
   FiCheck,
   FiAlertCircle,
@@ -57,50 +55,50 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
 
   return (
     <div
-      className={`bg-surface rounded-xl border border-brand-border/25 ${
-        isDrawer ? 'p-5' : 'p-6 lg:p-7'
+      className={`bg-surface rounded-xl border border-border shadow-soft ${
+        isDrawer ? 'p-4' : 'p-6 lg:p-7'
       } space-y-5`}
     >
-      <div className="pb-3 border-b border-brand-border/15">
-        <h2 className="font-display text-sm uppercase tracking-widest text-content">
+      <div className="pb-3 border-b border-border-subtle">
+        <h2 className="font-display font-bold text-sm uppercase tracking-wider text-content">
           Resumen del Pedido
         </h2>
-        <p className="text-xs text-content-muted mt-0.5">
-          Precios finales garantizados sin cargos ocultos
+        <p className="text-xs text-content-secondary mt-0.5">
+          Precios transparentes y descuentos aplicados al instante
         </p>
       </div>
 
       {/* 1. Barra de Progreso de Envío Gratis */}
-      <div className="p-3.5 rounded-lg bg-surface-elevated/70 border border-brand-border/25 space-y-2">
+      <div className="p-3.5 rounded-lg bg-surface-elevated border border-border space-y-2">
         <div className="flex items-center justify-between text-xs">
-          <span className="font-medium text-content inline-flex items-center gap-1.5">
-            <FiTruck className="text-mauve" />
+          <span className="font-semibold text-content inline-flex items-center gap-1.5">
+            <FiTruck className="text-brand-deep" />
             <span>
               {isFreeShipping
-                ? '¡Felicitaciones! Tenés Envío Gratis'
-                : `Te faltan $${remainingForFreeShipping.toLocaleString('es-AR')} para envío gratis`}
+                ? '¡Tenés Envío Bonificado!'
+                : `Te faltan $${remainingForFreeShipping.toLocaleString('es-AR')} para envío bonificado`}
             </span>
           </span>
-          <span className="text-[11px] font-semibold text-mauve">
+          <span className="text-[11px] font-bold text-brand-deep">
             {freeShippingProgress}%
           </span>
         </div>
-        <div className="w-full h-2 rounded-full bg-canvas overflow-hidden border border-brand-border/20">
+        <div className="w-full h-2 rounded-full bg-surface overflow-hidden border border-border">
           <div
-            className="h-full bg-gradient-to-r from-mauve to-brand transition-all duration-500 ease-out"
+            className="h-full bg-brand transition-all duration-500 ease-out"
             style={{ width: `${freeShippingProgress}%` }}
           />
         </div>
-        <p className="text-[10px] text-content-muted">
-          Envío bonificado a todo Córdoba en compras superiores a $
+        <p className="text-[11px] text-content-secondary">
+          Envío bonificado en {themeConfig.contact.deliveryZone} superando $
           {Number(freeShippingThreshold).toLocaleString('es-AR')}.
         </p>
       </div>
 
-      {/* 2. Aviso de Promoción por Cantidad (ej: 2x1 en Cosmética) */}
+      {/* 2. Aviso de Promoción por Cantidad */}
       {quantityPromoNotice && (
-        <div className="p-3.5 rounded-lg bg-brand/30 border border-mauve/40 flex items-start gap-2.5">
-          <FiGift className="text-mauve mt-0.5 flex-shrink-0" size={15} />
+        <div className="p-3.5 rounded-lg bg-surface-elevated border border-brand/40 flex items-start gap-2.5">
+          <FiGift className="text-brand-deep mt-0.5 flex-shrink-0" size={15} />
           <div className="text-xs">
             <p className="font-semibold text-content">{quantityPromoNotice.title}</p>
             <p className="text-content-secondary mt-0.5 leading-snug">
@@ -112,7 +110,7 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
 
       {/* 3. Selector de Método de Pago */}
       <div className="space-y-2">
-        <label className="block text-xs uppercase tracking-wider text-content-secondary font-medium">
+        <label className="block text-xs uppercase tracking-wider text-content-secondary font-semibold">
           Método de Pago Preferido:
         </label>
         <div className="grid grid-cols-2 gap-2 text-xs">
@@ -121,19 +119,19 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
             onClick={() => setPaymentMethod('TRANSFER')}
             className={`p-2.5 rounded-md border text-left transition-all ${
               paymentMethod === 'TRANSFER'
-                ? 'bg-brand/50 border-mauve text-content ring-1 ring-mauve/40'
-                : 'bg-canvas border-brand-border/25 text-content-secondary hover:text-content hover:border-mauve/30'
+                ? 'bg-surface-elevated border-brand text-content ring-1 ring-brand/40'
+                : 'bg-surface border-border-strong text-content-secondary hover:text-content hover:border-brand'
             }`}
           >
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Transferencia bancaria</span>
+            <div className="flex items-center justify-between gap-1">
+              <span className="font-semibold">Transferencia</span>
               {transferDiscountEnabled && (
-                <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">
+                <span className="text-[10px] text-status-success font-bold bg-status-success-bg px-1.5 py-0.5 rounded border border-status-success-border">
                   {transferDiscountPercent}% OFF
                 </span>
               )}
             </div>
-            <p className="text-[10px] text-content-muted mt-1 truncate">
+            <p className="text-[10px] text-content-secondary mt-1 truncate">
               {transferDiscountEnabled ? `${transferDiscountPercent}% de ahorro directo` : 'Pago por transferencia'}
             </p>
           </button>
@@ -143,12 +141,12 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
             onClick={() => setPaymentMethod('OTHER')}
             className={`p-2.5 rounded-md border text-left transition-all ${
               paymentMethod === 'OTHER'
-                ? 'bg-brand/50 border-mauve text-content ring-1 ring-mauve/40'
-                : 'bg-canvas border-brand-border/25 text-content-secondary hover:text-content hover:border-mauve/30'
+                ? 'bg-surface-elevated border-brand text-content ring-1 ring-brand/40'
+                : 'bg-surface border-border-strong text-content-secondary hover:text-content hover:border-brand'
             }`}
           >
-            <span className="font-medium">Efectivo / Otro</span>
-            <p className="text-[10px] text-content-muted mt-1 truncate">
+            <span className="font-semibold">Efectivo / Otro</span>
+            <p className="text-[10px] text-content-secondary mt-1 truncate">
               Al retirar o coordinar
             </p>
           </button>
@@ -156,20 +154,20 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
       </div>
 
       {/* 4. Campo de Cupón con validación en vivo */}
-      <div className="space-y-2 pt-2 border-t border-brand-border/15">
-        <label className="block text-xs uppercase tracking-wider text-content-secondary font-medium">
+      <div className="space-y-2 pt-2 border-t border-border-subtle">
+        <label className="block text-xs uppercase tracking-wider text-content-secondary font-semibold">
           ¿Tenés un cupón de descuento?
         </label>
 
         {quote?.coupon ? (
-          <div className="flex items-center justify-between p-2.5 rounded-md bg-surface-elevated border border-emerald-700/40 text-xs">
+          <div className="flex items-center justify-between p-2.5 rounded-md bg-status-success-bg border border-status-success-border text-xs">
             <div className="flex items-center gap-2">
-              <FiTag className="text-emerald-400" />
+              <FiTag className="text-status-success" />
               <div>
                 <span className="font-mono font-bold text-content">
                   {quote.coupon.code}
                 </span>
-                <span className="text-emerald-400 ml-2">
+                <span className="text-status-success font-semibold ml-2">
                   (-${Number(quote.coupon.discount || 0).toLocaleString('es-AR')})
                 </span>
               </div>
@@ -177,7 +175,7 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
             <button
               type="button"
               onClick={removeCoupon}
-              className="text-content-muted hover:text-rose-400 p-1"
+              className="text-content-secondary hover:text-status-error p-1"
               title="Quitar cupón"
               aria-label="Quitar cupón"
             >
@@ -191,7 +189,7 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
               value={inputCode}
               onChange={(e) => setInputCode(e.target.value.toUpperCase())}
               placeholder="Código de cupón"
-              className="flex-1 px-3 py-2 bg-canvas border border-brand-border/30 rounded text-xs text-content placeholder-content-muted font-mono uppercase focus:outline-none focus:border-mauve"
+              className="flex-1 px-3 py-2 bg-surface border border-border-strong rounded text-xs text-content placeholder:text-content-secondary/70 font-mono uppercase focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand"
             />
             <Button
               type="submit"
@@ -205,14 +203,14 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
         )}
 
         {couponError && (
-          <div className="flex items-center gap-1.5 text-xs text-rose-400 bg-rose-950/40 border border-rose-900/40 px-2.5 py-1.5 rounded">
+          <div className="flex items-center gap-1.5 text-xs text-status-error bg-status-error-bg border border-status-error-border px-2.5 py-1.5 rounded">
             <FiAlertCircle size={13} className="flex-shrink-0" />
             <span>{couponError}</span>
           </div>
         )}
 
         {couponSuccess && !couponError && (
-          <div className="flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-900/40 px-2.5 py-1.5 rounded">
+          <div className="flex items-center gap-1.5 text-xs text-status-success bg-status-success-bg border border-status-success-border px-2.5 py-1.5 rounded">
             <FiCheck size={13} className="flex-shrink-0" />
             <span>{couponSuccess}</span>
           </div>
@@ -220,9 +218,8 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
       </div>
 
       {/* 5. Desglose detallado de precios y descuentos */}
-      <div className="flow-root pt-3 border-t border-brand-border/15">
+      <div className="flow-root pt-3 border-t border-border-subtle">
         <dl className="text-xs space-y-2">
-          {/* Subtotal base */}
           <div className="flex items-center justify-between">
             <dt className="text-content-secondary">
               Subtotal ({cartCount}{' '}
@@ -234,68 +231,55 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
             </dd>
           </div>
 
-          {/* Descuentos individuales en productos */}
           {quote?.itemDiscountsTotal > 0 && (
-            <div className="flex items-center justify-between text-emerald-400">
-              <dt className="inline-flex items-center gap-1">
-                <span>Descuentos en productos</span>
-              </dt>
-              <dd className="font-medium">
+            <div className="flex items-center justify-between text-status-success font-medium">
+              <dt>Descuentos en productos</dt>
+              <dd>
                 -{themeConfig.brand.currencySymbol}
                 {Number(quote.itemDiscountsTotal).toLocaleString('es-AR')}
               </dd>
             </div>
           )}
 
-          {/* Promociones aplicadas a nivel carrito (ej: 2x1, combos, escalonados) */}
           {Array.isArray(quote?.appliedPromotions) &&
             quote.appliedPromotions.map((promo) => (
               <div
                 key={promo.id || promo.name}
-                className="flex items-center justify-between text-emerald-400"
+                className="flex items-center justify-between text-status-success font-medium"
               >
-                <dt className="truncate pr-2">
-                  <span>{promo.name}</span>
-                </dt>
-                <dd className="font-medium whitespace-nowrap">
+                <dt className="truncate pr-2">{promo.name}</dt>
+                <dd className="whitespace-nowrap">
                   -{themeConfig.brand.currencySymbol}
                   {Number(promo.discount).toLocaleString('es-AR')}
                 </dd>
               </div>
             ))}
 
-          {/* Cupón aplicado */}
           {quote?.couponDiscount > 0 && (
-            <div className="flex items-center justify-between text-emerald-400">
-              <dt className="inline-flex items-center gap-1">
-                <span>Cupón ({quote.coupon?.code})</span>
-              </dt>
-              <dd className="font-medium">
+            <div className="flex items-center justify-between text-status-success font-medium">
+              <dt>Cupón ({quote.coupon?.code})</dt>
+              <dd>
                 -{themeConfig.brand.currencySymbol}
                 {Number(quote.couponDiscount).toLocaleString('es-AR')}
               </dd>
             </div>
           )}
 
-          {/* Descuento por Transferencia */}
           {quote?.paymentMethodDiscount > 0 && (
-            <div className="flex items-center justify-between text-emerald-400">
-              <dt className="inline-flex items-center gap-1">
-                <span>Bonificación Transferencia bancaria ({transferDiscountPercent}%)</span>
-              </dt>
-              <dd className="font-medium">
+            <div className="flex items-center justify-between text-status-success font-medium">
+              <dt>Bonificación Transferencia ({transferDiscountPercent}%)</dt>
+              <dd>
                 -{themeConfig.brand.currencySymbol}
                 {Number(quote.paymentMethodDiscount).toLocaleString('es-AR')}
               </dd>
             </div>
           )}
 
-          {/* Costo de Envío */}
           <div className="flex items-center justify-between">
             <dt className="text-content-secondary">Envío a domicilio</dt>
-            <dd className="font-medium text-content">
+            <dd className="font-semibold text-content">
               {isFreeShipping ? (
-                <span className="text-emerald-400 font-semibold uppercase text-[11px] tracking-wider">
+                <span className="text-status-success font-bold uppercase text-[11px] tracking-wider">
                   ¡Gratis!
                 </span>
               ) : (
@@ -306,9 +290,8 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
             </dd>
           </div>
 
-          {/* Total Final */}
-          <div className="pt-3 flex items-baseline justify-between border-t border-brand-border/25">
-            <dt className="text-sm font-semibold text-content">Total Final</dt>
+          <div className="pt-3 flex items-baseline justify-between border-t border-border">
+            <dt className="text-sm font-bold text-content">Total Final</dt>
             <dd className="text-2xl font-bold text-content tracking-tight">
               {themeConfig.brand.currencySymbol}
               {totalFormatted}
@@ -316,10 +299,9 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
           </div>
         </dl>
 
-        {/* Ahorro Total Comprobado */}
         {totalSavings > 0 && (
-          <div className="mt-3 p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-800/40 text-center">
-            <p className="text-xs font-semibold text-emerald-300">
+          <div className="mt-3 p-2.5 rounded-lg bg-status-success-bg border border-status-success-border text-center">
+            <p className="text-xs font-bold text-status-success">
               ¡Ahorrás {themeConfig.brand.currencySymbol}
               {savingsFormatted} en este pedido!
             </p>
@@ -327,11 +309,11 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
         )}
       </div>
 
-      {/* Aviso de privacidad y discreción */}
-      <div className="bg-surface-elevated/70 border border-brand-border/25 rounded p-3 flex items-start gap-2.5">
-        <FiShield className="text-mauve mt-0.5 flex-shrink-0 text-sm" />
+      {/* Aviso de compra mayorista / envíos */}
+      <div className="bg-surface-elevated border border-border rounded-lg p-3 flex items-start gap-2.5">
+        <FiShield className="text-brand-deep mt-0.5 flex-shrink-0 text-sm" />
         <p className="text-[11px] text-content-secondary leading-relaxed">
-          {themeConfig.legal.discreetNotice}
+          {themeConfig.policies.wholesaleNotice}
         </p>
       </div>
 
@@ -350,7 +332,7 @@ const CartSummary = ({ isDrawer = false, onCloseDrawer }) => {
         <Link
           to="/catalogo"
           onClick={onCloseDrawer}
-          className="text-xs text-content-muted hover:text-content transition-colors font-medium"
+          className="text-xs text-content-secondary hover:text-brand-deep transition-colors font-semibold"
         >
           &larr; Seguir explorando el catálogo
         </Link>
